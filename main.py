@@ -4,13 +4,14 @@ from datetime import date, datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from random import randint
 import csv
+import pandas as pd
 
-stockSymbols = ["ACDCW", "ACER", "ACET", "ACGL", "ACGLN", "ACGLO", "ACGN", "ACHC", "ACHL", "ACHV",
-                "ACIU", "ACIW", "ACLS", "ACLX", "ACMR", "ACNB", "ACNT", "ACON", "ACOR", "ACQR", "ACQRU", "ACQRW", "ACRS",
-                "ACRV", "ACRX", "ACST", "ACT", "ACTG", "ACVA", "ACXP", "ADAG", "ADAL", "ADALU", "ADALW", "ADAP"]
+# read csv file
+df = pd.read_csv('./dataset/MegaCap Stock Symbols.csv')
+stockSymbols = list(df["Symbol"])
 
 for stockSymbol in stockSymbols:
-    f = open('./' + str(stockSymbol) + '.csv', 'w')
+    f = open('./dataset/news/' + str(stockSymbol) + '.csv', 'w')
     writer = csv.writer(f)
     header = ['title', 'datetime', 'link']
     writer.writerow(header)
@@ -37,4 +38,4 @@ for stockSymbol in stockSymbols:
             dateResult.append(result['datetime'])
             dateResult.append("https://" + str(result['link']))
             writer.writerow(dateResult)
-        time.sleep(randint(50, 65))
+        # time.sleep(randint(50, 65))
