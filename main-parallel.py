@@ -61,17 +61,17 @@ def getNews(stockSymbol):
 
 if __name__ == '__main__':
     # read csv file
-    stockSymbolData = pd.read_csv('./dataset/MidCap Stock Symbols.csv')
-    stockSymbols = list(stockSymbolData["Symbol"])
+    stockSymbol = pd.read_csv('./dataset/MidCap Stock Symbols.csv')
+    stockSymbols = list(stockSymbol["Symbol"])
 
     # Get all company names
     print("Fetch all company names")
-    companyNames = {}
-    
-    for stockSymbol in tqdm(stockSymbols):
-        getCompanyName(stockSymbol)
+    manager = Manager()
+    companyNames = manager.dict()
+    process_map(getCompanyName, stockSymbols[:3], max_workers=os.cpu_count()-1)
+    #print(companyNames)
 
     # Get news from Google News
     print("\nStart getting news")
-    for stockSymbol in stockSymbols:
-        getNews(stockSymbol)
+    pool2 = Pool(processes=2)
+    pool2.map(getNews, stockSymbols)
