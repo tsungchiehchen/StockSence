@@ -68,7 +68,7 @@ if __name__ == '__main__':
     print("Fetch all company names")
     manager = Manager()
     companyNames = manager.dict()
-    process_map(getCompanyName, stockSymbols[:3], max_workers=os.cpu_count()-1)
+    process_map(getCompanyName, stockSymbols, max_workers=os.cpu_count()-1)
     #print(companyNames)
 
     # Get news from Google News
