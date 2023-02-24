@@ -36,11 +36,12 @@ def datespan(startDate, endDate, delta=timedelta(days=1)):
 def getNews(stockSymbol):
     companyName = companyNames[stockSymbol]
     f = open('./dataset/news-company-name/' + str(stockSymbol) + '.csv', 'w')
+    #f = open('./dataset/news/' + str(stockSymbol) + '.csv', 'w')
     writer = csv.writer(f)
     header = ['title', 'datetime', 'link']
     writer.writerow(header)
 
-    for month in datespan(date(2020, 1, 1), date(2023, 3, 1), delta=relativedelta(months=1)):
+    for month in datespan(date(2017, 1, 1), date(2020, 1, 1), delta=relativedelta(months=1)):
         endMonth = month + relativedelta(day=31)
         if int(month.month) % 2 == 0:
             https = True
@@ -49,6 +50,7 @@ def getNews(stockSymbol):
         googlenews = GoogleNews(lang='en', region='US', start=str(month.strftime(
             "%m/%d/%Y")), end=str(endMonth.strftime("%m/%d/%Y")), https=https)
         googlenews.get_news(str(companyName))
+        #googlenews.get_news(str(stockSymbol))
         results = googlenews.results()
         print("number of results", len(results))
         for result in results:
@@ -64,7 +66,7 @@ if __name__ == '__main__':
     stockSymbol = pd.read_csv('./dataset/MidCap Stock Symbols.csv')
     stockSymbols = list(stockSymbol["Symbol"])
 
-    # Get all company names
+    # # Get all company names
     print("Fetch all company names")
     manager = Manager()
     companyNames = manager.dict()
@@ -73,5 +75,5 @@ if __name__ == '__main__':
 
     # Get news from Google News
     print("\nStart getting news")
-    pool2 = Pool(processes=2)
+    pool2 = Pool(processes=4)
     pool2.map(getNews, stockSymbols)
