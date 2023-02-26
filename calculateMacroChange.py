@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def get_macro_data(type):
-    macro_data = pd.read_csv("./macro dataset/" + type + ".csv")
+    macro_data = pd.read_csv("./dataset/macro dataset/" + type + ".csv")
     return macro_data
 
 
@@ -34,8 +34,7 @@ def calculate_change_rate(df, col_name, start_date, end_date):
 
 
 def get_stock_symbols_data():
-    stock_tkr_data = pd.read_csv(
-        "./MegaCap Stock Symbols.csv")
+    stock_tkr_data = pd.read_csv("./dataset/MegaCap Stock Symbols.csv")
     return stock_tkr_data
 
 
