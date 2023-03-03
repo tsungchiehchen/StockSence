@@ -34,8 +34,9 @@ def datespan(startDate, endDate, delta=timedelta(days=1)):
 
 
 def getNews(stockSymbol):
-    companyName = companyNames[stockSymbol]
-    f = open('./dataset/news-company-name/' + str(stockSymbol) + '.csv', 'w')
+    #companyName = companyNames[stockSymbol]
+    #f = open('./dataset/news-company-name/' + str(stockSymbol) + '.csv', 'w')
+    f = open('./dataset/news/' + str(stockSymbol) + '.csv', 'w')
     writer = csv.writer(f)
     header = ['title', 'datetime', 'link']
     writer.writerow(header)
@@ -48,7 +49,8 @@ def getNews(stockSymbol):
             https = False
         googlenews = GoogleNews(lang='en', region='US', start=str(month.strftime(
             "%m/%d/%Y")), end=str(endMonth.strftime("%m/%d/%Y")), https=https)
-        googlenews.get_news(str(companyName))
+        #googlenews.get_news(str(companyName))
+        googlenews.get_news(str(stockSymbol))
         results = googlenews.results()
         print("number of results", len(results))
         for result in results:
@@ -64,14 +66,14 @@ if __name__ == '__main__':
     stockSymbol = pd.read_csv('./dataset/MidCap Stock Symbols.csv')
     stockSymbols = list(stockSymbol["Symbol"])
 
-    # Get all company names
-    print("Fetch all company names")
-    manager = Manager()
-    companyNames = manager.dict()
-    process_map(getCompanyName, stockSymbols, max_workers=os.cpu_count()-1)
-    #print(companyNames)
+    # # Get all company names
+    # print("Fetch all company names")
+    # manager = Manager()
+    # companyNames = manager.dict()
+    # process_map(getCompanyName, stockSymbols, max_workers=os.cpu_count()-1)
+    # #print(companyNames)
 
     # Get news from Google News
     print("\nStart getting news")
-    pool2 = Pool(processes=2)
+    pool2 = Pool(processes=4)
     pool2.map(getNews, stockSymbols)
