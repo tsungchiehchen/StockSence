@@ -33,17 +33,25 @@
     .style("shape-rendering", "crispEdges");
 
   var grandparent = svg.append("g")
-    .attr("class", "grandparent");
+    .attr("class", "grandparent")
+    .attr("id", "banner");
 
   grandparent.append("rect")
     .attr("y", -margin.top)
     .attr("width", width)
-    .attr("height", margin.top);
+    .attr("height", margin.top)
+
+  grandparent.append("foreignObject")
+    .attr("id", "dates")
+    .attr("x", window.innerWidth-300)
+    .attr("y", -50)
+    .attr("width", 300)
+    .attr("height", 300)
 
   grandparent.append("text")
-    .attr("x", 6)
-    .attr("y", 6 - margin.top)
-    .attr("dy", ".75em");
+     .attr("x", 6)
+     .attr("y", 6 - margin.top)
+     .attr("dy", ".75em");
 
   d3.queue()
     .defer(d3.json, "data.json")
@@ -59,6 +67,12 @@
         root.dx = width;
         root.dy = height;
         root.depth = 0;
+        d3.select("#dates")
+          .html("<div\">From: <input type=\"text\" id=\"fromDate\" class=\"ui-widget\"></div>");
+        var dates = document.getElementById("dates");
+        console.log(dates);
+        dates.x = window.innerWidth - 300;
+        const picker = datepicker('#fromDate');
       }
 
       function accumulate(d) {
@@ -151,7 +165,7 @@
           .text(function (d) { return formatNumber(d.value); });
 
 
-        g.append("text")
+        g.append("text")  // 股票分類和股票名稱
           .attr("dy", ".75em")
           .text(function (d) { return d.name; })
           .call(text);
