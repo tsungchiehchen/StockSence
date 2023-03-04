@@ -1,0 +1,16 @@
+Flask==2.2.2
+Flask_Cors==3.0.10
+gdown==4.6.0
+matplotlib==3.6.2
+networkx==2.8.4
+nltk==3.7
+numpy==1.23.5
+pandas==1.5.2
+paperai==2.1.0
+Pillow==9.4.0
+scikit_learn==1.2.1
+seaborn==0.12.2
+statsmodels==0.13.5
+tqdm==4.64.1
+txtai==5.2.0
+wordcloud==1.8.2.2
