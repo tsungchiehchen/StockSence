@@ -1,3 +1,13 @@
+function dropDownFunction(){
+  console.log("123");
+  if(d3.select('#dates').attr('height') == 50){
+    d3.select('#dates').attr('height', "200");
+  }
+  else{
+    d3.select('#dates').attr('height', "50");
+  }
+}
+
 (function () {
   var margin = { top: 50, right: 0, bottom: 0, left: 0 },
     width = window.innerWidth,
@@ -43,15 +53,16 @@
 
   grandparent.append("foreignObject")
     .attr("id", "dates")
-    .attr("x", window.innerWidth-300)
+    .attr("x", 200)
     .attr("y", -50)
-    .attr("width", 300)
-    .attr("height", 300)
+    .attr("width", window.innerWidth)
+    .attr("height", 50)
 
   grandparent.append("text")
      .attr("x", 6)
-     .attr("y", 6 - margin.top)
-     .attr("dy", ".75em");
+     .attr("y", -18)
+     //.attr("dy", ".75em")
+     .attr("class", "title");
 
   d3.queue()
     .defer(d3.json, "data.json")
@@ -67,12 +78,60 @@
         root.dx = width;
         root.dy = height;
         root.depth = 0;
-        d3.select("#dates")
-          .html("<div\">From: <input type=\"text\" id=\"fromDate\" class=\"ui-widget\"></div>");
-        var dates = document.getElementById("dates");
-        console.log(dates);
-        dates.x = window.innerWidth - 300;
-        const picker = datepicker('#fromDate');
+        d3.select('#dates')
+          .html("<div class=\"dropdown\" style=\"float:left;padding-top:8px;\">" +
+          "<form action=\"/fetchExample\" method=\"POST\">" +
+          "<button class=\"btn btn-outline-dark dropdown-toggle\" id=\"dropDownMenu\" type=\"button\" data-toggle=\"dropdown\" name=\"type\" onclick=\"dropDownFunction()\">Macroeconomic type" +
+          "<span class=\"caret\"></span></button>" +
+          "<ul class=\"dropdown-menu\">" +
+          "<li><a href=\"#\">HTML</a></li>" +
+          "<li><a href=\"#\">CSS</a></li>" +
+          "<li><a href=\"#\">JavaScript</a></li>" +
+          "</ul>" +
+          "</div>" +
+          "<div class=\"input-daterange input-group\" id=\"datepicker\" style=\"padding-top:10px;padding-left: 10px;float:left\">" +
+          "<input type=\"text\" class=\"input-sm form-control\" name=\"stateDate\" placeholder=\"From\" style=\"width:100px;\"/>" +
+          "<input type=\"text\" class=\"input-sm form-control\" name=\"endDate\" placeholder=\"To\" style=\"width:100px;float:left;\"/>" +
+          "<button type=\"submit\" class=\"btn btn-primary\" style=\"margin-left:15px\">Go!</button>" + 
+          "</div>" +
+          "</form>")
+        fetch('/getData')
+          .then(function (response) {
+            return response.json();
+          }).then(function (text) {
+            console.log('GET response:');
+            console.log(text.greeting);
+          });
+        // d3.select("#dates")
+        //   .html("<div\">" +
+        //   "<pre style=\"font: 15px sans-serif;\">" +
+        //   "  Date: <input type=\"text\" id=\"fromDate\" class=\"ui-widget\" placeholder=\"Start\" style=\"width: 150px;text-align: center;\">" + 
+        //   " To <input type=\"text\" id=\"toDate\" class=\"ui-widget\" placeholder=\"End\" style=\"width: 150px;text-align: center;\"><nobr> " +
+        //   "</div>");
+
+        // https://github.com/qodesmith/datepicker#readme
+        // const fromDate = datepicker('#fromDate', {
+        //   position: 'bl',
+        //   id: 1,
+        //   formatter: (input, date, instance) => {
+        //     const value = date.toLocaleDateString('fr-CA')
+        //     input.value = value // => 'YYYY-MM-DD'
+        //   },
+        //   onSelect: (instance, date) => {
+        //     console.log(fromDate.getRange());
+        //   }
+        // });
+        // const toDate = datepicker('#toDate', {
+        //   position: 'bl',
+        //   id: 1,
+        //   formatter: (input, date, instance) => {
+        //     const value = date.toLocaleDateString('fr-CA')
+        //     input.value = value // => 'YYYY-MM-DD'
+        //   },
+        //   onSelect: (instance, date) => {
+        //     console.log(toDate.getRange());
+        //   }
+        // });
       }
 
       function accumulate(d) {
@@ -226,7 +285,7 @@
 
       function name(d) {
         return d.parent
-          ? "Sector : " + d.name + " (Back to Overall Market)"
+          ? "Back to Overall"
           : "Overall " + d.name;
       }
     });

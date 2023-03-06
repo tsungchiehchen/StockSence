@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS, cross_origin
 from controller import process
 import json
@@ -17,10 +17,16 @@ def hello_world():
     return "<p>Hello World</p>"
 
 
-@app.route("/fetchExample", methods=["GET", "POST"])
+@app.route("/getdata", methods=["GET", "POST"])
 @cross_origin()
 def fetchExample():
-    print("fetch")
+    print("GET", file=sys.stderr)
+    if request.method == "GET":
+        message = {'greeting':'Hello from Flask!'}
+        return jsonify(message)  # serialize and use JSON headers
+    else:
+        print(request.get_json())  # parse as JSON
+        return 'Sucesss', 200
     # titlesFile = open(titlesPath, "r")
     # publishTimeFile = open(publishTimePath, "r")
 

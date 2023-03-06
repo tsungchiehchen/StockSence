@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="heatmap.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+</head>
+<body>
+
+<div class="input-daterange input-group" id="datepicker">
+    <input type="text" class="input-sm form-control" name="start" />
+    <span class="input-group-addon">to</span>
+    <input type="text" class="input-sm form-control" name="end" />
+</div>
+<div id="demobox">
+    <div id="heatmap"></div>
+</div>
+
+<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="//d3js.org/d3-queue.v3.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script src="https://unpkg.com/js-datepicker"></script>
+<script src="heatmap.js"></script>
+<script>
+    $('#sandbox-container .input-daterange').datepicker({
+        format: "yyyy-mm-dd",
+        orientation: "bottom right",
+        multidate: false,
+        daysOfWeekDisabled: "0,6",
+        autoclose: true,
+        todayHighlight: true
+    });
+</script>
+</body>
+
+</html>

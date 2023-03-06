@@ -6,6 +6,11 @@ body {
   margin: 0;
   overflow-y: hidden;
   overflow-x: hidden;
+  font: 15px sans-serif;
+}
+
+.title{
+  font: 20px sans-serif;
 }
 
 #demobox {
