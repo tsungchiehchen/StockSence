@@ -10,16 +10,16 @@ def index():
     if request.method == 'POST':
         type = request.args.get('type')
         print(type)
-        if 'type' in request.form:
-            calculateStockChangebyDate.processAllStocksChange(request.form['startDate'], request.form['endDate'])
-            return redirect(request.path,code=302)
-        # if request.form:
-        #     type = request.form['type']
-        #     startDate = request.form['startDate']
-        #     endDate = request.form['endDate']
-        #     print(type, startDate, endDate)
+        # if 'type' in request.form:
+        #     calculateStockChangebyDate.processAllStocksChange(request.form['startDate'], request.form['endDate'])
+        #     return redirect(request.path,code=302)
+        # # if request.form:
+        # #     type = request.form['type']
+        # #     startDate = request.form['startDate']
+        # #     endDate = request.form['endDate']
+        # #     print(type, startDate, endDate)
         
-        # return render_template('index.html')
+        # # return render_template('index.html')
     else:
         if request.args.get('type'):
             calculateStockChangebyDate.processAllStocksChange(request.args.get('startDate'), request.args.get('endDate'))

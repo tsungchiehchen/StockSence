@@ -58,6 +58,7 @@
       .defer(d3.json, "stockData.json")
       .await(function (error, root) {
         if (error) throw error;
+        jQuery();
         initialize(root);
         accumulate(root);
         layout(root);
@@ -88,6 +89,40 @@
             "<input type=\"text\" class=\"input-sm form-control\" id=\"endDate\" name=\"endDate\" placeholder=\"To\" style=\"width:100px;float:left;\"/>" +
             "<button type=\"submit\" form=\"form1\" class=\"btn btn-primary\" style=\"margin-left:15px\" onclick=\"post('/')\">Go!</button>" + 
             "</div>")
+        }
+
+        function jQuery(){
+          $(document).ready(function(){
+            $("#dropDownMenu").on('click', function () {
+              console.log("clicked");
+              if ($('#dates').attr('height') == 50) {
+                $('#dates').attr('height', 500);
+                console.log("test");
+                $("#dropdown-menu").attr('class', 'dropdown-menu show');
+              }
+              else {
+                // console.log($("#dropdown-menu").attr('class'));
+                $("#dropdown-menu").attr('class', 'dropdown-menu');
+                // console.log($("#dropdown-menu").attr('class'));
+                //$('#dates').attr('height', 50);
+              }
+            });
+            $(".dropdown-menu").on('click', 'li a', function () {
+              $(".btn:first-child").text($(this).text());
+              $(".btn:first-child").val($(this).text());
+              $('#dates').attr('height', 50);
+              $("#dropdown-menu").attr('class', 'dropdown-menu');
+            });
+            $("#datepicker").datepicker({
+              format: "yyyy-mm-dd",
+              orientation: "bottom auto",
+              endDate: "2023-03-01",
+              multidate: false,
+              daysOfWeekDisabled: "0,6",
+              autoclose: true,
+              startView: 1
+            }).datepicker('update', new Date());
+          });
         }
   
         function accumulate(d) {
@@ -264,7 +299,7 @@
               else if(parseFloat(d.rate) >= -2){
                 return "#F23645";
               }
-              else if(parseFloat(d.rate) <= -3){
+              else{
                 return "#991F29";
               }
             });
@@ -276,42 +311,9 @@
             : "Overall " + d.name;
         }
       });
-
-      $(document).ready(function(){
-        $("#dropDownMenu").on('click', function () {
-          if ($('#dates').attr('height') == 50) {
-            $('#dates').attr('height', 500);
-            console.log("test");
-            $("#dropdown-menu").attr('class', 'dropdown-menu show');
-          }
-          else {
-            // console.log($("#dropdown-menu").attr('class'));
-            $("#dropdown-menu").attr('class', 'dropdown-menu');
-            // console.log($("#dropdown-menu").attr('class'));
-            //$('#dates').attr('height', 50);
-          }
-        });
-        $(".dropdown-menu").on('click', 'li a', function () {
-          $(".btn:first-child").text($(this).text());
-          $(".btn:first-child").val($(this).text());
-          $('#dates').attr('height', 50);
-          $("#dropdown-menu").attr('class', 'dropdown-menu');
-        });
-        $("#datepicker").datepicker({
-          format: "yyyy-mm-dd",
-          orientation: "bottom auto",
-          endDate: "2023-03-01",
-          multidate: false,
-          daysOfWeekDisabled: "0,6",
-          autoclose: true,
-          startView: 1
-        }).datepicker('update', new Date());
-      });
   }());
 
   function post(path, method = 'post') {
-    // The rest of this code assumes you are not using a library.
-    // It can be made less verbose if you use one.
     const params = Object.create(null);
     params["type"] = document.getElementById("dropDownMenu").value;
     params["startDate"] = document.getElementById("startDate").value;
