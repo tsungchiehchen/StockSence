@@ -8,6 +8,8 @@ app = Flask(__name__, static_url_path='', static_folder='../frontend/flask/stati
 def index():
     print(request.method)
     if request.method == 'POST':
+        type = request.args.get('type')
+        print(type)
         if 'type' in request.form:
             calculateStockChangebyDate.processAllStocksChange(request.form['startDate'], request.form['endDate'])
             return redirect(request.path,code=302)
@@ -19,6 +21,8 @@ def index():
         
         # return render_template('index.html')
     else:
+        if request.args.get('type'):
+            calculateStockChangebyDate.processAllStocksChange(request.args.get('startDate'), request.args.get('endDate'))
         return render_template('index.html')
 
 

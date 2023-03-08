@@ -97,6 +97,12 @@
         }
   
         function layout(d) {
+          const url = new URL(window.location.href);
+          if (url.searchParams.get('type') !== null) {
+            document.getElementById("dropDownMenu").innerHTML = url.searchParams.get('type');
+            document.getElementById("startDate").placeholder = url.searchParams.get('startDate');
+            document.getElementById("endDate").placeholder = url.searchParams.get('startDate');
+          };
           if (d._children) {
             treemap.nodes({ _children: d._children });
             d._children.forEach(function (c) {
@@ -240,7 +246,6 @@
             .attr("width", function (d) { return x(d.x + d.dx) - x(d.x); })
             .attr("height", function (d) { return y(d.y + d.dy) - y(d.y); })
             .attr("fill", function (d) { 
-              console.log(parseFloat(d.rate));
               if(parseFloat(d.rate) >= 3){
                 return "#056636";
               }
@@ -280,9 +285,9 @@
             $("#dropdown-menu").attr('class', 'dropdown-menu show');
           }
           else {
-            console.log($("#dropdown-menu").attr('class'));
+            // console.log($("#dropdown-menu").attr('class'));
             $("#dropdown-menu").attr('class', 'dropdown-menu');
-            console.log($("#dropdown-menu").attr('class'));
+            // console.log($("#dropdown-menu").attr('class'));
             //$('#dates').attr('height', 50);
           }
         });
@@ -315,7 +320,6 @@
         alert("Must enter all values");
     }
     else{
-        console.log(params);
         const form = document.createElement('form');
         form.method = method;
         form.action = path;
@@ -326,8 +330,13 @@
             hiddenField.value = params[key];
             form.appendChild(hiddenField);
         }
-        document.body.appendChild(form);
-        form.submit();
+        var url = new URL("http://127.0.0.1:3000");
+        url.searchParams.set('type', document.getElementById("dropDownMenu").value);
+        url.searchParams.set('startDate', document.getElementById("startDate").value);
+        url.searchParams.set('endDate', document.getElementById("endDate").value);
+        window.location.href = url;
+        // document.body.appendChild(form);
+        // form.submit();
     }
 }
   
