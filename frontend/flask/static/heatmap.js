@@ -91,7 +91,7 @@
                 "<div class=\"input-group-prepend\" style=\"float:left\">" +
                   "<div class=\"input-group-text\" style=\"float:left;text-align: center; font-weight: bold;\" id=\"typeName\">@</div>" +
                 "</div>" +
-                "<input type=\"text\" class=\"form-control\" id=\"typeValue\" style=\"text-align: center; width:100px; background: #FFFFFF\" readonly=\"readonly\">" +
+                "<input type=\"text\" class=\"form-control\" id=\"typeValue\" style=\"text-align: center; width:65px; background: #FFFFFF\" readonly=\"readonly\">" +
               "</div>"+
             "</div>"+
             "<div class=\"form-check\" id=\"checkBox\" style=\"float:left;padding-top:14px;padding-left:10px\">" +
@@ -150,6 +150,7 @@
         }
   
         function layout(d) {
+          // 從 URL 取值更新到內容中
           const url = new URL(window.location.href);
           document.getElementById("typeChange").style.display = 'none';
           if (url.searchParams.get('type') !== null) {
@@ -159,6 +160,7 @@
               document.getElementById("dropDownMenu").disabled = true;
               document.getElementById("typeChange").style.display = 'none';
               document.getElementById("stockPriceOnlyCheckBox").checked = true;
+              setDatePicker(true);
             }
             else{
               document.getElementById("dropDownMenu").innerHTML = url.searchParams.get('type');
@@ -168,10 +170,13 @@
               document.getElementById("typeValue").value = macroChange;
               document.getElementById("stockPriceOnlyCheckBox").checked = false;
               document.getElementById("checkBox").style="float:left;padding-top:14px;padding-left:0px";
+              setDatePicker(false);
             }
             document.getElementById("startDate").value = url.searchParams.get('startDate');
             document.getElementById("endDate").value = url.searchParams.get('endDate');
           };
+
+
           if (d._children) {
             treemap.nodes({ _children: d._children });
             d._children.forEach(function (c) {
@@ -353,40 +358,41 @@ function post(path, method = 'post') {
   params["startDate"] = document.getElementById("startDate").value;
   params["endDate"] = document.getElementById("endDate").value;
   if ((document.getElementById("stockPriceOnlyCheckBox").checked == true || params["type"] != "") && (params["startDate"] != "" | params["endDate"] != "")){
-    const form = document.createElement('form');
-    form.method = method;
-    form.action = path;
-    for (const key in params) {
-      const hiddenField = document.createElement('input');
-      hiddenField.type = 'hidden';
-      hiddenField.name = key;
-      hiddenField.value = params[key];
-      form.appendChild(hiddenField);
-    }
-    var url = new URL("http://127.0.0.1:3000");
-    if (params["type"] == ""){
-      url.searchParams.set('type', "none");
-      url.searchParams.set('stockPriceOnly', "true");
+    if(params["startDate"] == params["endDate"]){
+      alert("Date can't be the same")
     }
     else{
-      url.searchParams.set('type', document.getElementById("dropDownMenu").value);
-      url.searchParams.set('stockPriceOnly', "false");
+      const form = document.createElement('form');
+      form.method = method;
+      form.action = path;
+      for (const key in params) {
+        const hiddenField = document.createElement('input');
+        hiddenField.type = 'hidden';
+        hiddenField.name = key;
+        hiddenField.value = params[key];
+        form.appendChild(hiddenField);
+      }
+      var url = new URL("http://127.0.0.1:3000");
+      if (document.getElementById("stockPriceOnlyCheckBox").checked){
+        url.searchParams.set('type', "none");
+        url.searchParams.set('stockPriceOnly', "true");
+      }
+      else{
+        url.searchParams.set('type', document.getElementById("dropDownMenu").value);
+        url.searchParams.set('stockPriceOnly', "false");
+      }
+      url.searchParams.set('startDate', document.getElementById("startDate").value);
+      url.searchParams.set('endDate', document.getElementById("endDate").value);
+      window.location.href = url;
     }
-    url.searchParams.set('startDate', document.getElementById("startDate").value);
-    url.searchParams.set('endDate', document.getElementById("endDate").value);
-    window.location.href = url;
-      // document.body.appendChild(form);
-      // form.submit();
   }
   else {
-    alert("Must enter all values");
+    alert("Please enter all values");
   }
 }
 
-function checkBoxChange(checkbox){
-  if(checkbox.checked)
-  {
-    document.getElementById("dropDownMenu").disabled = true;
+function setDatePicker(stockPriceOnly) {
+  if (stockPriceOnly == true) {
     var newOptions = {
       format: "yyyy-mm-dd",
       orientation: "bottom auto",
@@ -398,16 +404,10 @@ function checkBoxChange(checkbox){
       startView: 1,
       minViewMode: 0
     }
-    //var value = $('#datepicker').datepicker('getDates');
-    document.getElementById("startDate").value = "";
-    document.getElementById("endDate").value = "";
     $('#datepicker').datepicker('destroy');
     $('#datepicker').datepicker(newOptions);
-    //$('#datepicker').datepicker('setDates', value);
   }
-  else
-  {
-    document.getElementById("dropDownMenu").disabled = false;
+  else {
     var newOptions = {
       format: "yyyy-mm-dd",
       orientation: "bottom auto",
@@ -419,11 +419,25 @@ function checkBoxChange(checkbox){
       startView: 1,
       minViewMode: 1
     }
-    //var value = $('#datepicker').datepicker('getDates');
-    document.getElementById("startDate").value = "";
-    document.getElementById("endDate").value = "";
     $('#datepicker').datepicker('destroy');
     $('#datepicker').datepicker(newOptions);
+  }
+}
+
+function checkBoxChange(checkbox){
+  if(checkbox.checked)
+  {
+    document.getElementById("dropDownMenu").disabled = true;
+    setDatePicker(true);
+    document.getElementById("startDate").value = "";
+    document.getElementById("endDate").value = "";
+  }
+  else
+  {
+    document.getElementById("dropDownMenu").disabled = false;
+    setDatePicker(false);
+    document.getElementById("startDate").value = "";
+    document.getElementById("endDate").value = "";
     //$('#datepicker').datepicker('setDates', value);
   }
 }

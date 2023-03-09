@@ -1,7 +1,7 @@
 import pandas as pd
 import csv
 import json
-import time
+import numpy as np
 
 
 def getdataframe():
@@ -19,15 +19,49 @@ def getdataframe():
 def getStocksChange(symbol, start_date, end_date):
     df = pd.read_csv('./dataset/Historical Price/' + symbol + '.csv')
 
-    try:
-        start_price = float(df.loc[df["Date"] == start_date]["Close"])
-        end_price = float(df.loc[df["Date"] == end_date]["Close"])
+    # try:
+    #     start_price = float(df.loc[df["Date"] == start_date]["Close"])
+    #     end_price = float(df.loc[df["Date"] == end_date]["Close"])
 
+    #     change = round(((end_price - start_price) / start_price) * 100, 2)
+    # except:
+    #     change = None
+
+    # First, check if the stock is listed before the start date
+    # if not let the change = None
+    ipo_date = df.iloc[0]["Date"]
+    ipo_year = ipo_date[0:4]
+    ipo_month = ipo_date[5:7]
+    start_year = start_date[0:4]
+    start_month = start_date[5:7]
+
+    if (ipo_year <= start_year) or (ipo_year == start_year and ipo_month < start_month):
+        # check if the start or end date is weekend or holiday
+        start_date = df.loc[df["Date"] >= start_date, "Date"].iloc[0]
+        end_date = df.loc[df["Date"] >= end_date, "Date"].iloc[0]
+
+        start_price = df.loc[df["Date"] == start_date]["Close"].values[0]
+        end_price = df.loc[df["Date"] == end_date]["Close"].values[0]
+
+        # Lastly, calculate price change
         change = round(((end_price - start_price) / start_price) * 100, 2)
-    except:
+    else:
         change = None
 
     return change
+
+
+def get_percentile(changes):
+    minimum, maximum = min(changes), max(changes)
+    portion_separate_values = [0 for _ in range(7)]
+    n = len(portion_separate_values)
+    interval = int(round((minimum + maximum) / 2 / 6, 0))
+
+    for i in range(1, 4):
+        portion_separate_values[(n//2) - i] = -1 * interval * i
+        portion_separate_values[(n//2) + i] = interval * i
+
+    return portion_separate_values
 
 
 def writetoCSV(objects):
@@ -171,6 +205,7 @@ def processAllStocksChange(start_date, end_date):
     df = getdataframe()
 
     all_changes = []
+    changes = []
     for i in range(len(df)):
         symbol = df.iloc[i]["Symbol"]
         sector = df.iloc[i]["Sector"]
@@ -186,22 +221,71 @@ def processAllStocksChange(start_date, end_date):
             d['rate'] = change
             # normalize Market_Cap by dividing 10^9
             d['market cap'] = marketCap / (10 ** 9)
+            changes.append(change)
             all_changes.append(d)
 
-    print("Stock Change Calculated")
+    # calculate percentile (of 6 portions)
+    percentiles = get_percentile(changes)
+
     writetoCSV(all_changes)
     change_in_json = convertCSVtoJSON()
     file = open('../frontend/flask/static/stockData.json', 'w')
     file.write(change_in_json)
     file.close()
+    return change_in_json, percentiles
 
 
-# testing
-# start_date = "2017-01-03"
-# end_date = "2018-01-02"
+################################## TESTING #########################################
+# # normal input test
+# start_date = "2017-01-01"
+# end_date = "2018-01-01"
+# print("From: " + start_date, " To: " + end_date)
+# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
+# print(percentiles)
+# print()
 
-# jsonFile = processAllStocksChange(start_date, end_date)
 
+# # test end date invalid (auto correct end date)
+# start_date = "2017-01-01"
+# end_date = "2018-01-21"
+# print("From: " + start_date, " To: " + end_date)
+# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
+# print(percentiles)
+# print()
+
+# # test date invalid 2 (auto correct end date)
+# start_date = "2021-01-01"
+# end_date = "2021-03-01"
+# print("From: " + start_date, " To: " + end_date)
+# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
+# print(percentiles)
+# print()
+
+# # test date invalid 3 (auto correct end date)
+# start_date = "2021-05-01"
+# end_date = "2022-07-01"
+# print("From: " + start_date, " To: " + end_date)
+# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
+# print(percentiles)
+# print()
+
+# # test date invalid 4 (auto correct end date)
+# start_date = "2022-06-15"
+# end_date = "2022-08-10"
+# print("From: " + start_date, " To: " + end_date)
+# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
+# print(percentiles)
+# print()
+
+# # test date invalid 5 (auto correct end date)
+# start_date = "2022-07-01"
+# end_date = "2022-10-01"
+# print("From: " + start_date, " To: " + end_date)
+# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
+# print(percentiles)
+# print()
+
+# print(percentiles)
 # file = open('stock_price_changes.json', 'w')
 # file.write(jsonFile)
 # file.close()

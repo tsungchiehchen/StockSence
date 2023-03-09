@@ -25,10 +25,10 @@ def index():
         stockPriceOnly = request.args.get('stockPriceOnly')
         startDate = request.args.get('startDate')
         endDate = request.args.get('endDate')
-        if type == "none":
+        if stockPriceOnly == "true":
             calculateStockChangebyDate.processAllStocksChange(startDate, endDate)
             return render_template('index.html', type=type, macroChange=None)
-        elif type != None:
+        elif stockPriceOnly == "false":
             calculateStockChangebyDate.processAllStocksChange(startDate, endDate)
             macroChange = calculateMacroChange.process_macro_data(type, startDate, endDate)
             print(macroChange)
