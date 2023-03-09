@@ -19,14 +19,6 @@ def getdataframe():
 def getStocksChange(symbol, start_date, end_date):
     df = pd.read_csv('./dataset/Historical Price/' + symbol + '.csv')
 
-    # try:
-    #     start_price = float(df.loc[df["Date"] == start_date]["Close"])
-    #     end_price = float(df.loc[df["Date"] == end_date]["Close"])
-
-    #     change = round(((end_price - start_price) / start_price) * 100, 2)
-    # except:
-    #     change = None
-
     # First, check if the stock is listed before the start date
     # if not let the change = None
     ipo_date = df.iloc[0]["Date"]
@@ -55,7 +47,10 @@ def get_percentile(changes):
     minimum, maximum = min(changes), max(changes)
     portion_separate_values = [0 for _ in range(7)]
     n = len(portion_separate_values)
-    interval = int(round((minimum + maximum) / 2 / 6, 0))
+    if (minimum + maximum) < 12:
+        interval = int(max(maximum, minimum) / 3)
+    else:
+        interval = int(round((minimum + maximum) / 2 / 6, 0))
 
     for i in range(1, 4):
         portion_separate_values[(n//2) - i] = -1 * interval * i
@@ -269,7 +264,15 @@ def processAllStocksChange(start_date, end_date):
 # print(percentiles)
 # print()
 
-# # test date invalid 4 (auto correct end date)
+# # test date invalid 3 (auto correct end date)
+# start_date = "2021-05-01"
+# end_date = "2021-06-01"
+# print("From: " + start_date, " To: " + end_date)
+# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
+# print(percentiles)
+# print()
+
+# # test date invalid 5 (auto correct end date)
 # start_date = "2022-06-15"
 # end_date = "2022-08-10"
 # print("From: " + start_date, " To: " + end_date)
@@ -277,15 +280,10 @@ def processAllStocksChange(start_date, end_date):
 # print(percentiles)
 # print()
 
-# # test date invalid 5 (auto correct end date)
+# # test date invalid 6 (auto correct end date)
 # start_date = "2022-07-01"
 # end_date = "2022-10-01"
 # print("From: " + start_date, " To: " + end_date)
 # jsonFile, percentiles = processAllStocksChange(start_date, end_date)
 # print(percentiles)
 # print()
-
-# print(percentiles)
-# file = open('stock_price_changes.json', 'w')
-# file.write(jsonFile)
-# file.close()
