@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def get_macro_data(type):
-    macro_data = pd.read_csv("../dataset/macro dataset/" + type + ".csv")
+    macro_data = pd.read_csv("./dataset/macro dataset/" + type + ".csv")
     return macro_data
 
 
@@ -34,7 +34,7 @@ def calculate_change_rate(df, col_name, start_date, end_date):
 
 
 def get_stock_symbols_data():
-    stock_tkr_data = pd.read_csv("../dataset/MegaCap Stock Symbols.csv")
+    stock_tkr_data = pd.read_csv("./dataset/MegaCap Stock Symbols.csv")
     return stock_tkr_data
 
 
@@ -47,24 +47,24 @@ def process_macro_data(type, start_date, end_date):
         change = calculate_change_rate(df, "DFF", start_date, end_date)
     elif type == "Retail Price":
         change = calculate_change(df, "PCUARETTRARETTR", start_date, end_date)
-    elif type == "Treasury yield 2yrs":
+    elif type == "Treasury yield 2 years":
         change = calculate_change_rate(df, "DGS2", start_date, end_date)
-    elif type == "Treasury yield 10yrs":
+    elif type == "Treasury yield 10 years":
         change = calculate_change_rate(df, "DGS10", start_date, end_date)
-    elif type == "Treasury yield 20yrs":
+    elif type == "Treasury yield 20 years":
         change = calculate_change_rate(df, "DGS20", start_date, end_date)
-    elif type == "Treasury yield 30yrs":
+    elif type == "Treasury yield 30 years":
         change = calculate_change_rate(df, "DGS30", start_date, end_date)
     elif type == "Unemployment":
         change = calculate_change(df, "UNEMPLOY", start_date, end_date)
     return change
 
 
-print(process_macro_data("CPI", "2017-01-01", "2018-01-01"))
-print(process_macro_data("Federal Funds Rate", "2017-01-01", "2018-01-01"))
-print(process_macro_data("Retail Price", "2017-01-01", "2018-01-01"))
-print(process_macro_data("Treasury yield 2yrs", "2017-01-01", "2018-01-01"))
-print(process_macro_data("Treasury yield 10yrs", "2017-01-01", "2018-01-01"))
-print(process_macro_data("Treasury yield 20yrs", "2017-01-01", "2018-01-01"))
-print(process_macro_data("Treasury yield 30yrs", "2017-01-01", "2018-01-01"))
-print(process_macro_data("Unemployment", "2017-01-01", "2018-01-01"))
+# print(process_macro_data("CPI", "2017-01-01", "2018-01-01"))
+# print(process_macro_data("Federal Funds Rate", "2017-01-01", "2018-01-01"))
+# print(process_macro_data("Retail Price", "2017-01-01", "2018-01-01"))
+# print(process_macro_data("Treasury yield 2yrs", "2017-01-01", "2018-01-01"))
+# print(process_macro_data("Treasury yield 10yrs", "2017-01-01", "2018-01-01"))
+# print(process_macro_data("Treasury yield 20yrs", "2017-01-01", "2018-01-01"))
+# print(process_macro_data("Treasury yield 30yrs", "2017-01-01", "2018-01-01"))
+# print(process_macro_data("Unemployment", "2017-01-01", "2018-01-01"))

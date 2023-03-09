@@ -1,5 +1,5 @@
-from flask import Flask, request, render_template, session, redirect
-from dataModule import calculateStockChangebyDate
+from flask import Flask, request, render_template, url_for, redirect
+from dataModule import calculateStockChangebyDate, calculateMacroChange
 
 app = Flask(__name__, static_url_path='', static_folder='../frontend/flask/static', template_folder='../frontend/flask/template')
 
@@ -21,9 +21,20 @@ def index():
         
         # # return render_template('index.html')
     else:
-        if request.args.get('type'):
-            calculateStockChangebyDate.processAllStocksChange(request.args.get('startDate'), request.args.get('endDate'))
-        return render_template('index.html')
+        type = request.args.get('type')
+        stockPriceOnly = request.args.get('stockPriceOnly')
+        startDate = request.args.get('startDate')
+        endDate = request.args.get('endDate')
+        if type == "none":
+            calculateStockChangebyDate.processAllStocksChange(startDate, endDate)
+            return render_template('index.html', type=type, macroChange=None)
+        elif type != None:
+            calculateStockChangebyDate.processAllStocksChange(startDate, endDate)
+            macroChange = calculateMacroChange.process_macro_data(type, startDate, endDate)
+            print(macroChange)
+            return render_template('index.html', type=type, macroChange=macroChange)
+        else:
+            return render_template('index.html')
 
 
 if __name__ == '__main__':

@@ -65,13 +65,14 @@
         display(root);
   
         function initialize(root) {
+          console.log(macroChange);
           root.x = root.y = 0;
           root.dx = width;
           root.dy = height;
           root.depth = 0;
           d3.select('#dates')
             .html("<div class=\"dropdown\" style=\"float:left;padding-top:8px;\">" +
-            "<button class=\"btn btn-outline-dark dropdown-toggle\" id=\"dropDownMenu\" type=\"button\" data-toggle=\"dropdown\" name=\"type\">Macroeconomic type" +
+            "<button class=\"btn btn-outline-dark dropdown-toggle\" id=\"dropDownMenu\" type=\"button\" data-toggle=\"dropdown\" name=\"type\">Select macroeconomic type" +
             "<span class=\"caret\"></span></button>" +
             "<ul class=\"dropdown-menu\" id=\"dropdown-menu\">" +
             "<li><a href=\"#\">CPI</a></li>" +
@@ -84,10 +85,25 @@
             "<li><a href=\"#\">Unemployment</a></li>" +
             "</ul>" +
             "</div>" +
-            "<div class=\"input-daterange input-group\" id=\"datepicker\" style=\"padding-top:10px;padding-left: 10px;float:left\">" +
+            "<div class=\"col-auto\" style=\"float:left;padding-top:8px;\" id=\"typeChange\">" +
+              "<label class=\"sr-only\" for=\"inlineFormInputGroup\">Username</label>" +
+              "<div class=\"input-group mb-2\" style=\"float:left\">" +
+                "<div class=\"input-group-prepend\" style=\"float:left\">" +
+                  "<div class=\"input-group-text\" style=\"float:left;text-align: center; font-weight: bold;\" id=\"typeName\">@</div>" +
+                "</div>" +
+                "<input type=\"text\" class=\"form-control\" id=\"typeValue\" style=\"text-align: center; width:100px; background: #FFFFFF\" readonly=\"readonly\">" +
+              "</div>"+
+            "</div>"+
+            "<div class=\"form-check\" id=\"checkBox\" style=\"float:left;padding-top:14px;padding-left:10px\">" +
+            "<input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"stockPriceOnlyCheckBox\" onclick=\"checkBoxChange(this)\">" +
+            "<label class=\"form-check-label\" for=\"stockPriceOnlyCheckBox\" style=\"margin-left:20px\">" +
+            "<p style=\"font-weight: normal;font-size: 14px;padding-top:5px;\">Stock Price Only</p>"+
+            "</label>"+
+            "</div>"+
+            "<div class=\"input-daterange input-group\" id=\"datepicker\" style=\"padding-top:8px;padding-left: 10px;float:left\">" +
             "<input type=\"text\" class=\"input-sm form-control\" id=\"startDate\" name=\"stateDate\" placeholder=\"From\" style=\"width:100px;\"/>" +
             "<input type=\"text\" class=\"input-sm form-control\" id=\"endDate\" name=\"endDate\" placeholder=\"To\" style=\"width:100px;float:left;\"/>" +
-            "<button type=\"submit\" form=\"form1\" class=\"btn btn-primary\" style=\"margin-left:15px\" onclick=\"post('/')\">Go!</button>" + 
+            "<button type=\"submit\" form=\"form1\" class=\"btn btn-primary\" style=\"margin-left:15px\" onclick=\"post('/')\">Search</button>" + 
             "</div>")
         }
 
@@ -116,11 +132,13 @@
             $("#datepicker").datepicker({
               format: "yyyy-mm-dd",
               orientation: "bottom auto",
-              endDate: "2023-03-01",
+              startDate: "2017-01-01",
+              endDate: "2023-01-01",
               multidate: false,
               daysOfWeekDisabled: "0,6",
               autoclose: true,
-              startView: 1
+              startView: 1,
+              minViewMode: 1
             }).datepicker('update', new Date());
           });
         }
@@ -133,10 +151,26 @@
   
         function layout(d) {
           const url = new URL(window.location.href);
+          document.getElementById("typeChange").style.display = 'none';
           if (url.searchParams.get('type') !== null) {
-            document.getElementById("dropDownMenu").innerHTML = url.searchParams.get('type');
-            document.getElementById("startDate").placeholder = url.searchParams.get('startDate');
-            document.getElementById("endDate").placeholder = url.searchParams.get('startDate');
+            if (url.searchParams.get('type') == "none"){
+              document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
+              document.getElementById("dropDownMenu").value = "Select macroeconomic type";
+              document.getElementById("dropDownMenu").disabled = true;
+              document.getElementById("typeChange").style.display = 'none';
+              document.getElementById("stockPriceOnlyCheckBox").checked = true;
+            }
+            else{
+              document.getElementById("dropDownMenu").innerHTML = url.searchParams.get('type');
+              document.getElementById("dropDownMenu").value = url.searchParams.get('type');
+              document.getElementById("typeChange").style.display = 'block';
+              document.getElementById("typeName").innerHTML = url.searchParams.get('type');
+              document.getElementById("typeValue").value = macroChange;
+              document.getElementById("stockPriceOnlyCheckBox").checked = false;
+              document.getElementById("checkBox").style="float:left;padding-top:14px;padding-left:0px";
+            }
+            document.getElementById("startDate").value = url.searchParams.get('startDate');
+            document.getElementById("endDate").value = url.searchParams.get('endDate');
           };
           if (d._children) {
             treemap.nodes({ _children: d._children });
@@ -313,32 +347,84 @@
       });
   }());
 
-  function post(path, method = 'post') {
-    const params = Object.create(null);
-    params["type"] = document.getElementById("dropDownMenu").value;
-    params["startDate"] = document.getElementById("startDate").value;
-    params["endDate"] = document.getElementById("endDate").value;
-    if(params["type"] == "" | params["startDate"] == "" | params["endDate"] == ""){
-        alert("Must enter all values");
+function post(path, method = 'post') {
+  const params = Object.create(null);
+  params["type"] = document.getElementById("dropDownMenu").value;
+  params["startDate"] = document.getElementById("startDate").value;
+  params["endDate"] = document.getElementById("endDate").value;
+  if ((document.getElementById("stockPriceOnlyCheckBox").checked == true || params["type"] != "") && (params["startDate"] != "" | params["endDate"] != "")){
+    const form = document.createElement('form');
+    form.method = method;
+    form.action = path;
+    for (const key in params) {
+      const hiddenField = document.createElement('input');
+      hiddenField.type = 'hidden';
+      hiddenField.name = key;
+      hiddenField.value = params[key];
+      form.appendChild(hiddenField);
+    }
+    var url = new URL("http://127.0.0.1:3000");
+    if (params["type"] == ""){
+      url.searchParams.set('type', "none");
+      url.searchParams.set('stockPriceOnly', "true");
     }
     else{
-        const form = document.createElement('form');
-        form.method = method;
-        form.action = path;
-        for (const key in params) {
-            const hiddenField = document.createElement('input');
-            hiddenField.type = 'hidden';
-            hiddenField.name = key;
-            hiddenField.value = params[key];
-            form.appendChild(hiddenField);
-        }
-        var url = new URL("http://127.0.0.1:3000");
-        url.searchParams.set('type', document.getElementById("dropDownMenu").value);
-        url.searchParams.set('startDate', document.getElementById("startDate").value);
-        url.searchParams.set('endDate', document.getElementById("endDate").value);
-        window.location.href = url;
-        // document.body.appendChild(form);
-        // form.submit();
+      url.searchParams.set('type', document.getElementById("dropDownMenu").value);
+      url.searchParams.set('stockPriceOnly', "false");
     }
+    url.searchParams.set('startDate', document.getElementById("startDate").value);
+    url.searchParams.set('endDate', document.getElementById("endDate").value);
+    window.location.href = url;
+      // document.body.appendChild(form);
+      // form.submit();
+  }
+  else {
+    alert("Must enter all values");
+  }
+}
+
+function checkBoxChange(checkbox){
+  if(checkbox.checked)
+  {
+    document.getElementById("dropDownMenu").disabled = true;
+    var newOptions = {
+      format: "yyyy-mm-dd",
+      orientation: "bottom auto",
+      startDate: "2017-01-01",
+      endDate: "2023-01-01",
+      multidate: false,
+      daysOfWeekDisabled: "0,6",
+      autoclose: true,
+      startView: 1,
+      minViewMode: 0
+    }
+    //var value = $('#datepicker').datepicker('getDates');
+    document.getElementById("startDate").value = "";
+    document.getElementById("endDate").value = "";
+    $('#datepicker').datepicker('destroy');
+    $('#datepicker').datepicker(newOptions);
+    //$('#datepicker').datepicker('setDates', value);
+  }
+  else
+  {
+    document.getElementById("dropDownMenu").disabled = false;
+    var newOptions = {
+      format: "yyyy-mm-dd",
+      orientation: "bottom auto",
+      startDate: "2017-01-01",
+      endDate: "2023-01-01",
+      multidate: false,
+      daysOfWeekDisabled: "0,6",
+      autoclose: true,
+      startView: 1,
+      minViewMode: 1
+    }
+    //var value = $('#datepicker').datepicker('getDates');
+    document.getElementById("startDate").value = "";
+    document.getElementById("endDate").value = "";
+    $('#datepicker').datepicker('destroy');
+    $('#datepicker').datepicker(newOptions);
+    //$('#datepicker').datepicker('setDates', value);
+  }
 }
   
