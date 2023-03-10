@@ -27,7 +27,7 @@
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.bottom + margin.top)
       .style("margin-left", -margin.left + "px")
-      .style("margin.right", -margin.right + "px")
+      .style("margin-right", -margin.right + "px")
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
       .style("shape-rendering", "crispEdges");
@@ -41,18 +41,136 @@
       .attr("width", width)
       .attr("height", margin.top)
   
-    grandparent.append("foreignObject")
-      .attr("id", "dates")
-      .attr("x", 200)
-      .attr("y", -50)
-      .attr("width", window.innerWidth)
-      .attr("height", 50)
-  
     grandparent.append("text")
-       .attr("x", 6)
-       .attr("y", -18)
+       .attr("x", 10)
+       .attr("y", -17)
        //.attr("dy", ".75em")
-       .attr("class", "title");
+       .attr("class", "title")
+
+    // 工具列
+    grandparent.append("foreignObject")
+       .attr("id", "dates")
+       .attr("x", 180)
+       .attr("y", -50)
+       .attr("width", window.innerWidth)
+       .attr("height", 50)
+    
+    // 顏色 legends
+    var colorLegends = svg.append("g")
+    .attr("class", "colorLegends")
+    .attr("id", "colorLegends")
+
+    colorLegends.append("rect")  // 3%
+      .attr("x", window.innerWidth - 75)
+      .attr("y", -37)
+      .attr("rx", 5)
+      .attr("ry", 5)
+      .attr("width", "70px")
+      .attr("height", "25px")
+      .attr("style", "fill:rgb(5, 102, 54);stroke-width:0;stroke:rgb(0,0,0);border-radius: 25px;")
+
+    colorLegends.append("foreignObject")  // 3%
+      .attr("x", window.innerWidth - 75)
+      .attr("y", -37)
+      .attr("width", "70px")
+      .attr("height", "25px")
+      .attr("id", "largest")
+
+    colorLegends.append("rect")  // 2%
+      .attr("x", window.innerWidth - 150)
+      .attr("y", -37)
+      .attr("rx", 5)
+      .attr("ry", 5)
+      .attr("width", "70px")
+      .attr("height", "25px")
+      .attr("style", "fill:rgb(8, 153, 80);stroke-width:0;stroke:rgb(0,0,0);border-radius: 25px;")
+
+    colorLegends.append("foreignObject")  // 2%
+      .attr("x", window.innerWidth - 150)
+      .attr("y", -37)
+      .attr("width", "70px")
+      .attr("height", "25px")
+      .attr("id", "secondLargest")
+
+    colorLegends.append("rect")  // 1%
+      .attr("x", window.innerWidth - 225)
+      .attr("y", -37)
+      .attr("rx", 5)
+      .attr("ry", 5)
+      .attr("width", "70px")
+      .attr("height", "25px")
+      .attr("style", "fill:rgb(66, 189, 127);stroke-width:0;stroke:rgb(0,0,0);border-radius: 25px;")
+
+    colorLegends.append("foreignObject")  // 1%
+      .attr("x", window.innerWidth - 225)
+      .attr("y", -37)
+      .attr("width", "70px")
+      .attr("height", "25px")
+      .attr("id", "thirdLargest")
+
+    colorLegends.append("rect")  // 0%
+      .attr("x", window.innerWidth - 300)
+      .attr("y", -37)
+      .attr("rx", 5)
+      .attr("ry", 5)
+      .attr("width", "70px")
+      .attr("height", "25px")
+      .attr("style", "fill:rgb(193, 196, 205);stroke-width:0;stroke:rgb(0,0,0);border-radius: 25px;")
+
+    colorLegends.append("foreignObject")  // 0%
+      .attr("x", window.innerWidth - 300)
+      .attr("y", -37)
+      .attr("width", "70px")
+      .attr("height", "25px")
+      .attr("id", "middle")
+
+    colorLegends.append("rect")  // -1%
+      .attr("x", window.innerWidth - 375)
+      .attr("y", -37)
+      .attr("rx", 5)
+      .attr("ry", 5)
+      .attr("width", "70px")
+      .attr("height", "25px")
+      .attr("style", "fill:rgb(247, 124, 128);stroke-width:0;stroke:rgb(0,0,0);border-radius: 25px;")
+
+    colorLegends.append("foreignObject")  // -1%
+      .attr("x", window.innerWidth - 375)
+      .attr("y", -37)
+      .attr("width", "70px")
+      .attr("height", "25px")
+      .attr("id", "thirdSmallest")
+    
+    colorLegends.append("rect")  // -2%
+      .attr("x", window.innerWidth - 450)
+      .attr("y", -37)
+      .attr("rx", 5)
+      .attr("ry", 5)
+      .attr("width", "70px")
+      .attr("height", "25px")
+      .attr("style", "fill:rgb(242, 54, 69);stroke-width:0;stroke:rgb(0,0,0);border-radius: 25px;")
+
+    colorLegends.append("foreignObject")  // -1%
+      .attr("x", window.innerWidth - 450)
+      .attr("y", -37)
+      .attr("width", "70px")
+      .attr("height", "25px")
+      .attr("id", "secondSmallest")
+    
+    colorLegends.append("rect")  // -3%
+      .attr("x", window.innerWidth - 525)
+      .attr("y", -37)
+      .attr("rx", 5)
+      .attr("ry", 5)
+      .attr("width", "70px")
+      .attr("height", "25px")
+      .attr("style", "fill:rgb(153, 31, 41);stroke-width:0;stroke:rgb(0,0,0);border-radius: 25px;")
+
+    colorLegends.append("foreignObject")  // -3%
+      .attr("x", window.innerWidth - 525)
+      .attr("y", -37)
+      .attr("width", "70px")
+      .attr("height", "25px")
+      .attr("id", "smallest")
 
     d3.queue()
       .defer(d3.json, "stockData.json")
@@ -65,14 +183,25 @@
         display(root);
   
         function initialize(root) {
-          console.log(macroChange);
           root.x = root.y = 0;
           root.dx = width;
           root.dy = height;
           root.depth = 0;
           d3.select('#dates')
-            .html("<div class=\"dropdown\" style=\"float:left;padding-top:8px;\">" +
-            "<button class=\"btn btn-outline-dark dropdown-toggle\" id=\"dropDownMenu\" type=\"button\" data-toggle=\"dropdown\" name=\"type\">Select macroeconomic type" +
+            .html(
+            "<div style=\"position: fixed\">" +
+            "<div class=\"form-check\" id=\"checkBox\" style=\"float:left;padding-top:14px;margin-left:0px;padding-left:3px\">" +
+            "<input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"stockPriceOnlyCheckBox\" onclick=\"checkBoxChange(this)\">" +
+            "<label class=\"form-check-label\" for=\"stockPriceOnlyCheckBox\" style=\"margin-left:20px\">" +
+            "<p style=\"font-weight: normal;font-size: 14px;padding-top:5px;\">Only Check Stock Price</p>"+
+            "</label>"+
+            "</div>"+
+            "<div class=\"input-daterange input-group\" id=\"datepicker\" style=\"padding-top:8px; padding-left: 10px; float:left; display: block; width:230px;\">" +
+            "<input type=\"text\" class=\"input-sm form-control\" id=\"startDate\" name=\"stateDate\" placeholder=\"From\" style=\"flex: 0; width:110px;\"/>" +
+            "<input type=\"text\" class=\"input-sm form-control\" id=\"endDate\" name=\"endDate\" placeholder=\"To\" style=\"flex: 0; width:110px;float:left;\"/>" + 
+            "</div>" +
+            "<div class=\"dropdown\" style=\"float:left;padding-top:8px; margin-left:10px\">" +
+            "<button class=\"btn btn-outline-dark dropdown-toggle\" id=\"dropDownMenu\" type=\"button\" data-toggle=\"dropdown\" name=\"type\">View macroeconomic data" +
             "<span class=\"caret\"></span></button>" +
             "<ul class=\"dropdown-menu\" id=\"dropdown-menu\">" +
             "<li><a href=\"#\">CPI</a></li>" +
@@ -85,32 +214,65 @@
             "<li><a href=\"#\">Unemployment</a></li>" +
             "</ul>" +
             "</div>" +
-            "<div class=\"col-auto\" style=\"float:left;padding-top:8px;\" id=\"typeChange\">" +
+            "<div class=\"col-auto\" style=\"float:left;padding-top:8px;padding-left:0px; padding-right:0px\" id=\"typeChange\">" +
               "<label class=\"sr-only\" for=\"inlineFormInputGroup\">Username</label>" +
-              "<div class=\"input-group mb-2\" style=\"float:left\">" +
-                "<div class=\"input-group-prepend\" style=\"float:left\">" +
-                  "<div class=\"input-group-text\" style=\"float:left;text-align: center; font-weight: bold;\" id=\"typeName\">@</div>" +
-                "</div>" +
-                "<input type=\"text\" class=\"form-control\" id=\"typeValue\" style=\"text-align: center; width:65px; background: #FFFFFF\" readonly=\"readonly\">" +
+              "<div class=\"input-group mb-2\" style=\"float:left;\">" +
+                "<input type=\"text\" class=\"form-control\" id=\"typeValue\" style=\"text-align: center; width:65px; background: #F0F0F4\" readonly=\"readonly\">" +
               "</div>"+
-            "</div>"+
-            "<div class=\"form-check\" id=\"checkBox\" style=\"float:left;padding-top:14px;padding-left:10px\">" +
-            "<input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"stockPriceOnlyCheckBox\" onclick=\"checkBoxChange(this)\">" +
-            "<label class=\"form-check-label\" for=\"stockPriceOnlyCheckBox\" style=\"margin-left:20px\">" +
-            "<p style=\"font-weight: normal;font-size: 14px;padding-top:5px;\">Stock Price Only</p>"+
-            "</label>"+
-            "</div>"+
-            "<div class=\"input-daterange input-group\" id=\"datepicker\" style=\"padding-top:8px;padding-left: 10px;float:left\">" +
-            "<input type=\"text\" class=\"input-sm form-control\" id=\"startDate\" name=\"stateDate\" placeholder=\"From\" style=\"width:100px;\"/>" +
-            "<input type=\"text\" class=\"input-sm form-control\" id=\"endDate\" name=\"endDate\" placeholder=\"To\" style=\"width:100px;float:left;\"/>" +
-            "<button type=\"submit\" form=\"form1\" class=\"btn btn-primary\" style=\"margin-left:15px\" onclick=\"post('/')\">Search</button>" + 
-            "</div>")
+            "</div>" +
+            "<div id=\"searchButton\" style=\"float:left;padding-top:8px;padding-left:10px\">" +
+            "<button type=\"submit\" form=\"form1\" class=\"btn btn-primary\" style=\"margin-left:0px\" onclick=\"post('/')\">Search</button>" +
+            "</div>");
+              
+            // Legend Text
+            // 3%
+            d3.select("#largest").html(
+              "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
+              "<p>" + percentiles[6] + "%</p>" +
+              "</div>"
+            )
+            // 2%
+            d3.select("#secondLargest").html(
+              "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
+              "<p>" + percentiles[5] + "%</p>" +
+              "</div>"
+            )
+            // 1%
+            d3.select("#thirdLargest").html(
+              "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
+              "<p>" + percentiles[4] + "%</p>" +
+              "</div>"
+            )
+            // 0%
+            d3.select("#middle").html(
+              "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
+              "<p>" + percentiles[3] + "%</p>" +
+              "</div>"
+            )
+            // -1%
+            d3.select("#thirdSmallest").html(
+              "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
+              "<p>" + percentiles[2] + "%</p>" +
+              "</div>"
+            )
+            // -2%
+            d3.select("#secondSmallest").html(
+              "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
+              "<p>" + percentiles[1] + "%</p>" +
+              "</div>"
+            )
+            // -3%
+            d3.select("#smallest").html(
+              "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
+              "<p>" + percentiles[0] + "%</p>" +
+              "</div>"
+            )
         }
 
         function jQuery(){
           $(document).ready(function(){
             $("#dropDownMenu").on('click', function () {
-              console.log("clicked");
+              // console.log("clicked");
               if ($('#dates').attr('height') == 50) {
                 $('#dates').attr('height', 500);
                 console.log("test");
@@ -124,10 +286,11 @@
               }
             });
             $(".dropdown-menu").on('click', 'li a', function () {
-              $(".btn:first-child").text($(this).text());
-              $(".btn:first-child").val($(this).text());
+              $("#dropDownMenu").text($(this).text());
+              $("#dropDownMenu").val($(this).text());
               $('#dates').attr('height', 50);
               $("#dropdown-menu").attr('class', 'dropdown-menu');
+              changeMacroDisplayValue($(this).text());
             });
             $("#datepicker").datepicker({
               format: "yyyy-mm-dd",
@@ -152,22 +315,22 @@
         function layout(d) {
           // 從 URL 取值更新到內容中
           const url = new URL(window.location.href);
-          document.getElementById("typeChange").style.display = 'none';
           if (url.searchParams.get('type') !== null) {
             if (url.searchParams.get('type') == "none"){
               document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
               document.getElementById("dropDownMenu").value = "Select macroeconomic type";
               document.getElementById("dropDownMenu").disabled = true;
-              document.getElementById("typeChange").style.display = 'none';
               document.getElementById("stockPriceOnlyCheckBox").checked = true;
+              document.getElementById("typeChange").style.display = 'none';
+              document.getElementById("dropDownMenu").style.display = 'none';
               setDatePicker(true);
             }
             else{
               document.getElementById("dropDownMenu").innerHTML = url.searchParams.get('type');
               document.getElementById("dropDownMenu").value = url.searchParams.get('type');
               document.getElementById("typeChange").style.display = 'block';
-              document.getElementById("typeName").innerHTML = url.searchParams.get('type');
-              document.getElementById("typeValue").value = macroChange;
+              document.getElementById("dropDownMenu").style.display = 'block';
+              changeMacroDisplayValue(url.searchParams.get('type'));
               document.getElementById("stockPriceOnlyCheckBox").checked = false;
               document.getElementById("checkBox").style="float:left;padding-top:14px;padding-left:0px";
               setDatePicker(false);
@@ -243,6 +406,7 @@
             .attr("class", "parent")
             .call(rect)
             .on("mouseover", function (d) {
+              console.log("mouseover");
               if (d.parent.name != "MARKET") {
                 d3.select("#tooltip").transition()
                   .duration(200)
@@ -320,22 +484,22 @@
             .attr("width", function (d) { return x(d.x + d.dx) - x(d.x); })
             .attr("height", function (d) { return y(d.y + d.dy) - y(d.y); })
             .attr("fill", function (d) { 
-              if(parseFloat(d.rate) >= 3){
+              if(parseFloat(d.rate) >= percentiles[6]){
                 return "#056636";
               }
-              else if(parseFloat(d.rate) >= 2){
+              else if(parseFloat(d.rate) >= percentiles[5]){
                 return "#089950";
               }
-              else if(parseFloat(d.rate) >= 1){
+              else if(parseFloat(d.rate) >= percentiles[4]){
                 return "#42BD7F";
               }
-              else if(parseFloat(d.rate) >= 0){
+              else if(parseFloat(d.rate) >= percentiles[3]){
                 return "#C1C4CD";
               }
-              else if(parseFloat(d.rate) >= -1){
+              else if(parseFloat(d.rate) >= percentiles[2]){
                 return "#F77C80";
               }
-              else if(parseFloat(d.rate) >= -2){
+              else if(parseFloat(d.rate) >= percentiles[1]){
                 return "#F23645";
               }
               else{
@@ -354,10 +518,9 @@
 
 function post(path, method = 'post') {
   const params = Object.create(null);
-  params["type"] = document.getElementById("dropDownMenu").value;
   params["startDate"] = document.getElementById("startDate").value;
   params["endDate"] = document.getElementById("endDate").value;
-  if ((document.getElementById("stockPriceOnlyCheckBox").checked == true || params["type"] != "") && (params["startDate"] != "" | params["endDate"] != "")){
+  if (params["startDate"] != "" | params["endDate"] != ""){
     if(params["startDate"] == params["endDate"]){
       alert("Date can't be the same")
     }
@@ -374,11 +537,9 @@ function post(path, method = 'post') {
       }
       var url = new URL("http://127.0.0.1:3000");
       if (document.getElementById("stockPriceOnlyCheckBox").checked){
-        url.searchParams.set('type', "none");
         url.searchParams.set('stockPriceOnly', "true");
       }
       else{
-        url.searchParams.set('type', document.getElementById("dropDownMenu").value);
         url.searchParams.set('stockPriceOnly', "false");
       }
       url.searchParams.set('startDate', document.getElementById("startDate").value);
@@ -427,10 +588,12 @@ function setDatePicker(stockPriceOnly) {
 function checkBoxChange(checkbox){
   if(checkbox.checked)
   {
-    document.getElementById("dropDownMenu").disabled = true;
+    //document.getElementById("dropDownMenu").disabled = true;
     setDatePicker(true);
     document.getElementById("startDate").value = "";
     document.getElementById("endDate").value = "";
+    document.getElementById("typeChange").style.display = 'none';
+    document.getElementById("dropDownMenu").style.display = 'none';
   }
   else
   {
@@ -438,7 +601,35 @@ function checkBoxChange(checkbox){
     setDatePicker(false);
     document.getElementById("startDate").value = "";
     document.getElementById("endDate").value = "";
-    //$('#datepicker').datepicker('setDates', value);
+    document.getElementById("typeChange").style.display = 'block';
+    document.getElementById("dropDownMenu").style.display = 'block';
   }
 }
   
+
+function changeMacroDisplayValue(type){
+  if(type == "CPI"){
+    document.getElementById("typeValue").value = macroChange[0];
+  }
+  else if (type == "Federal Funds Rate"){
+    document.getElementById("typeValue").value = macroChange[1];
+  }
+  else if (type == "Retail Price"){
+    document.getElementById("typeValue").value = macroChange[2];
+  }
+  else if (type == "Treasury yield 2 years"){
+    document.getElementById("typeValue").value = macroChange[3];
+  }
+  else if (type == "Treasury yield 10 years"){
+    document.getElementById("typeValue").value = macroChange[4];
+  }
+  else if (type == "Treasury yield 20 years"){
+    document.getElementById("typeValue").value = macroChange[5];
+  }
+  else if (type == "Treasury yield 30 years"){
+    document.getElementById("typeValue").value = macroChange[6];
+  }
+  else if(type == "Unemployment"){
+    document.getElementById("typeValue").value = macroChange[7];
+  }
+}

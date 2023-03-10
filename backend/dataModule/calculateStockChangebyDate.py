@@ -241,7 +241,7 @@ def processAllStocksChange(start_date, end_date):
     file = open('../frontend/flask/static/stockData.json', 'w')
     file.write(change_in_json)
     file.close()
-    return change_in_json, percentiles
+    return percentiles
 
 
 ################################## TESTING #########################################

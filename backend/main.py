@@ -26,15 +26,16 @@ def index():
         startDate = request.args.get('startDate')
         endDate = request.args.get('endDate')
         if stockPriceOnly == "true":
-            calculateStockChangebyDate.processAllStocksChange(startDate, endDate)
-            return render_template('index.html', type=type, macroChange=None)
+            percentiles = calculateStockChangebyDate.processAllStocksChange(startDate, endDate)
+            return render_template('index.html', type=type, macroChange=None, percentiles=percentiles)
         elif stockPriceOnly == "false":
-            calculateStockChangebyDate.processAllStocksChange(startDate, endDate)
-            macroChange = calculateMacroChange.process_macro_data(type, startDate, endDate)
-            print(macroChange)
-            return render_template('index.html', type=type, macroChange=macroChange)
-        else:
-            return render_template('index.html')
+            percentiles = calculateStockChangebyDate.processAllStocksChange(startDate, endDate)
+            macroChange = calculateMacroChange.process_macro_data(startDate, endDate)
+            return render_template('index.html', type=type, macroChange=macroChange, percentiles=percentiles)
+        else:  # 第一次進入網頁
+            percentiles = calculateStockChangebyDate.processAllStocksChange("2023-01-31", "2023-02-01")
+            #macroChange = calculateMacroChange.process_macro_data("2023-01-31", "2023-02-01")
+            return render_template('index.html', macroChange=None, percentiles=percentiles)
 
 
 if __name__ == '__main__':
