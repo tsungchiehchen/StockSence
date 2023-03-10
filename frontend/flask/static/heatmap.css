@@ -106,7 +106,7 @@ rect.parent {
 
 rect.parent:hover {
   fill: #bbb;
-  fill-opacity: .5;
+  fill-opacity: .6;
 }
 
 .children rect.parent {
@@ -114,7 +114,7 @@ rect.parent:hover {
 }
 
 .children:hover rect.parent {
-  fill-opacity: .5;
+  fill-opacity: .6;
 }
 
 label {

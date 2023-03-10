@@ -406,21 +406,34 @@
             .attr("class", "parent")
             .call(rect)
             .on("mouseover", function (d) {
-              console.log("mouseover");
               if (d.parent.name != "MARKET") {
+                let price = Math.round((d.value + Number.EPSILON) * 100) / 100;
+                let rate = d.rate;
                 d3.select("#tooltip").transition()
                   .duration(200)
                   .style("opacity", 1);
-                d3.select("#tooltip").html("<h3>" + d.name + "</h3><table>" +
-                  "<tr><td>" + d.value + "</td><td> (" + d.rate + "%)</td></tr>" +
+                d3.select("#tooltip").html(
+                  "<style=\"width: "+ length + "px></style>" +
+                  "<h3 style=\"font-weight: bold;\">" + d.name + "</h3><table>" +
+                  "<tr><td>" + price + "</td><td>" + " (" + rate.toString() + "%)" + "</td></tr>" +
                   "</table>")
-                  .style("left", (d3.event.pageX - document.getElementById('heatmap').offsetLeft + 20) + "px")
-                  .style("top", (d3.event.pageY - document.getElementById('heatmap').offsetTop - 60) + "px");
               }
+            })
+            .on("mousemove", function (d) {
+              var width = document.getElementById('tooltip').getBoundingClientRect().width;
+              if(d3.event.pageX + width >= window.innerWidth){  // 滑鼠已經到右邊，tooltip 在左邊顯示
+                d3.select("#tooltip").style("left", (d3.event.pageX) - width + "px")
+                                     .style("top", (d3.event.pageY - 45) + "px");
+              }
+              else{
+                d3.select("#tooltip").style("left", (d3.event.pageX) + "px")
+                                     .style("top", (d3.event.pageY - 45) + "px");
+              }
+              
             })
             .on("mouseout", function (d) {
               d3.select("#tooltip").transition()
-                .duration(500)
+                .duration(200)
                 .style("opacity", 0);
             })
             .append("title")
