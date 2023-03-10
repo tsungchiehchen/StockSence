@@ -2,6 +2,8 @@ import pandas as pd
 import csv
 import json
 import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats as st
 
 
 def getdataframe():
@@ -18,14 +20,6 @@ def getdataframe():
 
 def getStocksChange(symbol, start_date, end_date):
     df = pd.read_csv('./dataset/Historical Price/' + symbol + '.csv')
-
-    # try:
-    #     start_price = float(df.loc[df["Date"] == start_date]["Close"])
-    #     end_price = float(df.loc[df["Date"] == end_date]["Close"])
-
-    #     change = round(((end_price - start_price) / start_price) * 100, 2)
-    # except:
-    #     change = None
 
     # First, check if the stock is listed before the start date
     # if not let the change = None
@@ -52,10 +46,25 @@ def getStocksChange(symbol, start_date, end_date):
 
 
 def get_percentile(changes):
-    minimum, maximum = min(changes), max(changes)
+    # Use min and max to get interval
+    # minimum, maximum = min(changes), max(changes)
+    # portion_separate_values = [0 for _ in range(7)]
+    # n = len(portion_separate_values)
+    # if (minimum + maximum) < 12:
+    #     interval = int(max(maximum, minimum) / 3)
+    # else:
+    #     interval = int(round((minimum + maximum) / 2 / 6, 0))
+
+    # Use mode to get interval
+    # interval = st.mode(changes).mode[0]
+    # print(interval)
+    # portion_separate_values = [0 for _ in range(7)]
+    # n = len(portion_separate_values)
+
+    # Use median to get interval
+    interval = np.median(changes)
     portion_separate_values = [0 for _ in range(7)]
     n = len(portion_separate_values)
-    interval = int(round((minimum + maximum) / 2 / 6, 0))
 
     for i in range(1, 4):
         portion_separate_values[(n//2) - i] = -1 * interval * i
@@ -269,7 +278,15 @@ def processAllStocksChange(start_date, end_date):
 # print(percentiles)
 # print()
 
-# # test date invalid 4 (auto correct end date)
+# # test date invalid 3 (auto correct end date)
+# start_date = "2021-05-01"
+# end_date = "2021-06-01"
+# print("From: " + start_date, " To: " + end_date)
+# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
+# print(percentiles)
+# print()
+
+# # test date invalid 5 (auto correct end date)
 # start_date = "2022-06-15"
 # end_date = "2022-08-10"
 # print("From: " + start_date, " To: " + end_date)
@@ -277,7 +294,7 @@ def processAllStocksChange(start_date, end_date):
 # print(percentiles)
 # print()
 
-# # test date invalid 5 (auto correct end date)
+# # test date invalid 6 (auto correct end date)
 # start_date = "2022-07-01"
 # end_date = "2022-10-01"
 # print("From: " + start_date, " To: " + end_date)
@@ -285,7 +302,35 @@ def processAllStocksChange(start_date, end_date):
 # print(percentiles)
 # print()
 
+# test date invalid 7 (auto correct end date)
+# start_date = "2017-01-01"
+# end_date = "2023-02-20"
+# print("From: " + start_date, " To: " + end_date)
+# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
 # print(percentiles)
-# file = open('stock_price_changes.json', 'w')
-# file.write(jsonFile)
-# file.close()
+# p = np.linspace(0, 100, 6001)
+# ax = plt.gca()
+# lines = [
+#     ('linear', '-', 'C0'),
+#     ('inverted_cdf', ':', 'C1'),
+#     # Almost the same as `inverted_cdf`:
+#     ('averaged_inverted_cdf', '-.', 'C1'),
+#     ('closest_observation', ':', 'C2'),
+#     ('interpolated_inverted_cdf', '--', 'C1'),
+#     ('hazen', '--', 'C3'),
+#     ('weibull', '-.', 'C4'),
+#     ('median_unbiased', '--', 'C5'),
+#     ('normal_unbiased', '-.', 'C6'),
+# ]
+# for method, style, color in lines:
+#     ax.plot(
+#         p, np.percentile(percentiles, p, method=method),
+#         label=method, linestyle=style, color=color)
+# ax.set(
+#     title='Percentiles for different methods and data: ' + str(percentiles),
+#     xlabel='Percentile',
+#     ylabel='Estimated percentile value',
+#     yticks=percentiles)
+# ax.legend()
+# plt.show()
+# print()
