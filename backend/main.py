@@ -1,12 +1,13 @@
 from flask import Flask, request, render_template, url_for, redirect
 from dataModule import calculateStockChangebyDate, calculateMacroChange
+import os
+import time
 
 app = Flask(__name__, static_url_path='', static_folder='../frontend/flask/static', template_folder='../frontend/flask/template')
-
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    print(request.method)
     if request.method == 'POST':
         type = request.args.get('type')
         print(type)

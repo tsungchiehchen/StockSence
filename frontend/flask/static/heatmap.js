@@ -228,43 +228,43 @@
             // 3%
             d3.select("#largest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + percentiles[6] + "%</p>" +
+              "<p>" + Math.round(percentiles[6]) + "%</p>" +
               "</div>"
             )
             // 2%
             d3.select("#secondLargest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + percentiles[5] + "%</p>" +
+              "<p>" + Math.round(percentiles[5]) + "%</p>" +
               "</div>"
             )
             // 1%
             d3.select("#thirdLargest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + percentiles[4] + "%</p>" +
+              "<p>" + Math.round(percentiles[4]) + "%</p>" +
               "</div>"
             )
             // 0%
             d3.select("#middle").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + percentiles[3] + "%</p>" +
+              "<p>" + Math.round(percentiles[3]) + "%</p>" +
               "</div>"
             )
             // -1%
             d3.select("#thirdSmallest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + percentiles[2] + "%</p>" +
+              "<p>" + Math.round(percentiles[2]) + "%</p>" +
               "</div>"
             )
             // -2%
             d3.select("#secondSmallest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + percentiles[1] + "%</p>" +
+              "<p>" + Math.round(percentiles[1]) + "%</p>" +
               "</div>"
             )
             // -3%
             d3.select("#smallest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + percentiles[0] + "%</p>" +
+              "<p>" + Math.round(percentiles[0]) + "%</p>" +
               "</div>"
             )
         }
