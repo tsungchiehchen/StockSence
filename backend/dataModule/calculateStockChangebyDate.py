@@ -244,6 +244,27 @@ def processAllStocksChange(start_date, end_date):
     return change_in_json, percentiles
 
 
+def get_company_name(symbol):
+    df = pd.read_csv('./dataset/Stocks Symbols.csv')
+    df = df.loc[df['Market_Cap'] > 2000000000.00]
+
+    # Types of company
+    types = {" Inc.": 130, " Corporation": 45, " Incorporated": 6,
+             " plc": 8, " Company": 9, " SE": 2, " Ltd.": 4, " Bancorp": 1,
+             " L.P.": 1, " Corp.": 3, " Limited": 7, " N.V.": 1}
+
+    name = df[df['Symbol'] == symbol]['Name'].item()
+
+    for type in types.keys():
+        lower_name = name.lower()
+        lower_type = type.lower()
+        if lower_type in lower_name:
+            l = len(type)
+            idx = lower_name.index(lower_type)
+            name = name[:l+idx]
+    return name
+
+
 ################################## TESTING #########################################
 # # normal input test
 # start_date = "2017-01-01"
@@ -334,3 +355,48 @@ def processAllStocksChange(start_date, end_date):
 # ax.legend()
 # plt.show()
 # print()
+
+# Name contains "Common Stock"
+# "Class A Common Stock"
+# "Class B Common Stock"
+# "Class C Common Stock"
+# "Series A Common Stock"
+# "Common Stock (DE)"
+# "Class B"
+# "Common Unit"
+# "Common Shares"
+# "Common Shares (ON)"
+# "Class A Common Shares"
+# "Ordinary Shares"
+# "Class A Ordinary Shares"
+# "Class A Ordinary Shares"
+# "Class C Capital Stock"
+# "II Class A Common Stock"
+# "American Depositary Shares"
+# "American Depositary Share each ADS represents one Class B ordinary share"
+# "Class A Units representing Limited Partner Interests"
+# "Common Units representing Limited Partners Interests"
+# "Class A ADS"
+# "ADS"
+# "Series A Liberty Formula One Common Stock"
+# "Series B Liberty SiriusXM Common Stock"
+# "Ordinary Shares (Ireland)"
+# "Class C Capital Stock"
+# "New York Registry Shares"
+# Below non
+# "I Unit"
+# "II Unit"
+# "I Warrant"
+# "II Warrant"
+# "I Subunit"
+# "I Class A Ordinary Shares"
+# "Limited Ordinary Shares"
+
+# Testing for get_company_name()
+# df = pd.read_csv('./dataset/MidCap Stock Symbols.csv')
+# symbols = df['Symbol'].to_list()
+# for symbol in symbols:
+#     print("Start: " + symbol)
+#     name = get_company_name(symbol)
+#     print(name)
+#     print("End: " + symbol + '\n')
