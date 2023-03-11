@@ -2,6 +2,7 @@ import pandas as pd
 import csv
 import json
 import numpy as np
+import time
 import matplotlib.pyplot as plt
 from scipy import stats as st
 
@@ -45,7 +46,7 @@ def getStocksChange(symbol, start_date, end_date):
     return change
 
 
-def get_percentile(changes):
+def get_percentile_and_write(start_date, end_date, changes):
     # Use min and max to get interval
     # minimum, maximum = min(changes), max(changes)
     # portion_separate_values = [0 for _ in range(7)]
@@ -70,7 +71,12 @@ def get_percentile(changes):
         portion_separate_values[(n//2) - i] = -1 * interval * i
         portion_separate_values[(n//2) + i] = interval * i
 
-    return portion_separate_values
+    # Write the percentiles list to a JSON file
+    filename = './dataset/price changes/' + \
+        start_date + '~' + end_date + ' percentile.json'
+
+    with open(filename, 'w') as f:
+        json.dump(portion_separate_values, f)
 
 
 def writetoCSV(objects):
@@ -233,15 +239,24 @@ def processAllStocksChange(start_date, end_date):
             changes.append(change)
             all_changes.append(d)
 
+    # On 3/10 11:34pm, decided to not return percentiles
+    # Instead, call get_percentile() and write it to json
+    # with start_date~end_date
     # calculate percentile (of 6 portions)
-    percentiles = get_percentile(changes)
+    get_percentile_and_write(start_date, end_date, changes)
+
+    # convert start_date and end_date to tradingVue accetable timestamp
+    start_date_timestamp = int(time.mktime(
+        time.strptime(start_date, "%Y-%m-%d"))) * 1000
+    end_date_timestamp = int(
+        time.mktime(time.strptime(end_date, "%Y-%m-%d"))) * 1000
 
     writetoCSV(all_changes)
     change_in_json = convertCSVtoJSON()
     file = open('../frontend/flask/static/stockData.json', 'w')
     file.write(change_in_json)
     file.close()
-    return change_in_json, percentiles
+    return start_date_timestamp, end_date_timestamp
 
 
 def get_company_name():
@@ -287,16 +302,12 @@ def get_company_name():
         f.write(json_obj)
 
 
-get_company_name()
-
-
 ################################## TESTING #########################################
 # # normal input test
 # start_date = "2017-01-01"
 # end_date = "2018-01-01"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # print()
 
 
@@ -304,56 +315,49 @@ get_company_name()
 # start_date = "2017-01-01"
 # end_date = "2018-01-21"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # print()
 
 # # test date invalid 2 (auto correct end date)
 # start_date = "2021-01-01"
 # end_date = "2021-03-01"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # print()
 
 # # test date invalid 3 (auto correct end date)
 # start_date = "2021-05-01"
 # end_date = "2022-07-01"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # print()
 
 # # test date invalid 3 (auto correct end date)
 # start_date = "2021-05-01"
 # end_date = "2021-06-01"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # print()
 
 # # test date invalid 5 (auto correct end date)
 # start_date = "2022-06-15"
 # end_date = "2022-08-10"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # print()
 
 # # test date invalid 6 (auto correct end date)
 # start_date = "2022-07-01"
 # end_date = "2022-10-01"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # print()
 
 # test date invalid 7 (auto correct end date)
 # start_date = "2017-01-01"
 # end_date = "2023-02-20"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # p = np.linspace(0, 100, 6001)
 # ax = plt.gca()
 # lines = [
