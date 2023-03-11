@@ -172,8 +172,16 @@
       .attr("height", "25px")
       .attr("id", "smallest")
 
+    var currentURL = new URL(window.location.href);
+    if(currentURL.searchParams.get('startDate') != null){
+      var filePath = "stockPriceDifference/" + currentURL.searchParams.get('startDate') + "~" + currentURL.searchParams.get('endDate') + ".json";
+    } 
+    else{
+      var filePath = "stockPriceDifference/2023-01-31~2023-02-01.json";
+    }
+
     d3.queue()
-      .defer(d3.json, "stockData.json")
+      .defer(d3.json, filePath)
       .await(function (error, root) {
         if (error) throw error;
         jQuery();
@@ -315,8 +323,8 @@
         function layout(d) {
           // 從 URL 取值更新到內容中
           const url = new URL(window.location.href);
-          if (url.searchParams.get('type') !== null) {
-            if (url.searchParams.get('type') == "none"){
+          if (url.searchParams.get('stockPriceOnly') !== null) {
+            if (url.searchParams.get('stockPriceOnly') == "true"){
               document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
               document.getElementById("dropDownMenu").value = "Select macroeconomic type";
               document.getElementById("dropDownMenu").disabled = true;
@@ -326,8 +334,8 @@
               setDatePicker(true);
             }
             else{
-              document.getElementById("dropDownMenu").innerHTML = url.searchParams.get('type');
-              document.getElementById("dropDownMenu").value = url.searchParams.get('type');
+              document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
+              document.getElementById("dropDownMenu").value = "Select macroeconomic type";
               document.getElementById("typeChange").style.display = 'block';
               document.getElementById("dropDownMenu").style.display = 'block';
               changeMacroDisplayValue(url.searchParams.get('type'));
@@ -335,6 +343,7 @@
               document.getElementById("checkBox").style="float:left;padding-top:14px;padding-left:0px";
               setDatePicker(false);
             }
+            //console.log(url.searchParams.get('startDate'));
             document.getElementById("startDate").value = url.searchParams.get('startDate');
             document.getElementById("endDate").value = url.searchParams.get('endDate');
           };
@@ -398,7 +407,22 @@
           g.append("svg:a")
             .attr("href", function (d) {
               if (!d._children) {
-                var url = "http://127.0.0.1:8081/?" + "stockSymbol=" + d.name;
+                let currentURL = window.location.href;
+                console.log(currentURL);
+                if(currentURL.includes("stockSymbol")){
+                  var postData = currentURL.split('&stockSymbol')[0];
+                  postData = postData.split('?')[1];
+                  var url = "http://127.0.0.1:8081/?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp;
+                }
+                else if (currentURL.includes("?")){
+                  var postData = currentURL.split('?')[1];
+                  var url = "http://127.0.0.1:8081/?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp;
+                }
+                else{
+                  var newURL = currentURL.split(':3000')[0];
+                  console.log(newURL);
+                  var url = newURL + ":8081/?&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp;
+                }
                 return url;
               }
             })

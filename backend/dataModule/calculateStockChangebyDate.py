@@ -2,6 +2,7 @@ import pandas as pd
 import csv
 import json
 import numpy as np
+import time
 import matplotlib.pyplot as plt
 from scipy import stats as st
 
@@ -45,7 +46,7 @@ def getStocksChange(symbol, start_date, end_date):
     return change
 
 
-def get_percentile(changes):
+def get_percentile_and_write(start_date, end_date, changes):
     # Use min and max to get interval
     # minimum, maximum = min(changes), max(changes)
     # portion_separate_values = [0 for _ in range(7)]
@@ -70,6 +71,12 @@ def get_percentile(changes):
         portion_separate_values[(n//2) - i] = -1 * interval * i
         portion_separate_values[(n//2) + i] = interval * i
 
+    # Write the percentiles list to a JSON file
+    filename = './dataset/percentiles/' + str(start_date) + '~' + str(end_date) + '.json'
+
+    with open(filename, 'w+') as f:
+        json.dump(portion_separate_values, f)
+    
     return portion_separate_values
 
 
@@ -210,6 +217,15 @@ def convertCSVtoJSON():
     return json.dumps(overall_market, indent=4)
 
 
+def getTimeStamps(start_date, end_date):
+    startTimestamp = int(time.mktime(
+        time.strptime(start_date, "%Y-%m-%d"))) * 1000
+    endTimestamp = int(
+        time.mktime(time.strptime(end_date, "%Y-%m-%d"))) * 1000
+    
+    return startTimestamp, endTimestamp
+
+
 def processAllStocksChange(start_date, end_date):
     df = getdataframe()
 
@@ -233,15 +249,64 @@ def processAllStocksChange(start_date, end_date):
             changes.append(change)
             all_changes.append(d)
 
+    # On 3/10 11:34pm, decided to not return percentiles
+    # Instead, call get_percentile() and write it to json
+    # with start_date~end_date
     # calculate percentile (of 6 portions)
-    percentiles = get_percentile(changes)
+    percentile = get_percentile_and_write(start_date, end_date, changes)
+
+    # convert start_date and end_date to tradingVue accetable timestamp
+    # startTimestamp, endTimestamp = getTimeStamps(start_date, end_date)
 
     writetoCSV(all_changes)
     change_in_json = convertCSVtoJSON()
-    file = open('../frontend/flask/static/stockData.json', 'w')
+    file = open('../frontend/flask/static/stockPriceDifference/' + str(start_date) + "~" + str(end_date) +'.json', 'w+')
     file.write(change_in_json)
     file.close()
-    return percentiles
+    # return percentile, startTimestamp, endTimestamp
+
+
+def get_company_name():
+    """
+    Write stocks symbol in mega, large, and mid cap to a json file
+    with its corresponding company name.
+
+    For example, {'AAPL': "Apple Inc.', 'MSFT': 'Microsoft Corporation'}
+    """
+    mega_df = pd.read_csv('./dataset/MegaCap Stock Symbols.csv')
+    large_df = pd.read_csv('./dataset/LargeCap Stock Symbols.csv')
+    mid_df = pd.read_csv('./dataset/MidCap Stock Symbols.csv')
+    combined_df = pd.concat([mega_df, large_df, mid_df])
+    combined_df = combined_df.reset_index(drop=True)
+
+    # Types of company
+    # {" Inc.": 130, " Corporation": 45, " Incorporated": 6,
+    #  " plc": 8, " Company": 9, " SE": 2, " Ltd.": 4, " Bancorp": 1,
+    #  " L.P.": 1, " Corp.": 3, " Limited": 7, " N.V.": 1}
+    types = [" Inc.", " Corporation", " Incorporated",
+             " plc", " Company", " SE", " Ltd.",
+             " Bancorp", " L.P.", " Corp.", " Limited",
+             " N.V."]
+
+    results = {}
+    for i in range(len(combined_df)):
+        symbol = combined_df.loc[i, 'Symbol']
+        name = combined_df.loc[i, 'Name']
+
+        for type in types:
+            lower_name = name.lower()
+            lower_type = type.lower()
+            if lower_type in lower_name:
+                l = len(type)
+                idx = lower_name.index(lower_type)
+                name = name[:l+idx]
+
+        results[symbol] = name
+
+    # write results json
+    json_obj = json.dumps(results)
+    with open('../frontend/flask/static/company names.json', 'w') as f:
+        f.write(json_obj)
 
 
 ################################## TESTING #########################################
@@ -249,8 +314,7 @@ def processAllStocksChange(start_date, end_date):
 # start_date = "2017-01-01"
 # end_date = "2018-01-01"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # print()
 
 
@@ -258,56 +322,49 @@ def processAllStocksChange(start_date, end_date):
 # start_date = "2017-01-01"
 # end_date = "2018-01-21"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # print()
 
 # # test date invalid 2 (auto correct end date)
 # start_date = "2021-01-01"
 # end_date = "2021-03-01"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # print()
 
 # # test date invalid 3 (auto correct end date)
 # start_date = "2021-05-01"
 # end_date = "2022-07-01"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # print()
 
 # # test date invalid 3 (auto correct end date)
 # start_date = "2021-05-01"
 # end_date = "2021-06-01"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # print()
 
 # # test date invalid 5 (auto correct end date)
 # start_date = "2022-06-15"
 # end_date = "2022-08-10"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # print()
 
 # # test date invalid 6 (auto correct end date)
 # start_date = "2022-07-01"
 # end_date = "2022-10-01"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # print()
 
 # test date invalid 7 (auto correct end date)
 # start_date = "2017-01-01"
 # end_date = "2023-02-20"
 # print("From: " + start_date, " To: " + end_date)
-# jsonFile, percentiles = processAllStocksChange(start_date, end_date)
-# print(percentiles)
+# start_timestamp, end_timestamp = processAllStocksChange(start_date, end_date)
 # p = np.linspace(0, 100, 6001)
 # ax = plt.gca()
 # lines = [
@@ -334,3 +391,48 @@ def processAllStocksChange(start_date, end_date):
 # ax.legend()
 # plt.show()
 # print()
+
+# Name contains "Common Stock"
+# "Class A Common Stock"
+# "Class B Common Stock"
+# "Class C Common Stock"
+# "Series A Common Stock"
+# "Common Stock (DE)"
+# "Class B"
+# "Common Unit"
+# "Common Shares"
+# "Common Shares (ON)"
+# "Class A Common Shares"
+# "Ordinary Shares"
+# "Class A Ordinary Shares"
+# "Class A Ordinary Shares"
+# "Class C Capital Stock"
+# "II Class A Common Stock"
+# "American Depositary Shares"
+# "American Depositary Share each ADS represents one Class B ordinary share"
+# "Class A Units representing Limited Partner Interests"
+# "Common Units representing Limited Partners Interests"
+# "Class A ADS"
+# "ADS"
+# "Series A Liberty Formula One Common Stock"
+# "Series B Liberty SiriusXM Common Stock"
+# "Ordinary Shares (Ireland)"
+# "Class C Capital Stock"
+# "New York Registry Shares"
+# Below non
+# "I Unit"
+# "II Unit"
+# "I Warrant"
+# "II Warrant"
+# "I Subunit"
+# "I Class A Ordinary Shares"
+# "Limited Ordinary Shares"
+
+# Testing for get_company_name()
+# df = pd.read_csv('./dataset/MidCap Stock Symbols.csv')
+# symbols = df['Symbol'].to_list()
+# for symbol in symbols:
+#     print("Start: " + symbol)
+#     name = get_company_name(symbol)
+#     print(name)
+#     print("End: " + symbol + '\n')
