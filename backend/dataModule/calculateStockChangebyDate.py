@@ -244,25 +244,50 @@ def processAllStocksChange(start_date, end_date):
     return change_in_json, percentiles
 
 
-def get_company_name(symbol):
-    df = pd.read_csv('./dataset/Stocks Symbols.csv')
-    df = df.loc[df['Market_Cap'] > 2000000000.00]
+def get_company_name():
+    """
+    Write stocks symbol in mega, large, and mid cap to a json file
+    with its corresponding company name.
+
+    For example, {'AAPL': "Apple Inc.', 'MSFT': 'Microsoft Corporation'}
+    """
+    mega_df = pd.read_csv('./dataset/MegaCap Stock Symbols.csv')
+    large_df = pd.read_csv('./dataset/LargeCap Stock Symbols.csv')
+    mid_df = pd.read_csv('./dataset/MidCap Stock Symbols.csv')
+    combined_df = pd.concat([mega_df, large_df, mid_df])
+    combined_df = combined_df.reset_index(drop=True)
 
     # Types of company
-    types = {" Inc.": 130, " Corporation": 45, " Incorporated": 6,
-             " plc": 8, " Company": 9, " SE": 2, " Ltd.": 4, " Bancorp": 1,
-             " L.P.": 1, " Corp.": 3, " Limited": 7, " N.V.": 1}
+    # {" Inc.": 130, " Corporation": 45, " Incorporated": 6,
+    #  " plc": 8, " Company": 9, " SE": 2, " Ltd.": 4, " Bancorp": 1,
+    #  " L.P.": 1, " Corp.": 3, " Limited": 7, " N.V.": 1}
+    types = [" Inc.", " Corporation", " Incorporated",
+             " plc", " Company", " SE", " Ltd.",
+             " Bancorp", " L.P.", " Corp.", " Limited",
+             " N.V."]
 
-    name = df[df['Symbol'] == symbol]['Name'].item()
+    results = {}
+    for i in range(len(combined_df)):
+        symbol = combined_df.loc[i, 'Symbol']
+        name = combined_df.loc[i, 'Name']
 
-    for type in types.keys():
-        lower_name = name.lower()
-        lower_type = type.lower()
-        if lower_type in lower_name:
-            l = len(type)
-            idx = lower_name.index(lower_type)
-            name = name[:l+idx]
-    return name
+        for type in types:
+            lower_name = name.lower()
+            lower_type = type.lower()
+            if lower_type in lower_name:
+                l = len(type)
+                idx = lower_name.index(lower_type)
+                name = name[:l+idx]
+
+        results[symbol] = name
+
+    # write results json
+    json_obj = json.dumps(results)
+    with open('./dataset/stock symbols with company name.json', 'w') as f:
+        f.write(json_obj)
+
+
+get_company_name()
 
 
 ################################## TESTING #########################################
