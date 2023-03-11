@@ -1,17 +1,14 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import TreeMap from '../views/TreeMap.vue'
+import Vue from 'vue'
+import VueRouter, { RouteConfig } from 'vue-router'
+import StockSense from '../views/StockSense.vue'
 
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/home',
-    name: 'home',
-    component: HomeView
-  },
+Vue.use(VueRouter)
+
+const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'StockSense',
+    component: StockSense
   },
   {
     path: '/about',
@@ -23,8 +20,7 @@ const routes: Array<RouteRecordRaw> = [
   }
 ]
 
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+const router = new VueRouter({
   routes
 })
 
