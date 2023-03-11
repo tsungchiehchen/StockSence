@@ -1,5 +1,5 @@
 <template>
-    <trading-vue :data="this.$data" :width="this.width" :height="this.height" :toolbar="true" ref="tradingVue">
+    <trading-vue :data="this.$data" :titleTxt="this.titleTxt" :width="this.width" :height="this.height" :toolbar="false" ref="tradingVue">
     </trading-vue>
 </template>
 
@@ -13,14 +13,23 @@ export default {
         return {
             width: window.innerWidth,
             height: window.innerHeight,
-            ohlcv: [
-                [ 1551128400000, 33,  37.1, 14,  14,  196 ],
-                [ 1551132000000, 13.7, 30, 6.6,  30,  206 ],
-                [ 1551135600000, 29.9, 33, 21.3, 21.8, 74 ],
-                [ 1551139200000, 21.7, 25.9, 18, 24,  140 ],
-                [ 1551142800000, 24.1, 24.1, 24, 24.1, 29 ],
-            ],
+            ohlcv: null,
+            titleTxt: null,
         }
+    },
+    async created() {
+        const url = new URL(window.location.href);
+        var stockSymbol = url.searchParams.get('stockSymbol');
+        this.titleTxt = stockSymbol;
+
+        const objectData = await import("../../../backend/dataset/price display/" + String(stockSymbol) + ".json");
+        const slicedObjectData = Object.fromEntries(Object.entries(objectData).slice(0, -2))
+
+        var arrayData = [];
+        for (var od in slicedObjectData) {
+            arrayData.push(objectData[od]);
+        }
+        this.ohlcv = arrayData;
     },
     methods: {
         onResize() {

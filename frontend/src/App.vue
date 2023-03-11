@@ -4,6 +4,10 @@
   </div>
 </template>
 
+<script>
+  document.title = "StockSense"
+</script>
+
 <style lang="scss">
 html,
 body {

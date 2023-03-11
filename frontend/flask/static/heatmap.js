@@ -398,7 +398,7 @@
           g.append("svg:a")
             .attr("href", function (d) {
               if (!d._children) {
-                var url = "http://127.0.0.1:8081";
+                var url = "http://127.0.0.1:8081/?" + "stockSymbol=" + d.name;
                 return url;
               }
             })
@@ -440,7 +440,7 @@
             .text(function (d) { return formatNumber(d.value); });
   
   
-          g.append("text")  // 股票分類和股票名稱
+          g.append("text")  // 左上角標題 text
             .attr("dy", ".75em")
             .text(function (d) { return d.name; })
             .call(text);
