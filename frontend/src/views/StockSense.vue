@@ -1,6 +1,20 @@
 <template>
-    <trading-vue :data="this.$data" :titleTxt="this.titleTxt" :width="this.width" :height="this.height" :toolbar="false" ref="tradingVue">
-    </trading-vue>
+    <div>
+        <trading-vue :data="this.$data" 
+                 :titleTxt="this.titleTxt" 
+                 :width="this.width" 
+                 :height="this.height" 
+                 :toolbar="false" 
+                 :color-back="colors.colorBack"
+                 :color-grid="colors.colorGrid"
+                 :color-text="colors.colorText"
+                 ref="tradingVue">
+        </trading-vue>
+        <span class="fixTimeRangeCheckBox">
+            <input type="checkbox" v-model="fixTimeRange">
+            <label>Fix time range</label>
+        </span>
+    </div>
 </template>
 
 <script>
@@ -11,52 +25,71 @@ export default {
     name: 'app',
     components: { TradingVue },
     data() {
+        const url = new URL(window.location.href);
         return {
             width: window.innerWidth,
             height: window.innerHeight,
             ohlcv: null,
             titleTxt: null,
-            changed: false,
+            fixTimeRange: url.searchParams.get('fixTimeRange')
         }
     },
     async created() {
         // 讀取 json 檔案
         const url = new URL(window.location.href);
         var stockSymbol = url.searchParams.get('stockSymbol');
-        //this.titleTxt = stockSymbol;
+        var startTimestamp = url.searchParams.get('startTimestamp')
+        var endTimestamp = url.searchParams.get('endTimestamp')
 
         var objectData = await import("../../../backend/dataset/price display/" + String(stockSymbol) + ".json");
         var slicedObjectData = Object.fromEntries(Object.entries(objectData).slice(0, -2))
 
         var arrayData = [];
+        
         for (var od in slicedObjectData) {
-            arrayData.push(objectData[od]);
+            if(this.fixTimeRange == "true"){
+                if(slicedObjectData[od][0] >= startTimestamp && slicedObjectData[od][0] <= endTimestamp){
+                    arrayData.push(slicedObjectData[od]);
+                }
+            }
+            else{
+                arrayData.push(slicedObjectData[od]);
+            }
+            
         }
+
         this.ohlcv = arrayData;
 
         // 讀取 company name
         this.titleTxt = CompanyNames[stockSymbol] + " (" +  stockSymbol + ")";
-
-        var startTimestamp = url.searchParams.get('startTimestamp');
-        var endTimestamp = url.searchParams.get('endTimestamp');
-        this.$nextTick(() =>
-            this.$refs.tradingVue.goto(startTimestamp)
-        )
+    },
+    computed: {
+        colors() {
+            return{
+                colorBack: '#fff',
+                colorGrid: '#eee',
+                colorText: '#333'
+            }
+        },
     },
     methods: {
-        goToTime(){
-            // 將顯示時間與 treemap 相同
-            const url = new URL(window.location.href);
-            var startTimestamp = url.searchParams.get('startTimestamp');
-            var endTimestamp = url.searchParams.get('endTimestamp');
-
-            this.$refs.tradingVue.goto(startTimestamp)
-        },
         onResize() {
             this.width = window.innerWidth
             this.height = window.innerHeight
-            //this.goToTime()
-        },
+        }
+    },
+    watch: {
+        fixTimeRange: function(val) {  // 當改變 fix time range check box 的時候
+            let currentURL = window.location.href;
+            if(currentURL.includes("fixTimeRange")){  // true -> false
+                var postData = currentURL.split('&fixTimeRange=')[0];
+                window.location.href = postData;
+            }
+            else{  // false -> true
+                postData = currentURL.split('#/')[0];
+                window.location.href = postData + "&fixTimeRange=true";
+            }
+        }
     },
     mounted() {
         // 加入 back button
@@ -64,11 +97,12 @@ export default {
         div.className = 'pageBack';
         let currentURL = window.location.href;
         var postData = currentURL.split('?')[1];
-        div.innerHTML = `<a href="http://127.0.0.1:3000/?` + postData + `"+ style="z-index:10000; pointer-events: all; font-size: 20px; color: rgb(222, 221, 221); text-decoration: none;">◀ Back&nbsp</a>`;
+        div.innerHTML = `<a href="http://127.0.0.1:3000/?` + postData + `"+ style="z-index:10000; pointer-events: all; font-size: 20px; color: rgb(0, 0, 0); text-decoration: none;">`+ 
+            `◀ Back&nbsp</a>`;
         document.querySelector(".trading-vue-ohlcv").prepend(div);
-
+        
+        // 設定 title style
         document.querySelector(".t-vue-title").setAttribute("style", "font-weight: bold; color: rgb(66, 184, 131);"); 
-        //document.getElementById("t-vue-title").setAttribute("style", "font-weight: bold; color: rgb(66, 184, 131);"); 
 
         window.addEventListener('resize', this.onResize)
         window.dc = this.chart

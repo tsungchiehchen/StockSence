@@ -408,20 +408,19 @@
             .attr("href", function (d) {
               if (!d._children) {
                 let currentURL = window.location.href;
-                console.log(currentURL);
                 if(currentURL.includes("stockSymbol")){
                   var postData = currentURL.split('&stockSymbol')[0];
                   postData = postData.split('?')[1];
-                  var url = "http://127.0.0.1:8081/?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp;
+                  var url = "http://127.0.0.1:8081/?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true";
                 }
                 else if (currentURL.includes("?")){
                   var postData = currentURL.split('?')[1];
-                  var url = "http://127.0.0.1:8081/?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp;
+                  var url = "http://127.0.0.1:8081/?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true";
                 }
                 else{
                   var newURL = currentURL.split(':3000')[0];
                   console.log(newURL);
-                  var url = newURL + ":8081/?&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp;
+                  var url = newURL + ":8081/?&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true";
                 }
                 return url;
               }

@@ -38,4 +38,14 @@ nav {
     }
   }
 }
+
+.fixTimeRangeCheckBox {
+  position: absolute;
+  top: 13px;
+  right: 80px;
+  color: #888;
+  font: 11px -apple-system,BlinkMacSystemFont,
+  Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,
+  Fira Sans,Droid Sans,Helvetica Neue,sans-serif
+}
 </style>
