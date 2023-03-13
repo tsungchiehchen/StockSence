@@ -1,18 +1,18 @@
 <template>
-    <div>
+    <div id="priceDisplay">
         <trading-vue :data="this.$data" 
                  :titleTxt="this.titleTxt" 
-                 :width="this.width" 
-                 :height="this.height" 
                  :toolbar="false" 
+                 :height="this.height"
+                 :width="this.width"
                  :color-back="colors.colorBack"
                  :color-grid="colors.colorGrid"
                  :color-text="colors.colorText"
                  ref="tradingVue">
         </trading-vue>
-        <span class="fixTimeRangeCheckBox">
+        <span class="fixTimeRangeCheckBox" id="fixTimeRangeCheckBox">
             <input type="checkbox" v-model="fixTimeRange">
-            <label>Fix time range</label>
+            <label>&nbsp;Fix time range</label>
         </span>
     </div>
 </template>
@@ -27,8 +27,8 @@ export default {
     data() {
         const url = new URL(window.location.href);
         return {
-            width: window.innerWidth,
-            height: window.innerHeight,
+            width: window.innerWidth*0.8,
+            height: window.innerHeight*0.7,
             ohlcv: null,
             titleTxt: null,
             fixTimeRange: url.searchParams.get('fixTimeRange')
@@ -62,6 +62,9 @@ export default {
 
         // 讀取 company name
         this.titleTxt = CompanyNames[stockSymbol] + " (" +  stockSymbol + ")";
+
+        var fixTimeRangeCheckBox = document.getElementById("fixTimeRangeCheckBox");
+        fixTimeRangeCheckBox.style = "left: " + (this.width-190) + "px";
     },
     computed: {
         colors() {
@@ -74,8 +77,10 @@ export default {
     },
     methods: {
         onResize() {
-            this.width = window.innerWidth
-            this.height = window.innerHeight
+            this.width = window.innerWidth*0.8
+            this.height = window.innerHeight*0.7
+            var fixTimeRangeCheckBox = document.getElementById("fixTimeRangeCheckBox");
+            fixTimeRangeCheckBox.style = "left: " + (this.width-190) + "px";
         }
     },
     watch: {
