@@ -135,12 +135,12 @@ def get_sentiment_as_dataframe(symbol):
               '_news_sentiment.csv', index=False)
 
 
-df = pd.read_csv('./dataset/Stocks Symbols.csv')
-df = df.loc[df['Market_Cap'] > 2000000000.00]
-symbols = df['Symbol'].tolist()
+# df = pd.read_csv('./dataset/Stocks Symbols.csv')
+# df = df.loc[df['Market_Cap'] > 2000000000.00]
+# symbols = df['Symbol'].tolist()
 
-for symbol in symbols:
-    start = time.time()
-    get_sentiment_as_dataframe(symbol)
-    end = time.time()
-    print("Finished " + symbol + " in ", end-start, " Seconds")
+# for symbol in symbols:
+#     start = time.time()
+#     get_sentiment_as_dataframe(symbol)
+#     end = time.time()
+#     print("Finished " + symbol + " in ", end-start, " Seconds")
