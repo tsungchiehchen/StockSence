@@ -12,10 +12,10 @@
                  ref="tradingVue"
                  id="priceDisplayVue">
         </trading-vue>
-        <span class="fixTimeRangeCheckBox" id="fixTimeRangeCheckBox">
+        <!-- <span class="fixTimeRangeCheckBox" id="fixTimeRangeCheckBox">
             <input type="checkbox" v-model="fixTimeRange">
             <label>&nbsp;Fix time range</label>
-        </span>
+        </span> -->
     </div>
 </template>
 
@@ -49,15 +49,17 @@ export default {
         var arrayData = [];
         
         for (var od in slicedObjectData) {
-            if(this.fixTimeRange == "true"){
-                if(slicedObjectData[od][0] >= startTimestamp && slicedObjectData[od][0] <= endTimestamp){
-                    arrayData.push(slicedObjectData[od]);
-                }
-            }
-            else{
+            // if(this.fixTimeRange == "true"){
+            //     if(slicedObjectData[od][0] >= startTimestamp && slicedObjectData[od][0] <= endTimestamp){
+            //         arrayData.push(slicedObjectData[od]);
+            //     }
+            // }
+            // else{
+            //     arrayData.push(slicedObjectData[od]);
+            // }
+            if (slicedObjectData[od][0] >= startTimestamp && slicedObjectData[od][0] <= endTimestamp) {
                 arrayData.push(slicedObjectData[od]);
             }
-            
         }
 
         this.ohlcv = arrayData;
@@ -86,17 +88,17 @@ export default {
         }
     },
     watch: {
-        fixTimeRange: function(val) {  // 當改變 fix time range check box 的時候
-            let currentURL = window.location.href;
-            if(currentURL.includes("fixTimeRange")){  // true -> false
-                var postData = currentURL.split('&fixTimeRange=')[0];
-                window.location.href = postData;
-            }
-            else{  // false -> true
-                postData = currentURL.split('#/')[0];
-                window.location.href = postData + "&fixTimeRange=true";
-            }
-        }
+        // fixTimeRange: function(val) {  // 當改變 fix time range check box 的時候
+        //     let currentURL = window.location.href;
+        //     if(currentURL.includes("fixTimeRange")){  // true -> false
+        //         var postData = currentURL.split('&fixTimeRange=')[0];
+        //         window.location.href = postData;
+        //     }
+        //     else{  // false -> true
+        //         postData = currentURL.split('#/')[0];
+        //         window.location.href = postData + "&fixTimeRange=true";
+        //     }
+        // }
     },
     mounted() {
         // 加入 back button

@@ -28,10 +28,10 @@ document.title = "StockSense"
       <PriceDisplay/>
     </v-col>
     <v-col no-gutters id="NewsDisplay&Toolbox" style="padding: 0px 0px 0px 0px">
-      <div id="toolbox" style="margin: 15px 15px 15px 7.5px; height: 15vh; padding: 15px 15px 15px 15px;">
+      <div id="toolbox" style="margin: 15px 15px 15px 7.5px; height: 14vh; padding: 15px 15px 15px 15px;">
         <Toolbox/>
       </div>
-      <div id="news-display" style="margin: 7.5px 15px 7.5px 7.5px; height:50vh; padding: 15px 15px 15px 15px;">
+      <div id="news-display" style="margin: 7.5px 15px 7.5px 7.5px; height:51.5vh; padding: 15px 15px 15px 15px;">
         <NewsDisplay/>
       </div>
     </v-col>
