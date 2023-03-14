@@ -143,7 +143,7 @@ vader = SentimentIntensityAnalyzer().lexicon
 lm_dict = pd.read_csv('./dataset/nlp/Loughran-McDonald_MasterDictionary_1993-2021.csv').set_index(
     'Word').to_dict('index')
 new_lexicon = merge_lexicons(vader, lm_dict)
-print(new_lexicon)
+# print(new_lexicon)
 
 fieldnames = ["pos", "neg", "neu"]
 with open('Lexicon.csv', 'w') as csvfile:

@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, url_for, redirect
-from dataModule import calculateStockChangebyDate, calculateMacroChange
+from dataModule import calculateStockChangebyDate, calculateMacroChange, wordCloud
 import time
 from pathlib import Path
 import json
@@ -9,11 +9,19 @@ app = Flask(__name__, static_url_path='', static_folder='../frontend/flask/stati
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/api', methods=['GET', 'POST'])
-def calculate():
+def api():
+    stockPriceOnly = request.args.get('stockPriceOnly')
     startDate = request.args.get('startDate')
     endDate = request.args.get('endDate')
-    print(startDate, endDate, request.full_path)
-    return redirect("http://127.0.0.1:8081/?stockPriceOnly=false&startDate=2022-06-01&endDate=2022-07-01&stockSymbol=META&startTimestamp=1654066800000&endTimestamp=1656658800000#/")
+    stockSymbol = request.args.get('stockSymbol')
+    
+    startTimestamp, endTimestamp = calculateStockChangebyDate.getTimeStamps(startDate, endDate)
+    wordCloud.getWordCloud(startDate, endDate, stockSymbol)
+
+    url = "http://127.0.0.1:8081/?stockPriceOnly=" + stockPriceOnly + "&startDate=" + startDate + "&endDate=" + endDate 
+    + "&stockSymbol" + stockSymbol + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp
+
+    return redirect(url)
 
 
 @app.route('/', methods=['GET', 'POST'])

@@ -1,7 +1,8 @@
 import pandas as pd
 import operator
 import json
-from nlp import preprocess
+from dataModule import nlp
+import nltk
 
 
 def getDFbyDate(start_date, end_date, symbol):
@@ -16,7 +17,7 @@ def getDFbyDate(start_date, end_date, symbol):
     df['datetime'] = df['datetime'].apply(lambda x: x[:10])
 
     # preporcess title: remove stop words, and lemmentaize
-    df['title'] = df['title'].apply(preprocess)
+    df['title'] = df['title'].apply(nlp.preprocess)
 
     # filter rows based on datetime
     filtered_df = df[(df['datetime'] >= start_date)
@@ -56,7 +57,7 @@ def getWordCloud(start_date, end_date, symbol):
     # convert to list of dictionaries
     data = [{'name': k, 'value': v} for k, v in sorted_freq.items()]
     # write to json
-    with open('./dataModule/wordcloud.json', 'w') as f:
+    with open('./dataset/wordcloud.json', 'w') as f:
         json.dump(data, f, indent=2)
 
 
