@@ -1,26 +1,67 @@
 import pandas as pd
+import operator
+import json
+from nlp import preprocess
 
 
-def getWordCloud(start_date, end_date, symbol):
+def getDFbyDate(start_date, end_date, symbol):
     # get news within specified time span
-    df = pd.read_csv('../dataset/news sentiment/' +
+    df = pd.read_csv('./dataset/news sentiment/' +
                      symbol + '_news_sentiment.csv')
 
-    # convert datetime column to datetime type
-    df['datetime'] = pd.to_datetime(df['datetime'])
+    # drop datetime whose value is NaN
+    df = df.dropna(subset=['datetime'])
+
+    # clean datetime
+    df['datetime'] = df['datetime'].apply(lambda x: x[:10])
+
+    # preporcess title: remove stop words, and lemmentaize
+    df['title'] = df['title'].apply(preprocess)
 
     # filter rows based on datetime
     filtered_df = df[(df['datetime'] >= start_date)
                      & (df['datetime'] <= end_date)]
 
-    # display the filtered dataframe
-    print(filtered_df)
+    filtered_df = filtered_df.loc[:, ["title", "datetime", "link", "Compound"]]
 
+    return filtered_df
+
+
+def getWordCloud(start_date, end_date, symbol):
+    df = getDFbyDate(start_date, end_date, symbol)
+
+    # Count the word frequency
+    frequency = {}
+    for i in range(len(df)):
+        title = df.iloc[i]['title'].split()
+        polarity = df.iloc[i]['Compound']
+
+        if polarity > 0:
+            for t in title:
+                if t in frequency:
+                    frequency[t] += 1
+                else:
+                    frequency[t] = 1
+        elif polarity < 0:
+            for t in title:
+                if t in frequency:
+                    frequency[t] -= 1
+                else:
+                    frequency[t] = -1
+
+    # Sort the frequency dict by freq in descending order
+    sorted_freq = dict(
+        sorted(frequency.items(), key=operator.itemgetter(1), reverse=True))
+
+    # convert to list of dictionaries
+    data = [{'name': k, 'value': v} for k, v in sorted_freq.items()]
     # write to json
+    with open('./dataModule/wordcloud.json', 'w') as f:
+        json.dump(data, f, indent=2)
 
 
 # testing
-start_date = "2020-01-01"
-end_date = "2022-01-01"
-symbol = 'AAPL'
-getWordCloud(start_date, end_date, symbol)
+# start_date = "2020-01-01"
+# end_date = "2022-01-01"
+# symbol = 'AAPL'
+# getWordCloud(start_date, end_date, symbol)
