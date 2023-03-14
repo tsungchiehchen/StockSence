@@ -9,11 +9,13 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "less-loader": "^6.2.0",
     "trading-vue-js": "^1.0.2",
     "vue": "^2.6.14",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^3.5.1",
+    "vue-virtual-scroll-list": "^2.3.4",
     "vued3tree": "^5.1.0",
     "vuetify": "^2.6.0"
   },

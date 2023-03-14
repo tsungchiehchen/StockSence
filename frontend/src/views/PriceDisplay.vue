@@ -8,7 +8,8 @@
                  :color-back="colors.colorBack"
                  :color-grid="colors.colorGrid"
                  :color-text="colors.colorText"
-                 ref="tradingVue">
+                 ref="tradingVue"
+                 id="priceDisplayVue">
         </trading-vue>
         <span class="fixTimeRangeCheckBox" id="fixTimeRangeCheckBox">
             <input type="checkbox" v-model="fixTimeRange">

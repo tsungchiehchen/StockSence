@@ -1,37 +1,47 @@
 <script lang="ts">
 import PriceDisplay from "./views/PriceDisplay.vue"
 import StockRecommendation from "./views/StockRecommendation.vue"
+import NewsDisplay from "./views/NewsDisplay.vue"
 
 export default {
   name: 'StockSense',
   components: {
     PriceDisplay,
-    StockRecommendation
+    StockRecommendation,
+    NewsDisplay
   }
 }
 
 document.title = "StockSense"
+
 </script>
 
 
 <template>
-  <div id="StockSense">
-    <div id="upperRow">
-        <div id="priceDisplay">
-          <PriceDisplay/>
-        </div>
-    </div>
-    <div id="lowerRow">
-        <div>
-          <StockRecommendation/>
-        </div>
-    </div>
-  </div>
+  <div>
+  <v-row id="upperRow" style="height: 70vh">
+    <v-col id="priceDisplay">
+      <PriceDisplay/>
+    </v-col>
+    <v-col id="NewsDisplay">
+      <NewsDisplay/>
+    </v-col>
+  </v-row>
+  <v-row id="lowerRow" style="height: 70vh; width: 100%">
+    <v-col style="width: 83vw">
+      <StockRecommendation/>
+    </v-col>
+    <v-col>
+      <h1 style="justify-content: center; align-items: center; display:grid; height: 30vh;"><center>Wordcloud</center></h1>
+    </v-col>
+  </v-row>
+</div>
 </template>
 
 <style lang="scss">
 html,
 body {
+  width: 100%;
   height: 100%;
   margin: 0;
   overflow-y: hidden;
@@ -54,10 +64,14 @@ body {
 }
 
 .tree {
-    width: 90%;
-    height: 30%;
+    width: 83vw;
+    height: 30vh;
     // display: block;
     // overflow: auto; 
-    position: fixed;
+    position: plex;
+}
+
+.priceDisplayVue{
+  height: 70vh
 }
 </style>
