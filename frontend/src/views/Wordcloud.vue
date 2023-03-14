@@ -1,5 +1,5 @@
 <template>
-    <div class="wordCloud" v-resize="onResize" style="height: 20vh"></div>
+    <div class="wordCloud" v-resize="onResize" style="height: 27vh"></div>
   </template>
   
   <script>
@@ -139,7 +139,7 @@
         const height = svgHeight - margin.top - margin.bottom
         return { width, height }
       },
-      words () { // sort data in desc order, so as to get the right fontScale
+      words () { // 用降冪排序取得字體大小
         const { data, valueKey } = this
         const words = data.sort(function (a, b) {
           return parseFloat(b[valueKey]) - parseFloat(a[valueKey])
@@ -243,7 +243,8 @@
         // Define the div for the tooltip
         const tooltip = d3.select("body").append("div")
               .attr("class", "tooltip")
-              .style("opacity", 0);
+              .style("opacity", 0)
+              .style("display", "none");
         const text = centeredChart.selectAll('text')
                 .data(data)
              .enter().append('text')
@@ -260,13 +261,14 @@
           text.on("mouseover", function(d) {
                   tooltip.transition()
                       .duration(200)
-                      .style("opacity", .7)
-                  tooltip.html(nameKey + ': ' + d[nameKey] + "<br/>"  + valueKey + ': ' + d[valueKey])
+                      .style("display", "block")
+                      .style("opacity", .8)
+                  tooltip.html("<p style=\"font-weight: 1000; font-size:15px; line-height: 1.7em;\">" + d[nameKey] + "</p>" + valueKey + ': ' + d[valueKey])
               })
               .on("mousemove", function(d) {
                   tooltip
-                      .style("left", (d3.event.pageX) + "px")
-                      .style("top", (d3.event.pageY - 40) + "px")
+                      .style("left", d3.event.pageX + 10 + "px")
+                      .style("top", d3.event.pageY - 30 + "px")
               })
               .on("mouseout", function(d) {
                   tooltip.transition()
@@ -291,29 +293,5 @@
   
   
   <style scope>
-  .wordCloud {
-    display: inline-block;
-    position: relative;
-    width: 100%;
-  }
-  .wordCloud svg {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  div.tooltip {
-      position: absolute;
-      width: 140px;
-      height: 50px;
-      padding: 8px;
-      font: 18px Arial;
-      line-height: 24px;
-      color: white;
-      background: black;
-      border: 0px;
-      border-radius: 2px;
-      pointer-events: none;
-  }
   </style>
   

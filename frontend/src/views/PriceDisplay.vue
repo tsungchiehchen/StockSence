@@ -1,5 +1,6 @@
 <template>
     <div id="priceDisplay">
+        
         <trading-vue :data="this.$data" 
                  :titleTxt="this.titleTxt" 
                  :toolbar="false" 

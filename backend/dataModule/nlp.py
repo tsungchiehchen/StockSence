@@ -1,13 +1,11 @@
+import csv
 import nltk
 from nltk.corpus import wordnet
 from nltk.stem import WordNetLemmatizer
-from nltk.corpus import stopwords
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import pandas as pd
 import re
 import time
-import itertools
-import csv
 
 
 def get_wordnet_pos(word):
@@ -22,7 +20,12 @@ def get_wordnet_pos(word):
 
 
 def preprocess(raw_text: str) -> str:
-    stop_words = set(stopwords.words('english'))
+    stop_words_file = './dataset/nlp/SmartStoplist.txt'
+    # load stop_words dictionary
+    stop_words = []
+    with open(stop_words_file, "r") as f:
+        for line in f:
+            stop_words.extend(line.split())
 
     # Step 1: remove non-letter characters and convert the string to lower case
     letters_only_text: str = re.sub("[^a-zA-Z]", " ", raw_text)
@@ -52,18 +55,19 @@ def merge_lexicons(vader, lm_dict):
     new_lexicon = {}
     for word, scores in vader.items():
         new_lexicon[word] = scores
-        if word.upper() in lm_dict:
-            new_lexicon[word] *= 2
+        if word in lm_dict:
+            new_lexicon[word]['pos'] *= 2
+            new_lexicon[word]['neg'] *= 2
     for word, scores in lm_dict.items():
-        word = word.lower() if isinstance(word, str) else word
         if word not in new_lexicon:
-            if scores['Positive'] > 0:
-                new_lexicon[word] = 4
-            elif scores['Negative'] > 0:
-                new_lexicon[word] = -4
+            new_lexicon[word] = {'pos': 0.0, 'neg': 0.0, 'neu': 1.0}
+            if scores['Positive'] > scores['Negative']:
+                new_lexicon[word]['pos'] = scores['Positive'] + 1
+            elif scores['Positive'] < scores['Negative']:
+                new_lexicon[word]['neg'] = scores['Negative'] + 1
             else:
-                new_lexicon[word] = 0
-
+                new_lexicon[word]['pos'] = 1.0
+                new_lexicon[word]['neg'] = 1.0
     return new_lexicon
 
 
@@ -85,11 +89,6 @@ def get_sentiment_score(texts):
         scores.append(score)
 
     return scores
-
-
-def drop_row_with_duplicate(df):
-    df.drop_duplicates(keep='first', inplace=True)
-    return df
 
 
 def get_sentiment_as_dataframe(symbol):
@@ -115,32 +114,39 @@ def get_sentiment_as_dataframe(symbol):
     combined_df = combined_df.sort_values('datetime', ascending=True)
     combined_df = combined_df.reset_index(drop=True)
 
-    # drop duplicates
-    combined_df.drop_duplicates(keep='first', inplace=True)
-    combined_df.to_csv(
-        './dataset/combine news/combined_news_' + symbol + '.csv', index=False)
-
-    df = pd.read_csv('./dataset/combine news/combined_news_' + symbol + '.csv')
-
     # get sentiment score on each title
-    scores = get_sentiment_score(df['title'])
+    scores = get_sentiment_score(combined_df['title'])
 
     for i in range(len(scores)):
-        df.loc[i, 'Negative'] = scores[i]['neg']
-        df.loc[i, 'Neutral'] = scores[i]['neu']
-        df.loc[i, 'Positive'] = scores[i]['pos']
-        df.loc[i, 'Compound'] = scores[i]['compound']
+        combined_df.loc[i, 'Negative'] = scores[i]['neg']
+        combined_df.loc[i, 'Neutral'] = scores[i]['neu']
+        combined_df.loc[i, 'Positive'] = scores[i]['pos']
+        combined_df.loc[i, 'Compound'] = scores[i]['compound']
 
-    df.to_csv('./dataset/news sentiment/' + symbol +
-              '_news_sentiment.csv', index=False)
+    return combined_df
 
 
-df = pd.read_csv('./dataset/Stocks Symbols.csv')
-df = df.loc[df['Market_Cap'] > 2000000000.00]
-symbols = df['Symbol'].tolist()
+# testing
+# symbol = 'AAPL'
+# symbol = 'TSLA'
+# start = time.time()
+# df = get_sentiment_as_dataframe(symbol)
+# end = time.time()
+# df.to_csv('./dataset/news sentiment/' + symbol +
+#           '_news_sentiment.csv', index=False)
+# print(df.loc[:, ["title", "Negative", "Neutral", "Positive", "Compound"]])
+# print(end-start, " Seconds")
 
-for symbol in symbols:
-    start = time.time()
-    get_sentiment_as_dataframe(symbol)
-    end = time.time()
-    print("Finished " + symbol + " in ", end-start, " Seconds")
+
+# testing: lexicon
+vader = SentimentIntensityAnalyzer().lexicon
+lm_dict = pd.read_csv('./dataset/nlp/Loughran-McDonald_MasterDictionary_1993-2021.csv').set_index(
+    'Word').to_dict('index')
+new_lexicon = merge_lexicons(vader, lm_dict)
+print(new_lexicon)
+
+fieldnames = ["pos", "neg", "neu"]
+with open('Lexicon.csv', 'w') as csvfile:
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(new_lexicon)
