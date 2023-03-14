@@ -28,8 +28,8 @@ export default {
     data() {
         const url = new URL(window.location.href);
         return {
-            width: window.innerWidth*0.8,
-            height: window.innerHeight*0.7,
+            width: window.innerWidth*0.75,
+            height: window.innerHeight*0.65,
             ohlcv: null,
             titleTxt: null,
             fixTimeRange: url.searchParams.get('fixTimeRange')
@@ -78,8 +78,8 @@ export default {
     },
     methods: {
         onResize() {
-            this.width = window.innerWidth*0.8
-            this.height = window.innerHeight*0.7
+            this.width = window.innerWidth*0.78
+            this.height = window.innerHeight*0.65
             var fixTimeRangeCheckBox = document.getElementById("fixTimeRangeCheckBox");
             fixTimeRangeCheckBox.style = "left: " + (this.width-190) + "px";
         }

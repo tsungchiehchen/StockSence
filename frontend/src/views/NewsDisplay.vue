@@ -3,7 +3,7 @@
     <div class="wrapper">
       <virtual-list 
         class="list"
-        style="overflow-y: auto; height: 69vh"
+        style="overflow-y: auto; height: 62vh;"
         data-key="key"
         :data-sources="computedItems"
         :data-component="itemComponent"
