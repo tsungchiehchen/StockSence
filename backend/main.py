@@ -4,8 +4,17 @@ import time
 from pathlib import Path
 import json
 
+
 app = Flask(__name__, static_url_path='', static_folder='../frontend/flask/static', template_folder='../frontend/flask/template')
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+
+@app.route('/api', methods=['GET', 'POST'])
+def calculate():
+    startDate = request.args.get('startDate')
+    endDate = request.args.get('endDate')
+    print(startDate, endDate, request.full_path)
+    return redirect("http://127.0.0.1:8081/?stockPriceOnly=false&startDate=2022-06-01&endDate=2022-07-01&stockSymbol=META&startTimestamp=1654066800000&endTimestamp=1656658800000#/")
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():

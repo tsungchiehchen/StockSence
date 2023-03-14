@@ -9,6 +9,7 @@ export default {
   components: {
     PriceDisplay,
     NewsDisplay,
+    StockRecommendation,
     WordCloud
   }
 }
@@ -29,8 +30,8 @@ document.title = "StockSense"
     </v-col>
   </v-row>
   <v-row id="lowerRow" style="height: 30vh; width: 100%; margin-top: 15px;">
-    <v-col style="justify-content: center; align-items: center; display:grid; flex-basis: 45%; margin: 5px 7.5px 5px 25px;" id="stockRecommendation">
-      <h1 style=""><center>Stock Recommendation Vue</center></h1>
+    <v-col style="flex-basis: 45%; margin: 5px 7.5px 5px 25px;" id="stockRecommendation">
+      <StockRecommendation/>
     </v-col>
     <v-col id="wordcloud" style="margin: 5px 0px 5px 7.5px;">
       <WordCloud/>
@@ -74,8 +75,7 @@ body {
 }
 
 .tree {
-    width: 83vw;
-    height: 30vh;
+    height: 25vh;
     // display: block;
     // overflow: auto; 
     position: plex;

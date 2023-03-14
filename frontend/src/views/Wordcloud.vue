@@ -172,7 +172,7 @@
       createSvg () {
         const svg = d3.select(this.$el).append('svg')
                         .attr('width', '100%')
-                        .attr('height', '30vh')
+                        .attr('height', '100%')
         return svg
       },
       createChart () {
