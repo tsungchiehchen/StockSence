@@ -2,12 +2,14 @@
 import PriceDisplay from "./views/PriceDisplay.vue"
 import StockRecommendation from "./views/StockRecommendation.vue"
 import NewsDisplay from "./views/NewsDisplay.vue"
+import WordCloud from "./views/Wordcloud.vue"
 
 export default {
   name: 'StockSense',
   components: {
     PriceDisplay,
-    NewsDisplay
+    NewsDisplay,
+    WordCloud
   }
 }
 
@@ -27,12 +29,11 @@ document.title = "StockSense"
     </v-col>
   </v-row>
   <v-row id="lowerRow" style="height: 30vh; width: 100%; margin-top: 15px;">
-    <v-col style="justify-content: center; align-items: center; display:grid; flex-basis: 45em; margin: 5px 7.5px 5px 25px;" id="stockRecommendation">
+    <v-col style="justify-content: center; align-items: center; display:grid; flex-basis: 45%; margin: 5px 7.5px 5px 25px;" id="stockRecommendation">
       <h1 style=""><center>Stock Recommendation Vue</center></h1>
-      <!-- <StockRecommendation/> -->
     </v-col>
-    <v-col id="wordcloud" style="justify-content: center; align-items: center; display:grid; margin: 5px 0px 5px 7.5px;">
-      <h1 style=""><center>Wordcloud</center></h1>
+    <v-col id="wordcloud" style="margin: 5px 0px 5px 7.5px;">
+      <WordCloud/>
     </v-col>
   </v-row>
 </div>

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "d3-cloud": "^1.2.5",
     "less-loader": "^6.2.0",
     "trading-vue-js": "^1.0.2",
     "vue": "^2.6.14",
