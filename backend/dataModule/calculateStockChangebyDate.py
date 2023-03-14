@@ -216,6 +216,15 @@ def convertCSVtoJSON():
     return json.dumps(overall_market, indent=4)
 
 
+def getTimeStamps(start_date, end_date):
+    startTimestamp = int(time.mktime(
+        time.strptime(start_date, "%Y-%m-%d"))) * 1000
+    endTimestamp = int(
+        time.mktime(time.strptime(end_date, "%Y-%m-%d"))) * 1000
+
+    return startTimestamp, endTimestamp
+
+
 def processAllStocksChange(start_date, end_date):
     df = getdataframe()
 
@@ -253,7 +262,8 @@ def processAllStocksChange(start_date, end_date):
 
     writetoCSV(all_changes)
     change_in_json = convertCSVtoJSON()
-    file = open('../frontend/flask/static/stockData.json', 'w')
+    file = open('../frontend/flask/static/stockPriceDifference/' +
+                str(start_date) + "~" + str(end_date) + '.json', 'w+')
     file.write(change_in_json)
     file.close()
     return start_date_timestamp, end_date_timestamp

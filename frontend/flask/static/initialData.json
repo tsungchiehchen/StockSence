@@ -1,0 +1,53 @@
+{
+    "name": "MARKET",
+    "children": [
+        {
+            "name": "Technology",
+            "children": []
+        },
+        {
+            "name": "Consumer Discretionary",
+            "children": []
+        },
+        {
+            "name": "Health Care",
+            "children": []
+        },
+        {
+            "name": "Finance",
+            "children": []
+        },
+        {
+            "name": "Industrials",
+            "children": []
+        },
+        {
+            "name": "Consumer Staples",
+            "children": []
+        },
+        {
+            "name": "Utilities",
+            "children": []
+        },
+        {
+            "name": "Energy",
+            "children": []
+        },
+        {
+            "name": "Telecommunications",
+            "children": []
+        },
+        {
+            "name": "Real Estate",
+            "children": []
+        },
+        {
+            "name": "Miscellaneous",
+            "children": []
+        },
+        {
+            "name": "Basic Materials",
+            "children": []
+        }
+    ]
+}
