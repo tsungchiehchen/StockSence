@@ -62,6 +62,11 @@ import matplotlib.pyplot as plt
 from scipy.spatial.distance import squareform
 from scipy.spatial.distance import pdist
 
+from scipy.cluster.hierarchy import average, to_tree
+
+from skbio import DistanceMatrix
+from skbio.tree import nj
+
 metrics = [
     'P/B',
     'P/E',
@@ -82,7 +87,7 @@ metrics = [
 ]
 
 # Read in the data with missing values
-data = pd.read_csv('./server/financial_indicators.csv')
+data = pd.read_csv('./backend/dataModule/financial_indicators.csv')
 data.drop('Symbol', axis='columns', inplace=True)
 
 data["Short Float"] = np.nan
@@ -108,6 +113,7 @@ data = pd.DataFrame(imputer.fit_transform(data), columns=data.columns)
 # perform normalization
 normalized_data = (data.loc[:, metrics] - data.loc[:,
                    metrics].mean()) / data.loc[:, metrics].std()
+
 
 # Perform hierarchical clustering on the imputed data
 # cluster = AgglomerativeClustering(
@@ -138,11 +144,14 @@ normalized_data = (data.loc[:, metrics] - data.loc[:,
 # plt.show()
 
 
-# normalized_data.index = ['AAPL', 'MSFT', 'GOOG',
-#                          'AMZN', 'PCAR', 'TSLA',
-#                          'NVDA', 'META', 'ASML',
-#                          'AVGO', 'PEP', 'COST',
-#                          'AZN', 'CSCO']
+normalized_data.index = ['AAPL', 'MSFT', 'GOOG',
+                         'AMZN', 'PCAR', 'TSLA',
+                         'NVDA', 'META', 'ASML',
+                         'AVGO', 'PEP', 'COST',
+                         'AZN', 'CSCO']
+
+# linkage_matrix = sch.linkage(normalized_data, 'ward')
+# print(linkage_matrix)
 
 # plot out the dendrogram
 # print(sch.linkage(normalized_data, method='ward'))
@@ -166,33 +175,6 @@ normalized_data = (data.loc[:, metrics] - data.loc[:,
 # plt.show()
 ############################### End testing for Hierarchical Clustering #########################################
 
-############################### Below is testing for generating fake data.json #########################################
-
-# Create hierarchical data in a nested dictionary format
-# data = {
-#     "name": "Parent",
-#     "children": [
-#         {
-#             "name": "Child 1",
-#             "value": 10
-#         },
-#         {
-#             "name": "Child 2",
-#             "value": 20
-#         }
-#     ]
-# }
-
-# # Convert the nested dictionary to a JSON string
-# json_str = json.dumps(data)
-
-# # Write the JSON string to a file
-# with open("data.json", "w") as outfile:
-#     outfile.write(json_str)
-
-
-############################### End testing for generating fake data.json #########################################
-
 ############################### Below is testing for calculate distance matrix #########################################
 distance_matrix = pd.DataFrame(
     squareform(pdist(normalized_data)),
@@ -207,14 +189,30 @@ distance_matrix = pd.DataFrame(
            'AVGO', 'PEP', 'COST',
            'AZN', 'CSCO']
 )
-# print(distance_matrix) # verifies, shows distance matrix
+# # print(distance_matrix) # verifies, shows distance matrix
 
-# show AAPL distance with repect to other stocks
+# # show AAPL distance with repect to other stocks
 stock_list = ['AAPL', 'MSFT', 'GOOG',
               'AMZN', 'PCAR', 'TSLA',
               'NVDA', 'META', 'ASML',
               'AVGO', 'PEP', 'COST',
               'AZN', 'CSCO']
 
-AAPL_distantce_matrix = distance_matrix.loc['AAPL'].to_list()
+
+ids = stock_list
+dm = DistanceMatrix(distance_matrix, ids)
+newick_str = nj(dm, result_constructor=str)
+print(newick_str)
+
+# to json
+# symbol = 'AAPL'
+# results = {'tree': symbol}
+# change_in_json = json.dumps(results)
+# file = open('./' + symbol + '_HC.json', 'w+')
+# file.write(change_in_json)
+# file.close()
+
+# print(distance_matrix.columns.to_list())
+# AAPL_distantce_matrix = distance_matrix.loc['AAPL'].to_list()
+# print(AAPL_distantce_matrix)
 ############################### End testing for calculate distance matrix #########################################

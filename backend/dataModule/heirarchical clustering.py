@@ -4,11 +4,18 @@ from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 import re
 import numpy as np
+import json
 
 # import hierarchical clustering libraries
 import scipy.cluster.hierarchy as sch
 from sklearn.cluster import AgglomerativeClustering
-import matplotlib.pyplot as plt
+from sklearn.experimental import enable_iterative_imputer
+from sklearn.impute import IterativeImputer
+from scipy.spatial.distance import squareform
+from scipy.spatial.distance import pdist
+from ete3 import Tree
+from skbio.tree import nj
+from skbio import DistanceMatrix
 
 
 def fundamental_metric(soup, metric):
@@ -55,22 +62,16 @@ def get_fundamental_data(df):
 
                 val = fundamental_metric(soup, m)
                 df.iloc[idx][m] = val if val != None else np.nan
+                print("Finished fetching: ", symbol)
         except Exception as e:
             print(symbol, 'not found')
     return df
 
 
 def get_all_stocks_fundamental_data(metrics):
-    # stocks = pd.read_csv('./server/data/Stocks Symbols.csv')
-    # stocks = stocks.loc[stocks['Market_Cap'] > 2000000000.00]
-    # stock_list = stocks["Symbol"].to_list()
-
-    # testing only two stocks
-    stock_list = ['AAPL', 'MSFT', 'GOOG',
-                  'AMZN', 'PCAR', 'TSLA',
-                  'NVDA', 'META', 'ASML',
-                  'AVGO', 'PEP', 'COST',
-                  'AZN', 'CSCO']
+    stocks = pd.read_csv('./dataset/Stocks Symbols.csv')
+    stocks = stocks.loc[stocks['Market_Cap'] > 2000000000.00]
+    stock_list = stocks["Symbol"].to_list()
 
     df = pd.DataFrame(columns=metrics)
     df['Symbol'] = stock_list
@@ -79,13 +80,11 @@ def get_all_stocks_fundamental_data(metrics):
     df = df[cols]
 
     df = get_fundamental_data(df)
-    df.to_csv('./server/financial_indicators.csv', index=False)
-    print(df)
+    df.to_csv('./financial_indicators.csv', index=False)
 
 
 def clean_financial_indicators_df(df):
-
-    # 1. Seperate column "Short Float / Ratio" to two columns
+    # Seperate column "Short Float / Ratio" to two columns
     # create two new columns with default value NaN
     df["Short Float"] = np.nan
     df["Short Ratio"] = np.nan
@@ -93,24 +92,69 @@ def clean_financial_indicators_df(df):
     # loop through each row and extract the values
     for i in range(len(df)):
         # use eval() to convert the string tuple into a tuple of floats
-        value = eval(df.iloc[i]["Short Float / Ratio"])
-        if pd.notna(value):
-            short_float, short_ratio = value
-            df.at[i, "Short Float"] = short_float
-            df.at[i, "Short Ratio"] = short_ratio
+        if not isinstance(df.iloc[i]["Short Float / Ratio"], str):
+            continue
+        else:
+            print(i, df.iloc[i]["Short Float / Ratio"])
+            value = eval(df.iloc[i]["Short Float / Ratio"])
+            if pd.notna(value):
+                short_float, short_ratio = value
+                df.at[i, "Short Float"] = short_float
+                df.at[i, "Short Ratio"] = short_ratio
     # drop the original column
     df.drop(columns=["Short Float / Ratio"], inplace=True)
 
-    # 2. Perform operations on missing value, NaN
+
+def get_json(node):
+    node.name = node.name.replace("'", '')
+
+    json = {"name": node.name}
+    if node.children:
+        json["children"] = []
+        for ch in node.children:
+            json["children"].append(get_json(ch))
+    return json
 
 
 def perform_heirarchical_cluster():
-    df = pd.read_csv('./server/financial_indicators.csv')
+    data = pd.read_csv('./dataModule/financial_indicators.csv')
+    stock_list = data['Symbol'].to_list()
+    data.drop('Symbol', axis='columns', inplace=True)
 
-    clean_financial_indicators_df(df)
+    clean_financial_indicators_df(data)
 
-    print(df)
-    return None
+    # Define the imputer object
+    imputer = IterativeImputer()
+
+    # Use the imputer object to fill in missing values in the dataframe
+    data = pd.DataFrame(imputer.fit_transform(data), columns=data.columns)
+
+    # perform normalization
+    normalized_data = (
+        data.loc[:, metrics] - data.loc[:, metrics].mean()) / data.loc[:, metrics].std()
+
+    # Perform hierarchical clustering on the imputed data
+    cluster = AgglomerativeClustering(
+        n_clusters=3, affinity='euclidean', linkage='ward')
+    labels = cluster.fit_predict(normalized_data)
+
+    # add cluster labels to data dataframe
+    data['Cluster Label'] = labels
+
+    distance_matrix = pd.DataFrame(
+        squareform(pdist(normalized_data)),
+        columns=[stock_list],
+        index=stock_list
+    )
+
+    ids = stock_list
+    dm = DistanceMatrix(distance_matrix, ids)
+    newick_str = nj(dm, result_constructor=str)
+    t = Tree(newick_str)
+
+    # this part still has issue
+    with open('./dataModule/test.json', 'w') as f:
+        f.write(str(get_json(t)).replace("'", '"'))
 
 
 metrics = [
@@ -126,9 +170,11 @@ metrics = [
     'EPS Q/Q',  # is %
     'Insider Own',  # is %
     'Beta',
-    'Short Float / Ratio',  # is % / not %
     'Profit Margin',  # is %
-    'Avg Volume'
+    'Avg Volume',
+    # 'Short Float / Ratio' # uncomment when run get_all_stocks_fundamental_data(), and comment below 2
+    'Short Float',  # is %
+    'Short Ratio'  # not %
 ]
 
 # run this to fetch metrics for all stocks
