@@ -71,7 +71,7 @@ def get_sentiment_score(texts):
     scores = []
 
     vader = SentimentIntensityAnalyzer().lexicon
-    lm_dict = pd.read_csv('./Loughran-McDonald_MasterDictionary_1993-2021.csv').set_index(
+    lm_dict = pd.read_csv('./dataset/nlp/Loughran-McDonald_MasterDictionary_1993-2021.csv').set_index(
         'Word').to_dict('index')
 
     new_lexicon = merge_lexicons(vader, lm_dict)
@@ -95,14 +95,14 @@ def drop_row_with_duplicate(df):
 def get_sentiment_as_dataframe(symbol):
     # get the news from using stock symbol
     try:
-        symbol_news_df = pd.read_csv('./news/' + symbol + '.csv')
+        symbol_news_df = pd.read_csv('./dataset/news/' + symbol + '.csv')
     except:
         symbol_news_df = pd.DataFrame()
 
     # get the news from using company name
     try:
         comp_name_news_df = pd.read_csv(
-            './news-company-name/' + symbol + '.csv')
+            './dataset/news-company-name/' + symbol + '.csv')
     except:
         comp_name_news_df = pd.DataFrame()
 
@@ -117,9 +117,10 @@ def get_sentiment_as_dataframe(symbol):
 
     # drop duplicates
     combined_df.drop_duplicates(keep='first', inplace=True)
-    combined_df.to_csv('combined_news_' + symbol + '.csv', index=False)
+    combined_df.to_csv(
+        './dataset/combine news/combined_news_' + symbol + '.csv', index=False)
 
-    df = pd.read_csv('./combined_news_' + symbol + '.csv')
+    df = pd.read_csv('./dataset/combine news/combined_news_' + symbol + '.csv')
 
     # get sentiment score on each title
     scores = get_sentiment_score(df['title'])
@@ -130,17 +131,16 @@ def get_sentiment_as_dataframe(symbol):
         df.loc[i, 'Positive'] = scores[i]['pos']
         df.loc[i, 'Compound'] = scores[i]['compound']
 
-    df.to_csv('./news sentiment/' + symbol +
+    df.to_csv('./dataset/news sentiment/' + symbol +
               '_news_sentiment.csv', index=False)
 
 
-# testing
-# symbol = 'AAPL'
-# symbol = 'TSLA'
-# start = time.time()
-# df = get_sentiment_as_dataframe(symbol)
-# end = time.time()
-# df.to_csv('./dataset/news sentiment/' + symbol +
-#           '_news_sentiment.csv', index=False)
-# print(df.loc[:, ["title", "Negative", "Neutral", "Positive", "Compound"]])
-# print(end-start, " Seconds")
+df = pd.read_csv('./dataset/Stocks Symbols.csv')
+df = df.loc[df['Market_Cap'] > 2000000000.00]
+symbols = df['Symbol'].tolist()
+
+for symbol in symbols:
+    start = time.time()
+    get_sentiment_as_dataframe(symbol)
+    end = time.time()
+    print("Finished " + symbol + " in ", end-start, " Seconds")
