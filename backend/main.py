@@ -1,15 +1,25 @@
 from flask import Flask, request, render_template, url_for, redirect
 from dataModule import calculateStockChangebyDate, calculateMacroChange
+import time
+from pathlib import Path
+import json
+
 
 app = Flask(__name__, static_url_path='', static_folder='../frontend/flask/static', template_folder='../frontend/flask/template')
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+
+@app.route('/api', methods=['GET', 'POST'])
+def calculate():
+    startDate = request.args.get('startDate')
+    endDate = request.args.get('endDate')
+    print(startDate, endDate, request.full_path)
+    return redirect("http://127.0.0.1:8081/?stockPriceOnly=false&startDate=2022-06-01&endDate=2022-07-01&stockSymbol=META&startTimestamp=1654066800000&endTimestamp=1656658800000#/")
 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    print(request.method)
     if request.method == 'POST':
         type = request.args.get('type')
-        print(type)
         # if 'type' in request.form:
         #     calculateStockChangebyDate.processAllStocksChange(request.form['startDate'], request.form['endDate'])
         #     return redirect(request.path,code=302)
@@ -25,16 +35,45 @@ def index():
         stockPriceOnly = request.args.get('stockPriceOnly')
         startDate = request.args.get('startDate')
         endDate = request.args.get('endDate')
-        if stockPriceOnly == "true":
-            calculateStockChangebyDate.processAllStocksChange(startDate, endDate)
-            return render_template('index.html', type=type, macroChange=None)
-        elif stockPriceOnly == "false":
-            calculateStockChangebyDate.processAllStocksChange(startDate, endDate)
-            macroChange = calculateMacroChange.process_macro_data(type, startDate, endDate)
-            print(macroChange)
-            return render_template('index.html', type=type, macroChange=macroChange)
-        else:
-            return render_template('index.html')
+        
+        if stockPriceOnly == "true":  # 只要查 stock change
+            percentilesFilePath = Path("./dataset/percentiles/" + str(startDate) + "~" + str(endDate) + ".json")
+            if not percentilesFilePath.is_file():  # macro change file does not exist
+                print("Not calculated before")
+                calculateStockChangebyDate.processAllStocksChange(startDate, endDate)
+
+            macroChange = calculateMacroChange.process_macro_data(startDate, endDate)
+            percentilesFile = open(percentilesFilePath)
+            percentiles = json.load(percentilesFile)
+            startTimestamp, endTimestamp = calculateStockChangebyDate.getTimeStamps(startDate, endDate)
+
+            return render_template('index.html', type=type, macroChange=None, percentiles=percentiles, startTimestamp=startTimestamp, endTimestamp=endTimestamp)
+        
+        elif stockPriceOnly == "false":  # 要查 stock change 跟 macro change
+            percentilesFilePath = Path("./dataset/percentiles/" + str(startDate) + "~" + str(endDate) + ".json")
+            print(percentilesFilePath)
+            if not percentilesFilePath.is_file():  # macro change file does not exist
+                print("Not calculated before")
+                calculateStockChangebyDate.processAllStocksChange(startDate, endDate)
+
+            macroChange = calculateMacroChange.process_macro_data(startDate, endDate)
+            percentilesFile = open(percentilesFilePath)
+            percentiles = json.load(percentilesFile)
+            startTimestamp, endTimestamp = calculateStockChangebyDate.getTimeStamps(startDate, endDate)
+
+            return render_template('index.html', type=type, macroChange=macroChange, percentiles=percentiles, startTimestamp=startTimestamp, endTimestamp=endTimestamp)
+        
+        else:  # 第一次進入網頁
+            percentilesFilePath = Path("./dataset/percentiles/" + "2023-01-31" + "~" + "2023-02-01.json")
+            if not percentilesFilePath.is_file():  # macro change file does not exist
+                print("Not calculated before")
+                calculateStockChangebyDate.processAllStocksChange("2023-01-31", "2023-02-01")
+            
+            percentilesFile = open(percentilesFilePath)
+            percentiles = json.load(percentilesFile)
+            startTimestamp, endTimestamp = calculateStockChangebyDate.getTimeStamps("2023-01-31", "2023-02-01")
+
+            return render_template('index.html', macroChange=None, percentiles=percentiles, startTimestamp=startTimestamp, endTimestamp=endTimestamp)
 
 
 if __name__ == '__main__':

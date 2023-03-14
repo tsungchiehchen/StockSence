@@ -53,26 +53,45 @@ def get_stock_symbols_data():
     return stock_tkr_data
 
 
-def process_macro_data(type, start_date, end_date):
-    df = get_macro_data(type)
+def process_macro_data(start_date, end_date):
+    changes = []
 
-    if type == "CPI":
-        change = calculate_change(df, "CPIAUCSL", start_date, end_date)
-    elif type == "Federal Funds Rate":
-        change = calculate_change_rate(df, "DFF", start_date, end_date)
-    elif type == "Retail Price":
-        change = calculate_change(df, "PCUARETTRARETTR", start_date, end_date)
-    elif type == "Treasury yield 2 years":
-        change = calculate_change_rate(df, "DGS2", start_date, end_date)
-    elif type == "Treasury yield 10 years":
-        change = calculate_change_rate(df, "DGS10", start_date, end_date)
-    elif type == "Treasury yield 20 years":
-        change = calculate_change_rate(df, "DGS20", start_date, end_date)
-    elif type == "Treasury yield 30 years":
-        change = calculate_change_rate(df, "DGS30", start_date, end_date)
-    elif type == "Unemployment":
-        change = calculate_change(df, "UNEMPLOY", start_date, end_date)
-    return change
+    df = get_macro_data("CPI")
+    changes.append(calculate_change(df, "CPIAUCSL", start_date, end_date))  # CPI
+    df = get_macro_data("Federal Funds Rate")
+    changes.append(calculate_change_rate(df, "DFF", start_date, end_date))  # Federal Funds Rate
+    df = get_macro_data("Retail Price")
+    changes.append(calculate_change(df, "PCUARETTRARETTR", start_date, end_date))  # Retail Price
+    df = get_macro_data("Treasury yield 2 years")
+    changes.append(calculate_change_rate(df, "DGS2", start_date, end_date))  # Treasury yield 2 years
+    df = get_macro_data("Treasury yield 10 years")
+    changes.append(calculate_change_rate(df, "DGS10", start_date, end_date))  # Treasury yield 10 years
+    df = get_macro_data("Treasury yield 20 years")
+    changes.append(calculate_change_rate(df, "DGS20", start_date, end_date))  # Treasury yield 20 years
+    df = get_macro_data("Treasury yield 30 years")
+    changes.append(calculate_change_rate(df, "DGS30", start_date, end_date))  # Treasury yield 30 years
+    df = get_macro_data("Unemployment")
+    changes.append(calculate_change(df, "UNEMPLOY", start_date, end_date))  # Unemployment
+
+    return changes
+
+    # if type == "CPI":
+    #     change = calculate_change(df, "CPIAUCSL", start_date, end_date)
+    # elif type == "Federal Funds Rate":
+    #     change = calculate_change_rate(df, "DFF", start_date, end_date)
+    # elif type == "Retail Price":
+    #     change = calculate_change(df, "PCUARETTRARETTR", start_date, end_date)
+    # elif type == "Treasury yield 2 years":
+    #     change = calculate_change_rate(df, "DGS2", start_date, end_date)
+    # elif type == "Treasury yield 10 years":
+    #     change = calculate_change_rate(df, "DGS10", start_date, end_date)
+    # elif type == "Treasury yield 20 years":
+    #     change = calculate_change_rate(df, "DGS20", start_date, end_date)
+    # elif type == "Treasury yield 30 years":
+    #     change = calculate_change_rate(df, "DGS30", start_date, end_date)
+    # elif type == "Unemployment":
+    #     change = calculate_change(df, "UNEMPLOY", start_date, end_date)
+    # return change
 
 
 ################################## TESTING #########################################

@@ -84,9 +84,9 @@ rect.parent,
   fill: #fff;
 }
 
-.grandparent:hover rect {
+/* .grandparent:hover rect {
   fill-opacity: .5;
-}
+} */
 
 rect.parent {
   cursor: pointer;
@@ -96,9 +96,9 @@ rect.parent {
   cursor: zoom-in;
 }
 
-.grandparent rect {
+/* .grandparent rect {
   cursor: zoom-out;
-}
+} */
 
 rect.parent {
   fill-opacity: .5;
@@ -106,7 +106,7 @@ rect.parent {
 
 rect.parent:hover {
   fill: #bbb;
-  fill-opacity: .2;
+  fill-opacity: .6;
 }
 
 .children rect.parent {
@@ -114,7 +114,7 @@ rect.parent:hover {
 }
 
 .children:hover rect.parent {
-  fill-opacity: .2;
+  fill-opacity: .6;
 }
 
 label {
