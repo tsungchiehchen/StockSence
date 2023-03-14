@@ -72,11 +72,12 @@ def get_percentile_and_write(start_date, end_date, changes):
         portion_separate_values[(n//2) + i] = interval * i
 
     # Write the percentiles list to a JSON file
-    filename = './dataset/price changes/' + \
-        start_date + '~' + end_date + ' percentile.json'
+    filename = './dataset/percentiles/' + str(start_date) + '~' + str(end_date) + '.json'
 
-    with open(filename, 'w') as f:
+    with open(filename, 'w+') as f:
         json.dump(portion_separate_values, f)
+    
+    return portion_separate_values
 
 
 def writetoCSV(objects):
@@ -221,7 +222,7 @@ def getTimeStamps(start_date, end_date):
         time.strptime(start_date, "%Y-%m-%d"))) * 1000
     endTimestamp = int(
         time.mktime(time.strptime(end_date, "%Y-%m-%d"))) * 1000
-
+    
     return startTimestamp, endTimestamp
 
 
@@ -252,21 +253,17 @@ def processAllStocksChange(start_date, end_date):
     # Instead, call get_percentile() and write it to json
     # with start_date~end_date
     # calculate percentile (of 6 portions)
-    get_percentile_and_write(start_date, end_date, changes)
+    percentile = get_percentile_and_write(start_date, end_date, changes)
 
     # convert start_date and end_date to tradingVue accetable timestamp
-    start_date_timestamp = int(time.mktime(
-        time.strptime(start_date, "%Y-%m-%d"))) * 1000
-    end_date_timestamp = int(
-        time.mktime(time.strptime(end_date, "%Y-%m-%d"))) * 1000
+    # startTimestamp, endTimestamp = getTimeStamps(start_date, end_date)
 
     writetoCSV(all_changes)
     change_in_json = convertCSVtoJSON()
-    file = open('../frontend/flask/static/stockPriceDifference/' +
-                str(start_date) + "~" + str(end_date) + '.json', 'w+')
+    file = open('../frontend/flask/static/stockPriceDifference/' + str(start_date) + "~" + str(end_date) +'.json', 'w+')
     file.write(change_in_json)
     file.close()
-    return start_date_timestamp, end_date_timestamp
+    # return percentile, startTimestamp, endTimestamp
 
 
 def get_company_name():
@@ -308,7 +305,7 @@ def get_company_name():
 
     # write results json
     json_obj = json.dumps(results)
-    with open('./dataset/stock symbols with company name.json', 'w') as f:
+    with open('../frontend/flask/static/company names.json', 'w') as f:
         f.write(json_obj)
 
 
