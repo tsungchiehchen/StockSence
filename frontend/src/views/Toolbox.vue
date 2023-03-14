@@ -1,30 +1,34 @@
 <template>
     <div>
-        <datepicker placeholder="Select Date" style="width:1vw"></datepicker> 
-        <button type="submit" form="form1" class="btn btn-primary" style="margin-left:0px" onclick="">Search</button>
+        <VueDatePicker 
+            v-model="date"
+            :min-date="minDate"
+            :max-date="maxDate"
+            :range-presets="presets"
+            format="YYYY-MM-DD"
+            formatHeader="dddd MMM DD"
+            placeholder="Select a new time range"
+            id="dateRange"
+            range
+            validate 
+        />
     </div>
 </template>
   
 <script>
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-import Datepicker from 'vuejs-datepicker'
-
-import '../components/bootstrap4-1-3.min.css'
+import { VueDatePicker } from '@mathieustan/vue-datepicker';
+import '@mathieustan/vue-datepicker/dist/vue-datepicker.min.css';
 
 export default {
     components: {
-        Datepicker
-    },
-    data() {
-        return {
-            value: '',
-            context: null
-        }
-    },
-    methods: {
-        onContext(ctx) {
-            this.context = ctx
-        }
-    }
+    VueDatePicker
+  },
+  data: () => ({
+    date: new Date(),
+  }),
+  mounted(){
+    document.getElementById("dateRange").style = "text-align: center;";
+    document.getElementsByClassName("vd-icon")[0].style = "margin-left: auto; margin-right: auto;"
+  }
 }
 </script>
