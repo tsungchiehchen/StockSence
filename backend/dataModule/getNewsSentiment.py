@@ -25,7 +25,7 @@ def getDFbyDate(start_date, end_date, symbol):
 
 
 def writetoJSON(results):
-    json_list = [[{"title": d["title"], "datetime": d["datetime"], "link": d["link"], "score": d["Compound"]}
+    json_list = [[{"title": d["title"], "datetime": d["datetime"], "desc": d["link"]}
                   for d in results[k]] for k in results.keys()]
 
     # write to json
