@@ -22,7 +22,7 @@ document.title = "StockSense"
 
 
 <template>
-  <div>
+  <div id="container">
   <v-row no-gutters id="upperRow" style="height: 70vh; width: 100%;">
     <v-col no-gutters id="priceDisplay" style="justify-content: center; align-items: center; display:grid; width:95%; margin: 15px 7.5px 7.5px 15px; padding: 10px 10px 5px 10px">
       <PriceDisplay/>
@@ -88,18 +88,6 @@ body {
     // display: block;
     // overflow: auto; 
     position: plex;
-}
-
-.container {  
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "Price-History toolbox ."
-    "Price-History news-display ."
-    "News-Recommendation Wordcloud .";
 }
 
 .Price-History { grid-area: Price-History; }
