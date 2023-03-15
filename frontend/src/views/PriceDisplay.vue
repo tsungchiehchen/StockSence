@@ -67,8 +67,8 @@ export default {
         // 讀取 company name
         this.titleTxt = CompanyNames[stockSymbol] + " (" +  stockSymbol + ")";
 
-        var fixTimeRangeCheckBox = document.getElementById("fixTimeRangeCheckBox");
-        fixTimeRangeCheckBox.style = "left: " + (this.width-190) + "px";
+        // var fixTimeRangeCheckBox = document.getElementById("fixTimeRangeCheckBox");
+        // fixTimeRangeCheckBox.style = "left: " + (this.width-190) + "px";
     },
     computed: {
         colors() {
@@ -83,8 +83,8 @@ export default {
         onResize() {
             this.width = window.innerWidth*0.78
             this.height = window.innerHeight*0.65
-            var fixTimeRangeCheckBox = document.getElementById("fixTimeRangeCheckBox");
-            fixTimeRangeCheckBox.style = "left: " + (this.width-190) + "px";
+            // var fixTimeRangeCheckBox = document.getElementById("fixTimeRangeCheckBox");
+            // fixTimeRangeCheckBox.style = "left: " + (this.width-190) + "px";
         }
     },
     watch: {
@@ -104,14 +104,16 @@ export default {
         // 加入 back button
         const div = document.createElement('span');
         div.className = 'pageBack';
+        div.style = "margin-right: 5px;"
         let currentURL = window.location.href;
         var postData = currentURL.split('?')[1];
-        div.innerHTML = `<a href="http://127.0.0.1:3000/?` + postData + `"+ style="z-index:10000; pointer-events: all; font-size: 20px; color: rgb(0, 0, 0); text-decoration: none;">`+ 
-            `◀ Back&nbsp</a>`;
+        div.innerHTML = `<a href="http://127.0.0.1:3000/?` + postData + `"+ style="z-index:10000; pointer-events: all; font-size: 20px; color: rgb(0, 0, 0); text-decoration: none; font-weight: 300;">`+ 
+            `◀ Back</a>`;
         document.querySelector(".trading-vue-ohlcv").prepend(div);
+        //document.getElementsByClassName('pageBack').style = "margin-left: 5px;"
         
         // 設定 title style
-        document.querySelector(".t-vue-title").setAttribute("style", "font-weight: bold; color: rgb(66, 184, 131);"); 
+        document.querySelector(".t-vue-title").setAttribute("style", "font-weight: 800; color: rgb(66, 184, 131);"); 
 
         window.addEventListener('resize', this.onResize)
         window.dc = this.chart

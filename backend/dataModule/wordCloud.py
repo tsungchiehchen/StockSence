@@ -3,6 +3,7 @@ import operator
 import json
 from dataModule import nlp
 import nltk
+import os
 
 
 def getDFbyDate(start_date, end_date, symbol):
@@ -57,7 +58,7 @@ def getWordCloud(start_date, end_date, symbol):
     # convert to list of dictionaries
     data = [{'name': k, 'value': v} for k, v in sorted_freq.items()]
     # write to json
-    with open('./dataset/wordcloud.json', 'w') as f:
+    with open('./dataset/wordcloud.json', 'w+') as f:
         json.dump(data, f, indent=2)
 
 

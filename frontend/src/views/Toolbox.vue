@@ -12,8 +12,8 @@
             validate 
         />
         <div style="margin-top: 15px; text-align: center;">
-          <v-btn variant="outlined" color="rgb(66, 184, 131)" style="margin:0 auto; display:inline-block;" v-on:click="search">Search</v-btn>
-          <v-btn variant="outlined" color="rgb(229, 64, 80)" style="margin: 0 auto auto 5px; display:inline-block;">Price Prediction</v-btn>
+          <v-btn variant="outlined" color="rgb(66, 184, 131)" style="margin:0 auto 0px auto; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px;" v-on:click="search">Search</v-btn>
+          <v-btn variant="outlined" color="rgb(229, 64, 80)" style="margin: 0 auto 0px 10px; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px;">Price Prediction</v-btn>
         </div>
     </div>
 </template>
@@ -24,12 +24,14 @@ import '@mathieustan/vue-datepicker/dist/vue-datepicker.min.css';
 
 export default {
     components: {
-    VueDatePicker
+    VueDatePicker,
   },
   data: () => ({
     date: new Date(),
     minDate: new Date([2017, 1, 1]),
-    maxDate: new Date([2023, 5, 1])
+    maxDate: new Date([2023, 5, 1]),
+    opened: false,
+    visible: false
   }),
   mounted(){
     document.getElementById("dateRange").style = "text-align: center; font-weight: bold;";

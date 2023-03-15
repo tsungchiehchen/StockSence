@@ -18,8 +18,7 @@ def api():
     startTimestamp, endTimestamp = calculateStockChangebyDate.getTimeStamps(startDate, endDate)
     wordCloud.getWordCloud(startDate, endDate, stockSymbol)
 
-    url = "http://127.0.0.1:8081/?stockPriceOnly=" + stockPriceOnly + "&startDate=" + startDate + "&endDate=" + endDate 
-    + "&stockSymbol" + stockSymbol + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp
+    url = "http://127.0.0.1:8081/?stockPriceOnly=" + str(stockPriceOnly) + "&startDate=" + str(startDate) + "&endDate=" + str(endDate) + "&stockSymbol=" + str(stockSymbol) + "&startTimestamp=" + str(startTimestamp) + "&endTimestamp=" + str(endTimestamp)
 
     return redirect(url)
 

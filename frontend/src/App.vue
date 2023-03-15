@@ -27,7 +27,7 @@ document.title = "StockSense"
     <v-col no-gutters id="priceDisplay" style="justify-content: center; align-items: center; display:grid; width:95%; margin: 15px 7.5px 7.5px 15px; padding: 10px 10px 5px 10px">
       <PriceDisplay/>
     </v-col>
-    <v-col no-gutters id="NewsDisplay&Toolbox" style="padding: 0px 0px 0px 0px">
+    <v-col no-gutters id="NewsDisplay&Toolbox" style="padding: 0px 0px 0px 0px;">
       <div id="toolbox" style="margin: 15px 15px 15px 7.5px; height: 14vh; padding: 15px 15px 15px 15px;">
         <Toolbox/>
       </div>
@@ -37,7 +37,7 @@ document.title = "StockSense"
     </v-col>
   </v-row>
   <v-row no-gutters id="lowerRow" style="height: 30vh; width: 100%;">
-    <v-col no-gutters style="justify-content: center; align-items: center; display:grid; flex-basis: 45%; margin: 5px 7.5px 15px 15px;" id="stockRecommendation">
+    <v-col no-gutters style="justify-content: center; align-items: center; display:grid; flex-basis: 30%; margin: 5px 7.5px 15px 15px;" id="stockRecommendation">
       <StockRecommendation/>
     </v-col>
     <v-col no-gutters id="wordcloud" style="justify-content: center; align-items: center; margin: 5px 15px 15px 7.5px;">
@@ -52,9 +52,10 @@ html,
 body {
   width: 100%;
   height: 100%;
+  min-width: 1300px;
   margin: 0;
   overflow-y: hidden;
-  overflow-x: hidden;
+  overflow-x: scroll;
   font: 15px -apple-system,BlinkMacSystemFont,
   Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,
   Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
