@@ -1,266 +1,182 @@
 [
   {
     "name": "apple+",
-    "value": 329
-  },
-  {
-    "name": "best+",
-    "value": 74
+    "value": 263
   },
   {
     "name": "stock+",
-    "value": 72
+    "value": 123
   },
   {
-    "name": "new+",
-    "value": 64
+    "name": "best+",
+    "value": 66
+  },
+  {
+    "name": "aapl+",
+    "value": 61
   },
   {
     "name": "amazon+",
-    "value": 60
+    "value": 58
   },
   {
     "name": "buy+",
-    "value": 59
-  },
-  {
-    "name": "top+",
-    "value": 57
+    "value": 58
   },
   {
     "name": "stocks+",
+    "value": 57
+  },
+  {
+    "name": "top+",
     "value": 56
+  },
+  {
+    "name": "new+",
+    "value": 44
   },
   {
     "name": "better+",
     "value": 44
   },
   {
-    "name": "growth+",
-    "value": 41
-  },
-  {
     "name": "antitrust-",
     "value": 38
   },
   {
-    "name": "worth+",
-    "value": 37
-  },
-  {
-    "name": "shares+",
-    "value": 36
-  },
-  {
-    "name": "aapl+",
-    "value": 33
-  },
-  {
-    "name": "support+",
-    "value": 32
-  },
-  {
-    "name": "lawsuit-",
-    "value": 29
-  },
-  {
-    "name": "like+",
-    "value": 27
-  },
-  {
-    "name": "help+",
-    "value": 26
-  },
-  {
-    "name": "watch+",
-    "value": 25
-  },
-  {
-    "name": "first+",
-    "value": 25
-  },
-  {
-    "name": "nasdaq+",
-    "value": 25
-  },
-  {
-    "name": "company+",
-    "value": 24
-  },
-  {
-    "name": "today+",
-    "value": 24
-  },
-  {
-    "name": "iphone+",
-    "value": 23
-  },
-  {
-    "name": "value+",
-    "value": 23
-  },
-  {
-    "name": "fitness+",
-    "value": 23
-  },
-  {
-    "name": "wins+",
-    "value": 22
+    "name": "growth+",
+    "value": 34
   },
   {
     "name": "microsoft+",
-    "value": 22
+    "value": 32
   },
   {
-    "name": "tesla+",
-    "value": 22
+    "name": "nasdaq+",
+    "value": 30
   },
   {
-    "name": "next+",
-    "value": 21
+    "name": "today+",
+    "value": 27
   },
   {
-    "name": "free+",
-    "value": 21
+    "name": "worth+",
+    "value": 23
   },
   {
-    "name": "smart+",
-    "value": 21
-  },
-  {
-    "name": "review+",
-    "value": 20
-  },
-  {
-    "name": "store-",
-    "value": 20
-  },
-  {
-    "name": "dividend+",
-    "value": 19
-  },
-  {
-    "name": "fortnite-",
-    "value": 19
+    "name": "lawsuit-",
+    "value": 23
   },
   {
     "name": "pay-",
-    "value": 18
+    "value": 22
   },
   {
-    "name": "success+",
-    "value": 17
+    "name": "store-",
+    "value": 22
   },
   {
-    "name": "world+",
-    "value": 17
+    "name": "shares+",
+    "value": 22
   },
   {
-    "name": "risk-",
-    "value": 16
-  },
-  {
-    "name": "privacy-",
-    "value": 16
-  },
-  {
-    "name": "strong+",
-    "value": 16
-  },
-  {
-    "name": "sues-",
-    "value": 16
-  },
-  {
-    "name": "profit+",
-    "value": 16
-  },
-  {
-    "name": "tech+",
-    "value": 15
-  },
-  {
-    "name": "get+",
-    "value": 15
+    "name": "value+",
+    "value": 22
   },
   {
     "name": "market+",
-    "value": 15
+    "value": 20
   },
   {
-    "name": "great+",
-    "value": 15
+    "name": "share+",
+    "value": 20
+  },
+  {
+    "name": "support+",
+    "value": 19
+  },
+  {
+    "name": "world+",
+    "value": 18
+  },
+  {
+    "name": "watch+",
+    "value": 17
+  },
+  {
+    "name": "strong+",
+    "value": 17
+  },
+  {
+    "name": "privacy-",
+    "value": 17
+  },
+  {
+    "name": "valuable+",
+    "value": 17
+  },
+  {
+    "name": "big+",
+    "value": 16
+  },
+  {
+    "name": "company+",
+    "value": 16
+  },
+  {
+    "name": "good+",
+    "value": 16
+  },
+  {
+    "name": "gains+",
+    "value": 16
   },
   {
     "name": "epic-",
     "value": 15
   },
   {
-    "name": "car+",
+    "name": "tech+",
     "value": 15
   },
   {
-    "name": "ceo+",
+    "name": "time+",
+    "value": 15
+  },
+  {
+    "name": "first+",
+    "value": 15
+  },
+  {
+    "name": "free+",
+    "value": 15
+  },
+  {
+    "name": "faces-",
+    "value": 15
+  },
+  {
+    "name": "tesla+",
     "value": 14
   },
   {
-    "name": "share+",
+    "name": "car+",
     "value": 14
   },
   {
-    "name": "highlights+",
+    "name": "dividend+",
     "value": 14
   },
   {
-    "name": "jobs+",
+    "name": "drop-",
     "value": 14
   },
   {
-    "name": "problem-",
-    "value": 14
-  },
-  {
-    "name": "etfs+",
-    "value": 14
-  },
-  {
-    "name": "future+",
-    "value": 14
-  },
-  {
-    "name": "expands+",
-    "value": 14
-  },
-  {
-    "name": "valuable+",
-    "value": 14
-  },
-  {
-    "name": "cook+",
+    "name": "help+",
     "value": 13
   },
   {
-    "name": "could+",
-    "value": 13
-  },
-  {
-    "name": "trillion+",
-    "value": 13
-  },
-  {
-    "name": "long+",
-    "value": 13
-  },
-  {
-    "name": "joins+",
-    "value": 13
-  },
-  {
-    "name": "card+",
-    "value": 13
-  },
-  {
-    "name": "series+",
+    "name": "smart+",
     "value": 13
   },
   {
@@ -268,55 +184,51 @@
     "value": 13
   },
   {
-    "name": "patents+",
+    "name": "active+",
     "value": 13
   },
   {
-    "name": "low-",
+    "name": "worst-",
     "value": 13
   },
   {
-    "name": "ipad+",
+    "name": "court-",
     "value": 13
   },
   {
-    "name": "break-",
+    "name": "profit+",
     "value": 13
   },
   {
-    "name": "special+",
+    "name": "despite+",
     "value": 13
   },
   {
-    "name": "good+",
+    "name": "buffett+",
     "value": 13
   },
   {
-    "name": "battle-",
+    "name": "boost+",
     "value": 13
   },
   {
-    "name": "sued-",
+    "name": "metaverse+",
     "value": 13
   },
   {
-    "name": "years+",
+    "name": "term+",
     "value": 12
   },
   {
-    "name": "tim+",
+    "name": "like+",
     "value": 12
   },
   {
-    "name": "million+",
+    "name": "revenue+",
     "value": 12
   },
   {
-    "name": "services+",
-    "value": 12
-  },
-  {
-    "name": "bad-",
+    "name": "warren+",
     "value": 12
   },
   {
@@ -324,55 +236,35 @@
     "value": 12
   },
   {
-    "name": "love+",
+    "name": "investors+",
     "value": 12
   },
   {
-    "name": "exclusive+",
+    "name": "trillion+",
     "value": 12
   },
   {
-    "name": "war-",
+    "name": "problem-",
     "value": 12
   },
   {
-    "name": "coronavirus-",
+    "name": "faang+",
     "value": 12
   },
   {
-    "name": "launches+",
+    "name": "want+",
     "value": 12
   },
   {
-    "name": "drop-",
-    "value": 12
-  },
-  {
-    "name": "despite+",
-    "value": 12
-  },
-  {
-    "name": "fund+",
-    "value": 12
-  },
-  {
-    "name": "win+",
-    "value": 12
-  },
-  {
-    "name": "make+",
+    "name": "reach+",
     "value": 11
   },
   {
-    "name": "based+",
+    "name": "price+",
     "value": 11
   },
   {
-    "name": "gains+",
-    "value": 11
-  },
-  {
-    "name": "revenue+",
+    "name": "app-",
     "value": 11
   },
   {
@@ -380,59 +272,95 @@
     "value": 11
   },
   {
-    "name": "court-",
+    "name": "says-",
     "value": 11
   },
   {
-    "name": "covering+",
+    "name": "long+",
     "value": 11
   },
   {
-    "name": "cut-",
+    "name": "alphabet+",
     "value": 11
   },
   {
-    "name": "play+",
+    "name": "fitness+",
     "value": 11
   },
   {
-    "name": "challenge+",
+    "name": "wins+",
     "value": 11
   },
   {
-    "name": "worst-",
+    "name": "fight-",
     "value": 11
   },
   {
-    "name": "health+",
+    "name": "use+",
     "value": 11
-  },
-  {
-    "name": "boost+",
-    "value": 11
-  },
-  {
-    "name": "games-",
-    "value": 11
-  },
-  {
-    "name": "active+",
-    "value": 11
-  },
-  {
-    "name": "look+",
-    "value": 10
   },
   {
     "name": "ever+",
+    "value": 11
+  },
+  {
+    "name": "win+",
+    "value": 11
+  },
+  {
+    "name": "get+",
+    "value": 11
+  },
+  {
+    "name": "joins+",
     "value": 10
   },
   {
-    "name": "popular+",
+    "name": "face-",
     "value": 10
   },
   {
-    "name": "celebrates+",
+    "name": "china-",
+    "value": 10
+  },
+  {
+    "name": "success+",
+    "value": 10
+  },
+  {
+    "name": "ceo+",
+    "value": 10
+  },
+  {
+    "name": "years+",
+    "value": 10
+  },
+  {
+    "name": "changes-",
+    "value": 10
+  },
+  {
+    "name": "day+",
+    "value": 10
+  },
+  {
+    "name": "cash+",
+    "value": 10
+  },
+  {
+    "name": "opportunity+",
+    "value": 10
+  },
+  {
+    "name": "expands+",
+    "value": 10
+  },
+  {
+    "name": "rise+",
+    "value": 10
+  },
+  {
+    "name": "covering+",
     "value": 10
   },
   {
@@ -440,43 +368,35 @@
     "value": 10
   },
   {
-    "name": "reach+",
+    "name": "reports+",
     "value": 10
   },
   {
-    "name": "delay-",
+    "name": "great+",
     "value": 10
   },
   {
-    "name": "working+",
+    "name": "delays-",
     "value": 10
   },
   {
-    "name": "winners+",
+    "name": "bad-",
     "value": 10
   },
   {
-    "name": "much+",
+    "name": "recession-",
     "value": 10
   },
   {
-    "name": "granted+",
-    "value": 10
-  },
-  {
-    "name": "awards+",
-    "value": 10
-  },
-  {
-    "name": "energy+",
-    "value": 10
-  },
-  {
-    "name": "time+",
+    "name": "play+",
     "value": 9
   },
   {
-    "name": "debt-",
+    "name": "set+",
+    "value": 9
+  },
+  {
+    "name": "huge+",
     "value": 9
   },
   {
@@ -484,19 +404,59 @@
     "value": 9
   },
   {
-    "name": "google+",
+    "name": "health+",
     "value": 9
   },
   {
-    "name": "investors+",
+    "name": "fortnite-",
     "value": 9
   },
   {
-    "name": "warren+",
+    "name": "patent-",
     "value": 9
   },
   {
-    "name": "smartphone+",
+    "name": "warns-",
+    "value": 9
+  },
+  {
+    "name": "block-",
+    "value": 9
+  },
+  {
+    "name": "etfs+",
+    "value": 9
+  },
+  {
+    "name": "ipad+",
+    "value": 9
+  },
+  {
+    "name": "fund+",
+    "value": 9
+  },
+  {
+    "name": "review+",
+    "value": 9
+  },
+  {
+    "name": "case-",
+    "value": 9
+  },
+  {
+    "name": "retail+",
+    "value": 9
+  },
+  {
+    "name": "action-",
+    "value": 9
+  },
+  {
+    "name": "india+",
+    "value": 9
+  },
+  {
+    "name": "patents+",
     "value": 9
   },
   {
@@ -504,47 +464,47 @@
     "value": 9
   },
   {
-    "name": "introduces+",
+    "name": "sues-",
     "value": 9
-  },
-  {
-    "name": "video+",
-    "value": 9
-  },
-  {
-    "name": "care+",
-    "value": 9
-  },
-  {
-    "name": "ban-",
-    "value": 9
-  },
-  {
-    "name": "makes+",
-    "value": 9
-  },
-  {
-    "name": "investment+",
-    "value": 8
-  },
-  {
-    "name": "stop-",
-    "value": 8
-  },
-  {
-    "name": "funds+",
-    "value": 8
-  },
-  {
-    "name": "analyst+",
-    "value": 8
   },
   {
     "name": "employee-",
+    "value": 9
+  },
+  {
+    "name": "cut-",
+    "value": 9
+  },
+  {
+    "name": "hurt-",
+    "value": 9
+  },
+  {
+    "name": "record+",
     "value": 8
   },
   {
-    "name": "steve+",
+    "name": "dispute-",
+    "value": 8
+  },
+  {
+    "name": "sued-",
+    "value": 8
+  },
+  {
+    "name": "transparency+",
+    "value": 8
+  },
+  {
+    "name": "according+",
+    "value": 8
+  },
+  {
+    "name": "granted+",
+    "value": 8
+  },
+  {
+    "name": "card+",
     "value": 8
   },
   {
@@ -552,51 +512,91 @@
     "value": 8
   },
   {
+    "name": "interest+",
+    "value": 8
+  },
+  {
+    "name": "increase+",
+    "value": 8
+  },
+  {
+    "name": "hours+",
+    "value": 8
+  },
+  {
+    "name": "judge-",
+    "value": 8
+  },
+  {
+    "name": "run+",
+    "value": 8
+  },
+  {
+    "name": "wants+",
+    "value": 8
+  },
+  {
+    "name": "shortage-",
+    "value": 8
+  },
+  {
+    "name": "introduces+",
+    "value": 8
+  },
+  {
+    "name": "profitable+",
+    "value": 8
+  },
+  {
     "name": "powerful+",
     "value": 8
   },
   {
-    "name": "fears-",
+    "name": "berkshire+",
     "value": 8
   },
   {
-    "name": "buffett+",
-    "value": 8
+    "name": "year+",
+    "value": 7
   },
   {
-    "name": "major+",
-    "value": 8
+    "name": "increases+",
+    "value": 7
   },
   {
-    "name": "samsung+",
-    "value": 8
+    "name": "one+",
+    "value": 7
   },
   {
-    "name": "among+",
-    "value": 8
+    "name": "deal+",
+    "value": 7
   },
   {
-    "name": "changes-",
-    "value": 8
+    "name": "sell+",
+    "value": 7
   },
   {
-    "name": "mistake-",
-    "value": 8
+    "name": "work+",
+    "value": 7
   },
   {
-    "name": "day+",
-    "value": 8
+    "name": "highlights+",
+    "value": 7
   },
   {
-    "name": "block-",
-    "value": 8
+    "name": "offers+",
+    "value": 7
   },
   {
-    "name": "correction-",
-    "value": 8
+    "name": "battle-",
+    "value": 7
   },
   {
-    "name": "opportunity+",
-    "value": 8
+    "name": "bitcoin+",
+    "value": 7
+  },
+  {
+    "name": "helps+",
+    "value": 7
   }
 ]

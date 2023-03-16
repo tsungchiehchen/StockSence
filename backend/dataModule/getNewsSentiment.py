@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 
-from calculateStockChangebyDate import getStocksChange
+from dataModule.calculateStockChangebyDate import getStocksChange
 
 
 def getDFbyDate(start_date, end_date, symbol):

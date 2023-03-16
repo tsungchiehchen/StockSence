@@ -5,7 +5,7 @@
         <span style="word-wrap:break-word;" :style="source.color" >{{ source.name }}</span>
       </div>
       <div style="margin-top: 10px; text-align: center;">
-        <v-btn class="ma-2 white--text" color="#33A6B8" :href="source.desc">Open News
+        <v-btn color="#1E88A8" class="white--text ma-2" style="color:white" :href="source.desc">Open News
         <v-icon right dark>
           mdi-open-in-new
         </v-icon>

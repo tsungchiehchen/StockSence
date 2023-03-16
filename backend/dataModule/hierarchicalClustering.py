@@ -150,7 +150,7 @@ def perform_hierarchical_cluster(symbol):
     temp = distance_matrix[symbol]
     kept_idx = []
     for i in range(len(temp)):
-        if temp.iloc[i][0] < 8:
+        if temp.iloc[i][0] < 5:
             kept_idx.append(i)
     subset_distance_matrix = distance_matrix[symbol].iloc[kept_idx]
     subset_stock_list = list(subset_distance_matrix.index)

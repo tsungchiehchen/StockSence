@@ -12,8 +12,8 @@
             validate 
         />
         <div style="margin-top: 10px; text-align: center;">
-          <v-btn variant="outlined" color="rgb(66, 184, 131)" style="margin:0 auto 0px auto; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px;" @click="searchPopup=true" v-on:click="search">Search</v-btn>
-          <v-btn variant="outlined" color="rgb(229, 64, 80)" @click="predictionPopup=true" style="margin: 0 auto 0px 10px; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px;">Price Prediction</v-btn>
+          <v-btn variant="outlined" color="rgb(66, 184, 131)" style="margin:0 auto 0px auto; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px; color:white;" @click="searchPopup=true" v-on:click="search">Search</v-btn>
+          <v-btn variant="outlined" color="rgb(229, 64, 80)" @click="predictionPopup=true" style="margin: 0 auto 0px 10px; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px; color:white;">Price Prediction</v-btn>
         </div>
         <vs-popup class="search"  
           title="Calculating" 
