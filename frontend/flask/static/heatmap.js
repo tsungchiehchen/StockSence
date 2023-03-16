@@ -421,15 +421,15 @@
                 if(currentURL.includes("stockSymbol")){
                   var postData = currentURL.split('&stockSymbol')[0];
                   postData = postData.split('?')[1];
-                  var url = "http://127.0.0.1:8081/?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true" + "&rate=" + d.rate;
+                  var url = "http://127.0.0.1:3000/api?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true" + "&rate=" + d.rate;
                 }
                 else if (currentURL.includes("?")){
                   var postData = currentURL.split('?')[1];
-                  var url = "http://127.0.0.1:8081/?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true" + "&rate=" + d.rate;
+                  var url = "http://127.0.0.1:3000/api?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true" + "&rate=" + d.rate;
                 }
                 else{  // 在初始情況下直接進入 page 2
                   var newURL = currentURL.split(':3000')[0];
-                  var url = newURL + ":8081/?&startDate=" + defaultStartDate + "&endDate=" + defaultEndDate + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true" + "&rate=" + d.rate;
+                  var url = newURL + ":3000/api?&startDate=" + defaultStartDate + "&endDate=" + defaultEndDate + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true" + "&rate=" + d.rate + "&stockPriceOnly=false";
                 }
                 return url;
               }

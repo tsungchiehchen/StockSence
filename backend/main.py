@@ -10,7 +10,7 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/api', methods=['GET', 'POST'])
 def api():
-    stockPriceOnly = request.args.get('stockPriceOnly')
+    stockPriceOnly = "true"
     startDate = request.args.get('startDate')
     endDate = request.args.get('endDate')
     stockSymbol = request.args.get('stockSymbol')

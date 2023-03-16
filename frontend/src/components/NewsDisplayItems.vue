@@ -1,5 +1,5 @@
 <template>
-    <div class="item-inner">
+    <div class="item-inner" style="width:100%">
       <div class="head">
         <span># {{ source.key }}</span>
         <span style="word-wrap:break-word;" :style="source.color" >{{ source.name }}</span>

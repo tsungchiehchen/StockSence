@@ -15,32 +15,28 @@
           <v-btn variant="outlined" color="rgb(66, 184, 131)" style="margin:0 auto 0px auto; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px; color:white;" @click="searchPopup=true" v-on:click="search">Search</v-btn>
           <v-btn variant="outlined" color="rgb(229, 64, 80)" @click="predictionPopup=true" style="margin: 0 auto 0px 10px; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px; color:white;">Price Prediction</v-btn>
         </div>
-        <vs-popup class="search"  
-          title="Calculating" 
-          :active.sync="searchPopup"
-          :background-color = "searchPopupcolor"
-          :button-close-hidden="true" >
-          <div style="margin: 50px auto 50px auto; text-align: center !important;">
-            <v-progress-circular
-            :size="70"
-            color="rgb(66, 184, 131)"
-            indeterminate
-          ></v-progress-circular>
-          </div>
-        </vs-popup>
-        <vs-popup class="pricePrediction"  
-          title="Price Prediction" 
-          :active.sync="predictionPopup"
-          :background-color = "predictionPopupcolor" >
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <p>dqw</p>
-          <p>dqw</p>
-          <p>dqw</p>
-          <p>dqw</p>
-        </vs-popup>
-    </div>
+          <vs-popup class="search"  
+            title="Calculating" 
+            :active.sync="searchPopup"
+            :background-color = "searchPopupcolor"
+            :button-close-hidden="true" >
+            <div style="margin: 50px auto 50px auto; text-align: center !important;">
+              <v-progress-circular
+              :size="70"
+              color="rgb(66, 184, 131)"
+              indeterminate
+            ></v-progress-circular>
+            </div>
+          </vs-popup>
+          <vs-popup fullscreen class="pricePrediction"  
+            title="Price Prediction"
+            :active.sync="predictionPopup"
+            :background-color = "predictionPopupcolor" >
+            <div style="margin: auto; overflow-y: hidden;">
+              <apexchart type="line" height="450%" :options="chartOptions" :series="series"></apexchart>
+            </div> 
+          </vs-popup>
+        </div>
 </template>
   
 <script>
@@ -51,6 +47,10 @@ import Vue from 'vue'
 import Vuesax from 'vuesax'
 import 'vuesax/dist/vuesax.css'
 import 'material-icons/iconfont/material-icons.css';
+import VueApexCharts from 'vue-apexcharts'
+Vue.use(VueApexCharts)
+
+Vue.component('apexchart', VueApexCharts)
 
 Vue.use(Vuesax)
 //Vue.use(vsButton)
@@ -58,8 +58,10 @@ Vue.use(Vuesax)
 export default {
     components: {
     VueDatePicker,
+    
   },
-  data: () => ({
+  data(){
+    return{
     date: new Date(),
     minDate: new Date([2017, 1, 1]),
     maxDate: new Date([2023, 5, 1]),
@@ -68,8 +70,73 @@ export default {
     alrtPopup: false,
     close: true,
     searchPopupcolor: "rgba(0,0,0,.9)",
-    predictionPopupcolor: "rgba(0,0,0,.9)"
-  }),
+    predictionPopupcolor: "rgba(0,0,0,.9)",
+    options: {
+      chart: {
+        id: 'vuechart-example'
+      },
+      xaxis: {
+        categories: [
+         "Jan",
+         "Feb",
+         "Mar",
+         "Apr",
+         "May",
+         "Jun",
+         "Jul",
+         "Aug",
+         "Sep",
+         "Oct",
+         "Nov",
+         "Dec"
+        ]
+      }
+    },
+    series: [{
+      data: [55, 62, 89, 66, 98, 72, 101, 75, 94, 120, 117, 140]
+    }],
+    chartOptions: {
+      chart: {
+              type: 'line',
+              id: 'areachart-2'
+            },
+      xaxis: {
+        categories: [
+         "Jan",
+         "Feb",
+         "Mar",
+         "Apr",
+         "May",
+         "Jun",
+         "Jul",
+         "Aug",
+         "Sep",
+         "Oct",
+         "Nov",
+         "Dec"
+        ],
+      },
+      annotations: {
+        xaxis: [{
+          x: "Mar",
+          x2: "May",
+          fillColor: '#B3F7CA',
+          opacity: 0.4,
+          label: {
+            borderColor: '#B3F7CA',
+            style: {
+              fontSize: '15px',
+              color: '#fff',
+              background: '#00E396',
+            },
+            offsetY: -10,
+            text: 'X-axis range',
+          }
+        }],
+      },
+    }
+  }
+},
   mounted(){
     document.getElementById("dateRange").style = "text-align: center; font-weight: bold;";
     document.getElementsByClassName("vd-icon")[0].style = "margin-left: auto; margin-right: auto;"
@@ -108,3 +175,10 @@ export default {
   }
 }
 </script>
+
+<style>
+ .apexcharts-pie-label{
+    font-size:25px;
+    }  
+
+</style>
