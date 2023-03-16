@@ -150,28 +150,32 @@ def perform_hierarchical_cluster(symbol):
     temp = distance_matrix[symbol]
     kept_idx = []
     for i in range(len(temp)):
-        if temp.iloc[i][0] < 8:
+        if temp.iloc[i][0] < 5:
             kept_idx.append(i)
+
+    # # get new distance matrix on new subset of data
     subset_distance_matrix = distance_matrix[symbol].iloc[kept_idx]
     subset_stock_list = list(subset_distance_matrix.index)
 
-    # get new distance matrix on new subset of data
-    subset_normalized_data = normalized_data.iloc[kept_idx]
-    distance_matrix = pd.DataFrame(
-        squareform(pdist(subset_normalized_data)),
-        columns=[subset_stock_list],
-        index=subset_stock_list
-    )
+    if len(kept_idx) < 3:
+        with open('./dataset/stockRecommendation.json', 'w') as f:
+            f.write("{}")
+    else:
+        subset_normalized_data = normalized_data.iloc[kept_idx]
+        distance_matrix = pd.DataFrame(
+            squareform(pdist(subset_normalized_data)),
+            columns=[subset_stock_list],
+            index=subset_stock_list
+        )
 
-    # convert to tree structure acceptable datatype
-    ids = subset_stock_list
-    dm = DistanceMatrix(distance_matrix, ids)
-    newick_str = nj(dm, result_constructor=str)
-    t = Tree(newick_str)
+        # convert to tree structure acceptable datatype
+        ids = subset_stock_list
+        dm = DistanceMatrix(distance_matrix, ids)
+        newick_str = nj(dm, result_constructor=str)
+        t = Tree(newick_str)
 
-    # this part still has issue
-    with open('./dataset/stockRecommendation.json', 'w') as f:
-        f.write(str(get_json(t)).replace("'", '"'))
+        with open('./dataset/stockRecommendation.json', 'w') as f:
+            f.write(str(get_json(t)).replace("'", '"'))
 
 
 metrics = [
@@ -199,5 +203,6 @@ metrics = [
 # get_all_stocks_fundamental_data(metrics)
 
 # testing
+# symbol = 'TSLA'
 # symbol = 'AAPL'
 # perform_hierarchical_cluster(symbol)
