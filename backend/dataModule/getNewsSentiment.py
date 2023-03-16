@@ -1,7 +1,11 @@
 import pandas as pd
 import json
 
+<<<<<<< Updated upstream
 from dataModule import calculateStockChangebyDate
+=======
+from dataModule.calculateStockChangebyDate import getStocksChange
+>>>>>>> Stashed changes
 
 
 def getDFbyDate(start_date, end_date, symbol):
