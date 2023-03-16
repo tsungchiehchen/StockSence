@@ -25,29 +25,18 @@ def getDFbyDate(start_date, end_date, symbol):
 
 
 def writetoJSON(results):
-    json_list = [[{"title": d["title"], "desc": d["link"]}
+    json_list = [[{"title": d["title"], "datetime": d["datetime"], "desc": d["link"]}
                   for d in results[k]] for k in results.keys()]
 
     # write to json
     with open('./dataModule/NewsSentimentList.json', 'w') as f:
-        json.dump(json_list, f, indent=4)
+        json.dump(json_list, f, indent=4, ensure_ascii=False)
 
 
 def get_news_sentiment(start_date, end_date, symbol):
     df = getDFbyDate(start_date, end_date, symbol)
     compound_score_threshold = 0.5 if len(df) > 150 else 0.3
     change = getStocksChange(symbol, start_date, end_date)
-
-    # modified df: add datetime to title
-    # Combine 'title' and 'datetime' columns into a new column called 'temp_title'
-    df['temp_title'] = df.apply(
-        lambda row: row['title'] + ' (' + row['datetime'] + ')', axis=1)
-
-    # Drop the 'datetime' and 'title' columns
-    df = df.drop(['datetime', 'title'], axis=1)
-
-    # Rename the 'temp_title' column to 'title'
-    df = df.rename(columns={'temp_title': 'title'})
 
     # split df to Positive, Negative, and Neutral
     pos_df = df[df['Compound'] > compound_score_threshold]
