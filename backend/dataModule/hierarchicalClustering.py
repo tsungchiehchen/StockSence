@@ -115,7 +115,7 @@ def get_json(node):
     return json
 
 
-def perform_heirarchical_cluster(symbol):
+def perform_hierarchical_cluster(symbol):
     data = pd.read_csv('./dataModule/financial_indicators.csv')
     stock_list = data['Symbol'].to_list()
     data.drop('Symbol', axis='columns', inplace=True)
@@ -200,4 +200,4 @@ metrics = [
 
 # testing
 # symbol = 'AAPL'
-# perform_heirarchical_cluster(symbol)
+# perform_hierarchical_cluster(symbol)
