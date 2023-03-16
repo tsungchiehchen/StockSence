@@ -1,5 +1,6 @@
 <template>
     <div id="priceDisplay">
+        
         <trading-vue :data="this.$data" 
                  :titleTxt="this.titleTxt" 
                  :toolbar="false" 
@@ -11,10 +12,10 @@
                  ref="tradingVue"
                  id="priceDisplayVue">
         </trading-vue>
-        <span class="fixTimeRangeCheckBox" id="fixTimeRangeCheckBox">
+        <!-- <span class="fixTimeRangeCheckBox" id="fixTimeRangeCheckBox">
             <input type="checkbox" v-model="fixTimeRange">
             <label>&nbsp;Fix time range</label>
-        </span>
+        </span> -->
     </div>
 </template>
 
@@ -48,15 +49,17 @@ export default {
         var arrayData = [];
         
         for (var od in slicedObjectData) {
-            if(this.fixTimeRange == "true"){
-                if(slicedObjectData[od][0] >= startTimestamp && slicedObjectData[od][0] <= endTimestamp){
-                    arrayData.push(slicedObjectData[od]);
-                }
-            }
-            else{
+            // if(this.fixTimeRange == "true"){
+            //     if(slicedObjectData[od][0] >= startTimestamp && slicedObjectData[od][0] <= endTimestamp){
+            //         arrayData.push(slicedObjectData[od]);
+            //     }
+            // }
+            // else{
+            //     arrayData.push(slicedObjectData[od]);
+            // }
+            if (slicedObjectData[od][0] >= startTimestamp && slicedObjectData[od][0] <= endTimestamp) {
                 arrayData.push(slicedObjectData[od]);
             }
-            
         }
 
         this.ohlcv = arrayData;
@@ -64,8 +67,8 @@ export default {
         // 讀取 company name
         this.titleTxt = CompanyNames[stockSymbol] + " (" +  stockSymbol + ")";
 
-        var fixTimeRangeCheckBox = document.getElementById("fixTimeRangeCheckBox");
-        fixTimeRangeCheckBox.style = "left: " + (this.width-190) + "px";
+        // var fixTimeRangeCheckBox = document.getElementById("fixTimeRangeCheckBox");
+        // fixTimeRangeCheckBox.style = "left: " + (this.width-190) + "px";
     },
     computed: {
         colors() {
@@ -80,35 +83,37 @@ export default {
         onResize() {
             this.width = window.innerWidth*0.78
             this.height = window.innerHeight*0.65
-            var fixTimeRangeCheckBox = document.getElementById("fixTimeRangeCheckBox");
-            fixTimeRangeCheckBox.style = "left: " + (this.width-190) + "px";
+            // var fixTimeRangeCheckBox = document.getElementById("fixTimeRangeCheckBox");
+            // fixTimeRangeCheckBox.style = "left: " + (this.width-190) + "px";
         }
     },
     watch: {
-        fixTimeRange: function(val) {  // 當改變 fix time range check box 的時候
-            let currentURL = window.location.href;
-            if(currentURL.includes("fixTimeRange")){  // true -> false
-                var postData = currentURL.split('&fixTimeRange=')[0];
-                window.location.href = postData;
-            }
-            else{  // false -> true
-                postData = currentURL.split('#/')[0];
-                window.location.href = postData + "&fixTimeRange=true";
-            }
-        }
+        // fixTimeRange: function(val) {  // 當改變 fix time range check box 的時候
+        //     let currentURL = window.location.href;
+        //     if(currentURL.includes("fixTimeRange")){  // true -> false
+        //         var postData = currentURL.split('&fixTimeRange=')[0];
+        //         window.location.href = postData;
+        //     }
+        //     else{  // false -> true
+        //         postData = currentURL.split('#/')[0];
+        //         window.location.href = postData + "&fixTimeRange=true";
+        //     }
+        // }
     },
     mounted() {
         // 加入 back button
         const div = document.createElement('span');
         div.className = 'pageBack';
+        div.style = "margin-right: 5px;"
         let currentURL = window.location.href;
         var postData = currentURL.split('?')[1];
-        div.innerHTML = `<a href="http://127.0.0.1:3000/?` + postData + `"+ style="z-index:10000; pointer-events: all; font-size: 20px; color: rgb(0, 0, 0); text-decoration: none;">`+ 
-            `◀ Back&nbsp</a>`;
+        div.innerHTML = `<a href="http://127.0.0.1:3000/?` + postData + `"+ style="z-index:10000; pointer-events: all; font-size: 20px; color: rgb(0, 0, 0); text-decoration: none; font-weight: 300;">`+ 
+            `◀ Back</a>`;
         document.querySelector(".trading-vue-ohlcv").prepend(div);
+        //document.getElementsByClassName('pageBack').style = "margin-left: 5px;"
         
         // 設定 title style
-        document.querySelector(".t-vue-title").setAttribute("style", "font-weight: bold; color: rgb(66, 184, 131);"); 
+        document.querySelector(".t-vue-title").setAttribute("style", "font-weight: 800; color: rgb(66, 184, 131);"); 
 
         window.addEventListener('resize', this.onResize)
         window.dc = this.chart
