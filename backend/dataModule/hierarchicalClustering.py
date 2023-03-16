@@ -170,7 +170,7 @@ def perform_hierarchical_cluster(symbol):
     t = Tree(newick_str)
 
     # this part still has issue
-    with open('./dataModule/stockRecommendation.json', 'w') as f:
+    with open('./dataset/stockRecommendation.json', 'w') as f:
         f.write(str(get_json(t)).replace("'", '"'))
 
 

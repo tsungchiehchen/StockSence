@@ -29,7 +29,7 @@ def writetoJSON(results):
                   for d in results[k]] for k in results.keys()]
 
     # write to json
-    with open('./dataModule/NewsSentimentList.json', 'w') as f:
+    with open('./dataset/NewsSentimentList.json', 'w') as f:
         json.dump(json_list, f, indent=4, ensure_ascii=False)
 
 
