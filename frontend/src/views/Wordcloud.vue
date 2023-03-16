@@ -89,12 +89,32 @@ export default {
     return {
       svgWidth: 0,
       svgHeight: 0,
-      data: jsonData,
+      data: [],
+      positiveNegativeDict: {},
       color: ['#42b883', '#e54050']  // [Positive color, Negitive color]
     }
   },
+  created(){
+    // 將 "+", "-" 去除、判斷 negative positive
+    var processedData = []
+    for (var i = 0; i < jsonData.length; i++) {
+      if (jsonData[i].name.includes("+")){
+        var processedWord = jsonData[i].name.split("+")[0]
+        this.positiveNegativeDict[processedWord] = "+"
+      }
+      else{
+        processedWord = jsonData[i].name.split("-")[0]
+        this.positiveNegativeDict[processedWord] = "-"
+      }
+      let pair = {
+        "name": processedWord,
+        "value": jsonData[i].value
+      }
+      processedData.push(pair)
+    }
+    this.data = processedData
+  },
   computed: {
-    
     size() {
       const { svgWidth, svgHeight } = this
       const { margin } = this
@@ -107,7 +127,7 @@ export default {
       const words = data.sort(function (a, b) {
         return parseFloat(b[valueKey]) - parseFloat(a[valueKey])
       })
-      return words.slice(0, 150)  // 只取前 150 個
+      return words
     }
   },
   mounted() {
@@ -199,7 +219,7 @@ export default {
       layout.start()
     },
     draw(data) {
-      const { layout, chart, color, nameKey, valueKey, showTooltip, wordClick } = this
+      const { layout, chart, color, nameKey, valueKey, showTooltip, wordClick, positiveNegativeDict } = this
       const fill = this.getColorScale(color)
       const centeredChart = chart.append('g')
         .attr('transform', 'translate(' + layout.size()[0] / 2 + ',' + layout.size()[1] / 2 + ')')
@@ -214,13 +234,14 @@ export default {
         .style('font-size', d => d.size + 'px')
         .style('font-family', d => d.font)
         .style('fill', function(d){ // 根據出現頻率自訂文字顏色
-                if (d[valueKey] >= 0){
-                  return color[0]
-                }
-                else{
-                  return color[1]
-                }
-              })
+          //console.log(d[nameKey])
+          if (positiveNegativeDict[d[nameKey]] == "+"){
+            return color[0]
+          }
+          else{
+            return color[1]
+          }
+        })
         .attr('class', 'text')
         .attr('text-anchor', 'middle')
       text.transition()
@@ -233,7 +254,7 @@ export default {
             .duration(200)
             .style("display", "block")
             .style("opacity", .8)
-          tooltip.html("<p style=\"font-weight: 1000; font-size:15px; line-height: 1.7em;\">" + d[nameKey] + "</p>" + valueKey + ': ' + Math.abs(d[valueKey]))
+          tooltip.html("<p style=\"font-weight: 1000; font-size:15px; line-height: 1.7em;\">" + d[nameKey] + "</p>" + valueKey + ': ' + d[valueKey])
         })
           .on("mousemove", function (d) {
             tooltip

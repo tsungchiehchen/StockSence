@@ -42,6 +42,7 @@ export default {
         var stockSymbol = url.searchParams.get('stockSymbol');
         var startTimestamp = url.searchParams.get('startTimestamp')
         var endTimestamp = url.searchParams.get('endTimestamp')
+        var rate = url.searchParams.get('rate')
 
         var objectData = await import("../../../backend/dataset/price display/" + String(stockSymbol) + ".json");
         var slicedObjectData = Object.fromEntries(Object.entries(objectData).slice(0, -2))
@@ -64,11 +65,8 @@ export default {
 
         this.ohlcv = arrayData;
 
-        // 讀取 company name
-        this.titleTxt = CompanyNames[stockSymbol] + " (" +  stockSymbol + ")";
-
-        // var fixTimeRangeCheckBox = document.getElementById("fixTimeRangeCheckBox");
-        // fixTimeRangeCheckBox.style = "left: " + (this.width-190) + "px";
+        // 讀取 company name 和 rate 加入到 title
+        this.titleTxt = CompanyNames[stockSymbol] + " (" +  rate + "%)";
     },
     computed: {
         colors() {

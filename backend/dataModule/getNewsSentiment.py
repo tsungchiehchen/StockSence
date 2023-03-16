@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 
-from calculateStockChangebyDate import getStocksChange
+from dataModule import calculateStockChangebyDate
 
 
 def getDFbyDate(start_date, end_date, symbol):
@@ -29,14 +29,14 @@ def writetoJSON(results):
                   for d in results[k]] for k in results.keys()]
 
     # write to json
-    with open('./dataModule/NewsSentimentList.json', 'w') as f:
+    with open('./dataset/NewsSentimentList.json', 'w') as f:
         json.dump(json_list, f, indent=4)
 
 
 def get_news_sentiment(start_date, end_date, symbol):
     df = getDFbyDate(start_date, end_date, symbol)
 
-    change = getStocksChange(symbol, start_date, end_date)
+    change = calculateStockChangebyDate.getStocksChange(symbol, start_date, end_date)
 
     # split df to Positive, Negative, and Neutral
     pos_df = df[df['Compound'] > 0]
