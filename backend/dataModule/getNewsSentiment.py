@@ -87,7 +87,7 @@ def get_news_sentiment(start_date, end_date, symbol):
 
 
 # testing
-start_date = "2020-01-01"
-end_date = "2022-01-01"
-symbol = 'AAPL'
-get_news_sentiment(start_date, end_date, symbol)
+# start_date = "2020-01-01"
+# end_date = "2022-01-01"
+# symbol = 'AAPL'
+# get_news_sentiment(start_date, end_date, symbol)
