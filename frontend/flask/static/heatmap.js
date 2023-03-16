@@ -1,4 +1,7 @@
 (function () {
+    var defaultStartDate = "2022-12-01"
+    var defaultEndDate = "2023-01-01"
+
     var margin = { top: 50, right: 0, bottom: 0, left: 0 },
       width = window.innerWidth,
       height = window.innerHeight - 50,
@@ -177,7 +180,7 @@
       var filePath = "stockPriceDifference/" + currentURL.searchParams.get('startDate') + "~" + currentURL.searchParams.get('endDate') + ".json";
     } 
     else{
-      var filePath = "stockPriceDifference/2023-01-31~2023-02-01.json";
+      var filePath = "stockPriceDifference/" + defaultStartDate + "~" + defaultEndDate + ".json";
     }
 
     d3.queue()
@@ -304,7 +307,7 @@
               format: "yyyy-mm-dd",
               orientation: "bottom auto",
               startDate: "2017-01-01",
-              endDate: "2023-01-01",
+              endDate: "2023-01-31",
               multidate: false,
               daysOfWeekDisabled: "0,6",
               autoclose: true,
@@ -329,14 +332,12 @@
               document.getElementById("dropDownMenu").value = "Select macroeconomic type";
               document.getElementById("dropDownMenu").disabled = true;
               document.getElementById("stockPriceOnlyCheckBox").checked = true;
-              document.getElementById("typeChange").style.display = 'none';
               document.getElementById("dropDownMenu").style.display = 'none';
               setDatePicker(true);
             }
             else{
               document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
               document.getElementById("dropDownMenu").value = "Select macroeconomic type";
-              document.getElementById("typeChange").style.display = 'block';
               document.getElementById("dropDownMenu").style.display = 'block';
               changeMacroDisplayValue(url.searchParams.get('type'));
               document.getElementById("stockPriceOnlyCheckBox").checked = false;
@@ -346,7 +347,16 @@
             //console.log(url.searchParams.get('startDate'));
             document.getElementById("startDate").value = url.searchParams.get('startDate');
             document.getElementById("endDate").value = url.searchParams.get('endDate');
-          };
+            document.getElementById("typeChange").style.display = 'none';
+          }
+          else{  // 第一次載入的情況
+            document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
+            document.getElementById("dropDownMenu").value = "Select macroeconomic type";
+            document.getElementById("stockPriceOnlyCheckBox").checked = false;
+            document.getElementById("startDate").value = defaultStartDate;
+            document.getElementById("endDate").value = defaultEndDate;
+            document.getElementById("typeChange").style.display = 'none';
+          }
 
 
           if (d._children) {
@@ -411,16 +421,15 @@
                 if(currentURL.includes("stockSymbol")){
                   var postData = currentURL.split('&stockSymbol')[0];
                   postData = postData.split('?')[1];
-                  var url = "http://127.0.0.1:8081/?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true";
+                  var url = "http://127.0.0.1:8081/?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true" + "&rate=" + d.rate;
                 }
                 else if (currentURL.includes("?")){
                   var postData = currentURL.split('?')[1];
-                  var url = "http://127.0.0.1:8081/?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true";
+                  var url = "http://127.0.0.1:8081/?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true" + "&rate=" + d.rate;
                 }
-                else{
+                else{  // 在初始情況下直接進入 page 2
                   var newURL = currentURL.split(':3000')[0];
-                  console.log(newURL);
-                  var url = newURL + ":8081/?&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true";
+                  var url = newURL + ":8081/?&startDate=" + defaultStartDate + "&endDate=" + defaultEndDate + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true" + "&rate=" + d.rate;
                 }
                 return url;
               }
@@ -594,7 +603,7 @@ function setDatePicker(stockPriceOnly) {
       format: "yyyy-mm-dd",
       orientation: "bottom auto",
       startDate: "2017-01-01",
-      endDate: "2023-01-01",
+      endDate: "2023-01-31",
       multidate: false,
       daysOfWeekDisabled: "0,6",
       autoclose: true,
@@ -609,7 +618,7 @@ function setDatePicker(stockPriceOnly) {
       format: "yyyy-mm-dd",
       orientation: "bottom auto",
       startDate: "2017-01-01",
-      endDate: "2023-01-01",
+      endDate: "2023-01-31",
       multidate: false,
       daysOfWeekDisabled: "0,6",
       autoclose: true,
@@ -637,13 +646,14 @@ function checkBoxChange(checkbox){
     setDatePicker(false);
     document.getElementById("startDate").value = "";
     document.getElementById("endDate").value = "";
-    document.getElementById("typeChange").style.display = 'block';
+    document.getElementById("typeChange").style.display = 'none';
     document.getElementById("dropDownMenu").style.display = 'block';
   }
 }
   
 
 function changeMacroDisplayValue(type){
+  document.getElementById("typeChange").style.display = 'block';
   if(type == "CPI"){
     document.getElementById("typeValue").value = macroChange[0];
   }

@@ -5,357 +5,357 @@
             "name": "Technology",
             "children": [
                 {
-                    "rate": 8.43,
+                    "rate": -14.83,
                     "name": "AAPL",
                     "value": 2644.811217
                 },
                 {
-                    "rate": -5.03,
+                    "rate": -21.25,
                     "name": "ACIW",
                     "value": 2.920603717
                 },
                 {
-                    "rate": 30.53,
+                    "rate": -3.24,
                     "name": "ACLS",
                     "value": 3.99625575
                 },
                 {
-                    "rate": 3.21,
+                    "rate": -21.98,
                     "name": "ADBE",
                     "value": 163.36593
                 },
                 {
-                    "rate": 5.43,
+                    "rate": -0.36,
                     "name": "ADI",
                     "value": 97.482835082
                 },
                 {
-                    "rate": 15.03,
+                    "rate": -16.97,
                     "name": "ADSK",
                     "value": 47.46453333
                 },
                 {
-                    "rate": 66.19,
+                    "rate": -63.96,
                     "name": "AFRM",
                     "value": 3.816052192
                 },
                 {
-                    "rate": 52.0,
+                    "rate": 6.12,
                     "name": "AGYS",
                     "value": 2.08878443
                 },
                 {
-                    "rate": 8.99,
+                    "rate": -11.64,
                     "name": "ALGM",
                     "value": 8.522118104
                 },
                 {
-                    "rate": 18.24,
+                    "rate": -13.77,
                     "name": "ALRM",
                     "value": 2.648268321
                 },
                 {
-                    "rate": 6.14,
+                    "rate": -13.04,
                     "name": "ALTR",
                     "value": 4.452712744
                 },
                 {
-                    "rate": -5.32,
+                    "rate": -17.42,
                     "name": "AMAT",
                     "value": 97.324948909
                 },
                 {
-                    "rate": 20.21,
+                    "rate": -40.87,
                     "name": "AMBA",
                     "value": 3.609038896
                 },
                 {
-                    "rate": 4.51,
+                    "rate": -13.32,
                     "name": "AMD",
                     "value": 127.748150538
                 },
                 {
-                    "rate": 11.19,
+                    "rate": -7.56,
                     "name": "AMKR",
                     "value": 6.494278078
                 },
                 {
-                    "rate": 3.92,
+                    "rate": -24.44,
                     "name": "ANSS",
                     "value": 23.586508749
                 },
                 {
-                    "rate": -8.93,
+                    "rate": -43.4,
                     "name": "APP",
                     "value": 5.604366508
                 },
                 {
-                    "rate": 24.08,
+                    "rate": -12.07,
                     "name": "APPF",
                     "value": 4.655297308
                 },
                 {
-                    "rate": -18.7,
+                    "rate": -19.77,
                     "name": "APPN",
                     "value": 3.33428765
                 },
                 {
-                    "rate": 209.83,
+                    "rate": 0.37,
                     "name": "ARRY",
                     "value": 3.057967305
                 },
                 {
-                    "rate": 0.4,
+                    "rate": -17.29,
                     "name": "ASML",
                     "value": 262.817903676
                 },
                 {
-                    "rate": -37.73,
+                    "rate": -39.6,
                     "name": "AUR",
                     "value": 2.0988
                 },
                 {
-                    "rate": 17.87,
+                    "rate": -20.14,
                     "name": "AVDX",
                     "value": 2.014868223
                 },
                 {
-                    "rate": -8.69,
+                    "rate": -3.22,
                     "name": "AVGO",
                     "value": 248.888806123
                 },
                 {
-                    "rate": -5.01,
+                    "rate": 17.63,
                     "name": "AVT",
                     "value": 4.242749396
                 },
                 {
-                    "rate": 36.97,
+                    "rate": 32.83,
                     "name": "AZPN",
                     "value": 13.857813644
                 },
                 {
-                    "rate": 28.72,
+                    "rate": -12.28,
                     "name": "BIDU",
                     "value": 48.967963197
                 },
                 {
-                    "rate": 27.4,
+                    "rate": -37.2,
                     "name": "BILI",
                     "value": 8.904349739
                 },
                 {
-                    "rate": 31.54,
+                    "rate": -20.71,
                     "name": "BL",
                     "value": 4.287197332
                 },
                 {
-                    "rate": 12.22,
+                    "rate": -5.94,
                     "name": "BLKB",
                     "value": 3.110363189
                 },
                 {
-                    "rate": 41.55,
+                    "rate": -5.94,
                     "name": "BMBL",
                     "value": 2.948853547
                 },
                 {
-                    "rate": 46.28,
+                    "rate": -36.81,
                     "name": "BRZE",
                     "value": 2.979340357
                 },
                 {
-                    "rate": 23.26,
+                    "rate": -14.78,
                     "name": "BSY",
                     "value": 11.792378035
                 },
                 {
-                    "rate": 31.24,
+                    "rate": -35.82,
                     "name": "BZ",
                     "value": 9.832025586
                 },
                 {
-                    "rate": 23.12,
+                    "rate": -11.88,
                     "name": "CCCS",
                     "value": 5.685716928
                 },
                 {
-                    "rate": 29.62,
+                    "rate": 1.06,
                     "name": "CDNS",
                     "value": 53.0704536
                 },
                 {
-                    "rate": -6.6,
+                    "rate": -27.68,
                     "name": "CERT",
                     "value": 3.070511732
                 },
                 {
-                    "rate": 46.4,
+                    "rate": -69.63,
                     "name": "CFLT",
                     "value": 7.263148684
                 },
                 {
-                    "rate": 1.49,
+                    "rate": 4.36,
                     "name": "CHKP",
                     "value": 15.671398922
                 },
                 {
-                    "rate": -10.75,
+                    "rate": -22.83,
                     "name": "CNXC",
                     "value": 7.43181465
                 },
                 {
-                    "rate": -2.07,
+                    "rate": -65.29,
                     "name": "COIN",
                     "value": 17.07588
                 },
                 {
-                    "rate": -10.38,
+                    "rate": -48.85,
                     "name": "COUP",
                     "value": 6.043304
                 },
                 {
-                    "rate": 8.2,
+                    "rate": -2.09,
                     "name": "CRUS",
                     "value": 5.720774292
                 },
                 {
-                    "rate": 28.14,
+                    "rate": -11.36,
                     "name": "CRWD",
                     "value": 26.77949165
                 },
                 {
-                    "rate": -11.36,
+                    "rate": -14.16,
                     "name": "CTSH",
                     "value": 33.32932
                 },
                 {
-                    "rate": -3.86,
+                    "rate": -7.64,
                     "name": "CVLT",
                     "value": 2.777007501
                 },
                 {
-                    "rate": 26.73,
+                    "rate": -26.84,
                     "name": "CVT",
                     "value": 3.849699057
                 },
                 {
-                    "rate": 28.73,
+                    "rate": -1.73,
                     "name": "CYBR",
                     "value": 5.949877157
                 },
                 {
-                    "rate": 9.49,
+                    "rate": -16.49,
                     "name": "DBX",
                     "value": 7.697265941
                 },
                 {
-                    "rate": -22.7,
+                    "rate": -29.58,
                     "name": "DCT",
                     "value": 2.508929386
                 },
                 {
-                    "rate": 7.11,
+                    "rate": -34.02,
                     "name": "DDOG",
                     "value": 25.401611442
                 },
                 {
-                    "rate": 5.25,
+                    "rate": -17.79,
                     "name": "DIOD",
                     "value": 4.275753842
                 },
                 {
-                    "rate": -13.29,
+                    "rate": -35.59,
                     "name": "DOCU",
                     "value": 12.963250322
                 },
                 {
-                    "rate": 12.57,
+                    "rate": 12.74,
                     "name": "DOX",
                     "value": 11.43656592
                 },
                 {
-                    "rate": 38.15,
+                    "rate": -16.35,
                     "name": "DUOL",
                     "value": 3.669103778
                 },
                 {
-                    "rate": -14.73,
+                    "rate": -12.7,
                     "name": "EEFT",
                     "value": 5.464253368
                 },
                 {
-                    "rate": 93.27,
+                    "rate": 27.91,
                     "name": "ENPH",
                     "value": 27.980605716
                 },
                 {
-                    "rate": -4.76,
+                    "rate": -14.49,
                     "name": "ENTG",
                     "value": 12.73947624
                 },
                 {
-                    "rate": -4.7,
+                    "rate": -34.84,
                     "name": "ERIC",
                     "value": 19.180746397
                 },
                 {
-                    "rate": 33.51,
+                    "rate": 18.16,
                     "name": "EXLS",
                     "value": 5.638508114
                 },
                 {
-                    "rate": -3.41,
+                    "rate": -21.4,
                     "name": "FFIV",
                     "value": 8.830519897
                 },
                 {
-                    "rate": 8.33,
+                    "rate": -22.21,
                     "name": "FIVN",
                     "value": 5.670748839
                 },
                 {
-                    "rate": 9.33,
+                    "rate": 2.87,
                     "name": "FLEX",
                     "value": 10.70415251
                 },
                 {
-                    "rate": 21.81,
+                    "rate": -33.72,
                     "name": "FLYW",
                     "value": 2.61816787
                 },
                 {
-                    "rate": -13.59,
+                    "rate": -5.55,
                     "name": "FORM",
                     "value": 2.431682502
                 },
                 {
-                    "rate": 26.05,
+                    "rate": -30.51,
                     "name": "FROG",
                     "value": 2.326958859
                 },
                 {
-                    "rate": -2.21,
+                    "rate": -32.0,
                     "name": "FRSH",
                     "value": 4.537569556
                 },
                 {
-                    "rate": 75.26,
+                    "rate": -8.79,
                     "name": "FSLR",
                     "value": 17.513169611
                 },
                 {
-                    "rate": -4.2,
+                    "rate": -4.34,
                     "name": "FTNT",
                     "value": 47.810497075
                 },
                 {
-                    "rate": -22.46,
+                    "rate": -71.61,
                     "name": "GDRX",
                     "value": 2.095843439
                 },
                 {
-                    "rate": 1.36,
+                    "rate": -41.17,
                     "name": "GDS",
                     "value": 3.997825501
                 },
@@ -365,572 +365,572 @@
                     "value": 33.271130993
                 },
                 {
-                    "rate": -5.67,
+                    "rate": -6.31,
                     "name": "GEN",
                     "value": 13.447284049
                 },
                 {
-                    "rate": 14.55,
+                    "rate": 16.03,
                     "name": "GFS",
                     "value": 36.607132633
                 },
                 {
-                    "rate": 93.2,
+                    "rate": -51.8,
                     "name": "GLBE",
                     "value": 4.122971852
                 },
                 {
-                    "rate": 0.1,
+                    "rate": -17.22,
                     "name": "GOOG",
                     "value": 1211.41413
                 },
                 {
-                    "rate": -0.62,
+                    "rate": -17.26,
                     "name": "GOOGL",
                     "value": 1208.34045
                 },
                 {
-                    "rate": 72.91,
+                    "rate": -43.27,
                     "name": "GTLB",
                     "value": 6.803865
                 },
                 {
-                    "rate": 20.96,
+                    "rate": -50.37,
                     "name": "HCP",
                     "value": 5.768744181
                 },
                 {
-                    "rate": 0.54,
+                    "rate": -36.04,
                     "name": "HOOD",
                     "value": 9.23997876
                 },
                 {
-                    "rate": -31.42,
+                    "rate": -1.28,
                     "name": "INTA",
                     "value": 2.484407802
                 },
                 {
-                    "rate": -23.06,
+                    "rate": -9.89,
                     "name": "INTC",
                     "value": 114.22257
                 },
                 {
-                    "rate": 25.48,
+                    "rate": -27.18,
                     "name": "INTU",
                     "value": 113.600593033
                 },
                 {
-                    "rate": -1.92,
+                    "rate": -32.57,
                     "name": "IPGP",
                     "value": 6.314295171
                 },
                 {
-                    "rate": 20.86,
+                    "rate": -11.26,
                     "name": "IQ",
                     "value": 6.576914757
                 },
                 {
-                    "rate": 6.79,
+                    "rate": -25.52,
                     "name": "JAMF",
                     "value": 2.513931749
                 },
                 {
-                    "rate": 12.14,
+                    "rate": 10.33,
                     "name": "JKHY",
                     "value": 12.335432863
                 },
                 {
-                    "rate": 12.21,
+                    "rate": -8.0,
                     "name": "KLAC",
                     "value": 53.719070051
                 },
                 {
-                    "rate": -11.43,
+                    "rate": -2.61,
                     "name": "KLIC",
                     "value": 3.035069042
                 },
                 {
-                    "rate": -4.61,
+                    "rate": -0.71,
                     "name": "LFUS",
                     "value": 6.672866859
                 },
                 {
-                    "rate": -81.49,
+                    "rate": -87.54,
                     "name": "LIFW",
                     "value": 3.802621651
                 },
                 {
-                    "rate": 1.98,
+                    "rate": -13.53,
                     "name": "LITE",
                     "value": 3.98396
                 },
                 {
-                    "rate": -10.45,
+                    "rate": -25.82,
                     "name": "LOGI",
                     "value": 9.270380898
                 },
                 {
-                    "rate": 0.85,
+                    "rate": -14.2,
                     "name": "LRCX",
                     "value": 66.882481353
                 },
                 {
-                    "rate": 28.24,
+                    "rate": -8.85,
                     "name": "LSCC",
                     "value": 11.937875308
                 },
                 {
-                    "rate": -19.0,
+                    "rate": -56.72,
                     "name": "LYFT",
                     "value": 4.175348265
                 },
                 {
-                    "rate": 23.64,
+                    "rate": -9.29,
                     "name": "MANH",
                     "value": 9.081289546
                 },
                 {
-                    "rate": 0.4,
+                    "rate": -9.11,
                     "name": "MCHP",
                     "value": 45.614964343
                 },
                 {
-                    "rate": 35.18,
+                    "rate": -41.19,
                     "name": "MDB",
                     "value": 14.766874029
                 },
                 {
-                    "rate": -17.4,
+                    "rate": -40.87,
                     "name": "META",
                     "value": 448.215525058
                 },
                 {
-                    "rate": 44.44,
+                    "rate": 1.28,
                     "name": "MMYT",
                     "value": 2.799234384
                 },
                 {
-                    "rate": 9.82,
+                    "rate": -48.76,
                     "name": "MNDY",
                     "value": 6.903011355
                 },
                 {
-                    "rate": 20.43,
+                    "rate": 10.31,
                     "name": "MPWR",
                     "value": 23.65195363
                 },
                 {
-                    "rate": 10.1,
+                    "rate": -16.09,
                     "name": "MQ",
                     "value": 3.237909533
                 },
                 {
-                    "rate": -5.24,
+                    "rate": -19.86,
                     "name": "MRVL",
                     "value": 37.660248
                 },
                 {
-                    "rate": 2.33,
+                    "rate": -11.77,
                     "name": "MSFT",
                     "value": 1920.947939726
                 },
                 {
-                    "rate": 21.68,
+                    "rate": -36.16,
                     "name": "MSTR",
                     "value": 3.395990801
                 },
                 {
-                    "rate": -17.82,
+                    "rate": -29.31,
                     "name": "MTCH",
                     "value": 12.186125405
                 },
                 {
-                    "rate": 18.42,
+                    "rate": -11.23,
                     "name": "MTSI",
                     "value": 4.806438426
                 },
                 {
-                    "rate": -15.38,
+                    "rate": -9.7,
                     "name": "MU",
                     "value": 64.390328334
                 },
                 {
-                    "rate": -8.51,
+                    "rate": -33.69,
                     "name": "MXL",
                     "value": 2.893122602
                 },
                 {
-                    "rate": 27.04,
+                    "rate": -17.53,
                     "name": "NATI",
                     "value": 6.809149309
                 },
                 {
-                    "rate": 15.68,
+                    "rate": -31.7,
                     "name": "NCNO",
                     "value": 3.175587358
                 },
                 {
-                    "rate": 17.17,
+                    "rate": -23.28,
                     "name": "NICE",
                     "value": 13.936299673
                 },
                 {
-                    "rate": -5.42,
+                    "rate": 3.7,
                     "name": "NSIT",
                     "value": 4.546162351
                 },
                 {
-                    "rate": -0.27,
+                    "rate": -16.66,
                     "name": "NTAP",
                     "value": 14.531799995
                 },
                 {
-                    "rate": -2.61,
+                    "rate": 10.26,
                     "name": "NTCT",
                     "value": 2.126738692
                 },
                 {
-                    "rate": -10.52,
+                    "rate": -43.3,
                     "name": "NTNX",
                     "value": 6.528237609
                 },
                 {
-                    "rate": -2.12,
+                    "rate": -25.64,
                     "name": "NVDA",
                     "value": 526.1448
                 },
                 {
-                    "rate": 13.01,
+                    "rate": -8.05,
                     "name": "NVMI",
                     "value": 2.609926999
                 },
                 {
-                    "rate": -3.04,
+                    "rate": -11.35,
                     "name": "NXPI",
                     "value": 48.836556093
                 },
                 {
-                    "rate": 5.53,
+                    "rate": -58.08,
                     "name": "OKTA",
                     "value": 11.855156116
                 },
                 {
-                    "rate": -6.61,
+                    "rate": -17.78,
                     "name": "OLED",
                     "value": 6.261677996
                 },
                 {
-                    "rate": 33.71,
+                    "rate": -0.64,
                     "name": "ON",
                     "value": 35.360892867
                 },
                 {
-                    "rate": 16.69,
+                    "rate": -2.17,
                     "name": "PANW",
                     "value": 51.182980603
                 },
                 {
-                    "rate": 41.39,
+                    "rate": -15.89,
                     "name": "PCTY",
                     "value": 11.673159675
                 },
                 {
-                    "rate": -30.01,
+                    "rate": -50.44,
                     "name": "PEGA",
                     "value": 3.964069856
                 },
                 {
-                    "rate": -9.75,
+                    "rate": -18.42,
                     "name": "PLTK",
                     "value": 3.571520573
                 },
                 {
-                    "rate": 13.84,
+                    "rate": 6.69,
                     "name": "PLXS",
                     "value": 2.775234747
                 },
                 {
-                    "rate": -3.85,
+                    "rate": 4.87,
                     "name": "POWI",
                     "value": 4.710524094
                 },
                 {
-                    "rate": -16.78,
+                    "rate": -6.77,
                     "name": "PRFT",
                     "value": 2.564236278
                 },
                 {
-                    "rate": 3.85,
+                    "rate": 6.33,
                     "name": "PRGS",
                     "value": 2.505791041
                 },
                 {
-                    "rate": 119.8,
+                    "rate": 6.59,
                     "name": "PRVA",
                     "value": 3.209503172
                 },
                 {
-                    "rate": 7.63,
+                    "rate": 0.23,
                     "name": "PTC",
                     "value": 15.408512719
                 },
                 {
-                    "rate": 33.6,
+                    "rate": -2.68,
                     "name": "PYCR",
                     "value": 4.64737908
                 },
                 {
-                    "rate": 3.29,
+                    "rate": -20.95,
                     "name": "QCOM",
                     "value": 142.4078
                 },
                 {
-                    "rate": 33.3,
+                    "rate": 0.85,
                     "name": "QLYS",
                     "value": 4.504240599
                 },
                 {
-                    "rate": 56.5,
+                    "rate": -10.98,
                     "name": "RELY",
                     "value": 2.007006323
                 },
                 {
-                    "rate": 13.04,
+                    "rate": -1.1,
                     "name": "RMBS",
                     "value": 4.751779662
                 },
                 {
-                    "rate": -5.56,
+                    "rate": -27.95,
                     "name": "RPD",
                     "value": 2.944025224
                 },
                 {
-                    "rate": -9.95,
+                    "rate": -9.56,
                     "name": "RUM",
                     "value": 2.584743587
                 },
                 {
-                    "rate": 25.96,
+                    "rate": 9.17,
                     "name": "SANM",
                     "value": 3.707462521
                 },
                 {
-                    "rate": 26.01,
+                    "rate": 12.49,
                     "name": "SEDG",
                     "value": 17.122933556
                 },
                 {
-                    "rate": 125.93,
+                    "rate": -13.29,
                     "name": "SHLS",
                     "value": 2.976650489
                 },
                 {
-                    "rate": -15.66,
+                    "rate": 12.98,
                     "name": "SIMO",
                     "value": 2.300965824
                 },
                 {
-                    "rate": -31.69,
+                    "rate": -11.72,
                     "name": "SITM",
                     "value": 2.602754207
                 },
                 {
-                    "rate": -3.5,
+                    "rate": -10.34,
                     "name": "SLAB",
                     "value": 5.720154143
                 },
                 {
-                    "rate": 37.61,
+                    "rate": 23.98,
                     "name": "SMCI",
                     "value": 4.933545793
                 },
                 {
-                    "rate": -14.58,
+                    "rate": -10.46,
                     "name": "SMTC",
                     "value": 2.034508423
                 },
                 {
-                    "rate": 32.62,
+                    "rate": 1.62,
                     "name": "SNPS",
                     "value": 54.024274413
                 },
                 {
-                    "rate": 16.3,
+                    "rate": -17.27,
                     "name": "SPLK",
                     "value": 17.1885
                 },
                 {
-                    "rate": 18.59,
+                    "rate": -11.3,
                     "name": "SPSC",
                     "value": 5.473294688
                 },
                 {
-                    "rate": 29.28,
+                    "rate": -25.8,
                     "name": "SPT",
                     "value": 3.344588588
                 },
                 {
-                    "rate": 60.1,
+                    "rate": 6.47,
                     "name": "SPWR",
                     "value": 2.837433088
                 },
                 {
-                    "rate": 18.81,
+                    "rate": -28.01,
                     "name": "SRAD",
                     "value": 3.689583419
                 },
                 {
-                    "rate": -3.27,
+                    "rate": -19.66,
                     "name": "SSNC",
                     "value": 15.55297378
                 },
                 {
-                    "rate": 25.95,
+                    "rate": -39.25,
                     "name": "STNE",
                     "value": 2.904172429
                 },
                 {
-                    "rate": -5.85,
+                    "rate": -22.49,
                     "name": "STX",
                     "value": 14.507556285
                 },
                 {
-                    "rate": 1.68,
+                    "rate": -26.68,
                     "name": "SWKS",
                     "value": 18.414773214
                 },
                 {
-                    "rate": -15.75,
+                    "rate": -32.27,
                     "name": "SYNA",
                     "value": 4.80785855
                 },
                 {
-                    "rate": 42.92,
+                    "rate": -44.99,
                     "name": "TEAM",
                     "value": 43.199797739
                 },
                 {
-                    "rate": -4.51,
+                    "rate": -2.81,
                     "name": "TENB",
                     "value": 4.9518528
                 },
                 {
-                    "rate": -1.82,
+                    "rate": 38.99,
                     "name": "TSEM",
                     "value": 4.473165238
                 },
                 {
-                    "rate": 46.06,
+                    "rate": -27.47,
                     "name": "TTD",
                     "value": 29.517520958
                 },
                 {
-                    "rate": -15.55,
+                    "rate": -14.66,
                     "name": "TTEC",
                     "value": 2.346809498
                 },
                 {
-                    "rate": 19.03,
+                    "rate": -22.23,
                     "name": "TTWO",
                     "value": 18.977571258
                 },
                 {
-                    "rate": -14.45,
+                    "rate": -24.37,
                     "name": "TWKS",
                     "value": 3.082271725
                 },
                 {
-                    "rate": 2.35,
+                    "rate": -3.79,
                     "name": "TXN",
                     "value": 158.875999979
                 },
                 {
-                    "rate": 19.31,
+                    "rate": -18.42,
                     "name": "VERX",
                     "value": 2.309113815
                 },
                 {
-                    "rate": 4.69,
+                    "rate": -10.66,
                     "name": "VIAV",
                     "value": 2.504021372
                 },
                 {
-                    "rate": 28.39,
+                    "rate": -28.09,
                     "name": "VICR",
                     "value": 2.699734588
                 },
                 {
-                    "rate": -3.94,
+                    "rate": -15.28,
                     "name": "VRNS",
                     "value": 2.941149434
                 },
                 {
-                    "rate": -0.44,
+                    "rate": 0.19,
                     "name": "VRNT",
                     "value": 2.527946944
                 },
                 {
-                    "rate": 15.32,
+                    "rate": -19.59,
                     "name": "VRSN",
                     "value": 21.555963
                 },
                 {
-                    "rate": 3.9,
+                    "rate": -12.76,
                     "name": "VSAT",
                     "value": 2.592871566
                 },
                 {
-                    "rate": -6.52,
+                    "rate": -36.65,
                     "name": "WB",
                     "value": 5.031671017
                 },
                 {
-                    "rate": -12.68,
+                    "rate": -38.05,
                     "name": "WDAY",
                     "value": 47.7506
                 },
                 {
-                    "rate": -19.44,
+                    "rate": 14.67,
                     "name": "WDC",
                     "value": 13.27765192
                 },
                 {
-                    "rate": 5.06,
+                    "rate": -53.08,
                     "name": "WIX",
                     "value": 5.020380935
                 },
                 {
-                    "rate": -19.68,
+                    "rate": -52.85,
                     "name": "XM",
                     "value": 9.513599954
                 },
                 {
-                    "rate": 0.46,
+                    "rate": -14.23,
                     "name": "XRX",
                     "value": 2.61244737
                 },
                 {
-                    "rate": -20.66,
+                    "rate": -30.56,
                     "name": "YY",
                     "value": 2.354820888
                 },
                 {
-                    "rate": -1.99,
+                    "rate": -34.34,
                     "name": "ZBRA",
                     "value": 16.654740239
                 },
                 {
-                    "rate": 12.03,
+                    "rate": -24.68,
                     "name": "ZI",
                     "value": 10.378021701
                 },
                 {
-                    "rate": -7.8,
+                    "rate": -30.85,
                     "name": "ZM",
                     "value": 22.248644849
                 },
                 {
-                    "rate": 10.22,
+                    "rate": -42.95,
                     "name": "ZS",
                     "value": 19.086488243
                 }
@@ -940,47 +940,47 @@
             "name": "Consumer Discretionary",
             "children": [
                 {
-                    "rate": -15.57,
+                    "rate": 2.73,
                     "name": "AAL",
                     "value": 10.644510662
                 },
                 {
-                    "rate": 44.02,
+                    "rate": -15.75,
                     "name": "AAWW",
                     "value": 2.891729986
                 },
                 {
-                    "rate": -1.39,
+                    "rate": -25.63,
                     "name": "ABNB",
                     "value": 78.486109321
                 },
                 {
-                    "rate": 20.63,
+                    "rate": 6.69,
                     "name": "ADP",
                     "value": 94.760125898
                 },
                 {
-                    "rate": 23.48,
+                    "rate": -7.59,
                     "name": "AEIS",
                     "value": 3.631395791
                 },
                 {
-                    "rate": -3.83,
+                    "rate": -12.16,
                     "name": "AKAM",
                     "value": 12.0588
                 },
                 {
-                    "rate": 22.91,
+                    "rate": -19.52,
                     "name": "AMZN",
                     "value": 989.19353304
                 },
                 {
-                    "rate": 31.09,
+                    "rate": -36.52,
                     "name": "ARHS",
                     "value": 2.004304635
                 },
                 {
-                    "rate": 26.19,
+                    "rate": -16.16,
                     "name": "ASO",
                     "value": 4.896558995
                 },
@@ -990,382 +990,382 @@
                     "value": 3.103682268
                 },
                 {
-                    "rate": 3.07,
+                    "rate": -2.09,
                     "name": "ATVI",
                     "value": 60.708245995
                 },
                 {
-                    "rate": 37.92,
+                    "rate": -31.01,
                     "name": "AXON",
                     "value": 13.468754898
                 },
                 {
-                    "rate": -0.48,
+                    "rate": 11.88,
                     "name": "BECN",
                     "value": 3.993502123
                 },
                 {
-                    "rate": -2.64,
+                    "rate": -9.21,
                     "name": "BKNG",
                     "value": 95.49986115
                 },
                 {
-                    "rate": 3.27,
+                    "rate": 2.45,
                     "name": "BLMN",
                     "value": 2.415203146
                 },
                 {
-                    "rate": -2.07,
+                    "rate": -14.47,
                     "name": "CAKE",
                     "value": 2.061947454
                 },
                 {
-                    "rate": -21.49,
+                    "rate": 4.7,
                     "name": "CAR",
                     "value": 9.986770666
                 },
                 {
-                    "rate": 3.72,
+                    "rate": -16.33,
                     "name": "CBRL",
                     "value": 2.455002282
                 },
                 {
-                    "rate": -3.26,
+                    "rate": -7.45,
                     "name": "CCOI",
                     "value": 3.266123157
                 },
                 {
-                    "rate": 10.72,
+                    "rate": -9.6,
                     "name": "CDW",
                     "value": 28.964192779
                 },
                 {
-                    "rate": 10.88,
+                    "rate": -3.2,
                     "name": "CHDN",
                     "value": 9.196715782
                 },
                 {
-                    "rate": 7.82,
+                    "rate": 4.18,
                     "name": "CHRW",
                     "value": 11.908666878
                 },
                 {
-                    "rate": -8.34,
+                    "rate": -17.01,
                     "name": "CHTR",
                     "value": 81.062212405
                 },
                 {
-                    "rate": -7.92,
+                    "rate": -12.03,
                     "name": "CMCSA",
                     "value": 164.932123551
                 },
                 {
-                    "rate": -2.05,
+                    "rate": -16.52,
                     "name": "COLM",
                     "value": 5.654203375
                 },
                 {
-                    "rate": 8.33,
+                    "rate": -10.11,
                     "name": "COST",
                     "value": 225.183611189
                 },
                 {
-                    "rate": 13.76,
+                    "rate": -12.76,
                     "name": "CPRT",
                     "value": 32.578920752
                 },
                 {
-                    "rate": 41.49,
+                    "rate": -46.04,
                     "name": "CROX",
                     "value": 8.117606473
                 },
                 {
-                    "rate": 7.83,
+                    "rate": -28.19,
                     "name": "CRTO",
                     "value": 2.008235294
                 },
                 {
-                    "rate": 13.45,
+                    "rate": 0.9,
                     "name": "CTAS",
                     "value": 45.129654724
                 },
                 {
-                    "rate": 11.24,
+                    "rate": -20.1,
                     "name": "CVCO",
                     "value": 2.476226286
                 },
                 {
-                    "rate": -9.42,
+                    "rate": -38.66,
                     "name": "CZR",
                     "value": 11.329090344
                 },
                 {
-                    "rate": 9.85,
+                    "rate": -34.51,
                     "name": "DADA",
                     "value": 2.755250552
                 },
                 {
-                    "rate": -19.54,
+                    "rate": -30.1,
                     "name": "DISH",
                     "value": 7.509496565
                 },
                 {
-                    "rate": 53.61,
+                    "rate": -42.95,
                     "name": "DKNG",
                     "value": 9.219342747
                 },
                 {
-                    "rate": 46.23,
+                    "rate": -15.1,
                     "name": "DLO",
                     "value": 4.629206823
                 },
                 {
-                    "rate": 5.12,
+                    "rate": 19.94,
                     "name": "DLTR",
                     "value": 32.744150271
                 },
                 {
-                    "rate": -2.05,
+                    "rate": 1.29,
                     "name": "DNUT",
                     "value": 2.195100683
                 },
                 {
-                    "rate": 0.2,
+                    "rate": 6.83,
                     "name": "DORM",
                     "value": 3.04351736
                 },
                 {
-                    "rate": 12.55,
+                    "rate": 7.38,
                     "name": "EA",
                     "value": 30.713490752
                 },
                 {
-                    "rate": -6.3,
+                    "rate": -22.34,
                     "name": "EBAY",
                     "value": 26.177874357
                 },
                 {
-                    "rate": 25.98,
+                    "rate": -46.81,
                     "name": "ETSY",
                     "value": 16.299260819
                 },
                 {
-                    "rate": -2.41,
+                    "rate": -5.78,
                     "name": "EXPD",
                     "value": 17.727793178
                 },
                 {
-                    "rate": -19.3,
+                    "rate": -32.88,
                     "name": "EXPE",
                     "value": 16.708834473
                 },
                 {
-                    "rate": 12.59,
+                    "rate": -5.41,
                     "name": "EXPO",
                     "value": 5.509186124
                 },
                 {
-                    "rate": -4.4,
+                    "rate": -14.74,
                     "name": "FA",
                     "value": 2.063202909
                 },
                 {
-                    "rate": 31.01,
+                    "rate": -14.42,
                     "name": "FELE",
                     "value": 4.465106774
                 },
                 {
-                    "rate": 14.44,
+                    "rate": -8.74,
                     "name": "FISV",
                     "value": 73.263189128
                 },
                 {
-                    "rate": -4.67,
+                    "rate": -25.58,
                     "name": "FIVE",
                     "value": 11.683966334
                 },
                 {
-                    "rate": 28.16,
+                    "rate": -39.12,
                     "name": "FOXF",
                     "value": 5.187485734
                 },
                 {
-                    "rate": 8.84,
+                    "rate": -25.64,
                     "name": "FTAI",
                     "value": 2.450743244
                 },
                 {
-                    "rate": 0.27,
+                    "rate": -34.3,
                     "name": "FTDR",
                     "value": 2.31520934
                 },
                 {
-                    "rate": 18.43,
+                    "rate": 4.1,
                     "name": "FWONA",
                     "value": 14.754172996
                 },
                 {
-                    "rate": 20.8,
+                    "rate": 3.57,
                     "name": "FWONK",
                     "value": 16.369883541
                 },
                 {
-                    "rate": 6.61,
+                    "rate": -15.61,
                     "name": "FWRD",
                     "value": 2.855467561
                 },
                 {
-                    "rate": 21.11,
+                    "rate": -2.84,
                     "name": "FYBR",
                     "value": 6.85766196
                 },
                 {
-                    "rate": -2.2,
+                    "rate": -5.25,
                     "name": "GNTX",
                     "value": 6.720778483
                 },
                 {
-                    "rate": 26.75,
+                    "rate": 49.84,
                     "name": "GO",
                     "value": 2.883348878
                 },
                 {
-                    "rate": -8.16,
+                    "rate": 56.41,
                     "name": "GOGO",
                     "value": 2.056687369
                 },
                 {
-                    "rate": 30.91,
+                    "rate": -54.21,
                     "name": "GRAB",
                     "value": 13.402621012
                 },
                 {
-                    "rate": 21.98,
+                    "rate": -40.16,
                     "name": "GT",
                     "value": 3.339530449
                 },
                 {
-                    "rate": -6.25,
+                    "rate": -5.37,
                     "name": "HAS",
                     "value": 8.198430538
                 },
                 {
-                    "rate": -35.26,
+                    "rate": -14.07,
                     "name": "HELE",
                     "value": 2.800378688
                 },
                 {
-                    "rate": 50.41,
+                    "rate": -17.92,
                     "name": "HTHT",
                     "value": 15.670874754
                 },
                 {
-                    "rate": 14.55,
+                    "rate": -0.9,
                     "name": "HTZ",
                     "value": 6.27406906
                 },
                 {
-                    "rate": 14.58,
+                    "rate": -4.74,
                     "name": "HUBG",
                     "value": 3.215511308
                 },
                 {
-                    "rate": -15.37,
+                    "rate": -35.5,
                     "name": "IAC",
                     "value": 4.662805
                 },
                 {
-                    "rate": 3.53,
+                    "rate": -26.72,
                     "name": "IPAR",
                     "value": 3.76642385
                 },
                 {
-                    "rate": 32.21,
+                    "rate": 6.43,
                     "name": "IRDM",
                     "value": 8.16550835
                 },
                 {
-                    "rate": -18.73,
+                    "rate": -31.14,
                     "name": "JBLU",
                     "value": 2.791825033
                 },
                 {
-                    "rate": 15.08,
+                    "rate": -25.69,
                     "name": "JD",
                     "value": 83.00281
                 },
                 {
-                    "rate": -5.41,
+                    "rate": -35.78,
                     "name": "LAZR",
                     "value": 2.452243073
                 },
                 {
-                    "rate": -3.11,
+                    "rate": -20.31,
                     "name": "LBRDA",
                     "value": 13.702223897
                 },
                 {
-                    "rate": -6.6,
+                    "rate": -18.81,
                     "name": "LBRDK",
                     "value": 13.654944281
                 },
                 {
-                    "rate": 3.07,
+                    "rate": -34.91,
                     "name": "LCID",
                     "value": 19.983430519
                 },
                 {
-                    "rate": 4.53,
+                    "rate": -20.94,
                     "name": "LGIH",
                     "value": 2.661846787
                 },
                 {
-                    "rate": 50.99,
+                    "rate": -6.71,
                     "name": "LI",
                     "value": 23.457079306
                 },
                 {
-                    "rate": 9.49,
+                    "rate": -9.26,
                     "name": "LKQ",
                     "value": 15.720576117
                 },
                 {
-                    "rate": 12.34,
+                    "rate": -10.71,
                     "name": "LNW",
                     "value": 6.025085244
                 },
                 {
-                    "rate": -5.78,
+                    "rate": 6.02,
                     "name": "LOPE",
                     "value": 3.66976169
                 },
                 {
-                    "rate": 9.31,
+                    "rate": -14.39,
                     "name": "LSXMA",
                     "value": 11.0540063
                 },
                 {
-                    "rate": 10.05,
+                    "rate": -14.83,
                     "name": "LSXMB",
                     "value": 12.385971619
                 },
                 {
-                    "rate": 8.89,
+                    "rate": -15.37,
                     "name": "LSXMK",
                     "value": 11.047477058
                 },
                 {
-                    "rate": 5.21,
+                    "rate": -15.93,
                     "name": "LULU",
                     "value": 40.850621145
                 },
                 {
-                    "rate": -4.85,
+                    "rate": 4.64,
                     "name": "MAR",
                     "value": 53.157062351
                 },
                 {
-                    "rate": -5.3,
+                    "rate": 14.56,
                     "name": "MAT",
                     "value": 6.783245437
                 },
@@ -1375,317 +1375,317 @@
                     "value": 35.244028225
                 },
                 {
-                    "rate": 15.95,
+                    "rate": -33.03,
                     "name": "MELI",
                     "value": 55.368138857
                 },
                 {
-                    "rate": 4.47,
+                    "rate": 7.01,
                     "name": "MGRC",
                     "value": 2.607946317
                 },
                 {
-                    "rate": 13.32,
+                    "rate": -49.03,
                     "name": "MLCO",
                     "value": 5.594766505
                 },
                 {
-                    "rate": 29.24,
+                    "rate": -57.8,
                     "name": "NFLX",
                     "value": 154.962864177
                 },
                 {
-                    "rate": 0.22,
+                    "rate": -1.33,
                     "name": "NTES",
                     "value": 56.379553539
                 },
                 {
-                    "rate": 25.73,
+                    "rate": 17.97,
                     "name": "NVEE",
                     "value": 2.002725283
                 },
                 {
-                    "rate": 1.14,
+                    "rate": -21.89,
                     "name": "NWS",
                     "value": 10.999817627
                 },
                 {
-                    "rate": -0.51,
+                    "rate": -22.69,
                     "name": "NWSA",
                     "value": 10.936501042
                 },
                 {
-                    "rate": 20.16,
+                    "rate": 3.63,
                     "name": "NXST",
                     "value": 7.547721951
                 },
                 {
-                    "rate": 46.13,
+                    "rate": -5.46,
                     "name": "OLLI",
                     "value": 3.609862754
                 },
                 {
-                    "rate": -1.99,
+                    "rate": 4.75,
                     "name": "OMAB",
                     "value": 3.789287473
                 },
                 {
-                    "rate": 16.25,
+                    "rate": -4.93,
                     "name": "ORLY",
                     "value": 54.434985465
                 },
                 {
-                    "rate": -8.79,
+                    "rate": -4.01,
                     "name": "PARA",
                     "value": 15.378941797
                 },
                 {
-                    "rate": -5.01,
+                    "rate": -5.72,
                     "name": "PARAA",
                     "value": 17.521217353
                 },
                 {
-                    "rate": 12.44,
+                    "rate": 3.52,
                     "name": "PAYX",
                     "value": 41.363536383
                 },
                 {
-                    "rate": 49.63,
+                    "rate": -17.79,
                     "name": "PDD",
                     "value": 118.118909198
                 },
                 {
-                    "rate": 9.82,
+                    "rate": -32.51,
                     "name": "PENN",
                     "value": 4.994900813
                 },
                 {
-                    "rate": 5.81,
+                    "rate": 4.0,
                     "name": "PLAY",
                     "value": 2.061995298
                 },
                 {
-                    "rate": 75.18,
+                    "rate": -21.75,
                     "name": "PLUG",
                     "value": 9.081650879
                 },
                 {
-                    "rate": -15.11,
+                    "rate": 9.43,
                     "name": "PSMT",
                     "value": 2.267337959
                 },
                 {
-                    "rate": -18.7,
+                    "rate": -2.48,
                     "name": "PSNY",
                     "value": 11.348456583
                 },
                 {
-                    "rate": -38.85,
+                    "rate": 0.0,
                     "name": "PSNYW",
                     "value": 2.172659903
                 },
                 {
-                    "rate": 4.5,
+                    "rate": -53.82,
                     "name": "PTON",
                     "value": 4.705875414
                 },
                 {
-                    "rate": 14.89,
+                    "rate": -3.35,
                     "name": "PTVE",
                     "value": 2.010952631
                 },
                 {
-                    "rate": 19.06,
+                    "rate": -53.08,
                     "name": "PYPL",
                     "value": 84.468330429
                 },
                 {
-                    "rate": -0.4,
+                    "rate": -28.58,
                     "name": "PZZA",
                     "value": 3.352288438
                 },
                 {
-                    "rate": 143.26,
+                    "rate": -40.0,
                     "name": "QRTEB",
                     "value": 2.15567365
                 },
                 {
-                    "rate": 20.9,
+                    "rate": -10.55,
                     "name": "RCM",
                     "value": 5.868637989
                 },
                 {
-                    "rate": 42.87,
+                    "rate": -56.55,
                     "name": "RIVN",
                     "value": 18.621726377
                 },
                 {
-                    "rate": 1.05,
+                    "rate": -16.12,
                     "name": "ROST",
                     "value": 39.840282031
                 },
                 {
-                    "rate": 8.16,
+                    "rate": -11.8,
                     "name": "RRR",
                     "value": 2.681939375
                 },
                 {
-                    "rate": -0.81,
+                    "rate": -3.51,
                     "name": "RUSHA",
                     "value": 3.274415311
                 },
                 {
-                    "rate": 15.14,
+                    "rate": -1.31,
                     "name": "RUSHB",
                     "value": 3.413752133
                 },
                 {
-                    "rate": -11.87,
+                    "rate": -26.12,
                     "name": "RYAAY",
                     "value": 21.468380954
                 },
                 {
-                    "rate": -19.88,
+                    "rate": 39.51,
                     "name": "SBLK",
                     "value": 2.220122732
                 },
                 {
-                    "rate": 19.75,
+                    "rate": -22.76,
                     "name": "SBUX",
                     "value": 123.09003
                 },
                 {
-                    "rate": 18.67,
+                    "rate": -1.44,
                     "name": "SFM",
                     "value": 3.497365609
                 },
                 {
-                    "rate": -16.92,
+                    "rate": -9.03,
                     "name": "SHOO",
                     "value": 2.723585331
                 },
                 {
-                    "rate": 2.8,
+                    "rate": -6.66,
                     "name": "SIRI",
                     "value": 17.896302033
                 },
                 {
-                    "rate": -25.29,
+                    "rate": -14.16,
                     "name": "SONO",
                     "value": 2.625913327
                 },
                 {
-                    "rate": 7.82,
+                    "rate": 8.08,
                     "name": "STRA",
                     "value": 2.302800974
                 },
                 {
-                    "rate": 42.0,
+                    "rate": -19.51,
                     "name": "TCOM",
                     "value": 23.404782129
                 },
                 {
-                    "rate": -2.07,
+                    "rate": -22.83,
                     "name": "THRM",
                     "value": 2.429766524
                 },
                 {
-                    "rate": 117.38,
+                    "rate": 100.42,
                     "name": "TRMD",
                     "value": 2.623764592
                 },
                 {
-                    "rate": 0.45,
+                    "rate": -13.46,
                     "name": "TSCO",
                     "value": 26.400715555
                 },
                 {
-                    "rate": 11.41,
+                    "rate": -20.5,
                     "name": "TSLA",
                     "value": 659.114233645
                 },
                 {
-                    "rate": 10.17,
+                    "rate": -4.48,
                     "name": "TTEK",
                     "value": 7.645934867
                 },
                 {
-                    "rate": 15.02,
+                    "rate": -13.04,
                     "name": "TXRH",
                     "value": 6.980546824
                 },
                 {
-                    "rate": -15.25,
+                    "rate": 3.48,
                     "name": "UAL",
                     "value": 16.225428253
                 },
                 {
-                    "rate": 46.99,
+                    "rate": -22.35,
                     "name": "ULCC",
                     "value": 2.434600771
                 },
                 {
-                    "rate": -2.41,
+                    "rate": -25.38,
                     "name": "URBN",
                     "value": 2.620556573
                 },
                 {
-                    "rate": 22.02,
+                    "rate": 9.96,
                     "name": "VC",
                     "value": 4.591214597
                 },
                 {
-                    "rate": 13.69,
+                    "rate": 0.63,
                     "name": "VRRM",
                     "value": 2.381525
                 },
                 {
-                    "rate": 8.84,
+                    "rate": -12.89,
                     "name": "VRSK",
                     "value": 27.700997584
                 },
                 {
-                    "rate": 11.77,
+                    "rate": -19.91,
                     "name": "WEN",
                     "value": 4.878317888
                 },
                 {
-                    "rate": 52.14,
+                    "rate": -52.65,
                     "name": "WING",
                     "value": 5.190192766
                 },
                 {
-                    "rate": 8.69,
+                    "rate": -34.02,
                     "name": "WMG",
                     "value": 17.124011195
                 },
                 {
-                    "rate": 22.66,
+                    "rate": -4.14,
                     "name": "WSC",
                     "value": 10.8309367
                 },
                 {
-                    "rate": 1.9,
+                    "rate": -26.15,
                     "name": "WYNN",
                     "value": 12.352314555
                 },
                 {
-                    "rate": 52.52,
+                    "rate": -20.16,
                     "name": "XPEL",
                     "value": 2.228340204
                 },
                 {
-                    "rate": -5.65,
+                    "rate": -23.37,
                     "name": "Z",
                     "value": 10.754033953
                 },
                 {
-                    "rate": 3.91,
+                    "rate": -27.53,
                     "name": "ZD",
                     "value": 3.906989584
                 },
                 {
-                    "rate": -4.24,
+                    "rate": -22.7,
                     "name": "ZG",
                     "value": 10.536094281
                 }
@@ -1695,687 +1695,687 @@
             "name": "Health Care",
             "children": [
                 {
-                    "rate": 78.46,
+                    "rate": -16.22,
                     "name": "ABCL",
                     "value": 2.743703095
                 },
                 {
-                    "rate": 11.83,
+                    "rate": -15.29,
                     "name": "ABCM",
                     "value": 3.308393618
                 },
                 {
-                    "rate": 1.78,
+                    "rate": -31.33,
                     "name": "ACAD",
                     "value": 3.136603354
                 },
                 {
-                    "rate": 25.59,
+                    "rate": 29.96,
                     "name": "ACHC",
                     "value": 7.464639302
                 },
                 {
-                    "rate": 35.87,
+                    "rate": -1.78,
                     "name": "AHCO",
                     "value": 2.999126863
                 },
                 {
-                    "rate": 31.8,
+                    "rate": -55.65,
                     "name": "AKRO",
                     "value": 2.103875738
                 },
                 {
-                    "rate": 1.38,
+                    "rate": -47.86,
                     "name": "ALGN",
                     "value": 24.481683
                 },
                 {
-                    "rate": 83.08,
+                    "rate": 32.86,
                     "name": "ALHC",
                     "value": 2.07297906
                 },
                 {
-                    "rate": -6.46,
+                    "rate": 18.6,
                     "name": "ALKS",
                     "value": 4.612247833
                 },
                 {
-                    "rate": 72.41,
+                    "rate": -15.1,
                     "name": "ALNY",
                     "value": 27.409460253
                 },
                 {
-                    "rate": -22.25,
+                    "rate": 0.0,
                     "name": "ALVO",
                     "value": 3.304551921
                 },
                 {
-                    "rate": 8.87,
+                    "rate": -12.44,
                     "name": "AMED",
                     "value": 3.15947589
                 },
                 {
-                    "rate": 1.57,
+                    "rate": 10.82,
                     "name": "AMGN",
                     "value": 128.437304526
                 },
                 {
-                    "rate": 228.27,
+                    "rate": -63.4,
                     "name": "AMLX",
                     "value": 2.460093374
                 },
                 {
-                    "rate": 61.22,
+                    "rate": 0.93,
                     "name": "APLS",
                     "value": 6.135837103
                 },
                 {
-                    "rate": 30.71,
+                    "rate": 9.7,
                     "name": "ARGX",
                     "value": 20.635918274
                 },
                 {
-                    "rate": 24.67,
+                    "rate": -40.02,
                     "name": "ARWR",
                     "value": 3.655468001
                 },
                 {
-                    "rate": 16.99,
+                    "rate": -30.05,
                     "name": "ASND",
                     "value": 6.652227546
                 },
                 {
-                    "rate": 69.29,
+                    "rate": 0.46,
                     "name": "AXNX",
                     "value": 2.843515635
                 },
                 {
-                    "rate": 126.15,
+                    "rate": -16.5,
                     "name": "AXSM",
                     "value": 2.893050912
                 },
                 {
-                    "rate": 6.29,
+                    "rate": 14.63,
                     "name": "AZN",
                     "value": 213.781953131
                 },
                 {
-                    "rate": -14.69,
+                    "rate": -12.47,
                     "name": "AZTA",
                     "value": 3.2098507
                 },
                 {
-                    "rate": 67.24,
+                    "rate": -50.8,
                     "name": "BEAM",
                     "value": 3.042145046
                 },
                 {
-                    "rate": 22.64,
+                    "rate": -45.36,
                     "name": "BGNE",
                     "value": 24.165136468
                 },
                 {
-                    "rate": 3.48,
+                    "rate": -12.8,
                     "name": "BIIB",
                     "value": 40.221914133
                 },
                 {
-                    "rate": 16.96,
+                    "rate": -16.85,
                     "name": "BMRN",
                     "value": 20.129295984
                 },
                 {
-                    "rate": 1.25,
+                    "rate": -10.08,
                     "name": "BNTX",
                     "value": 33.641050287
                 },
                 {
-                    "rate": 39.39,
+                    "rate": -29.21,
                     "name": "BPMC",
                     "value": 2.76537084
                 },
                 {
-                    "rate": 44.36,
+                    "rate": -2.47,
                     "name": "CERE",
                     "value": 5.250874522
                 },
                 {
-                    "rate": 17.15,
+                    "rate": -27.81,
                     "name": "CLDX",
                     "value": 2.02623473
                 },
                 {
-                    "rate": 48.44,
+                    "rate": 10.26,
                     "name": "CORT",
                     "value": 2.425351211
                 },
                 {
-                    "rate": 52.12,
+                    "rate": -11.69,
                     "name": "CRSP",
                     "value": 3.984388734
                 },
                 {
-                    "rate": 40.56,
+                    "rate": 20.55,
                     "name": "CYTK",
                     "value": 4.325583056
                 },
                 {
-                    "rate": 34.94,
+                    "rate": -32.42,
                     "name": "DNLI",
                     "value": 4.145033147
                 },
                 {
-                    "rate": 4.96,
+                    "rate": -34.75,
                     "name": "DXCM",
                     "value": 44.344835064
                 },
                 {
-                    "rate": 15.67,
+                    "rate": 4.79,
                     "name": "ENSG",
                     "value": 5.08945665
                 },
                 {
-                    "rate": -6.45,
+                    "rate": -34.63,
                     "name": "EVO",
                     "value": 3.521357795
                 },
                 {
-                    "rate": -27.29,
+                    "rate": -37.36,
                     "name": "EXAS",
                     "value": 11.279382796
                 },
                 {
-                    "rate": -3.84,
+                    "rate": 0.27,
                     "name": "EXEL",
                     "value": 5.668287524
                 },
                 {
-                    "rate": 37.59,
+                    "rate": -33.27,
                     "name": "EYE",
                     "value": 3.239356442
                 },
                 {
-                    "rate": 36.34,
+                    "rate": -37.64,
                     "name": "FGEN",
                     "value": 2.237132551
                 },
                 {
-                    "rate": 89.17,
+                    "rate": -19.34,
                     "name": "FOLD",
                     "value": 3.739381238
                 },
                 {
-                    "rate": 60.71,
+                    "rate": -47.03,
                     "name": "GH",
                     "value": 2.914309008
                 },
                 {
-                    "rate": 2.98,
+                    "rate": -5.4,
                     "name": "GILD",
                     "value": 105.69572
                 },
                 {
-                    "rate": -10.12,
+                    "rate": -19.49,
                     "name": "GLPG",
                     "value": 2.595894199
                 },
                 {
-                    "rate": 24.29,
+                    "rate": -13.26,
                     "name": "GMAB",
                     "value": 26.3846292
                 },
                 {
-                    "rate": -32.53,
+                    "rate": 4.74,
                     "name": "GRFS",
                     "value": 7.006358362
                 },
                 {
-                    "rate": 10.97,
+                    "rate": 29.2,
                     "name": "HALO",
                     "value": 6.764709292
                 },
                 {
-                    "rate": 23.77,
+                    "rate": -66.06,
                     "name": "HCM",
                     "value": 2.767281088
                 },
                 {
-                    "rate": -4.98,
+                    "rate": 5.84,
                     "name": "HOLX",
                     "value": 20.397414571
                 },
                 {
-                    "rate": 10.73,
+                    "rate": 15.97,
                     "name": "HQY",
                     "value": 5.592153502
                 },
                 {
-                    "rate": 33.44,
+                    "rate": 13.92,
                     "name": "HRMY",
                     "value": 2.922575886
                 },
                 {
-                    "rate": -12.29,
+                    "rate": 10.97,
                     "name": "HSIC",
                     "value": 11.269425386
                 },
                 {
-                    "rate": -31.38,
+                    "rate": -5.13,
                     "name": "HZNP",
                     "value": 25.107068911
                 },
                 {
-                    "rate": -13.09,
+                    "rate": -5.41,
                     "name": "IART",
                     "value": 4.805635099
                 },
                 {
-                    "rate": 8.28,
+                    "rate": -18.52,
                     "name": "ICLR",
                     "value": 18.580016142
                 },
                 {
-                    "rate": -12.22,
+                    "rate": -15.78,
                     "name": "ICUI",
                     "value": 4.300138544
                 },
                 {
-                    "rate": 5.99,
+                    "rate": -28.02,
                     "name": "IDXX",
                     "value": 41.115306472
                 },
                 {
-                    "rate": -4.06,
+                    "rate": -34.02,
                     "name": "ILMN",
                     "value": 33.320859
                 },
                 {
-                    "rate": 92.45,
+                    "rate": 16.75,
                     "name": "IMCR",
                     "value": 3.001724731
                 },
                 {
-                    "rate": -4.16,
+                    "rate": -0.28,
                     "name": "INCY",
                     "value": 17.614236422
                 },
                 {
-                    "rate": 40.25,
+                    "rate": -49.07,
                     "name": "INMD",
                     "value": 3.075285347
                 },
                 {
-                    "rate": 47.88,
+                    "rate": -24.38,
                     "name": "INSM",
                     "value": 2.792177033
                 },
                 {
-                    "rate": 31.04,
+                    "rate": 13.96,
                     "name": "IONS",
                     "value": 5.48314297
                 },
                 {
-                    "rate": 14.36,
+                    "rate": 9.53,
                     "name": "IRTC",
                     "value": 3.394399277
                 },
                 {
-                    "rate": 13.1,
+                    "rate": -28.41,
                     "name": "ISEE",
                     "value": 2.942898004
                 },
                 {
-                    "rate": 4.3,
+                    "rate": -24.47,
                     "name": "ISRG",
                     "value": 83.71159821
                 },
                 {
-                    "rate": -5.54,
+                    "rate": 14.1,
                     "name": "ITCI",
                     "value": 4.736199751
                 },
                 {
-                    "rate": 11.91,
+                    "rate": 4.8,
                     "name": "JAZZ",
                     "value": 9.302014454
                 },
                 {
-                    "rate": 165.12,
+                    "rate": -9.61,
                     "name": "KRTX",
                     "value": 6.782524924
                 },
                 {
-                    "rate": 43.52,
+                    "rate": -1.52,
                     "name": "KRYS",
                     "value": 2.014753378
                 },
                 {
-                    "rate": 36.37,
+                    "rate": -0.74,
                     "name": "LEGN",
                     "value": 8.371813628
                 },
                 {
-                    "rate": 20.79,
+                    "rate": -10.57,
                     "name": "LFST",
                     "value": 2.049125913
                 },
                 {
-                    "rate": -1.34,
+                    "rate": 33.13,
                     "name": "LHCG",
                     "value": 5.244887668
                 },
                 {
-                    "rate": 7.17,
+                    "rate": -10.01,
                     "name": "LIVN",
                     "value": 2.991919098
                 },
                 {
-                    "rate": 42.43,
+                    "rate": 165.38,
                     "name": "LNTH",
                     "value": 4.110652295
                 },
                 {
-                    "rate": 19.56,
+                    "rate": -38.37,
                     "name": "MASI",
                     "value": 8.660028229
                 },
                 {
-                    "rate": 20.31,
+                    "rate": 5.61,
                     "name": "MDGL",
                     "value": 5.41317388
                 },
                 {
-                    "rate": 24.97,
+                    "rate": -18.81,
                     "name": "MEDP",
                     "value": 6.410616034
                 },
                 {
-                    "rate": 3.81,
+                    "rate": 9.6,
                     "name": "MMSI",
                     "value": 3.982650768
                 },
                 {
-                    "rate": 6.88,
+                    "rate": -16.99,
                     "name": "MRNA",
                     "value": 64.004466135
                 },
                 {
-                    "rate": 42.47,
+                    "rate": -67.54,
                     "name": "MRTX",
                     "value": 2.784901565
                 },
                 {
-                    "rate": 28.22,
+                    "rate": -14.96,
                     "name": "NARI",
                     "value": 3.0045596
                 },
                 {
-                    "rate": 29.64,
+                    "rate": 17.08,
                     "name": "NBIX",
                     "value": 10.000712305
                 },
                 {
-                    "rate": -21.93,
+                    "rate": -27.87,
                     "name": "NEOG",
                     "value": 4.398739659
                 },
                 {
-                    "rate": 40.5,
+                    "rate": -57.05,
                     "name": "NTLA",
                     "value": 3.48143398
                 },
                 {
-                    "rate": 73.48,
+                    "rate": -51.3,
                     "name": "NTRA",
                     "value": 5.44292092
                 },
                 {
-                    "rate": -6.45,
+                    "rate": 6.6,
                     "name": "NUVA",
                     "value": 2.317330084
                 },
                 {
-                    "rate": 37.39,
+                    "rate": 11.51,
                     "name": "NVCR",
                     "value": 8.893469949
                 },
                 {
-                    "rate": -0.92,
+                    "rate": -28.35,
                     "name": "OMCL",
                     "value": 2.411537966
                 },
                 {
-                    "rate": 162.05,
+                    "rate": -32.47,
                     "name": "ONEM",
                     "value": 3.271649472
                 },
                 {
-                    "rate": 21.18,
+                    "rate": 24.64,
                     "name": "OPCH",
                     "value": 5.344249323
                 },
                 {
-                    "rate": 23.26,
+                    "rate": -55.16,
                     "name": "PACB",
                     "value": 2.573148174
                 },
                 {
-                    "rate": 26.36,
+                    "rate": 18.04,
                     "name": "PCVX",
                     "value": 3.492504267
                 },
                 {
-                    "rate": -5.37,
+                    "rate": 8.87,
                     "name": "PDCO",
                     "value": 2.79749976
                 },
                 {
-                    "rate": 28.88,
+                    "rate": -27.27,
                     "name": "PGNY",
                     "value": 3.121805764
                 },
                 {
-                    "rate": 1.07,
+                    "rate": -2.67,
                     "name": "PINC",
                     "value": 3.972546436
                 },
                 {
-                    "rate": 43.87,
+                    "rate": -16.41,
                     "name": "PODD",
                     "value": 20.556816088
                 },
                 {
-                    "rate": -21.88,
+                    "rate": 0.1,
                     "name": "PROK",
                     "value": 2.691941985
                 },
                 {
-                    "rate": 15.35,
+                    "rate": -23.49,
                     "name": "PRTA",
                     "value": 2.757891156
                 },
                 {
-                    "rate": 59.69,
+                    "rate": -28.25,
                     "name": "PTCT",
                     "value": 3.406581951
                 },
                 {
-                    "rate": -6.23,
+                    "rate": -9.36,
                     "name": "QDEL",
                     "value": 6.035885268
                 },
                 {
-                    "rate": -2.76,
+                    "rate": -35.95,
                     "name": "RARE",
                     "value": 3.414846406
                 },
                 {
-                    "rate": -2.0,
+                    "rate": 7.43,
                     "name": "REGN",
                     "value": 81.85639883
                 },
                 {
-                    "rate": 55.64,
+                    "rate": -17.84,
                     "name": "RGEN",
                     "value": 10.54964341
                 },
                 {
-                    "rate": 53.26,
+                    "rate": -30.1,
                     "name": "RLAY",
                     "value": 2.230510923
                 },
                 {
-                    "rate": 24.59,
+                    "rate": -43.58,
                     "name": "ROIV",
                     "value": 6.537643757
                 },
                 {
-                    "rate": 15.28,
+                    "rate": 0.32,
                     "name": "RPRX",
                     "value": 16.769402575
                 },
                 {
-                    "rate": 45.98,
+                    "rate": -26.09,
                     "name": "RVMD",
                     "value": 2.272156546
                 },
                 {
-                    "rate": 43.07,
+                    "rate": -2.96,
                     "name": "RVNC",
                     "value": 2.7792016
                 },
                 {
-                    "rate": 113.27,
+                    "rate": -31.35,
                     "name": "RXDX",
                     "value": 5.778886111
                 },
                 {
-                    "rate": 42.72,
+                    "rate": -15.85,
                     "name": "SAGE",
                     "value": 2.708153406
                 },
                 {
-                    "rate": 36.22,
+                    "rate": -2.61,
                     "name": "SGEN",
                     "value": 30.358875819
                 },
                 {
-                    "rate": -30.85,
+                    "rate": -15.87,
                     "name": "SGRY",
                     "value": 4.291129325
                 },
                 {
-                    "rate": -4.74,
+                    "rate": -1.44,
                     "name": "SHC",
                     "value": 5.078042982
                 },
                 {
-                    "rate": 41.02,
+                    "rate": -0.15,
                     "name": "SILK",
                     "value": 2.054805391
                 },
                 {
-                    "rate": -22.22,
+                    "rate": 3.06,
                     "name": "SNY",
                     "value": 119.045369825
                 },
                 {
-                    "rate": 75.41,
+                    "rate": -2.22,
                     "name": "SRPT",
                     "value": 10.935075492
                 },
                 {
-                    "rate": 92.66,
+                    "rate": -12.08,
                     "name": "STAA",
                     "value": 3.386010442
                 },
                 {
-                    "rate": 36.28,
+                    "rate": -11.87,
                     "name": "SUPN",
                     "value": 2.124484823
                 },
                 {
-                    "rate": 121.67,
+                    "rate": 2.37,
                     "name": "SWAV",
                     "value": 7.205688756
                 },
                 {
-                    "rate": -8.75,
+                    "rate": -20.14,
                     "name": "SYNH",
                     "value": 4.060592787
                 },
                 {
-                    "rate": -1.3,
+                    "rate": -10.36,
                     "name": "TECH",
                     "value": 11.946624192
                 },
                 {
-                    "rate": 15.79,
+                    "rate": -66.78,
                     "name": "TGTX",
                     "value": 2.621969085
                 },
                 {
-                    "rate": 108.86,
+                    "rate": 78.54,
                     "name": "TMDX",
                     "value": 2.110190942
                 },
                 {
-                    "rate": -29.91,
+                    "rate": -45.32,
                     "name": "TNDM",
                     "value": 2.678687383
                 },
                 {
-                    "rate": 19.6,
+                    "rate": -32.21,
                     "name": "TRUP",
                     "value": 2.372887278
                 },
                 {
-                    "rate": -16.14,
+                    "rate": -53.61,
                     "name": "TXG",
                     "value": 5.907462319
                 },
                 {
-                    "rate": 24.22,
+                    "rate": 13.95,
                     "name": "UTHR",
                     "value": 11.656761755
                 },
                 {
-                    "rate": 14.57,
+                    "rate": -27.46,
                     "name": "VIR",
                     "value": 3.426396085
                 },
                 {
-                    "rate": 21.18,
+                    "rate": 9.67,
                     "name": "VRTX",
                     "value": 75.497472564
                 },
                 {
-                    "rate": -2.87,
+                    "rate": -19.91,
                     "name": "VTRS",
                     "value": 14.176282951
                 },
                 {
-                    "rate": 51.49,
+                    "rate": 7.61,
                     "name": "VTYX",
                     "value": 2.510172139
                 },
                 {
-                    "rate": 39.38,
+                    "rate": -9.99,
                     "name": "XENE",
                     "value": 2.397937688
                 },
                 {
-                    "rate": 17.82,
+                    "rate": -34.96,
                     "name": "XNCR",
                     "value": 2.121909407
                 },
                 {
-                    "rate": -5.55,
+                    "rate": -26.49,
                     "name": "XRAY",
                     "value": 7.702441994
                 },
                 {
-                    "rate": 65.28,
+                    "rate": -44.95,
                     "name": "ZLAB",
                     "value": 2.817536601
                 }
@@ -2385,487 +2385,487 @@
             "name": "Finance",
             "children": [
                 {
-                    "rate": 15.06,
+                    "rate": -7.69,
                     "name": "ABCB",
                     "value": 3.393533926
                 },
                 {
-                    "rate": 1.94,
+                    "rate": -1.16,
                     "name": "ACGL",
                     "value": 25.113162057
                 },
                 {
-                    "rate": 17.51,
+                    "rate": 8.67,
                     "name": "ACT",
                     "value": 4.005928304
                 },
                 {
-                    "rate": 4.45,
+                    "rate": -11.88,
                     "name": "ARCC",
                     "value": 10.457347647
                 },
                 {
-                    "rate": 31.59,
+                    "rate": 20.15,
                     "name": "BANF",
                     "value": 2.948608976
                 },
                 {
-                    "rate": 12.31,
+                    "rate": -6.97,
                     "name": "BANR",
                     "value": 2.196965657
                 },
                 {
-                    "rate": 3.49,
+                    "rate": -13.52,
                     "name": "BHF",
                     "value": 4.039330503
                 },
                 {
-                    "rate": 6.64,
+                    "rate": -19.08,
                     "name": "BOKF",
                     "value": 6.995168494
                 },
                 {
-                    "rate": 1.61,
+                    "rate": -12.31,
                     "name": "BPOP",
                     "value": 5.248195709
                 },
                 {
-                    "rate": 0.31,
+                    "rate": 10.89,
                     "name": "CACC",
                     "value": 6.007437257
                 },
                 {
-                    "rate": 10.17,
+                    "rate": -11.57,
                     "name": "CATY",
                     "value": 3.261758051
                 },
                 {
-                    "rate": 4.06,
+                    "rate": -3.03,
                     "name": "CBSH",
                     "value": 8.377439682
                 },
                 {
-                    "rate": 34.4,
+                    "rate": 35.71,
                     "name": "CD",
                     "value": 2.908473657
                 },
                 {
-                    "rate": -8.15,
+                    "rate": -27.0,
                     "name": "CG",
                     "value": 12.762234251
                 },
                 {
-                    "rate": -18.96,
+                    "rate": 6.58,
                     "name": "CINF",
                     "value": 19.956413
                 },
                 {
-                    "rate": 8.26,
+                    "rate": -3.34,
                     "name": "CLBK",
                     "value": 2.256778558
                 },
                 {
-                    "rate": -0.68,
+                    "rate": -14.07,
                     "name": "CME",
                     "value": 67.859111991
                 },
                 {
-                    "rate": 8.64,
+                    "rate": -14.27,
                     "name": "COLB",
                     "value": 2.484430868
                 },
                 {
-                    "rate": 4.16,
+                    "rate": 7.65,
                     "name": "COOP",
                     "value": 3.318659158
                 },
                 {
-                    "rate": 8.8,
+                    "rate": -12.55,
                     "name": "CRVL",
                     "value": 3.161371396
                 },
                 {
-                    "rate": 24.71,
+                    "rate": -13.16,
                     "name": "CSGP",
                     "value": 31.542881054
                 },
                 {
-                    "rate": 7.68,
+                    "rate": -17.34,
                     "name": "CSQ",
                     "value": 2.280037376
                 },
                 {
-                    "rate": 14.29,
+                    "rate": 11.68,
                     "name": "CVBF",
                     "value": 3.405983605
                 },
                 {
-                    "rate": 7.01,
+                    "rate": -9.05,
                     "name": "EBC",
                     "value": 2.769424988
                 },
                 {
-                    "rate": 7.29,
+                    "rate": -8.72,
                     "name": "EFSC",
                     "value": 2.07387451
                 },
                 {
-                    "rate": 31.15,
+                    "rate": -10.32,
                     "name": "ERIE",
                     "value": 12.637938197
                 },
                 {
-                    "rate": -16.16,
+                    "rate": -15.01,
                     "name": "ESGR",
                     "value": 3.949261953
                 },
                 {
-                    "rate": 4.1,
+                    "rate": -17.74,
                     "name": "EWBC",
                     "value": 11.01649568
                 },
                 {
-                    "rate": 7.64,
+                    "rate": -50.36,
                     "name": "EXPI",
                     "value": 2.256936713
                 },
                 {
-                    "rate": 28.95,
+                    "rate": -12.17,
                     "name": "FCNCA",
                     "value": 11.0464713
                 },
                 {
-                    "rate": 11.35,
+                    "rate": -18.44,
                     "name": "FFBC",
                     "value": 2.421620846
                 },
                 {
-                    "rate": 7.85,
+                    "rate": -14.43,
                     "name": "FFIN",
                     "value": 5.445250936
                 },
                 {
-                    "rate": 6.37,
+                    "rate": -12.39,
                     "name": "FHB",
                     "value": 3.445177995
                 },
                 {
-                    "rate": 19.02,
+                    "rate": -2.5,
                     "name": "FIBK",
                     "value": 3.87793146
                 },
                 {
-                    "rate": -2.62,
+                    "rate": -15.67,
                     "name": "FITB",
                     "value": 25.2511127
                 },
                 {
-                    "rate": 17.2,
+                    "rate": -28.46,
                     "name": "FOCS",
                     "value": 3.301200512
                 },
                 {
-                    "rate": 33.97,
+                    "rate": -31.71,
                     "name": "FRHC",
                     "value": 4.62583445
                 },
                 {
-                    "rate": 3.9,
+                    "rate": -4.85,
                     "name": "FRME",
                     "value": 2.502323955
                 },
                 {
-                    "rate": 9.12,
+                    "rate": -13.8,
                     "name": "FULT",
                     "value": 2.91119463
                 },
                 {
-                    "rate": 33.99,
+                    "rate": -19.29,
                     "name": "FUTU",
                     "value": 6.642725378
                 },
                 {
-                    "rate": -7.87,
+                    "rate": -9.85,
                     "name": "GBDC",
                     "value": 2.337852766
                 },
                 {
-                    "rate": 4.89,
+                    "rate": -12.66,
                     "name": "HBAN",
                     "value": 22.223247754
                 },
                 {
-                    "rate": 13.4,
+                    "rate": -25.22,
                     "name": "HLNE",
                     "value": 3.065453942
                 },
                 {
-                    "rate": 4.9,
+                    "rate": -11.28,
                     "name": "HTLF",
                     "value": 2.128041113
                 },
                 {
-                    "rate": 6.62,
+                    "rate": -8.25,
                     "name": "HWC",
                     "value": 4.37009985
                 },
                 {
-                    "rate": 15.31,
+                    "rate": -14.51,
                     "name": "IBKR",
                     "value": 8.921077184
                 },
                 {
-                    "rate": 6.04,
+                    "rate": -1.76,
                     "name": "IBOC",
                     "value": 2.873384666
                 },
                 {
-                    "rate": 0.37,
+                    "rate": -5.76,
                     "name": "IBTX",
                     "value": 2.515102738
                 },
                 {
-                    "rate": 5.77,
+                    "rate": -2.03,
                     "name": "INDB",
                     "value": 3.701047989
                 },
                 {
-                    "rate": 30.78,
+                    "rate": 8.28,
                     "name": "LPLA",
                     "value": 19.81120727
                 },
                 {
-                    "rate": -0.58,
+                    "rate": -21.05,
                     "name": "MKTX",
                     "value": 13.367470425
                 },
                 {
-                    "rate": -1.33,
+                    "rate": -14.72,
                     "name": "MORN",
                     "value": 10.102192744
                 },
                 {
-                    "rate": 5.09,
+                    "rate": -10.48,
                     "name": "NAVI",
                     "value": 2.4102
                 },
                 {
-                    "rate": 27.74,
+                    "rate": -15.47,
                     "name": "NDAQ",
                     "value": 28.930591336
                 },
                 {
-                    "rate": 26.07,
+                    "rate": -27.81,
                     "name": "NMIH",
                     "value": 2.023642825
                 },
                 {
-                    "rate": -5.4,
+                    "rate": -8.61,
                     "name": "NTRS",
                     "value": 20.15707188
                 },
                 {
-                    "rate": 12.98,
+                    "rate": -14.72,
                     "name": "ONB",
                     "value": 5.27518303
                 },
                 {
-                    "rate": 6.03,
+                    "rate": -14.08,
                     "name": "OZK",
                     "value": 5.574772447
                 },
                 {
-                    "rate": -10.36,
+                    "rate": -34.01,
                     "name": "PACW",
                     "value": 3.322937655
                 },
                 {
-                    "rate": 1.67,
+                    "rate": -4.06,
                     "name": "PAX",
                     "value": 2.443402638
                 },
                 {
-                    "rate": 11.37,
+                    "rate": -3.48,
                     "name": "PFG",
                     "value": 22.165805
                 },
                 {
-                    "rate": 8.09,
+                    "rate": -17.86,
                     "name": "PNFP",
                     "value": 5.986411858
                 },
                 {
-                    "rate": 8.05,
+                    "rate": -17.23,
                     "name": "PPBI",
                     "value": 3.202233312
                 },
                 {
-                    "rate": 3.63,
+                    "rate": -9.2,
                     "name": "PSEC",
                     "value": 3.059671089
                 },
                 {
-                    "rate": 15.59,
+                    "rate": -26.6,
                     "name": "QFIN",
                     "value": 3.341995517
                 },
                 {
-                    "rate": 14.29,
+                    "rate": -15.92,
                     "name": "RNST",
                     "value": 2.091527028
                 },
                 {
-                    "rate": 1.55,
+                    "rate": -7.05,
                     "name": "SBCF",
                     "value": 2.692948559
                 },
                 {
-                    "rate": -14.28,
+                    "rate": -33.52,
                     "name": "SBNY",
                     "value": 7.822695661
                 },
                 {
-                    "rate": 2.29,
+                    "rate": -2.42,
                     "name": "SEIC",
                     "value": 8.2375468
                 },
                 {
-                    "rate": -0.5,
+                    "rate": -11.91,
                     "name": "SFNC",
                     "value": 2.87887718
                 },
                 {
-                    "rate": 3.62,
+                    "rate": -2.25,
                     "name": "SIGI",
                     "value": 6.1732658
                 },
                 {
-                    "rate": -6.63,
+                    "rate": -21.65,
                     "name": "SIVB",
                     "value": 17.324935624
                 },
                 {
-                    "rate": -6.89,
+                    "rate": -1.19,
                     "name": "SLM",
                     "value": 3.506999
                 },
                 {
-                    "rate": 33.45,
+                    "rate": 13.66,
                     "name": "SNEX",
                     "value": 2.141888095
                 },
                 {
-                    "rate": 22.86,
+                    "rate": -46.87,
                     "name": "SOFI",
                     "value": 5.369771446
                 },
                 {
-                    "rate": 7.16,
+                    "rate": -6.5,
                     "name": "SSB",
                     "value": 6.228971444
                 },
                 {
-                    "rate": 25.6,
+                    "rate": -33.42,
                     "name": "TBBK",
                     "value": 2.069426539
                 },
                 {
-                    "rate": 16.39,
+                    "rate": -12.75,
                     "name": "TCBI",
                     "value": 3.189822738
                 },
                 {
-                    "rate": 5.33,
+                    "rate": -14.52,
                     "name": "TFSL",
                     "value": 4.047926082
                 },
                 {
-                    "rate": 3.72,
+                    "rate": -6.97,
                     "name": "TOWN",
                     "value": 2.297547685
                 },
                 {
-                    "rate": 20.48,
+                    "rate": -16.64,
                     "name": "TPG",
                     "value": 2.672767156
                 },
                 {
-                    "rate": 1.56,
+                    "rate": -20.46,
                     "name": "TROW",
                     "value": 26.631139
                 },
                 {
-                    "rate": 16.07,
+                    "rate": -20.32,
                     "name": "TW",
                     "value": 15.095331782
                 },
                 {
-                    "rate": 11.19,
+                    "rate": 2.15,
                     "name": "UBSI",
                     "value": 5.609439429
                 },
                 {
-                    "rate": 15.78,
+                    "rate": -12.67,
                     "name": "UCBI",
                     "value": 3.830977831
                 },
                 {
-                    "rate": 1.61,
+                    "rate": -10.23,
                     "name": "UMBF",
                     "value": 4.429439765
                 },
                 {
-                    "rate": 8.36,
+                    "rate": -15.09,
                     "name": "UMPQ",
                     "value": 4.074090854
                 },
                 {
-                    "rate": 10.71,
+                    "rate": -15.66,
                     "name": "VCTR",
                     "value": 2.257425155
                 },
                 {
-                    "rate": -9.33,
+                    "rate": -14.51,
                     "name": "VIRT",
                     "value": 3.693069603
                 },
                 {
-                    "rate": 4.33,
+                    "rate": -9.23,
                     "name": "VLY",
                     "value": 6.21827859
                 },
                 {
-                    "rate": 9.22,
+                    "rate": -7.35,
                     "name": "WAFD",
                     "value": 2.413171819
                 },
                 {
-                    "rate": 6.74,
+                    "rate": -6.25,
                     "name": "WSBC",
                     "value": 2.225881009
                 },
                 {
-                    "rate": 29.73,
+                    "rate": -20.45,
                     "name": "WSFS",
                     "value": 3.1329702
                 },
                 {
-                    "rate": 1.64,
+                    "rate": -12.46,
                     "name": "WTFC",
                     "value": 5.6258775
                 },
                 {
-                    "rate": 1.64,
+                    "rate": -11.71,
                     "name": "WTW",
                     "value": 25.716540524
                 },
                 {
-                    "rate": 20.27,
+                    "rate": -35.52,
                     "name": "XP",
                     "value": 6.988384654
                 },
                 {
-                    "rate": 4.43,
+                    "rate": -18.9,
                     "name": "ZION",
                     "value": 7.64578952
                 }
@@ -2875,237 +2875,237 @@
             "name": "Industrials",
             "children": [
                 {
-                    "rate": 11.92,
+                    "rate": -14.81,
                     "name": "AAON",
                     "value": 4.25596296
                 },
                 {
-                    "rate": 7.3,
+                    "rate": -19.69,
                     "name": "AIMC",
                     "value": 4.010146437
                 },
                 {
-                    "rate": 13.79,
+                    "rate": -18.0,
                     "name": "ARCB",
                     "value": 2.475753246
                 },
                 {
-                    "rate": 25.69,
+                    "rate": 58.01,
                     "name": "AVAV",
                     "value": 2.207051333
                 },
                 {
-                    "rate": 16.21,
+                    "rate": -14.54,
                     "name": "BCPC",
                     "value": 4.438503051
                 },
                 {
-                    "rate": 0.86,
+                    "rate": -8.64,
                     "name": "BRKR",
                     "value": 10.844409241
                 },
                 {
-                    "rate": -10.59,
+                    "rate": -29.09,
                     "name": "CGNX",
                     "value": 8.324858673
                 },
                 {
-                    "rate": 13.7,
+                    "rate": -1.17,
                     "name": "CHX",
                     "value": 6.175619542
                 },
                 {
-                    "rate": -12.96,
+                    "rate": -2.73,
                     "name": "COHR",
                     "value": 6.251930118
                 },
                 {
-                    "rate": -34.52,
+                    "rate": -60.2,
                     "name": "CRCT",
                     "value": 2.126481818
                 },
                 {
-                    "rate": 29.01,
+                    "rate": -4.42,
                     "name": "CSWI",
                     "value": 2.183821416
                 },
                 {
-                    "rate": 2.56,
+                    "rate": -7.83,
                     "name": "CSX",
                     "value": 65.616176432
                 },
                 {
-                    "rate": -12.59,
+                    "rate": 24.27,
                     "name": "DRS",
                     "value": 3.424064342
                 },
                 {
-                    "rate": 4.58,
+                    "rate": 25.85,
                     "name": "ESLT",
                     "value": 7.289402169
                 },
                 {
-                    "rate": 7.29,
+                    "rate": -13.08,
                     "name": "FOX",
                     "value": 18.292697507
                 },
                 {
-                    "rate": 7.28,
+                    "rate": -13.52,
                     "name": "FOXA",
                     "value": 19.794815567
                 },
                 {
-                    "rate": 30.02,
+                    "rate": 8.47,
                     "name": "GPRE",
                     "value": 2.053884683
                 },
                 {
-                    "rate": 1.55,
+                    "rate": -6.54,
                     "name": "HON",
                     "value": 134.576809558
                 },
                 {
-                    "rate": -3.51,
+                    "rate": -6.47,
                     "name": "IEP",
                     "value": 18.314711321
                 },
                 {
-                    "rate": 0.7,
+                    "rate": 9.7,
                     "name": "IOSP",
                     "value": 5.711274781
                 },
                 {
-                    "rate": 3.78,
+                    "rate": -16.77,
                     "name": "ITRI",
                     "value": 2.585988319
                 },
                 {
-                    "rate": 9.62,
+                    "rate": -10.01,
                     "name": "JBHT",
                     "value": 19.53999405
                 },
                 {
-                    "rate": 7.18,
+                    "rate": 5.18,
                     "name": "LECO",
                     "value": 10.178702536
                 },
                 {
-                    "rate": -2.79,
+                    "rate": -6.55,
                     "name": "LSTR",
                     "value": 6.595839766
                 },
                 {
-                    "rate": 7.69,
+                    "rate": -21.03,
                     "name": "MIDD",
                     "value": 8.356795427
                 },
                 {
-                    "rate": -7.53,
+                    "rate": -21.54,
                     "name": "MKSI",
                     "value": 6.334104775
                 },
                 {
-                    "rate": 15.05,
+                    "rate": -8.13,
                     "name": "NDSN",
                     "value": 14.078535328
                 },
                 {
-                    "rate": -11.32,
+                    "rate": -8.4,
                     "name": "NWL",
                     "value": 6.16264
                 },
                 {
-                    "rate": 6.28,
+                    "rate": -15.93,
                     "name": "ODFL",
                     "value": 39.20329875
                 },
                 {
-                    "rate": 52.31,
+                    "rate": -34.72,
                     "name": "OLK",
                     "value": 2.64397822
                 },
                 {
-                    "rate": 9.24,
+                    "rate": -7.12,
                     "name": "PCAR",
                     "value": 919.477189402
                 },
                 {
-                    "rate": -8.12,
+                    "rate": -17.03,
                     "name": "POOL",
                     "value": 14.705681726
                 },
                 {
-                    "rate": -6.83,
+                    "rate": -21.15,
                     "name": "QRVO",
                     "value": 10.296579767
                 },
                 {
-                    "rate": -3.41,
+                    "rate": -10.04,
                     "name": "REYN",
                     "value": 5.907633823
                 },
                 {
-                    "rate": -17.65,
+                    "rate": 11.21,
                     "name": "RGLD",
                     "value": 8.004593997
                 },
                 {
-                    "rate": -2.9,
+                    "rate": -50.37,
                     "name": "RKLB",
                     "value": 2.323692808
                 },
                 {
-                    "rate": 65.2,
+                    "rate": -3.11,
                     "name": "RUN",
                     "value": 5.372344756
                 },
                 {
-                    "rate": 3.36,
+                    "rate": -34.64,
                     "name": "SAIA",
                     "value": 7.485172284
                 },
                 {
-                    "rate": 78.06,
+                    "rate": 51.59,
                     "name": "SGML",
                     "value": 3.05118
                 },
                 {
-                    "rate": 5.63,
+                    "rate": 45.76,
                     "name": "STLD",
                     "value": 21.941158983
                 },
                 {
-                    "rate": -9.65,
+                    "rate": -8.76,
                     "name": "TER",
                     "value": 16.393334367
                 },
                 {
-                    "rate": 10.15,
+                    "rate": -7.87,
                     "name": "TRMB",
                     "value": 13.7448
                 },
                 {
-                    "rate": 7.6,
+                    "rate": -15.35,
                     "name": "WDFC",
                     "value": 2.388563501
                 },
                 {
-                    "rate": -0.38,
+                    "rate": -8.28,
                     "name": "WERN",
                     "value": 2.976538981
                 },
                 {
-                    "rate": -0.76,
+                    "rate": 7.82,
                     "name": "WFRD",
                     "value": 4.456874481
                 },
                 {
-                    "rate": 13.22,
+                    "rate": 9.36,
                     "name": "WIRE",
                     "value": 3.661362394
                 },
                 {
-                    "rate": 2.24,
+                    "rate": -7.38,
                     "name": "WWD",
                     "value": 6.052885177
                 }
@@ -3115,87 +3115,87 @@
             "name": "Consumer Staples",
             "children": [
                 {
-                    "rate": 6.26,
+                    "rate": 20.86,
                     "name": "CALM",
                     "value": 3.002353943
                 },
                 {
-                    "rate": 5.32,
+                    "rate": -8.66,
                     "name": "CCEP",
                     "value": 25.703513922
                 },
                 {
-                    "rate": 174.85,
+                    "rate": 31.29,
                     "name": "CELH",
                     "value": 7.229198063
                 },
                 {
-                    "rate": 1.38,
+                    "rate": 1.2,
                     "name": "COKE",
                     "value": 4.972367067
                 },
                 {
-                    "rate": 21.46,
+                    "rate": 8.99,
                     "name": "FIZZ",
                     "value": 4.310105517
                 },
                 {
-                    "rate": 21.69,
+                    "rate": -15.56,
                     "name": "JJSF",
                     "value": 2.740564112
                 },
                 {
-                    "rate": 7.05,
+                    "rate": -9.18,
                     "name": "KDP",
                     "value": 50.517684121
                 },
                 {
-                    "rate": -10.47,
+                    "rate": 3.1,
                     "name": "KHC",
                     "value": 48.99720656
                 },
                 {
-                    "rate": 6.49,
+                    "rate": -24.36,
                     "name": "LANC",
                     "value": 5.4149444
                 },
                 {
-                    "rate": -2.0,
+                    "rate": -5.65,
                     "name": "MDLZ",
                     "value": 91.137062856
                 },
                 {
-                    "rate": 20.84,
+                    "rate": 23.42,
                     "name": "MGPI",
                     "value": 2.147057794
                 },
                 {
-                    "rate": 7.48,
+                    "rate": 1.83,
                     "name": "MNST",
                     "value": 54.39500917
                 },
                 {
-                    "rate": 4.53,
+                    "rate": -3.39,
                     "name": "PEP",
                     "value": 242.781861984
                 },
                 {
-                    "rate": 3.86,
+                    "rate": 15.92,
                     "name": "PPC",
                     "value": 5.885722495
                 },
                 {
-                    "rate": -11.53,
+                    "rate": 9.82,
                     "name": "SMPL",
                     "value": 3.754803813
                 },
                 {
-                    "rate": 5.13,
+                    "rate": 2.54,
                     "name": "TWNK",
                     "value": 3.031195726
                 },
                 {
-                    "rate": -15.1,
+                    "rate": -13.05,
                     "name": "WBA",
                     "value": 31.705630645
                 }
@@ -3205,82 +3205,82 @@
             "name": "Utilities",
             "children": [
                 {
-                    "rate": 3.61,
+                    "rate": 15.5,
                     "name": "AEP",
                     "value": 47.486142484
                 },
                 {
-                    "rate": 16.67,
+                    "rate": -1.11,
                     "name": "AY",
                     "value": 3.006988315
                 },
                 {
-                    "rate": 40.9,
+                    "rate": 27.86,
                     "name": "CEG",
                     "value": 27.649363022
                 },
                 {
-                    "rate": 19.06,
+                    "rate": -5.87,
                     "name": "CWST",
                     "value": 3.986614716
                 },
                 {
-                    "rate": 5.52,
+                    "rate": 8.46,
                     "name": "EVRG",
                     "value": 14.254209509
                 },
                 {
-                    "rate": -2.72,
+                    "rate": 19.25,
                     "name": "EXC",
                     "value": 42.79716438
                 },
                 {
-                    "rate": 139.2,
+                    "rate": -49.11,
                     "name": "FLNC",
                     "value": 3.489720466
                 },
                 {
-                    "rate": 8.08,
+                    "rate": 7.72,
                     "name": "LNT",
                     "value": 13.547648165
                 },
                 {
-                    "rate": 1.62,
+                    "rate": 4.31,
                     "name": "MGEE",
                     "value": 2.604847541
                 },
                 {
-                    "rate": 48.87,
+                    "rate": 99.56,
                     "name": "NFE",
                     "value": 7.843492206
                 },
                 {
-                    "rate": -5.79,
+                    "rate": 4.2,
                     "name": "NWE",
                     "value": 3.49356251
                 },
                 {
-                    "rate": 25.04,
+                    "rate": 6.32,
                     "name": "OTTR",
                     "value": 2.964956401
                 },
                 {
-                    "rate": 117.92,
+                    "rate": -42.22,
                     "name": "PI",
                     "value": 3.399898428
                 },
                 {
-                    "rate": 7.97,
+                    "rate": 14.21,
                     "name": "RNW",
                     "value": 2.173668922
                 },
                 {
-                    "rate": 11.91,
+                    "rate": -17.29,
                     "name": "SRCL",
                     "value": 5.156785211
                 },
                 {
-                    "rate": 2.61,
+                    "rate": 9.68,
                     "name": "XEL",
                     "value": 37.218370213
                 }
@@ -3290,67 +3290,67 @@
             "name": "Energy",
             "children": [
                 {
-                    "rate": 7.84,
+                    "rate": 37.19,
                     "name": "APA",
                     "value": 12.2463845
                 },
                 {
-                    "rate": 42.61,
+                    "rate": 44.38,
                     "name": "ARLP",
                     "value": 2.723249639
                 },
                 {
-                    "rate": -14.11,
+                    "rate": 36.04,
                     "name": "BKR",
                     "value": 30.933149596
                 },
                 {
-                    "rate": 23.81,
+                    "rate": 46.05,
                     "name": "CHK",
                     "value": 10.729748282
                 },
                 {
-                    "rate": 10.91,
+                    "rate": 16.98,
                     "name": "CHRD",
                     "value": 5.539866063
                 },
                 {
-                    "rate": 5.24,
+                    "rate": 17.42,
                     "name": "FANG",
                     "value": 24.50079395
                 },
                 {
-                    "rate": 31.97,
+                    "rate": 78.33,
                     "name": "GLNG",
                     "value": 2.39284469
                 },
                 {
-                    "rate": -5.93,
+                    "rate": 93.08,
                     "name": "HPK",
                     "value": 3.06105447
                 },
                 {
-                    "rate": 18.32,
+                    "rate": 3.54,
                     "name": "PAA",
                     "value": 9.092291559
                 },
                 {
-                    "rate": 18.42,
+                    "rate": 0.99,
                     "name": "PAGP",
                     "value": 2.603433284
                 },
                 {
-                    "rate": 3.99,
+                    "rate": 31.86,
                     "name": "PDCE",
                     "value": 5.799585089
                 },
                 {
-                    "rate": 13.81,
+                    "rate": 78.54,
                     "name": "PTEN",
                     "value": 3.012548021
                 },
                 {
-                    "rate": 14.26,
+                    "rate": 22.27,
                     "name": "VNOM",
                     "value": 2.227779784
                 }
@@ -3360,67 +3360,67 @@
             "name": "Telecommunications",
             "children": [
                 {
-                    "rate": -5.01,
+                    "rate": -18.31,
                     "name": "CSCO",
                     "value": 208.568392509
                 },
                 {
-                    "rate": 47.17,
+                    "rate": -20.9,
                     "name": "EXTR",
                     "value": 2.494512685
                 },
                 {
-                    "rate": -9.8,
+                    "rate": -3.27,
                     "name": "IDCC",
                     "value": 2.20396038
                 },
                 {
-                    "rate": -6.26,
+                    "rate": -12.68,
                     "name": "LBTYA",
                     "value": 9.627224721
                 },
                 {
-                    "rate": -3.42,
+                    "rate": -13.47,
                     "name": "LBTYB",
                     "value": 10.068587459
                 },
                 {
-                    "rate": -4.68,
+                    "rate": -8.61,
                     "name": "LBTYK",
                     "value": 9.852503618
                 },
                 {
-                    "rate": -14.03,
+                    "rate": -15.54,
                     "name": "LILA",
                     "value": 2.006763783
                 },
                 {
-                    "rate": -14.3,
+                    "rate": -14.31,
                     "name": "LILAK",
                     "value": 2.013286309
                 },
                 {
-                    "rate": -17.72,
+                    "rate": -45.4,
                     "name": "ROKU",
                     "value": 9.966126565
                 },
                 {
-                    "rate": -27.38,
+                    "rate": -39.17,
                     "name": "TIGO",
                     "value": 3.3562796
                 },
                 {
-                    "rate": 18.15,
+                    "rate": 22.83,
                     "name": "TMUS",
                     "value": 182.114867479
                 },
                 {
-                    "rate": -7.46,
+                    "rate": -4.4,
                     "name": "VOD",
                     "value": 33.580569376
                 },
                 {
-                    "rate": -22.07,
+                    "rate": -35.0,
                     "name": "WBD",
                     "value": 37.470150511
                 }
@@ -3430,52 +3430,52 @@
             "name": "Real Estate",
             "children": [
                 {
-                    "rate": 1.39,
+                    "rate": -17.1,
                     "name": "AGNC",
                     "value": 6.545833
                 },
                 {
-                    "rate": 6.57,
+                    "rate": -5.07,
                     "name": "EQIX",
                     "value": 66.327619307
                 },
                 {
-                    "rate": 19.97,
+                    "rate": 4.18,
                     "name": "GLPI",
                     "value": 13.565991609
                 },
                 {
-                    "rate": -4.1,
+                    "rate": 17.62,
                     "name": "HST",
                     "value": 12.112570271
                 },
                 {
-                    "rate": 0.98,
+                    "rate": -12.23,
                     "name": "LAMR",
                     "value": 10.954360223
                 },
                 {
-                    "rate": -11.19,
+                    "rate": -0.54,
                     "name": "PCH",
                     "value": 3.814271052
                 },
                 {
-                    "rate": 4.34,
+                    "rate": 4.72,
                     "name": "PECO",
                     "value": 4.01039424
                 },
                 {
-                    "rate": -4.29,
+                    "rate": -6.04,
                     "name": "REG",
                     "value": 10.978987203
                 },
                 {
-                    "rate": 5.59,
+                    "rate": 2.7,
                     "name": "SBAC",
                     "value": 30.364227907
                 },
                 {
-                    "rate": 23.0,
+                    "rate": 4.65,
                     "name": "SBRA",
                     "value": 3.00731541
                 }
@@ -3485,32 +3485,32 @@
             "name": "Miscellaneous",
             "children": [
                 {
-                    "rate": 11.04,
+                    "rate": 9.94,
                     "name": "CASY",
                     "value": 8.096671147
                 },
                 {
-                    "rate": 9.11,
+                    "rate": 0.77,
                     "name": "FCFS",
                     "value": 4.2149924
                 },
                 {
-                    "rate": -20.18,
+                    "rate": -9.02,
                     "name": "LESL",
                     "value": 2.49043577
                 },
                 {
-                    "rate": -15.06,
+                    "rate": -15.46,
                     "name": "ODP",
                     "value": 2.390858502
                 },
                 {
-                    "rate": 23.03,
+                    "rate": -29.2,
                     "name": "OLPX",
                     "value": 3.564005524
                 },
                 {
-                    "rate": -24.05,
+                    "rate": -17.61,
                     "name": "WOOF",
                     "value": 2.87991399
                 }
@@ -3520,12 +3520,12 @@
             "name": "Basic Materials",
             "children": [
                 {
-                    "rate": 2.14,
+                    "rate": -4.6,
                     "name": "FAST",
                     "value": 30.505346782
                 },
                 {
-                    "rate": 10.27,
+                    "rate": -3.61,
                     "name": "UFPI",
                     "value": 5.353834466
                 }

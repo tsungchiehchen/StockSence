@@ -19,7 +19,7 @@
           title="Calculating" 
           :active.sync="searchPopup"
           :background-color = "searchPopupcolor"
-          :button-close-hidden="close" >
+          :button-close-hidden="true" >
           <div style="margin: 50px auto 50px auto; text-align: center !important;">
             <v-progress-circular
             :size="70"
@@ -65,6 +65,7 @@ export default {
     maxDate: new Date([2023, 5, 1]),
     predictionPopup: false,
     searchPopup: false,
+    alrtPopup: false,
     close: true,
     searchPopupcolor: "rgba(0,0,0,.9)",
     predictionPopupcolor: "rgba(0,0,0,.9)"
@@ -83,8 +84,6 @@ export default {
   },
   methods:{
     search: function(event){
-      document.getElementsByClassName("vuesax-app-is-ltr")[0].style = "pointer-events: none;";  // 讓 popup 不會被滑鼠關掉
-
       var dateRange = document.getElementById('dateRange').value
       var splitted = dateRange.split(' ~ ');
       var startDate = splitted[0]
@@ -95,8 +94,10 @@ export default {
       var endDateDay = endDateSplitted[2]
       if((endDateYear > 2023) || (endDateYear == 2023 && endDateMonth > 2) || (endDateYear == 2023 && endDateMonth == 2 && endDateDay == 1)){
         alert("Current time range is not available in our data. Please use \"Price Prediction.\"");
+        this.searchPopup = false
       }
       else{
+        document.getElementsByClassName("vuesax-app-is-ltr")[0].style = "pointer-events: none;";  // 讓 popup 不會被滑鼠關掉
         const url = new URL(window.location.href);
         var stockPriceOnly = url.searchParams.get('stockPriceOnly')
         var stockSymbol = url.searchParams.get('stockSymbol')

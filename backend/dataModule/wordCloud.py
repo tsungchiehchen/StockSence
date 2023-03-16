@@ -83,7 +83,7 @@ def getWordCloud(start_date, end_date, symbol):
     # convert to list of dictionaries
     data = [{'name': k, 'value': v} for k, v in sorted_freq.items()]
     # write to json
-    with open('./dataModule/wordcloud.json', 'w') as f:
+    with open('./dataset/wordcloud.json', 'w') as f:
         json.dump(data, f, indent=2)
 
 
