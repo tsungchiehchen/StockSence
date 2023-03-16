@@ -35,7 +35,7 @@ def datespan(startDate, endDate, delta=timedelta(days=1)):
 
 def getNews(stockSymbol):
     companyName = companyNames[stockSymbol]
-    f = open('../dataset/news-company-name/' + str(stockSymbol) + '.csv', 'w')
+    f = open('../dataset/news-company-name-new/' + str(stockSymbol) + '.csv', 'w')
     writer = csv.writer(f)
     header = ['title', 'datetime', 'link']
     writer.writerow(header)

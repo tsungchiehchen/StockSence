@@ -71,27 +71,6 @@ export default {
     close: true,
     searchPopupcolor: "rgba(0,0,0,.9)",
     predictionPopupcolor: "rgba(0,0,0,.9)",
-    options: {
-      chart: {
-        id: 'vuechart-example'
-      },
-      xaxis: {
-        categories: [
-         "Jan",
-         "Feb",
-         "Mar",
-         "Apr",
-         "May",
-         "Jun",
-         "Jul",
-         "Aug",
-         "Sep",
-         "Oct",
-         "Nov",
-         "Dec"
-        ]
-      }
-    },
     series: [{
       data: [55, 62, 89, 66, 98, 72, 101, 75, 94, 120, 117, 140]
     }],
