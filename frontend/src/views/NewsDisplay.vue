@@ -5,7 +5,7 @@
         class="list"
         style="overflow-y: auto; height: 48vh;"
         data-key="key"
-        :data-sources="computedItems"
+        :data-sources="items"
         :data-component="itemComponent"
         :estimate-size="80"
         :item-class="'list-item-dynamic'"
@@ -18,36 +18,70 @@
 import Item from '../components/NewsDisplayItems'
 import { getData } from '../components/data'
 import VirtualList from 'vue-virtual-scroll-list'
+import newsJson from '../../../backend/dataset/NewsSentimentList.json'
 
 export default {
   name: 'App',
   data() {
     return {
       itemComponent: Item,
-      items: [
-        { price: '1', name: 'mm', desc: '123' },
-        { price: '22', name: 'aa' },
-        { price: '55', name: 'dd' },
-        { price: '77', name: 'gg' },
-        { price: '123', name: 'kk' },
-        { price: '53', name: 'mn' },
-        { price: '11', name: 'mm' },
-        { price: '22', name: 'a' },
-        { price: '33', name: 'd' },
-        { price: '77', name: 'g' },
-        { price: '1283', name: 'k' },
-        { price: '589', name: 'n' }
-      ]
+      items: []
     }
   },
-  computed: {
-    computedItems() {
-      return this.items.map((item, index) => {
-        item.key = `${index+1}`
-        return item
-      })
+  mounted(){
+    const url = new URL(window.location.href)
+    var rate = url.searchParams.get('rate')
+    
+    var processedItems = []
+    var key = 1
+    //console.log(newsJson[0])
+    for (var i = 0; i < 3; i++) {
+      for (var j = 0; j < newsJson[i].length; j++){
+        if(rate >= 0){
+          if(i == 0){
+            var color = "color: #42b883"
+          }
+          else if(i == 1){
+            color = "color: #787878"
+          }
+          else{
+            color = "color: #e54050"
+          }
+        }
+        else{
+          if(i == 0){
+            color = "color: #e54050"
+          }
+          else if(i == 1){
+            color = "color: #787878"
+          }
+          else{
+            color = "color: #42b883"
+          }
+        }
+        let news = {
+          "key": key,
+          "name": newsJson[i][j].title + " (" + newsJson[i][j].datetime + ")",
+          "desc": newsJson[i][j].desc,
+          "color": color
+        }
+        key++
+        processedItems.push(news)
+      }
     }
+    //console.log(processedItems)
+    this.items = processedItems
   }
+  // computed: {
+  //   computedItems() {
+      
+
+  //     // return this.items.map((item, index) => {
+  //     //   item.key = `${index+1}`
+  //     //   return item
+  //     // })
+  //   }
+  // }
 }
 </script>
 
