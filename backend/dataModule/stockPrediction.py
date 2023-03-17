@@ -1,7 +1,6 @@
 from keras.layers import LSTM
 from keras.layers import Dense
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
-from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler
 
 from keras.models import Sequential
 from keras.layers import Dense, LSTM
@@ -12,9 +11,9 @@ from tensorflow import keras
 import pandas as pd
 import numpy as np
 import pickle
-import financialanalysis as fa
-import matplotlib.pyplot as plt
 import time
+import json
+import datetime
 
 
 def stock_prediction_train_model(symbol, train_on_number_of_days, future_number_of_days, TestingRecords=0):
@@ -100,7 +99,15 @@ def stock_prediction_train_model(symbol, train_on_number_of_days, future_number_
         (EndTime-StartTime)/60), 'Minutes #############')
 
 
-def stock_prediction_inference(symbol, num_days):
+def get_number_of_days(end_date):
+    start_date = datetime.date(2023, 2, 28)
+    num_days = np.busday_count(start_date, end_date)
+    return num_days
+
+
+def stock_prediction_inference(symbol, start_date, end_date):
+    num_days = get_number_of_days(end_date)
+
     # read historical price again
     StockData = pd.read_csv('./dataset/Historical Price/' + symbol + '.csv')
     FullData = StockData[['Close']].values
@@ -113,7 +120,7 @@ def stock_prediction_inference(symbol, num_days):
 
     DataScaler = sc.fit(FullData)
 
-    previousPrices = np.array(list(StockData['Close'].iloc[-num_days:]))
+    previousPrices = np.array(list(StockData['Close'].iloc[-60:]))
 
     # Reshaping the data to (-1, 1)because its a single entry
     previousPrices = previousPrices.reshape(-1, 1)
@@ -133,7 +140,48 @@ def stock_prediction_inference(symbol, num_days):
 
     # Generating the prices in original scale
     NextPeriodPrice = DataScaler.inverse_transform(NextPeriodPrice)
-    print(NextPeriodPrice)
+    # get the slice that the user interested
+    NextPeriodPrice = NextPeriodPrice[0].tolist()[:num_days]
+
+    # write NextPeriodPrice to json
+    writePricetoJSON(StockData, start_date, end_date,
+                     NextPeriodPrice, num_days)
+    writeDatetoJSON(StockData, start_date, end_date, num_days)
+
+
+def writePricetoJSON(StockData, start_date, end_date, future_price, num_days):
+    # filter rows based on start_date and end_date to get historical date
+    historical_price = StockData[(StockData['Date'] >= start_date)
+                                 & (StockData['Date'] <= end_date)]
+    historical_price = historical_price['Close'].to_list()
+    combined = historical_price + future_price
+
+    json_string = json.dumps(json.loads(json.dumps(
+        [{"data": combined}]), parse_float=lambda x: round(float(x), 2)))
+
+    with open('./dataset/price prediction/price.json', 'w') as f:
+        f.write(json_string)
+
+
+def writeDatetoJSON(StockData, start_date, end_date, num_days):
+    # filter rows based on start_date and end_date to get historical date
+    historical_date = StockData[(StockData['Date'] >= start_date)
+                                & (StockData['Date'] <= end_date)]
+    historical_date = historical_date['Date'].to_list()
+
+    future_date = ["2023-03-01", "2023-03-02", "2023-03-03", "2023-03-06",
+                   "2023-03-07", "2023-03-08", "2023-03-09", "2023-03-10",
+                   "2023-03-13", "2023-03-14", "2023-03-15", "2023-03-16",
+                   "2023-03-17", "2023-03-20", "2023-03-21", "2023-03-22",
+                   "2023-03-23", "2023-03-24", "2023-03-27", "2023-03-28",
+                   "2023-03-29", "2023-03-30", "2023-03-31", "2023-04-03",
+                   "2023-04-04", "2023-04-05", "2023-04-06", "2023-04-07",
+                   "2023-04-10", "2023-04-11"]
+    future_date = future_date[:num_days]
+    date = historical_date + future_date
+
+    with open('./dataset/price prediction/date.json', 'w') as outfile:
+        json.dump(date, outfile)
 
 
 # testing
@@ -146,4 +194,7 @@ future_number_of_days = 30
 # stock_prediction_train_model(
 #     symbol, train_on_number_of_days, future_number_of_days)
 
-stock_prediction_inference(symbol, train_on_number_of_days)
+start_date = "2022-12-01"
+end_date = "2023-03-09"
+# end_date = "2023-04-11"
+stock_prediction_inference(symbol, start_date, end_date)
