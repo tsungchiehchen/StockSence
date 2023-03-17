@@ -23,7 +23,7 @@ document.title = "StockSense"
 
 <template>
   <div id="container">
-  <v-row no-gutters id="upperRow" style="height: 70vh; width: 100%;">
+  <v-row no-gutters id="upperRow" style="height: 67vh; width: 100%;">
     <v-col no-gutters id="priceDisplay" style="justify-content: center; align-items: center; display:grid; width:95%; margin: 15px 7.5px 7.5px 15px; padding: 10px 10px 5px 10px">
       <PriceDisplay/>
     </v-col>
@@ -31,16 +31,16 @@ document.title = "StockSense"
       <div id="toolbox" style="margin: 15px 15px 15px 7.5px; height: 13vh; padding: 15px 15px 15px 15px;">
         <Toolbox/>
       </div>
-      <div id="news-display" style="margin: 7.5px 15px 7.5px 7.5px; height:52.5vh; padding: 15px 15px 15px 15px;">
+      <div id="news-display" style="margin: 7.5px 15px 7.5px 7.5px; height:50vh; padding: 15px 15px 15px 15px;">
         <NewsDisplay/>
       </div>
     </v-col>
   </v-row>
-  <v-row no-gutters id="lowerRow" style="height: 30vh; width: 100%;">
-    <v-col no-gutters style="justify-content: center; align-items: center; display:grid; flex-basis: 30%; margin: 5px 7.5px 15px 15px;" id="stockRecommendation">
+  <v-row no-gutters id="lowerRow" style="height: 33.3vh; width: 100%;">
+    <v-col no-gutters style="justify-content: center; align-items: center; display:grid; flex-basis: 30%; margin: 10px 7.5px 15px 15px;" id="stockRecommendation">
       <StockRecommendation/>
     </v-col>
-    <v-col no-gutters id="wordcloud" style="justify-content: center; align-items: center; margin: 5px 15px 15px 7.5px;">
+    <v-col no-gutters id="wordcloud" style="justify-content: center; align-items: center; margin: 10px 15px 15px 7.5px;">
       <WordCloud/>
     </v-col>
   </v-row>
@@ -83,8 +83,8 @@ body {
 }
 
 .tree {
-    width: 80vw;
-    height: 20vh;
+    width: 70vw;
+    height: 25vh;
     // display: block;
     // overflow: auto; 
     position: plex;

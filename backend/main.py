@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, url_for, redirect
-from dataModule import calculateStockChangebyDate, calculateMacroChange, wordCloud, getNewsSentiment, hierarchicalClustering
+from dataModule import calculateStockChangebyDate, calculateMacroChange, wordCloud, getNewsSentiment, hierarchicalClustering, stockPrediction
 import time
 from pathlib import Path
 import json
@@ -23,7 +23,28 @@ def api():
     getNewsSentiment.get_news_sentiment(startDate, endDate, stockSymbol)
     hierarchicalClustering.perform_hierarchical_cluster(stockSymbol)
     
+    
     url = "http://127.0.0.1:8081/?stockPriceOnly=" + str(stockPriceOnly) + "&startDate=" + str(startDate) + "&endDate=" + str(endDate) + "&stockSymbol=" + str(stockSymbol) + "&startTimestamp=" + str(startTimestamp) + "&endTimestamp=" + str(endTimestamp) + "&rate=" + str(rate) + "&treeType=" + str(treeType)
+
+    return redirect(url)
+
+
+@app.route('/prediction', methods=['GET', 'POST'])
+def prediction():
+    stockPriceOnly = "true"
+    startDate = request.args.get('startDate')
+    endDate = request.args.get('endDate')
+    stockSymbol = request.args.get('stockSymbol')
+    treeType = request.args.get('cluster')
+    startTimestamp = request.args.get('startTimestamp')
+    endTimestamp = request.args.get('endTimestamp')
+    rate = request.args.get('rate')
+    predictionStartDate = request.args.get('predictionStartDate')
+    predictionEndDate = request.args.get('predictionEndDate')
+
+    stockPrediction.stock_prediction_inference(stockSymbol, predictionStartDate, predictionEndDate)
+
+    url = "http://127.0.0.1:8081/?stockPriceOnly=" + str(stockPriceOnly) + "&startDate=" + str(startDate) + "&endDate=" + str(endDate) + "&stockSymbol=" + str(stockSymbol) + "&startTimestamp=" + str(startTimestamp) + "&endTimestamp=" + str(endTimestamp) + "&rate=" + str(rate) + "&treeType=" + str(treeType) + "&predicting=true" + "&predictionStartDate=" + str(predictionStartDate) + "&predictionEndDate=" + str(predictionEndDate)
 
     return redirect(url)
 

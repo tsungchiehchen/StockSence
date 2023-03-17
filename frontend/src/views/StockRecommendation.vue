@@ -1,10 +1,10 @@
 <template>
   <div id="stockRecommendation" style="width: 100%">
-    <div style="margin-top: -15px; position: absolute; margin-left: 20px; z-index: 10000">
-          <v-btn variant="outlined" color="rgb(66, 184, 131)" style="margin:0 auto 0px auto; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px; color:white;" v-on:click="changeToCluster">Cluster</v-btn>
-          <v-btn variant="outlined" color="rgb(229, 64, 80)" @click="treePopup=true" style="margin: 0 auto 0px 10px; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px; color:white;" v-on:click="changeToTree">Tree</v-btn>
-    </div>
     <div id="vued3tree">
+      <div style="margin-top: -8px; position: absolute; margin-left: 20px; z-index: 10000">
+          <v-btn variant="outlined" color="#6F3381" style="margin:0 auto 0px auto; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px; color:white;" v-on:click="changeToCluster">Cluster</v-btn>
+          <v-btn variant="outlined" color="#E98B2A" @click="treePopup=true" style="margin: 0 auto 0px 10px; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px; color:white;" v-on:click="changeToTree">Tree</v-btn>
+      </div>
     <tree :data="tree" :zoomable="true" :marginY="-100" :marginX="0" layoutType="horizontal" :type="treeType" class="tree" id="tree"></tree>
     </div>
     <div id="noSimilarStock">
@@ -37,7 +37,6 @@ data() {
 mounted(){
   const url = new URL(window.location.href);
   var treeType = url.searchParams.get('treeType')
-  console.log(treeType)
   this.treeType = treeType
 
   if (recommendationJson && Object.keys(recommendationJson).length === 0 && Object.getPrototypeOf(recommendationJson) === Object.prototype){  // 沒有相似的 stock

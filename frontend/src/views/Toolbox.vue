@@ -12,8 +12,8 @@
             validate 
         />
         <div style="margin-top: 10px; text-align: center;">
-          <v-btn variant="outlined" color="rgb(66, 184, 131)" style="margin:0 auto 0px auto; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px; color:white;" @click="searchPopup=true" v-on:click="search">Search</v-btn>
-          <v-btn variant="outlined" color="rgb(229, 64, 80)" @click="predictionPopup=true" style="margin: 0 auto 0px 10px; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px; color:white;">Price Prediction</v-btn>
+          <v-btn variant="outlined" color="#227D51" style="margin:0 auto 0px auto; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px; color:white;" @click="searchPopup=true" v-on:click="search">Search</v-btn>
+          <v-btn variant="outlined" color="rgb(229, 64, 80)" @click="searchPopup=true" v-on:click="prediction" style="margin: 0 auto 0px 10px; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px; color:white;">Price Prediction</v-btn>
         </div>
           <vs-popup class="search"  
             title="Calculating" 
@@ -23,7 +23,7 @@
             <div style="margin: 50px auto 50px auto; text-align: center !important;">
               <v-progress-circular
               :size="70"
-              color="rgb(66, 184, 131)"
+              color="#227D51"
               indeterminate
             ></v-progress-circular>
             </div>
@@ -48,6 +48,9 @@ import Vuesax from 'vuesax'
 import 'vuesax/dist/vuesax.css'
 import 'material-icons/iconfont/material-icons.css';
 import VueApexCharts from 'vue-apexcharts'
+import stockPredictionDate from '../../../backend/dataset/price prediction/date.json'
+import stockPredictionPrice from '../../../backend/dataset/price prediction/price.json'
+
 Vue.use(VueApexCharts)
 
 Vue.component('apexchart', VueApexCharts)
@@ -71,45 +74,30 @@ export default {
     close: true,
     searchPopupcolor: "rgba(0,0,0,.9)",
     predictionPopupcolor: "rgba(0,0,0,.9)",
-    series: [{
-      data: [55, 62, 89, 66, 98, 72, 101, 75, 94, 120, 117, 140]
-    }],
+    series: stockPredictionPrice,
     chartOptions: {
       chart: {
               type: 'line',
               id: 'areachart-2'
             },
       xaxis: {
-        categories: [
-         "Jan",
-         "Feb",
-         "Mar",
-         "Apr",
-         "May",
-         "Jun",
-         "Jul",
-         "Aug",
-         "Sep",
-         "Oct",
-         "Nov",
-         "Dec"
-        ],
+        categories: stockPredictionDate,
       },
       annotations: {
         xaxis: [{
           x: "Mar",
           x2: "May",
-          fillColor: '#B3F7CA',
+          fillColor: '#E8B647',
           opacity: 0.4,
           label: {
-            borderColor: '#B3F7CA',
+            borderColor: '#E8B647',
             style: {
               fontSize: '15px',
               color: '#fff',
-              background: '#00E396',
+              background: '#E8B647',
             },
             offsetY: -10,
-            text: 'X-axis range',
+            text: 'Predicting range',
           }
         }],
       },
@@ -122,11 +110,28 @@ export default {
     document.getElementsByClassName("v-btn__content")[0].style = "margin-right: 0;"
     document.getElementsByClassName("v-btn__content")[1].style = "margin-right: 0;"
 
+    // 讀取 URL 的資料
     const url = new URL(window.location.href);
     var startDate = url.searchParams.get('startDate')
     var endDate = url.searchParams.get('endDate')
     document.getElementById("dateRange").placeholder = startDate + " ~ " + endDate;
     document.getElementById("dateRange").value = startDate + " ~ " + endDate;
+
+    // stock prediction 顯示的情況
+    var predicting = url.searchParams.get('predicting')
+    var predictionStartDate = url.searchParams.get('predictionStartDate')
+    var startDateSplitted = predictionStartDate.split('-')
+    var startDateYear = startDateSplitted[0]
+    var startDateMonth = startDateSplitted[1]
+    var startDateDay = startDateSplitted[2]
+    var predictionEndDate = url.searchParams.get('predictionEndDate')
+    if (predicting == "true"){
+      this.predictionPopup = true
+      this.chartOptions.annotations.xaxis[0].x = "2023-03-01"
+      this.chartOptions.annotations.xaxis[0].x2 = predictionEndDate
+      console.log(this.chartOptions.annotations.xaxis[0])
+    }
+
   },
   methods:{
     search: function(event){
@@ -149,6 +154,36 @@ export default {
         var stockSymbol = url.searchParams.get('stockSymbol')
         var treeType = url.searchParams.get('treeType')
         var newURL = "http://127.0.0.1:3000/api?stockPriceOnly=" + stockPriceOnly + "&startDate=" + startDate + "&endDate=" + endDate + "&stockSymbol=" + stockSymbol + "&treeType=" + treeType
+        window.location.href = newURL;
+      }
+    },
+    prediction: function(event){
+      var dateRange = document.getElementById('dateRange').value
+      var splitted = dateRange.split(' ~ ');
+      var predictionStartDate = splitted[0]
+      var startDateSplitted = predictionStartDate.split('-')
+      var startDateYear = startDateSplitted[0]
+      var startDateMonth = startDateSplitted[1]
+      var startDateDay = startDateSplitted[2]
+      var predictionEndDate = splitted[1]
+      var endDateSplitted = predictionEndDate.split('-')
+      var endDateYear = endDateSplitted[0]
+      var endDateMonth = endDateSplitted[1]
+      var endDateDay = endDateSplitted[2]
+      if((endDateYear < 2023) || (endDateYear == 2023 && endDateMonth < 3)){
+        alert("Current time range don't require prediction. Please use \"Search.\"");
+        this.searchPopup = false
+      }
+      else if((startDateYear == 2023 && startDateMonth == 3 && startDateDay > 1)){
+        alert("Minimum prediction time must start on 2023-03-01");
+        this.searchPopup = false
+      }
+      else{
+        document.getElementsByClassName("vuesax-app-is-ltr")[0].style = "pointer-events: none;";  // 讓 popup 不會被滑鼠關掉
+        const url = new URL(window.location.href);
+        var payload = String(url).split("/?")[1]
+        var newURL = "http://127.0.0.1:3000/prediction?" + "&predictionStartDate=" + predictionStartDate + "&predictionEndDate=" + predictionEndDate + "&" + payload
+        console.log(newURL)
         window.location.href = newURL;
       }
     }
