@@ -20,6 +20,7 @@ def getCompanyName(symbol):
             content = response.read()
             data = json.loads(content.decode('utf8'))['quotes'][0]['shortname']
             companyNames[str(symbol)] = str(data)
+            print("fetched")
         except Exception:
             #tqdm.write("Error on %s retrying" % symbol)
             continue
@@ -34,9 +35,9 @@ def datespan(startDate, endDate, delta=timedelta(days=1)):
 
 
 def getNews(stockSymbol):
-    #companyName = companyNames[stockSymbol]
-    #f = open('./dataset/news-company-name/' + str(stockSymbol) + '.csv', 'w')
-    f = open('../dataset/news-stockSymbol (new)/' + str(stockSymbol) + '.csv', 'w')
+    companyName = companyNames[stockSymbol]
+    f = open('./dataset/news-company-name/' + str(stockSymbol) + '.csv', 'w')
+    # f = open('../dataset/news-stockSymbol (new)/' + str(stockSymbol) + '.csv', 'w')
     writer = csv.writer(f)
     header = ['title', 'datetime', 'link']
     writer.writerow(header)
@@ -49,8 +50,8 @@ def getNews(stockSymbol):
             https = False
         googlenews = GoogleNews(lang='en', region='US', start=str(day.strftime(
             "%m/%d/%Y")), end=str(endDay.strftime("%m/%d/%Y")), https=https)
-        # googlenews.get_news(str(companyName))
-        googlenews.get_news(str(stockSymbol))
+        googlenews.get_news(str(companyName))
+        #googlenews.get_news(str(stockSymbol))
         results = googlenews.results()
         #print(results)
         print("number of results", len(results))
@@ -61,18 +62,17 @@ def getNews(stockSymbol):
             dateResult.append("https://" + str(result['link']))
             writer.writerow(dateResult)
 
+companyNames = {}
 
 if __name__ == '__main__':
     # read csv file
-    stockSymbol = pd.read_csv('../dataset/MegaCap Stock Symbols.csv')
+    stockSymbol = pd.read_csv('../dataset/LargeCap Stock Symbols.csv')
     stockSymbols = list(stockSymbol["Symbol"])
 
-    # # Get all company names
-    # print("Fetch all company names")
-    # manager = Manager()
-    # companyNames = manager.dict()
-    # process_map(getCompanyName, stockSymbols, max_workers=os.cpu_count()-1)
-    # #print(companyNames)
+    print("Fetch all company names")
+    
+    for stockSymbol in tqdm(stockSymbols):
+        getCompanyName(stockSymbol)
 
     # Get news from Google News
     print("\nStart getting news")

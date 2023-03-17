@@ -1,5 +1,5 @@
 <template>
-  <div class="wordCloud" v-resize="onResize" style="height: 27vh"></div>
+  <div class="wordCloud" v-resize="onResize" style="height: 30vh"></div>
 </template>
   
 <script>

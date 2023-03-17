@@ -95,8 +95,7 @@ def stock_prediction_train_model(symbol, train_on_number_of_days, future_number_
     pickle.dump(regressor, open(fileName, 'wb'))
 
     EndTime = time.time()
-    print("############### Total Time Taken: ", round(
-        (EndTime-StartTime)/60), 'Minutes #############')
+    # print("############### Total Time Taken: ", round((EndTime-StartTime)/60), 'Minutes #############')
 
 
 def get_number_of_days(end_date):
@@ -185,16 +184,16 @@ def writeDatetoJSON(StockData, start_date, end_date, num_days):
 
 
 # testing
-symbol = 'AAPL'
+# symbol = 'AAPL'
 
-# setting parameter for training LSTM model
-train_on_number_of_days = 60
-future_number_of_days = 30
+# # setting parameter for training LSTM model
+# train_on_number_of_days = 60
+# future_number_of_days = 30
 
-# stock_prediction_train_model(
-#     symbol, train_on_number_of_days, future_number_of_days)
+# # stock_prediction_train_model(
+# #     symbol, train_on_number_of_days, future_number_of_days)
 
-start_date = "2022-12-01"
-end_date = "2023-03-09"
-# end_date = "2023-04-11"
-stock_prediction_inference(symbol, start_date, end_date)
+# start_date = "2022-12-01"
+# end_date = "2023-03-09"
+# # end_date = "2023-04-11"
+# stock_prediction_inference(symbol, start_date, end_date)

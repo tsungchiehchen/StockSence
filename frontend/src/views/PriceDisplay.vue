@@ -30,7 +30,7 @@ export default {
         const url = new URL(window.location.href);
         return {
             width: window.innerWidth*0.75,
-            height: window.innerHeight*0.65,
+            height: window.innerHeight*0.63,
             ohlcv: null,
             titleTxt: null,
             fixTimeRange: url.searchParams.get('fixTimeRange')
