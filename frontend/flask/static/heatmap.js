@@ -1,6 +1,6 @@
 (function () {
     var defaultStartDate = "2022-12-01"
-    var defaultEndDate = "2023-01-01"
+    var defaultEndDate = "2023-02-01"
 
     var margin = { top: 50, right: 0, bottom: 0, left: 0 },
       width = window.innerWidth,
@@ -17,8 +17,7 @@
       .range([0, height]);
   
     var color = d3.scale.threshold()
-    //.domain([-3, -0.25, 0.25, 3])
-    .domain([3, 0.25, -0.25, -3])
+    .domain([-3, -0.25, 0.25, 3])
     .range(["#30CC5A", "#35764E", "#404040", "#8B444E", "#F63538"])
   
     var treemap = d3.layout.treemap()
@@ -105,7 +104,7 @@
       .attr("height", "25px")
       .attr("style", "fill:rgb(66, 189, 127);stroke-width:0;stroke:rgb(0,0,0);border-radius: 25px;")
 
-    colorLegends.append("foreignObject")  // 1%
+    colorLegends.append("foreignObject")  // -1%
       .attr("x", window.innerWidth - 225)
       .attr("y", -37)
       .attr("width", "70px")
@@ -153,7 +152,7 @@
       .attr("height", "25px")
       .attr("style", "fill:rgb(242, 54, 69);stroke-width:0;stroke:rgb(0,0,0);border-radius: 25px;")
 
-    colorLegends.append("foreignObject")  // -1%
+    colorLegends.append("foreignObject")  // -2%
       .attr("x", window.innerWidth - 450)
       .attr("y", -37)
       .attr("width", "70px")
@@ -240,19 +239,19 @@
             // 3%
             d3.select("#largest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + Math.round(percentiles[0]) + "%</p>" +
+              "<p>" + Math.round(percentiles[6]) + "%</p>" +
               "</div>"
             )
             // 2%
             d3.select("#secondLargest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + Math.round(percentiles[1]) + "%</p>" +
+              "<p>" + Math.round(percentiles[5]) + "%</p>" +
               "</div>"
             )
             // 1%
             d3.select("#thirdLargest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + Math.round(percentiles[2]) + "%</p>" +
+              "<p>" + Math.round(percentiles[4]) + "%</p>" +
               "</div>"
             )
             // 0%
@@ -264,19 +263,19 @@
             // -1%
             d3.select("#thirdSmallest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + Math.round(percentiles[4]) + "%</p>" +
+              "<p>" + Math.round(percentiles[2]) + "%</p>" +
               "</div>"
             )
             // -2%
             d3.select("#secondSmallest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + Math.round(percentiles[5]) + "%</p>" +
+              "<p>" + Math.round(percentiles[1]) + "%</p>" +
               "</div>"
             )
             // -3%
             d3.select("#smallest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + Math.round(percentiles[6]) + "%</p>" +
+              "<p>" + Math.round(percentiles[0]) + "%</p>" +
               "</div>"
             )
         }
@@ -325,41 +324,6 @@
         }
   
         function layout(d) {
-          // 從 URL 取值更新到內容中
-          const url = new URL(window.location.href);
-          if (url.searchParams.get('stockPriceOnly') !== null) {
-            if (url.searchParams.get('stockPriceOnly') == "true"){
-              document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
-              document.getElementById("dropDownMenu").value = "Select macroeconomic type";
-              document.getElementById("dropDownMenu").disabled = true;
-              document.getElementById("stockPriceOnlyCheckBox").checked = true;
-              document.getElementById("dropDownMenu").style.display = 'none';
-              setDatePicker(true);
-            }
-            else{
-              document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
-              document.getElementById("dropDownMenu").value = "Select macroeconomic type";
-              document.getElementById("dropDownMenu").style.display = 'block';
-              changeMacroDisplayValue(url.searchParams.get('type'));
-              document.getElementById("stockPriceOnlyCheckBox").checked = false;
-              document.getElementById("checkBox").style="float:left;padding-top:14px;padding-left:0px";
-              setDatePicker(false);
-            }
-            //console.log(url.searchParams.get('startDate'));
-            document.getElementById("startDate").value = url.searchParams.get('startDate');
-            document.getElementById("endDate").value = url.searchParams.get('endDate');
-            document.getElementById("typeChange").style.display = 'none';
-          }
-          else{  // 第一次載入的情況
-            document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
-            document.getElementById("dropDownMenu").value = "Select macroeconomic type";
-            document.getElementById("stockPriceOnlyCheckBox").checked = false;
-            document.getElementById("startDate").value = defaultStartDate;
-            document.getElementById("endDate").value = defaultEndDate;
-            document.getElementById("typeChange").style.display = 'none';
-          }
-
-
           if (d._children) {
             treemap.nodes({ _children: d._children });
             d._children.forEach(function (c) {
@@ -378,6 +342,40 @@
         }
   
         function display(d) {
+          // 從 URL 取值更新到內容中
+          const url = new URL(window.location.href);
+          if (url.searchParams.get('stockPriceOnly') !== null) {
+            if (url.searchParams.get('stockPriceOnly') == "true"){
+              document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
+              document.getElementById("dropDownMenu").value = "Select macroeconomic type";
+              document.getElementById("dropDownMenu").disabled = true;
+              document.getElementById("stockPriceOnlyCheckBox").checked = true;
+              document.getElementById("dropDownMenu").style.display = 'none';
+              setDatePicker(true, true);
+            }
+            else{
+              document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
+              document.getElementById("dropDownMenu").value = "Select macroeconomic type";
+              document.getElementById("dropDownMenu").style.display = 'block';
+              changeMacroDisplayValue(url.searchParams.get('type'));
+              document.getElementById("stockPriceOnlyCheckBox").checked = false;
+              document.getElementById("checkBox").style="float:left;padding-top:14px;padding-left:0px";
+              setDatePicker(false, true);
+            }
+            //console.log(url.searchParams.get('startDate'));
+            document.getElementById("startDate").value = url.searchParams.get('startDate');
+            document.getElementById("endDate").value = url.searchParams.get('endDate');
+            document.getElementById("typeChange").style.display = 'none';
+          }
+          else{  // 第一次載入的情況
+            document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
+            document.getElementById("dropDownMenu").value = "Select macroeconomic type";
+            document.getElementById("stockPriceOnlyCheckBox").checked = false;
+            document.getElementById("startDate").value = defaultStartDate;
+            document.getElementById("endDate").value = defaultEndDate;
+            document.getElementById("typeChange").style.display = 'none';
+          }
+          
           grandparent
             .datum(d.parent)
             .on("click", transition)
@@ -530,47 +528,26 @@
             .attr("width", function (d) { return x(d.x + d.dx) - x(d.x); })
             .attr("height", function (d) { return y(d.y + d.dy) - y(d.y); })
             .attr("fill", function (d) { 
-              // if(parseFloat(d.rate) >= percentiles[6]){
-              //   return "#056636";
-              // }
-              // else if(parseFloat(d.rate) >= percentiles[5]){
-              //   return "#089950";
-              // }
-              // else if(parseFloat(d.rate) >= percentiles[4]){
-              //   return "#42BD7F";
-              // }
-              // else if(parseFloat(d.rate) >= percentiles[3]){
-              //   return "#C1C4CD";
-              // }
-              // else if(parseFloat(d.rate) >= percentiles[2]){
-              //   return "#F77C80";
-              // }
-              // else if(parseFloat(d.rate) >= percentiles[1]){
-              //   return "#F23645";
-              // }
-              // else{
-              //   return "#991F29";
-              // }
               if(parseFloat(d.rate) >= percentiles[6]){
-                return "#991F29";
+                return "#056636";
               }
               else if(parseFloat(d.rate) >= percentiles[5]){
-                return "#F23645";
-              }
-              else if(parseFloat(d.rate) >= percentiles[4]){
-                return "#F77C80";
-              }
-              else if(parseFloat(d.rate) >= percentiles[3]){
-                return "#C1C4CD";
-              }
-              else if(parseFloat(d.rate) >= percentiles[2]){
-                return "#42BD7F";
-              }
-              else if(parseFloat(d.rate) >= percentiles[1]){
                 return "#089950";
               }
+              else if(parseFloat(d.rate) >= percentiles[4]){
+                return "#42BD7F";
+              }
+              else if(parseFloat(d.rate) >= percentiles[2]){
+                return "#C1C4CD";
+              }
+              else if(parseFloat(d.rate) >= percentiles[1]){
+                return "#F77C80";
+              }
+              else if(parseFloat(d.rate) >= percentiles[0]){
+                return "#F23645";
+              }
               else{
-                return "#056636";
+                return "#991F29";
               }
             });
         }
@@ -619,20 +596,23 @@ function post(path, method = 'post') {
   }
 }
 
-function setDatePicker(stockPriceOnly) {
+function setDatePicker(stockPriceOnly, firstLoad) {
   if (stockPriceOnly == true) {
     var newOptions = {
       format: "yyyy-mm-dd",
       orientation: "bottom auto",
       startDate: "2017-01-01",
-      endDate: "2023-01-31",
+      endDate: "2023-02-28",
       multidate: false,
       daysOfWeekDisabled: "0,6",
       autoclose: true,
       startView: 1,
       minViewMode: 0
     }
-    $('#datepicker').datepicker('destroy');
+    if(firstLoad == false)
+    {
+      $('#datepicker').datepicker('destroy')
+    }
     $('#datepicker').datepicker(newOptions);
   }
   else {
@@ -640,7 +620,7 @@ function setDatePicker(stockPriceOnly) {
       format: "yyyy-mm-dd",
       orientation: "bottom auto",
       startDate: "2017-01-01",
-      endDate: "2023-01-31",
+      endDate: "2023-02-28",
       multidate: false,
       daysOfWeekDisabled: "0,6",
       autoclose: true,
@@ -656,7 +636,7 @@ function checkBoxChange(checkbox){
   if(checkbox.checked)
   {
     //document.getElementById("dropDownMenu").disabled = true;
-    setDatePicker(true);
+    setDatePicker(true, false);
     document.getElementById("startDate").value = "";
     document.getElementById("endDate").value = "";
     document.getElementById("typeChange").style.display = 'none';
@@ -665,7 +645,7 @@ function checkBoxChange(checkbox){
   else
   {
     document.getElementById("dropDownMenu").disabled = false;
-    setDatePicker(false);
+    setDatePicker(false, false);
     document.getElementById("startDate").value = "";
     document.getElementById("endDate").value = "";
     document.getElementById("typeChange").style.display = 'none';

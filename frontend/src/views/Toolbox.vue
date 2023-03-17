@@ -152,7 +152,7 @@ export default {
       var endDateYear = endDateSplitted[0]
       var endDateMonth = endDateSplitted[1]
       var endDateDay = endDateSplitted[2]
-      if((endDateYear > 2023) || (endDateYear == 2023 && endDateMonth > 2) || (endDateYear == 2023 && endDateMonth == 2 && endDateDay == 28)){
+      if((endDateYear > 2023) || (endDateYear == 2023 && endDateMonth > 3)){
         alert("Current time range is not available in our data. Please use \"Price Prediction.\"");
         this.searchPopup = false
       }

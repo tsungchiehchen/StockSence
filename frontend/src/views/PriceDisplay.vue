@@ -105,6 +105,7 @@ export default {
         div.style = "margin-right: 5px;"
         let currentURL = window.location.href;
         var postData = currentURL.split('?')[1];
+        postData = postData.split('#')[0]
         div.innerHTML = `<a href="http://127.0.0.1:3000/?` + postData + `"+ style="z-index:10000; pointer-events: all; font-size: 20px; color: rgb(0, 0, 0); text-decoration: none; font-weight: 300;">`+ 
             `◀ Back</a>`;
         document.querySelector(".trading-vue-ohlcv").prepend(div);
