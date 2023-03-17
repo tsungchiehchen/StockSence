@@ -1,10 +1,23 @@
 import pandas as pd
 import json
+import zipfile
 
 from dataModule.calculateStockChangebyDate import getStocksChange
 
 
 def getDFbyDate(start_date, end_date, symbol):
+    # # Uncomment below to use unzip
+    # # specify the path to the zip file
+    # zip_file_path = './dataset/test/news sentiment.zip'
+
+    # # open the zip file and extract its contents
+    # with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+    #     zip_ref.extractall('./dataset/test/news sentiment')
+
+    # # get news within specified time span
+    # df = pd.read_csv('./dataset/test/news sentiment/' +
+    #                  symbol + '_news_sentiment.csv')
+
     # get news within specified time span
     df = pd.read_csv('./dataset/news sentiment/' +
                      symbol + '_news_sentiment.csv')
