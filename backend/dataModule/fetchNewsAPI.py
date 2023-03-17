@@ -67,7 +67,7 @@ class GoogleNews:
         self.__links = []
         self.__results = []
         self.__totalcount = 0
-        self.user_agent = 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:64.0) Gecko/20100101 Firefox/64.0'
+        self.user_agent = ''
         self.__lang = lang
         if region:
             self.accept_language= lang + '-' + region + ',' + lang + ';q=0.9'

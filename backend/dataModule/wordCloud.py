@@ -59,26 +59,35 @@ def getWordCloud(start_date, end_date, symbol):
 
         if polarity > 0:
             for t in title:
-                if len(t) > 1:
-                    t += '+'
+                if len(t) > 2:
                     if t in frequency:
                         frequency[t] += 1
                     else:
                         frequency[t] = 1
         elif polarity < 0:
             for t in title:
-                if len(t) > 1:
-                    t += '-'
+                if len(t) > 2:
                     if t in frequency:
-                        frequency[t] += 1
+                        frequency[t] -= 1
                     else:
-                        frequency[t] = 1
+                        frequency[t] = -1
+
+    # assign '+' or '-' based on the value
+    modified_freq = {}
+    for key, value in frequency.items():
+        if value < 0:
+            key += '-'
+            modified_freq[key] = value * -1
+        else:
+            key += '+'
+            modified_freq[key] = value
 
     # Sort the frequency dict by freq in descending order
     sorted_freq = dict(
-        sorted(frequency.items(), key=operator.itemgetter(1), reverse=True))
-    # get the first 150 items
-    sorted_freq = dict(itertools.islice(sorted_freq.items(), 150))
+        sorted(modified_freq.items(), key=operator.itemgetter(1), reverse=True))
+    # get at most 150 items
+    if len(sorted_freq) > 150:
+        sorted_freq = dict(itertools.islice(sorted_freq.items(), 150))
 
     # convert to list of dictionaries
     data = [{'name': k, 'value': v} for k, v in sorted_freq.items()]
@@ -88,7 +97,7 @@ def getWordCloud(start_date, end_date, symbol):
 
 
 # testing
-start_date = "2020-01-01"
-end_date = "2022-01-01"
-symbol = 'AAPL'
-getWordCloud(start_date, end_date, symbol)
+# start_date = "2020-01-01"
+# end_date = "2022-01-01"
+# symbol = 'AAPL'
+# getWordCloud(start_date, end_date, symbol)

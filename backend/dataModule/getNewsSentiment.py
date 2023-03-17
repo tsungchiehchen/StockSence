@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 
-from dataModule import calculateStockChangebyDate
+from dataModule.calculateStockChangebyDate import getStocksChange
 
 
 def getDFbyDate(start_date, end_date, symbol):
@@ -30,23 +30,32 @@ def writetoJSON(results):
 
     # write to json
     with open('./dataset/NewsSentimentList.json', 'w') as f:
-        json.dump(json_list, f, indent=4)
+        json.dump(json_list, f, indent=4, ensure_ascii=False)
 
 
 def get_news_sentiment(start_date, end_date, symbol):
     df = getDFbyDate(start_date, end_date, symbol)
-
-    change = calculateStockChangebyDate.getStocksChange(symbol, start_date, end_date)
+    compound_score_threshold = 0.5 if len(df) > 150 else 0.3
+    change = getStocksChange(symbol, start_date, end_date)
 
     # split df to Positive, Negative, and Neutral
-    pos_df = df[df['Compound'] > 0]
-    neg_df = df[df['Compound'] < 0]
+    pos_df = df[df['Compound'] > compound_score_threshold]
+    neg_df = df[df['Compound'] < compound_score_threshold]
     neu_df = df[df['Compound'] == 0]
 
     # sort positive df by descending
     pos_df = pos_df.sort_values('Compound', ascending=False)
     # sort negative df by ascending
     neg_df = neg_df.sort_values('Compound', ascending=True)
+
+    # return only maximum of 150 news item
+    if compound_score_threshold == 0.5:
+        if len(pos_df) > 50:
+            pos_df = pos_df[:50]
+        if len(neg_df) > 50:
+            neg_df = neg_df[:50]
+        if len(neu_df) > 50:
+            neu_df = neu_df[:50]
 
     # convert df to dict
     pos = pos_df.to_dict(orient='records')
@@ -67,7 +76,7 @@ def get_news_sentiment(start_date, end_date, symbol):
 
 
 # testing
-start_date = "2020-01-01"
-end_date = "2022-01-01"
-symbol = 'AAPL'
-get_news_sentiment(start_date, end_date, symbol)
+# start_date = "2020-01-01"
+# end_date = "2022-01-01"
+# symbol = 'AAPL'
+# get_news_sentiment(start_date, end_date, symbol)

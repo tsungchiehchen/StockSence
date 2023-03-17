@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, url_for, redirect
-from dataModule import calculateStockChangebyDate, calculateMacroChange, wordCloud, getNewsSentiment
+from dataModule import calculateStockChangebyDate, calculateMacroChange, wordCloud, getNewsSentiment, hierarchicalClustering
 import time
 from pathlib import Path
 import json
@@ -10,18 +10,20 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/api', methods=['GET', 'POST'])
 def api():
-    stockPriceOnly = request.args.get('stockPriceOnly')
+    stockPriceOnly = "true"
     startDate = request.args.get('startDate')
     endDate = request.args.get('endDate')
     stockSymbol = request.args.get('stockSymbol')
+    treeType = request.args.get('cluster')
 
     startTimestamp, endTimestamp = calculateStockChangebyDate.getTimeStamps(startDate, endDate)
     rate = calculateStockChangebyDate.getStocksChange(stockSymbol, startDate, endDate)
     
     wordCloud.getWordCloud(startDate, endDate, stockSymbol)
     getNewsSentiment.get_news_sentiment(startDate, endDate, stockSymbol)
+    hierarchicalClustering.perform_hierarchical_cluster(stockSymbol)
     
-    url = "http://127.0.0.1:8081/?stockPriceOnly=" + str(stockPriceOnly) + "&startDate=" + str(startDate) + "&endDate=" + str(endDate) + "&stockSymbol=" + str(stockSymbol) + "&startTimestamp=" + str(startTimestamp) + "&endTimestamp=" + str(endTimestamp) + "&rate=" + str(rate)
+    url = "http://127.0.0.1:8081/?stockPriceOnly=" + str(stockPriceOnly) + "&startDate=" + str(startDate) + "&endDate=" + str(endDate) + "&stockSymbol=" + str(stockSymbol) + "&startTimestamp=" + str(startTimestamp) + "&endTimestamp=" + str(endTimestamp) + "&rate=" + str(rate) + "&treeType=" + str(treeType)
 
     return redirect(url)
 
