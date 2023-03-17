@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, url_for, redirect
-from dataModule import calculateStockChangebyDate, calculateMacroChange, wordCloud
+from dataModule import calculateStockChangebyDate, calculateMacroChange, wordCloud, getNewsSentiment, hierarchicalClustering
 import time
 from pathlib import Path
 import json
@@ -10,15 +10,20 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/api', methods=['GET', 'POST'])
 def api():
-    stockPriceOnly = request.args.get('stockPriceOnly')
+    stockPriceOnly = "true"
     startDate = request.args.get('startDate')
     endDate = request.args.get('endDate')
     stockSymbol = request.args.get('stockSymbol')
-    
-    startTimestamp, endTimestamp = calculateStockChangebyDate.getTimeStamps(startDate, endDate)
-    wordCloud.getWordCloud(startDate, endDate, stockSymbol)
+    treeType = request.args.get('cluster')
 
-    url = "http://127.0.0.1:8081/?stockPriceOnly=" + str(stockPriceOnly) + "&startDate=" + str(startDate) + "&endDate=" + str(endDate) + "&stockSymbol=" + str(stockSymbol) + "&startTimestamp=" + str(startTimestamp) + "&endTimestamp=" + str(endTimestamp)
+    startTimestamp, endTimestamp = calculateStockChangebyDate.getTimeStamps(startDate, endDate)
+    rate = calculateStockChangebyDate.getStocksChange(stockSymbol, startDate, endDate)
+    
+    wordCloud.getWordCloud(startDate, endDate, stockSymbol)
+    getNewsSentiment.get_news_sentiment(startDate, endDate, stockSymbol)
+    hierarchicalClustering.perform_hierarchical_cluster(stockSymbol)
+    
+    url = "http://127.0.0.1:8081/?stockPriceOnly=" + str(stockPriceOnly) + "&startDate=" + str(startDate) + "&endDate=" + str(endDate) + "&stockSymbol=" + str(stockSymbol) + "&startTimestamp=" + str(startTimestamp) + "&endTimestamp=" + str(endTimestamp) + "&rate=" + str(rate) + "&treeType=" + str(treeType)
 
     return redirect(url)
 
@@ -48,8 +53,7 @@ def index():
             if not percentilesFilePath.is_file():  # macro change file does not exist
                 print("Not calculated before")
                 calculateStockChangebyDate.processAllStocksChange(startDate, endDate)
-
-            macroChange = calculateMacroChange.process_macro_data(startDate, endDate)
+            
             percentilesFile = open(percentilesFilePath)
             percentiles = json.load(percentilesFile)
             startTimestamp, endTimestamp = calculateStockChangebyDate.getTimeStamps(startDate, endDate)
@@ -71,16 +75,17 @@ def index():
             return render_template('index.html', type=type, macroChange=macroChange, percentiles=percentiles, startTimestamp=startTimestamp, endTimestamp=endTimestamp)
         
         else:  # 第一次進入網頁
-            percentilesFilePath = Path("./dataset/percentiles/" + "2023-01-31" + "~" + "2023-02-01.json")
+            percentilesFilePath = Path("./dataset/percentiles/" + "2022-12-01" + "~" + "2023-01-01.json")
             if not percentilesFilePath.is_file():  # macro change file does not exist
                 print("Not calculated before")
-                calculateStockChangebyDate.processAllStocksChange("2023-01-31", "2023-02-01")
+                calculateStockChangebyDate.processAllStocksChange("2022-12-01", "2023-01-01")
             
+            macroChange = calculateMacroChange.process_macro_data("2022-12-01", "2023-01-01")
             percentilesFile = open(percentilesFilePath)
             percentiles = json.load(percentilesFile)
-            startTimestamp, endTimestamp = calculateStockChangebyDate.getTimeStamps("2023-01-31", "2023-02-01")
+            startTimestamp, endTimestamp = calculateStockChangebyDate.getTimeStamps("2022-12-01", "2023-01-01")
 
-            return render_template('index.html', macroChange=None, percentiles=percentiles, startTimestamp=startTimestamp, endTimestamp=endTimestamp)
+            return render_template('index.html', macroChange=macroChange, percentiles=percentiles, startTimestamp=startTimestamp, endTimestamp=endTimestamp)
 
 
 if __name__ == '__main__':

@@ -11,36 +11,32 @@
             range
             validate 
         />
-        <div style="margin-top: 15px; text-align: center;">
-          <v-btn variant="outlined" color="rgb(66, 184, 131)" style="margin:0 auto 0px auto; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px;" @click="searchPopup=true" v-on:click="search">Search</v-btn>
-          <v-btn variant="outlined" color="rgb(229, 64, 80)" @click="predictionPopup=true" style="margin: 0 auto 0px 10px; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px;">Price Prediction</v-btn>
+        <div style="margin-top: 10px; text-align: center;">
+          <v-btn variant="outlined" color="rgb(66, 184, 131)" style="margin:0 auto 0px auto; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px; color:white;" @click="searchPopup=true" v-on:click="search">Search</v-btn>
+          <v-btn variant="outlined" color="rgb(229, 64, 80)" @click="predictionPopup=true" style="margin: 0 auto 0px 10px; display:inline-block; padding-left: 10px; padding-right: 10px; padding-bottom: 5px; color:white;">Price Prediction</v-btn>
         </div>
-        <vs-popup class="search"  
-          title="Calculating" 
-          :active.sync="searchPopup"
-          :background-color = "searchPopupcolor"
-          :button-close-hidden="close" >
-          <div style="margin: 50px auto 50px auto; text-align: center !important;">
-            <v-progress-circular
-            :size="70"
-            color="rgb(66, 184, 131)"
-            indeterminate
-          ></v-progress-circular>
-          </div>
-        </vs-popup>
-        <vs-popup class="pricePrediction"  
-          title="Price Prediction" 
-          :active.sync="predictionPopup"
-          :background-color = "predictionPopupcolor" >
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <p>dqw</p>
-          <p>dqw</p>
-          <p>dqw</p>
-          <p>dqw</p>
-        </vs-popup>
-    </div>
+          <vs-popup class="search"  
+            title="Calculating" 
+            :active.sync="searchPopup"
+            :background-color = "searchPopupcolor"
+            :button-close-hidden="true" >
+            <div style="margin: 50px auto 50px auto; text-align: center !important;">
+              <v-progress-circular
+              :size="70"
+              color="rgb(66, 184, 131)"
+              indeterminate
+            ></v-progress-circular>
+            </div>
+          </vs-popup>
+          <vs-popup fullscreen class="pricePrediction"  
+            title="Price Prediction"
+            :active.sync="predictionPopup"
+            :background-color = "predictionPopupcolor" >
+            <div style="margin: auto; overflow-y: hidden;">
+              <apexchart type="line" height="450%" :options="chartOptions" :series="series"></apexchart>
+            </div> 
+          </vs-popup>
+        </div>
 </template>
   
 <script>
@@ -51,6 +47,10 @@ import Vue from 'vue'
 import Vuesax from 'vuesax'
 import 'vuesax/dist/vuesax.css'
 import 'material-icons/iconfont/material-icons.css';
+import VueApexCharts from 'vue-apexcharts'
+Vue.use(VueApexCharts)
+
+Vue.component('apexchart', VueApexCharts)
 
 Vue.use(Vuesax)
 //Vue.use(vsButton)
@@ -58,17 +58,64 @@ Vue.use(Vuesax)
 export default {
     components: {
     VueDatePicker,
+    
   },
-  data: () => ({
+  data(){
+    return{
     date: new Date(),
     minDate: new Date([2017, 1, 1]),
-    maxDate: new Date([2023, 5, 1]),
+    maxDate: new Date([2023, 3, 31]),
     predictionPopup: false,
     searchPopup: false,
+    alrtPopup: false,
     close: true,
     searchPopupcolor: "rgba(0,0,0,.9)",
-    predictionPopupcolor: "rgba(0,0,0,.9)"
-  }),
+    predictionPopupcolor: "rgba(0,0,0,.9)",
+    series: [{
+      data: [55, 62, 89, 66, 98, 72, 101, 75, 94, 120, 117, 140]
+    }],
+    chartOptions: {
+      chart: {
+              type: 'line',
+              id: 'areachart-2'
+            },
+      xaxis: {
+        categories: [
+         "Jan",
+         "Feb",
+         "Mar",
+         "Apr",
+         "May",
+         "Jun",
+         "Jul",
+         "Aug",
+         "Sep",
+         "Oct",
+         "Nov",
+         "Dec"
+        ],
+      },
+      annotations: {
+        xaxis: [{
+          x: "Mar",
+          x2: "May",
+          fillColor: '#B3F7CA',
+          opacity: 0.4,
+          label: {
+            borderColor: '#B3F7CA',
+            style: {
+              fontSize: '15px',
+              color: '#fff',
+              background: '#00E396',
+            },
+            offsetY: -10,
+            text: 'X-axis range',
+          }
+        }],
+      },
+    }
+  }
+},
   mounted(){
     document.getElementById("dateRange").style = "text-align: center; font-weight: bold;";
     document.getElementsByClassName("vd-icon")[0].style = "margin-left: auto; margin-right: auto;"
@@ -83,8 +130,6 @@ export default {
   },
   methods:{
     search: function(event){
-      document.getElementsByClassName("vuesax-app-is-ltr")[0].style = "pointer-events: none;";  // 讓 popup 不會被滑鼠關掉
-
       var dateRange = document.getElementById('dateRange').value
       var splitted = dateRange.split(' ~ ');
       var startDate = splitted[0]
@@ -93,17 +138,27 @@ export default {
       var endDateYear = endDateSplitted[0]
       var endDateMonth = endDateSplitted[1]
       var endDateDay = endDateSplitted[2]
-      if((endDateYear > 2023) || (endDateYear == 2023 && endDateMonth > 2) || (endDateYear == 2023 && endDateMonth == 2 && endDateDay == 1)){
+      if((endDateYear > 2023) || (endDateYear == 2023 && endDateMonth > 2) || (endDateYear == 2023 && endDateMonth == 2 && endDateDay == 28)){
         alert("Current time range is not available in our data. Please use \"Price Prediction.\"");
+        this.searchPopup = false
       }
-      else{
+      else{  // start searching
+        document.getElementsByClassName("vuesax-app-is-ltr")[0].style = "pointer-events: none;";  // 讓 popup 不會被滑鼠關掉
         const url = new URL(window.location.href);
         var stockPriceOnly = url.searchParams.get('stockPriceOnly')
         var stockSymbol = url.searchParams.get('stockSymbol')
-        var newURL = "http://127.0.0.1:3000/api?stockPriceOnly=" + stockPriceOnly + "&startDate=" + startDate + "&endDate=" + endDate + "&stockSymbol=" + stockSymbol
+        var treeType = url.searchParams.get('treeType')
+        var newURL = "http://127.0.0.1:3000/api?stockPriceOnly=" + stockPriceOnly + "&startDate=" + startDate + "&endDate=" + endDate + "&stockSymbol=" + stockSymbol + "&treeType=" + treeType
         window.location.href = newURL;
       }
     }
   }
 }
 </script>
+
+<style>
+ .apexcharts-pie-label{
+    font-size:25px;
+    }  
+
+</style>

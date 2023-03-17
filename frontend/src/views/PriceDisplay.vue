@@ -42,6 +42,7 @@ export default {
         var stockSymbol = url.searchParams.get('stockSymbol');
         var startTimestamp = url.searchParams.get('startTimestamp')
         var endTimestamp = url.searchParams.get('endTimestamp')
+        var rate = url.searchParams.get('rate')
 
         var objectData = await import("../../../backend/dataset/price display/" + String(stockSymbol) + ".json");
         var slicedObjectData = Object.fromEntries(Object.entries(objectData).slice(0, -2))
@@ -64,11 +65,8 @@ export default {
 
         this.ohlcv = arrayData;
 
-        // 讀取 company name
-        this.titleTxt = CompanyNames[stockSymbol] + " (" +  stockSymbol + ")";
-
-        // var fixTimeRangeCheckBox = document.getElementById("fixTimeRangeCheckBox");
-        // fixTimeRangeCheckBox.style = "left: " + (this.width-190) + "px";
+        // 讀取 company name 和 rate 加入到 title
+        this.titleTxt = CompanyNames[stockSymbol] + " (" +  rate + "%)";
     },
     computed: {
         colors() {
@@ -113,7 +111,14 @@ export default {
         //document.getElementsByClassName('pageBack').style = "margin-left: 5px;"
         
         // 設定 title style
-        document.querySelector(".t-vue-title").setAttribute("style", "font-weight: 800; color: rgb(66, 184, 131);"); 
+        const url = new URL(window.location.href);
+        var rate = url.searchParams.get('rate')
+        if(rate >= 0){
+            document.querySelector(".t-vue-title").setAttribute("style", "font-weight: 800; color: rgb(66, 184, 131);"); 
+        }
+        else{
+            document.querySelector(".t-vue-title").setAttribute("style", "font-weight: 800; color: rgb(229, 64, 80);"); 
+        }
 
         window.addEventListener('resize', this.onResize)
         window.dc = this.chart
