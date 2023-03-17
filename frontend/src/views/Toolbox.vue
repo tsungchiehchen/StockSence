@@ -127,13 +127,7 @@ export default {
     var predictionEndDate = url.searchParams.get('predictionEndDate')
     if (predicting == "true"){
       this.predictionPopup = true
-      if(startDateYear == 2023 && startDateMonth == 3 && startDateDay > 1){
-        this.chartOptions.annotations.xaxis[0].x = predictionStartDate
-      }
-      else{
-        this.chartOptions.annotations.xaxis[0].x = "2023-03-01"
-      }
-      
+      this.chartOptions.annotations.xaxis[0].x = "2023-03-01"
       this.chartOptions.annotations.xaxis[0].x2 = predictionEndDate
       console.log(this.chartOptions.annotations.xaxis[0])
     }
@@ -167,6 +161,10 @@ export default {
       var dateRange = document.getElementById('dateRange').value
       var splitted = dateRange.split(' ~ ');
       var predictionStartDate = splitted[0]
+      var startDateSplitted = predictionStartDate.split('-')
+      var startDateYear = startDateSplitted[0]
+      var startDateMonth = startDateSplitted[1]
+      var startDateDay = startDateSplitted[2]
       var predictionEndDate = splitted[1]
       var endDateSplitted = predictionEndDate.split('-')
       var endDateYear = endDateSplitted[0]
@@ -174,6 +172,10 @@ export default {
       var endDateDay = endDateSplitted[2]
       if((endDateYear < 2023) || (endDateYear == 2023 && endDateMonth < 3)){
         alert("Current time range don't require prediction. Please use \"Search.\"");
+        this.searchPopup = false
+      }
+      else if((startDateYear == 2023 && startDateMonth == 3 && startDateDay > 1)){
+        alert("Minimum prediction time must start on 2023-03-01");
         this.searchPopup = false
       }
       else{
