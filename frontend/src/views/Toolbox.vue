@@ -1,6 +1,6 @@
 <template>
     <div>
-        <VueDatePicker 
+        <VueDatePicker
             v-model="date"
             :min-date="minDate"
             :max-date="maxDate"
@@ -8,6 +8,7 @@
             format="YYYY-MM-DD"
             formatHeader="dddd MMM DD"
             id="dateRange"
+            style="margin-top: -5px"
             range
             validate 
         />
@@ -29,7 +30,7 @@
             </div>
           </vs-popup>
           <vs-popup fullscreen class="pricePrediction"  
-            title="Price Prediction"
+            :title="pricePredictionTitle"
             :active.sync="predictionPopup"
             :background-color = "predictionPopupcolor" >
             <div style="margin: auto; overflow-y: hidden;">
@@ -74,7 +75,13 @@ export default {
     close: true,
     searchPopupcolor: "rgba(0,0,0,.9)",
     predictionPopupcolor: "rgba(0,0,0,.9)",
-    series: stockPredictionPrice,
+    pricePredictionTitle: "",
+    series: [
+      {
+        name: "",
+        data: stockPredictionPrice
+      }
+    ],
     chartOptions: {
       chart: {
               type: 'line',
@@ -114,8 +121,10 @@ export default {
     const url = new URL(window.location.href);
     var startDate = url.searchParams.get('startDate')
     var endDate = url.searchParams.get('endDate')
+    var stockSymbol = url.searchParams.get('stockSymbol')
     document.getElementById("dateRange").placeholder = startDate + " ~ " + endDate;
     document.getElementById("dateRange").value = startDate + " ~ " + endDate;
+    this.pricePredictionTitle = "Price Prediction for " + stockSymbol
 
     // stock prediction 顯示的情況
     var predicting = url.searchParams.get('predicting')

@@ -1,602 +1,602 @@
 [
   {
-    "name": "apple+",
-    "value": 8
-  },
-  {
-    "name": "inc+",
-    "value": 6
-  },
-  {
-    "name": "pay-",
-    "value": 6
-  },
-  {
-    "name": "stocks+",
-    "value": 6
-  },
-  {
-    "name": "top+",
-    "value": 5
-  },
-  {
-    "name": "amazon+",
-    "value": 5
-  },
-  {
-    "name": "nasdaq-",
-    "value": 4
-  },
-  {
-    "name": "aapl+",
-    "value": 4
-  },
-  {
-    "name": "companies+",
-    "value": 4
-  },
-  {
-    "name": "buy+",
-    "value": 4
-  },
-  {
-    "name": "despite+",
-    "value": 4
-  },
-  {
-    "name": "tech-",
-    "value": 4
-  },
-  {
-    "name": "boost+",
-    "value": 4
-  },
-  {
-    "name": "looking+",
-    "value": 3
-  },
-  {
-    "name": "include+",
-    "value": 3
-  },
-  {
-    "name": "market+",
-    "value": 3
-  },
-  {
-    "name": "better+",
-    "value": 3
-  },
-  {
-    "name": "cuts-",
-    "value": 3
-  },
-  {
-    "name": "hours+",
-    "value": 3
-  },
-  {
-    "name": "trading+",
-    "value": 3
-  },
-  {
-    "name": "microsoft+",
-    "value": 3
-  },
-  {
-    "name": "sales+",
-    "value": 3
-  },
-  {
-    "name": "tim-",
-    "value": 3
-  },
-  {
-    "name": "cook-",
-    "value": 3
-  },
-  {
-    "name": "iss-",
-    "value": 3
-  },
-  {
-    "name": "shareholders-",
-    "value": 3
-  },
-  {
-    "name": "shares+",
-    "value": 3
+    "name": "amd+",
+    "value": 11
   },
   {
     "name": "stock+",
+    "value": 3
+  },
+  {
+    "name": "gaming+",
+    "value": 3
+  },
+  {
+    "name": "nvidia-",
+    "value": 3
+  },
+  {
+    "name": "alienware+",
+    "value": 3
+  },
+  {
+    "name": "winner+",
     "value": 2
   },
   {
-    "name": "management+",
+    "name": "energy+",
     "value": 2
   },
   {
-    "name": "closely+",
+    "name": "graphics+",
     "value": 2
   },
   {
-    "name": "blackrock+",
+    "name": "driver+",
     "value": 2
   },
   {
-    "name": "increases+",
+    "name": "new-",
     "value": 2
   },
   {
-    "name": "position+",
+    "name": "gpu-",
     "value": 2
   },
   {
-    "name": "wednesday+",
+    "name": "better+",
     "value": 2
   },
   {
-    "name": "wall+",
+    "name": "review+",
     "value": 2
   },
   {
-    "name": "street+",
+    "name": "advantage+",
     "value": 2
   },
   {
-    "name": "calls+",
+    "name": "save+",
     "value": 2
   },
   {
-    "name": "volatility-",
+    "name": "die-",
     "value": 2
   },
   {
-    "name": "time-",
+    "name": "gpus+",
     "value": 2
   },
   {
-    "name": "growth+",
-    "value": 2
+    "name": "micron+",
+    "value": 1
   },
   {
-    "name": "current+",
-    "value": 2
+    "name": "end+",
+    "value": 1
   },
   {
-    "name": "analyst+",
-    "value": 2
+    "name": "addressing+",
+    "value": 1
   },
   {
-    "name": "avoids-",
-    "value": 2
+    "name": "challenge+",
+    "value": 1
   },
   {
-    "name": "job-",
-    "value": 2
+    "name": "efficient+",
+    "value": 1
   },
   {
-    "name": "overhire-",
-    "value": 2
+    "name": "computing+",
+    "value": 1
   },
   {
-    "name": "like-",
-    "value": 2
-  },
-  {
-    "name": "active+",
-    "value": 2
-  },
-  {
-    "name": "profitable+",
-    "value": 2
-  },
-  {
-    "name": "cap+",
-    "value": 2
-  },
-  {
-    "name": "iphone+",
-    "value": 2
-  },
-  {
-    "name": "defend-",
-    "value": 2
-  },
-  {
-    "name": "mobile-",
-    "value": 2
-  },
-  {
-    "name": "payment-",
-    "value": 2
-  },
-  {
-    "name": "hearing-",
-    "value": 2
+    "name": "apple+",
+    "value": 1
   },
   {
     "name": "outperforms+",
-    "value": 2
+    "value": 1
   },
   {
-    "name": "key+",
-    "value": 2
+    "name": "ryzen-",
+    "value": 1
   },
   {
-    "name": "walmart+",
-    "value": 2
+    "name": "much+",
+    "value": 1
   },
   {
-    "name": "adani+",
-    "value": 2
+    "name": "else+",
+    "value": 1
   },
   {
-    "name": "group+",
-    "value": 2
+    "name": "duke+",
+    "value": 1
   },
   {
-    "name": "higher+",
-    "value": 2
+    "name": "gpd+",
+    "value": 1
   },
   {
-    "name": "valuations+",
-    "value": 2
+    "name": "win+",
+    "value": 1
   },
   {
-    "name": "rout+",
-    "value": 2
+    "name": "max+",
+    "value": 1
   },
   {
-    "name": "likely+",
-    "value": 2
+    "name": "clear+",
+    "value": 1
   },
   {
-    "name": "beneficiary+",
-    "value": 2
+    "name": "epyc+",
+    "value": 1
   },
   {
-    "name": "competition+",
-    "value": 2
+    "name": "zen-",
+    "value": 1
   },
   {
-    "name": "scrutinize-",
-    "value": 2
+    "name": "cpu-",
+    "value": 1
   },
   {
-    "name": "customer-",
-    "value": 2
+    "name": "specs-",
+    "value": 1
   },
   {
-    "name": "history-",
-    "value": 2
+    "name": "leak-",
+    "value": 1
   },
   {
-    "name": "later-",
-    "value": 2
+    "name": "cores-",
+    "value": 1
   },
   {
-    "name": "house-",
-    "value": 2
+    "name": "rdna+",
+    "value": 1
   },
   {
-    "name": "big-",
-    "value": 2
+    "name": "chiplet-",
+    "value": 1
   },
   {
-    "name": "content-",
-    "value": 2
+    "name": "patent-",
+    "value": 1
   },
   {
-    "name": "moderation-",
-    "value": 2
+    "name": "details-",
+    "value": 1
   },
   {
-    "name": "justice+",
-    "value": 2
+    "name": "cutting-",
+    "value": 1
   },
   {
-    "name": "department+",
-    "value": 2
+    "name": "edge-",
+    "value": 1
   },
   {
-    "name": "escalates+",
-    "value": 2
+    "name": "shader-",
+    "value": 1
   },
   {
-    "name": "probe+",
-    "value": 2
+    "name": "leaked-",
+    "value": 1
   },
   {
-    "name": "wsj+",
-    "value": 2
+    "name": "asrock-",
+    "value": 1
   },
   {
-    "name": "judge-",
-    "value": 2
+    "name": "motherboards-",
+    "value": 1
   },
   {
-    "name": "using-",
-    "value": 2
+    "name": "list-",
+    "value": 1
   },
   {
-    "name": "much-",
-    "value": 2
+    "name": "confirms-",
+    "value": 1
   },
   {
-    "name": "debt-",
-    "value": 2
+    "name": "milan+",
+    "value": 1
   },
   {
-    "name": "vote-",
-    "value": 2
+    "name": "performance+",
+    "value": 1
   },
   {
-    "name": "packages-",
-    "value": 2
+    "name": "continues+",
+    "value": 1
+  },
+  {
+    "name": "impress+",
+    "value": 1
+  },
+  {
+    "name": "hiring+",
+    "value": 1
+  },
+  {
+    "name": "improve+",
+    "value": 1
+  },
+  {
+    "name": "linux+",
+    "value": 1
+  },
+  {
+    "name": "installation+",
+    "value": 1
+  },
+  {
+    "name": "drops-",
+    "value": 1
+  },
+  {
+    "name": "low-",
+    "value": 1
+  },
+  {
+    "name": "walmart-",
+    "value": 1
+  },
+  {
+    "name": "working-",
+    "value": 1
+  },
+  {
+    "name": "speculative-",
+    "value": 1
+  },
+  {
+    "name": "attack-",
+    "value": 1
+  },
+  {
+    "name": "sends-",
+    "value": 1
+  },
+  {
+    "name": "scrambling-",
+    "value": 1
+  },
+  {
+    "name": "goes-",
+    "value": 1
+  },
+  {
+    "name": "offensive-",
+    "value": 1
+  },
+  {
+    "name": "claims-",
+    "value": 1
+  },
+  {
+    "name": "drivers-",
+    "value": 1
+  },
+  {
+    "name": "stable-",
+    "value": 1
+  },
+  {
+    "name": "rebuilt+",
+    "value": 1
+  },
+  {
+    "name": "directx+",
+    "value": 1
+  },
+  {
+    "name": "ground+",
+    "value": 1
+  },
+  {
+    "name": "alleged-",
+    "value": 1
+  },
+  {
+    "name": "benchmarks-",
+    "value": 1
+  },
+  {
+    "name": "emerge-",
+    "value": 1
+  },
+  {
+    "name": "ugly-",
+    "value": 1
+  },
+  {
+    "name": "intc-",
+    "value": 1
+  },
+  {
+    "name": "shut-",
+    "value": 1
+  },
+  {
+    "name": "eyes-",
+    "value": 1
+  },
+  {
+    "name": "billion-",
+    "value": 1
+  },
+  {
+    "name": "chips-",
+    "value": 1
+  },
+  {
+    "name": "act-",
+    "value": 1
+  },
+  {
+    "name": "windfall-",
+    "value": 1
+  },
+  {
+    "name": "silence+",
+    "value": 1
+  },
+  {
+    "name": "still+",
+    "value": 1
+  },
+  {
+    "name": "offers+",
+    "value": 1
+  },
+  {
+    "name": "strong+",
+    "value": 1
+  },
+  {
+    "name": "powerful+",
+    "value": 1
+  },
+  {
+    "name": "alien+",
+    "value": 1
+  },
+  {
+    "name": "ready+",
+    "value": 1
+  },
+  {
+    "name": "take+",
+    "value": 1
+  },
+  {
+    "name": "consolidate+",
+    "value": 1
+  },
+  {
+    "name": "leading+",
+    "value": 1
+  },
+  {
+    "name": "position+",
+    "value": 1
+  },
+  {
+    "name": "laptop+",
+    "value": 1
+  },
+  {
+    "name": "shines+",
+    "value": 1
+  },
+  {
+    "name": "retbleed-",
+    "value": 1
+  },
+  {
+    "name": "spectre-",
+    "value": 1
+  },
+  {
+    "name": "bti-",
+    "value": 1
+  },
+  {
+    "name": "family-",
+    "value": 1
+  },
+  {
+    "name": "newborn-",
+    "value": 1
+  },
+  {
+    "name": "strikes-",
+    "value": 1
+  },
+  {
+    "name": "chiplets+",
+    "value": 1
+  },
+  {
+    "name": "helped+",
+    "value": 1
+  },
+  {
+    "name": "might+",
+    "value": 1
+  },
+  {
+    "name": "also+",
+    "value": 1
+  },
+  {
+    "name": "help+",
+    "value": 1
+  },
+  {
+    "name": "moore+",
+    "value": 1
+  },
+  {
+    "name": "law+",
+    "value": 1
+  },
+  {
+    "name": "head+",
+    "value": 1
+  },
+  {
+    "name": "crisis+",
+    "value": 1
+  },
+  {
+    "name": "navi-",
+    "value": 1
+  },
+  {
+    "name": "gcd-",
+    "value": 1
+  },
+  {
+    "name": "complex-",
+    "value": 1
   },
   {
     "name": "best+",
-    "value": 2
-  },
-  {
-    "name": "performing+",
-    "value": 2
-  },
-  {
-    "name": "warren+",
-    "value": 2
-  },
-  {
-    "name": "value+",
-    "value": 2
-  },
-  {
-    "name": "duality+",
-    "value": 2
-  },
-  {
-    "name": "advisers+",
-    "value": 2
-  },
-  {
-    "name": "sells+",
-    "value": 2
-  },
-  {
-    "name": "watch+",
-    "value": 2
-  },
-  {
-    "name": "saves+",
-    "value": 2
-  },
-  {
-    "name": "redditor+",
-    "value": 2
-  },
-  {
-    "name": "life+",
-    "value": 2
-  },
-  {
-    "name": "rare-",
     "value": 1
   },
   {
-    "name": "miss-",
+    "name": "time+",
     "value": 1
   },
   {
-    "name": "stop-",
+    "name": "meet+",
     "value": 1
   },
   {
-    "name": "samsung-",
+    "name": "king+",
     "value": 1
   },
   {
-    "name": "appeal-",
+    "name": "memory+",
     "value": 1
   },
   {
-    "name": "touchscreen-",
+    "name": "constrained+",
     "value": 1
   },
   {
-    "name": "patent+",
+    "name": "amazon+",
     "value": 1
   },
   {
-    "name": "board-",
+    "name": "offer+",
     "value": 1
   },
   {
-    "name": "loss-",
+    "name": "vms+",
     "value": 1
   },
   {
-    "name": "neonode-",
+    "name": "buy+",
     "value": 1
   },
   {
-    "name": "heads+",
+    "name": "suppression-",
     "value": 1
   },
   {
-    "name": "stars+",
+    "name": "tech-",
     "value": 1
   },
   {
-    "name": "worth+",
+    "name": "breaks-",
     "value": 1
   },
   {
-    "name": "nineties+",
+    "name": "cover-",
     "value": 1
   },
   {
-    "name": "focus+",
+    "name": "video-",
     "value": 1
   },
   {
-    "name": "chevron+",
+    "name": "faster-",
     "value": 1
   },
   {
-    "name": "nyse+",
+    "name": "despite-",
     "value": 1
   },
   {
-    "name": "cvx+",
+    "name": "smaller-",
     "value": 1
   },
   {
-    "name": "smart+",
+    "name": "rtx-",
     "value": 1
   },
   {
-    "name": "long+",
+    "name": "report-",
     "value": 1
   },
   {
-    "name": "term+",
+    "name": "look+",
     "value": 1
   },
   {
-    "name": "credit-",
+    "name": "dapper+",
     "value": 1
   },
   {
-    "name": "card-",
+    "name": "fan+",
     "value": 1
   },
   {
-    "name": "issuers-",
+    "name": "made+",
     "value": 1
   },
   {
-    "name": "antitrust-",
+    "name": "renders+",
     "value": 1
   },
   {
-    "name": "complaint-",
+    "name": "could+",
     "value": 1
   },
   {
-    "name": "risk-",
+    "name": "flagship+",
     "value": 1
   },
   {
-    "name": "dismissal-",
+    "name": "core+",
     "value": 1
   },
   {
-    "name": "see+",
+    "name": "superb+",
     "value": 1
   },
   {
-    "name": "went+",
+    "name": "raphael+",
     "value": 1
   },
   {
-    "name": "fall+",
+    "name": "cpus+",
     "value": 1
   },
   {
-    "name": "grace+",
+    "name": "launching+",
     "value": 1
   },
   {
-    "name": "solid+",
-    "value": 1
-  },
-  {
-    "name": "bet+",
-    "value": 1
-  },
-  {
-    "name": "dis+",
-    "value": 1
-  },
-  {
-    "name": "crash-",
-    "value": 1
-  },
-  {
-    "name": "detection-",
-    "value": 1
-  },
-  {
-    "name": "helps-",
-    "value": 1
-  },
-  {
-    "name": "cops-",
-    "value": 1
-  },
-  {
-    "name": "bust-",
-    "value": 1
-  },
-  {
-    "name": "drunk-",
-    "value": 1
-  },
-  {
-    "name": "driver-",
-    "value": 1
-  },
-  {
-    "name": "decreases-",
-    "value": 1
-  },
-  {
-    "name": "baidu-",
-    "value": 1
-  },
-  {
-    "name": "bidu-",
-    "value": 1
-  },
-  {
-    "name": "tesla+",
-    "value": 1
-  },
-  {
-    "name": "declines-",
-    "value": 1
-  },
-  {
-    "name": "first-",
-    "value": 1
-  },
-  {
-    "name": "since-",
-    "value": 1
-  },
-  {
-    "name": "sell-",
-    "value": 1
-  },
-  {
-    "name": "risky-",
-    "value": 1
-  },
-  {
-    "name": "upward-",
-    "value": 1
-  },
-  {
-    "name": "climb-",
-    "value": 1
-  },
-  {
-    "name": "japan+",
-    "value": 1
-  },
-  {
-    "name": "ftc+",
+    "name": "well+",
     "value": 1
   }
 ]

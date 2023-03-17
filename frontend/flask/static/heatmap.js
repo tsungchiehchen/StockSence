@@ -17,8 +17,9 @@
       .range([0, height]);
   
     var color = d3.scale.threshold()
-    .domain([-3, -0.25, 0.25, 3])
-    .range(["#F63538", "#8B444E", "#404040", "#35764E", "#30CC5A"]);
+    //.domain([-3, -0.25, 0.25, 3])
+    .domain([3, 0.25, -0.25, -3])
+    .range(["#30CC5A", "#35764E", "#404040", "#8B444E", "#F63538"])
   
     var treemap = d3.layout.treemap()
       .children(function (d, depth) { return depth ? null : d._children; })
@@ -239,19 +240,19 @@
             // 3%
             d3.select("#largest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + Math.round(percentiles[6]) + "%</p>" +
+              "<p>" + Math.round(percentiles[0]) + "%</p>" +
               "</div>"
             )
             // 2%
             d3.select("#secondLargest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + Math.round(percentiles[5]) + "%</p>" +
+              "<p>" + Math.round(percentiles[1]) + "%</p>" +
               "</div>"
             )
             // 1%
             d3.select("#thirdLargest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + Math.round(percentiles[4]) + "%</p>" +
+              "<p>" + Math.round(percentiles[2]) + "%</p>" +
               "</div>"
             )
             // 0%
@@ -263,19 +264,19 @@
             // -1%
             d3.select("#thirdSmallest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + Math.round(percentiles[2]) + "%</p>" +
+              "<p>" + Math.round(percentiles[4]) + "%</p>" +
               "</div>"
             )
             // -2%
             d3.select("#secondSmallest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + Math.round(percentiles[1]) + "%</p>" +
+              "<p>" + Math.round(percentiles[5]) + "%</p>" +
               "</div>"
             )
             // -3%
             d3.select("#smallest").html(
               "<div style=\"line-height: 25px;text-align:center;color: white;\">" +
-              "<p>" + Math.round(percentiles[0]) + "%</p>" +
+              "<p>" + Math.round(percentiles[6]) + "%</p>" +
               "</div>"
             )
         }
@@ -529,26 +530,47 @@
             .attr("width", function (d) { return x(d.x + d.dx) - x(d.x); })
             .attr("height", function (d) { return y(d.y + d.dy) - y(d.y); })
             .attr("fill", function (d) { 
+              // if(parseFloat(d.rate) >= percentiles[6]){
+              //   return "#056636";
+              // }
+              // else if(parseFloat(d.rate) >= percentiles[5]){
+              //   return "#089950";
+              // }
+              // else if(parseFloat(d.rate) >= percentiles[4]){
+              //   return "#42BD7F";
+              // }
+              // else if(parseFloat(d.rate) >= percentiles[3]){
+              //   return "#C1C4CD";
+              // }
+              // else if(parseFloat(d.rate) >= percentiles[2]){
+              //   return "#F77C80";
+              // }
+              // else if(parseFloat(d.rate) >= percentiles[1]){
+              //   return "#F23645";
+              // }
+              // else{
+              //   return "#991F29";
+              // }
               if(parseFloat(d.rate) >= percentiles[6]){
-                return "#056636";
+                return "#991F29";
               }
               else if(parseFloat(d.rate) >= percentiles[5]){
-                return "#089950";
+                return "#F23645";
               }
               else if(parseFloat(d.rate) >= percentiles[4]){
-                return "#42BD7F";
+                return "#F77C80";
               }
               else if(parseFloat(d.rate) >= percentiles[3]){
                 return "#C1C4CD";
               }
               else if(parseFloat(d.rate) >= percentiles[2]){
-                return "#F77C80";
+                return "#42BD7F";
               }
               else if(parseFloat(d.rate) >= percentiles[1]){
-                return "#F23645";
+                return "#089950";
               }
               else{
-                return "#991F29";
+                return "#056636";
               }
             });
         }
