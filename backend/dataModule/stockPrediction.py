@@ -84,11 +84,16 @@ def stock_prediction_train_model(symbol, train_on_number_of_days, future_number_
     # Compiling the RNN
     regressor.compile(optimizer='adam', loss='mean_squared_error')
 
+    # set early stop criteria
+    early_stop = EarlyStopping(
+        monitor='loss', patience=10, mode='auto', verbose=1)
+
     # Measuring the time taken by the model to train
     StartTime = time.time()
 
     # Fitting the RNN to the Training set
-    regressor.fit(X_train, y_train, batch_size=5, epochs=100)
+    regressor.fit(X_train, y_train, batch_size=5,
+                  epochs=100, callbacks=[early_stop])
 
     # load pre-train model to pickle
     fileName = './dataset/preTrained model/' + symbol + '.sav'
@@ -97,6 +102,11 @@ def stock_prediction_train_model(symbol, train_on_number_of_days, future_number_
     EndTime = time.time()
     print("############### Total Time Taken: ", round(
         (EndTime-StartTime)/60), 'Minutes #############')
+
+    symbol += '\n'
+    # Write to .txt file indicating finished company with correct scores
+    with open('./dataset/Finished_news_sentiment.txt', 'a') as file:
+        file.write(str(symbol))
 
 
 def get_number_of_days(end_date):
@@ -144,12 +154,11 @@ def stock_prediction_inference(symbol, start_date, end_date):
     NextPeriodPrice = NextPeriodPrice[0].tolist()[:num_days]
 
     # write NextPeriodPrice to json
-    writePricetoJSON(StockData, start_date, end_date,
-                     NextPeriodPrice, num_days)
+    writePricetoJSON(StockData, start_date, end_date, NextPeriodPrice)
     writeDatetoJSON(StockData, start_date, end_date, num_days)
 
 
-def writePricetoJSON(StockData, start_date, end_date, future_price, num_days):
+def writePricetoJSON(StockData, start_date, end_date, future_price):
     # filter rows based on start_date and end_date to get historical date
     historical_price = StockData[(StockData['Date'] >= start_date)
                                  & (StockData['Date'] <= end_date)]
@@ -157,7 +166,7 @@ def writePricetoJSON(StockData, start_date, end_date, future_price, num_days):
     combined = historical_price + future_price
 
     json_string = json.dumps(json.loads(json.dumps(
-        [{"data": combined}]), parse_float=lambda x: round(float(x), 2)))
+        [combined]), parse_float=lambda x: round(float(x), 2)))
 
     with open('./dataset/price prediction/price.json', 'w') as f:
         f.write(json_string)
@@ -185,8 +194,6 @@ def writeDatetoJSON(StockData, start_date, end_date, num_days):
 
 
 # testing
-symbol = 'AAPL'
-
 # setting parameter for training LSTM model
 train_on_number_of_days = 60
 future_number_of_days = 30
@@ -194,7 +201,33 @@ future_number_of_days = 30
 # stock_prediction_train_model(
 #     symbol, train_on_number_of_days, future_number_of_days)
 
-start_date = "2022-12-01"
-end_date = "2023-03-09"
-# end_date = "2023-04-11"
-stock_prediction_inference(symbol, start_date, end_date)
+##################  Training  #####################
+df = pd.read_csv('./dataset/Stocks Symbols.csv')
+df = df.loc[df['Market_Cap'] > 2000000000.00]
+symbols = df['Symbol'].tolist()
+
+dont_run = ['ATAT']
+symbols = [symb for symb in symbols if symb not in dont_run]
+
+already_processed_symbol = []
+with open('./dataset/Finished_news_sentiment.txt', 'r') as file:
+    for line in file:
+        already_processed_symbol.append(line.split()[0])
+
+for symbol in symbols:
+    if symbol not in already_processed_symbol:
+        print("Start " + symbol)
+
+        start = time.time()
+        stock_prediction_train_model(
+            symbol, train_on_number_of_days, future_number_of_days)
+        end = time.time()
+        print("Finished " + symbol + " in ", end-start, " Seconds")
+
+
+################## Inference Testing #####################
+# symbol = 'AAPL'
+# start_date = "2023-03-01"
+# end_date = "2023-03-09"
+# # end_date = "2023-04-11"
+# stock_prediction_inference(symbol, start_date, end_date)
