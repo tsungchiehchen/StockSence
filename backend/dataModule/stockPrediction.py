@@ -166,7 +166,7 @@ def writePricetoJSON(StockData, start_date, end_date, future_price):
     combined = historical_price + future_price
 
     json_string = json.dumps(json.loads(json.dumps(
-        [combined]), parse_float=lambda x: round(float(x), 2)))
+        combined), parse_float=lambda x: round(float(x), 2)))
 
     with open('./dataset/price prediction/price.json', 'w') as f:
         f.write(json_string)
