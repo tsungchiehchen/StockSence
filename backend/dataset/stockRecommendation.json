@@ -1,1 +1,158 @@
-{"name": "", "children": [{"name": "", "children": [{"name": "GOOGL"}, {"name": "", "children": [{"name": "INTC"}, {"name": "", "children": [{"name": "SOFI"}, {"name": "", "children": [{"name": "NVDA"}, {"name": "", "children": [{"name": "AMD"}, {"name": "", "children": [{"name": "AMZN"}, {"name": "AAPL"}]}]}]}]}]}]}, {"name": "", "children": [{"name": "META"}, {"name": "GOOG"}]}, {"name": "MSFT"}]}
+{
+    "name": "",
+    "children": [
+        {
+            "name": "",
+            "children": [
+                {
+                    "name": "GOOGL"
+                },
+                {
+                    "name": "",
+                    "children": [
+                        {
+                            "name": "INTC"
+                        },
+                        {
+                            "name": "",
+                            "children": [
+                                {
+                                    "name": "NVDA"
+                                },
+                                {
+                                    "name": "",
+                                    "children": [
+                                        {
+                                            "name": "AMD"
+                                        },
+                                        {
+                                            "name": "",
+                                            "children": [
+                                                {
+                                                    "name": "AMZN"
+                                                },
+                                                {
+                                                    "name": "",
+                                                    "children": [
+                                                        {
+                                                            "name": "AAPL"
+                                                        },
+                                                        {
+                                                            "name": "TSLA"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "",
+            "children": [
+                {
+                    "name": "",
+                    "children": [
+                        {
+                            "name": "",
+                            "children": [
+                                {
+                                    "name": "IQ"
+                                },
+                                {
+                                    "name": "",
+                                    "children": [
+                                        {
+                                            "name": "CSCO"
+                                        },
+                                        {
+                                            "name": "CMCSA"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "",
+                            "children": [
+                                {
+                                    "name": "RIVN"
+                                },
+                                {
+                                    "name": "",
+                                    "children": [
+                                        {
+                                            "name": "WBD"
+                                        },
+                                        {
+                                            "name": "",
+                                            "children": [
+                                                {
+                                                    "name": "SOFI"
+                                                },
+                                                {
+                                                    "name": "",
+                                                    "children": [
+                                                        {
+                                                            "name": "LCID"
+                                                        },
+                                                        {
+                                                            "name": "",
+                                                            "children": [
+                                                                {
+                                                                    "name": "AAL"
+                                                                },
+                                                                {
+                                                                    "name": "",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "LYFT"
+                                                                        },
+                                                                        {
+                                                                            "name": "",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "PLUG"
+                                                                                },
+                                                                                {
+                                                                                    "name": "AFRM"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "",
+                    "children": [
+                        {
+                            "name": "GOOG"
+                        },
+                        {
+                            "name": "META"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "MSFT"
+        }
+    ]
+}
