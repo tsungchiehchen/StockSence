@@ -111,7 +111,14 @@ export default {
         //document.getElementsByClassName('pageBack').style = "margin-left: 5px;"
         
         // 設定 title style
-        document.querySelector(".t-vue-title").setAttribute("style", "font-weight: 800; color: rgb(66, 184, 131);"); 
+        const url = new URL(window.location.href);
+        var rate = url.searchParams.get('rate')
+        if(rate >= 0){
+            document.querySelector(".t-vue-title").setAttribute("style", "font-weight: 800; color: rgb(66, 184, 131);"); 
+        }
+        else{
+            document.querySelector(".t-vue-title").setAttribute("style", "font-weight: 800; color: rgb(229, 64, 80);"); 
+        }
 
         window.addEventListener('resize', this.onResize)
         window.dc = this.chart

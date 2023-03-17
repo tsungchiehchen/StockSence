@@ -14,6 +14,7 @@ def api():
     startDate = request.args.get('startDate')
     endDate = request.args.get('endDate')
     stockSymbol = request.args.get('stockSymbol')
+    treeType = request.args.get('cluster')
 
     startTimestamp, endTimestamp = calculateStockChangebyDate.getTimeStamps(startDate, endDate)
     rate = calculateStockChangebyDate.getStocksChange(stockSymbol, startDate, endDate)
@@ -22,7 +23,7 @@ def api():
     getNewsSentiment.get_news_sentiment(startDate, endDate, stockSymbol)
     hierarchicalClustering.perform_hierarchical_cluster(stockSymbol)
     
-    url = "http://127.0.0.1:8081/?stockPriceOnly=" + str(stockPriceOnly) + "&startDate=" + str(startDate) + "&endDate=" + str(endDate) + "&stockSymbol=" + str(stockSymbol) + "&startTimestamp=" + str(startTimestamp) + "&endTimestamp=" + str(endTimestamp) + "&rate=" + str(rate)
+    url = "http://127.0.0.1:8081/?stockPriceOnly=" + str(stockPriceOnly) + "&startDate=" + str(startDate) + "&endDate=" + str(endDate) + "&stockSymbol=" + str(stockSymbol) + "&startTimestamp=" + str(startTimestamp) + "&endTimestamp=" + str(endTimestamp) + "&rate=" + str(rate) + "&treeType=" + str(treeType)
 
     return redirect(url)
 

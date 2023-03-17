@@ -83,7 +83,7 @@ body {
 }
 
 .tree {
-    width: 65vw;
+    width: 80vw;
     height: 20vh;
     // display: block;
     // overflow: auto; 

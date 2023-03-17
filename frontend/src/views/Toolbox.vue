@@ -64,7 +64,7 @@ export default {
     return{
     date: new Date(),
     minDate: new Date([2017, 1, 1]),
-    maxDate: new Date([2023, 5, 1]),
+    maxDate: new Date([2023, 3, 31]),
     predictionPopup: false,
     searchPopup: false,
     alrtPopup: false,
@@ -138,16 +138,17 @@ export default {
       var endDateYear = endDateSplitted[0]
       var endDateMonth = endDateSplitted[1]
       var endDateDay = endDateSplitted[2]
-      if((endDateYear > 2023) || (endDateYear == 2023 && endDateMonth > 2) || (endDateYear == 2023 && endDateMonth == 2 && endDateDay == 1)){
+      if((endDateYear > 2023) || (endDateYear == 2023 && endDateMonth > 2) || (endDateYear == 2023 && endDateMonth == 2 && endDateDay == 28)){
         alert("Current time range is not available in our data. Please use \"Price Prediction.\"");
         this.searchPopup = false
       }
-      else{
+      else{  // start searching
         document.getElementsByClassName("vuesax-app-is-ltr")[0].style = "pointer-events: none;";  // 讓 popup 不會被滑鼠關掉
         const url = new URL(window.location.href);
         var stockPriceOnly = url.searchParams.get('stockPriceOnly')
         var stockSymbol = url.searchParams.get('stockSymbol')
-        var newURL = "http://127.0.0.1:3000/api?stockPriceOnly=" + stockPriceOnly + "&startDate=" + startDate + "&endDate=" + endDate + "&stockSymbol=" + stockSymbol
+        var treeType = url.searchParams.get('treeType')
+        var newURL = "http://127.0.0.1:3000/api?stockPriceOnly=" + stockPriceOnly + "&startDate=" + startDate + "&endDate=" + endDate + "&stockSymbol=" + stockSymbol + "&treeType=" + treeType
         window.location.href = newURL;
       }
     }
