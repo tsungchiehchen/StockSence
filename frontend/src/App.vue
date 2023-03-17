@@ -37,7 +37,7 @@ document.title = "StockSense"
     </v-col>
   </v-row>
   <v-row no-gutters id="lowerRow" style="height: 30vh; width: 100%;">
-    <v-col no-gutters style="justify-content: center; align-items: center; display:grid; flex-basis: 30%; margin: 5px 7.5px 15px 15px;" id="stockRecommendation">
+    <v-col no-gutters style="justify-content: center; align-items: center; display:grid; flex-basis: 20%; margin: 5px 7.5px 15px 15px;" id="stockRecommendation">
       <StockRecommendation/>
     </v-col>
     <v-col no-gutters id="wordcloud" style="justify-content: center; align-items: center; margin: 5px 15px 15px 7.5px;">

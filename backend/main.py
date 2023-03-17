@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, url_for, redirect
-from dataModule import calculateStockChangebyDate, calculateMacroChange, wordCloud, getNewsSentiment, hierarchicalClustering
+from dataModule import calculateStockChangebyDate, calculateMacroChange, wordCloud, getNewsSentiment, hierarchicalClustering, stockPrediction
 import time
 from pathlib import Path
 import json
@@ -22,6 +22,7 @@ def api():
     wordCloud.getWordCloud(startDate, endDate, stockSymbol)
     getNewsSentiment.get_news_sentiment(startDate, endDate, stockSymbol)
     hierarchicalClustering.perform_hierarchical_cluster(stockSymbol)
+    
     
     url = "http://127.0.0.1:8081/?stockPriceOnly=" + str(stockPriceOnly) + "&startDate=" + str(startDate) + "&endDate=" + str(endDate) + "&stockSymbol=" + str(stockSymbol) + "&startTimestamp=" + str(startTimestamp) + "&endTimestamp=" + str(endTimestamp) + "&rate=" + str(rate) + "&treeType=" + str(treeType)
 
