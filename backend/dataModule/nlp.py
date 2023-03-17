@@ -1,3 +1,4 @@
+import os
 import nltk
 from nltk.corpus import wordnet
 from nltk.stem import WordNetLemmatizer
@@ -123,24 +124,41 @@ def get_sentiment_as_dataframe(symbol):
     df = pd.read_csv('./dataset/combine news/combined_news_' + symbol + '.csv')
 
     # get sentiment score on each title
-    scores = get_sentiment_score(df['title'])
+    try:
+        scores = get_sentiment_score(df['title'])
+        symbol += '\n'
+        # Write to .txt file indicating finished company with correct scores
+        with open('./dataset/Finished_news_sentiment.txt', 'a') as file:
+            file.write(str(symbol))
 
-    for i in range(len(scores)):
-        df.loc[i, 'Negative'] = scores[i]['neg']
-        df.loc[i, 'Neutral'] = scores[i]['neu']
-        df.loc[i, 'Positive'] = scores[i]['pos']
-        df.loc[i, 'Compound'] = scores[i]['compound']
+        for i in range(len(scores)):
+            df.loc[i, 'Negative'] = scores[i]['neg']
+            df.loc[i, 'Neutral'] = scores[i]['neu']
+            df.loc[i, 'Positive'] = scores[i]['pos']
+            df.loc[i, 'Compound'] = scores[i]['compound']
 
-    df.to_csv('./dataset/news sentiment/' + symbol +
-              '_news_sentiment.csv', index=False)
+        df.to_csv('./dataset/news sentiment/' + symbol +
+                  '_news_sentiment.csv', index=False)
+    except:
+        scores = None
+        symbol += '\n'
+        # Write to .txt file indicating not finished company with correct scores
+        with open('./dataset/Not Finished_news_sentiment.txt', 'a') as file:
+            file.write(str(symbol))
 
 
 # df = pd.read_csv('./dataset/Stocks Symbols.csv')
 # df = df.loc[df['Market_Cap'] > 2000000000.00]
 # symbols = df['Symbol'].tolist()
 
+# already_processed_symbol = []
+# with open('./dataset/Finished_news_sentiment.txt', 'r') as file:
+#     for line in file:
+#         already_processed_symbol.append(line.split()[0])
+
 # for symbol in symbols:
-#     start = time.time()
-#     get_sentiment_as_dataframe(symbol)
-#     end = time.time()
-#     print("Finished " + symbol + " in ", end-start, " Seconds")
+#     if symbol not in already_processed_symbol:
+#         start = time.time()
+#         get_sentiment_as_dataframe(symbol)
+#         end = time.time()
+#         print("Finished " + symbol + " in ", end-start, " Seconds")
