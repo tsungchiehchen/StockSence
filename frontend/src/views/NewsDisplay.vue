@@ -34,41 +34,61 @@ export default {
     
     var processedItems = []
     var key = 1
-    //console.log(newsJson[0])
-    for (var i = 0; i < 3; i++) {
-      for (var j = 0; j < newsJson[i].length; j++){
-        if(rate >= 0){
-          if(i == 0){
-            var color = "color: #42b883"
-          }
-          else if(i == 1){
-            color = "color: #787878"
-          }
-          else{
-            color = "color: #e54050"
-          }
-        }
-        else{
-          if(i == 0){
-            color = "color: #e54050"
-          }
-          else if(i == 1){
-            color = "color: #787878"
-          }
-          else{
-            color = "color: #42b883"
-          }
-        }
-        let news = {
+    for (var i = 0; i < newsJson.length; i++){
+      if (newsJson[i].Score == "Positive"){
+        var color = "color: #42b883"
+      }
+      else if(newsJson[i].Score == "Negative"){
+        color = "color: #e54050"
+      }
+      else{
+        color = "color: #787878"
+      }
+      let news = {
           "key": key,
-          "name": newsJson[i][j].title + " (" + newsJson[i][j].datetime + ")",
-          "desc": newsJson[i][j].desc,
+          "name": newsJson[i].title + " (" + newsJson[i].datetime + ")",
+          "desc": newsJson[i].desc,
           "color": color
         }
-        key++
-        processedItems.push(news)
-      }
+      key++
+      processedItems.push(news)
     }
+
+    //console.log(newsJson[0])
+    // for (var i = 0; i < 3; i++) {
+    //   for (var j = 0; j < newsJson[i].length; j++){
+    //     if(rate >= 0){
+    //       if(i == 0){
+    //         var color = "color: #42b883"
+    //       }
+    //       else if(i == 1){
+    //         color = "color: #787878"
+    //       }
+    //       else{
+    //         color = "color: #e54050"
+    //       }
+    //     }
+    //     else{
+    //       if(i == 0){
+    //         color = "color: #e54050"
+    //       }
+    //       else if(i == 1){
+    //         color = "color: #787878"
+    //       }
+    //       else{
+    //         color = "color: #42b883"
+    //       }
+    //     }
+    //     let news = {
+    //       "key": key,
+    //       "name": newsJson[i][j].title + " (" + newsJson[i][j].datetime + ")",
+    //       "desc": newsJson[i][j].desc,
+    //       "color": color
+    //     }
+    //     key++
+    //     processedItems.push(news)
+    //   }
+    // }
     //console.log(processedItems)
     this.items = processedItems
   }

@@ -33,8 +33,8 @@
             :title="pricePredictionTitle"
             :active.sync="predictionPopup"
             :background-color = "predictionPopupcolor" >
-            <div style="margin: auto; overflow-y: hidden;">
-              <apexchart type="line" height="450%" :options="chartOptions" :series="series"></apexchart>
+            <div style="margin: auto;">
+              <apexchart type="line" height="500%" :options="chartOptions" :series="series"></apexchart>
             </div> 
           </vs-popup>
         </div>
@@ -140,6 +140,7 @@ export default {
       this.chartOptions.annotations.xaxis[0].x2 = predictionEndDate
       console.log(this.chartOptions.annotations.xaxis[0])
     }
+    document.getElementsByClassName('vs-popup--content')[0].style = "overflow-y: hidden"
 
   },
   methods:{
