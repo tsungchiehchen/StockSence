@@ -72,10 +72,11 @@ def get_percentile_and_write(start_date, end_date, changes):
         portion_separate_values[(n//2) + i] = interval * i
 
     # Write the percentiles list to a JSON file
-    # filename = './dataset/percentiles/' + str(start_date) + '~' + str(end_date) + '.json'
+    filename = './dataset/percentiles/' + \
+        str(start_date) + '~' + str(end_date) + '.json'
 
-    # with open(filename, 'w+') as f:
-    #     json.dump(portion_separate_values, f)
+    with open(filename, 'w+') as f:
+        json.dump(portion_separate_values, f)
 
     return portion_separate_values
 
@@ -254,7 +255,6 @@ def processAllStocksChange(start_date, end_date):
     # with start_date~end_date
     # calculate percentile (of 6 portions)
     percentile = get_percentile_and_write(start_date, end_date, changes)
-    print(percentile)
 
     # convert start_date and end_date to tradingVue accetable timestamp
     # startTimestamp, endTimestamp = getTimeStamps(start_date, end_date)
@@ -440,18 +440,18 @@ def get_company_name():
 
 
 # Testing for percentile
-start_date = "2022-06-01"
-end_date = "2022-09-01"
-processAllStocksChange(start_date, end_date)
+# start_date = "2022-06-01"
+# end_date = "2022-09-01"
+# processAllStocksChange(start_date, end_date)
 
-start_date = "2022-01-01"
-end_date = "2023-02-01"
-processAllStocksChange(start_date, end_date)
+# start_date = "2022-01-01"
+# end_date = "2023-02-01"
+# processAllStocksChange(start_date, end_date)
 
-start_date = "2022-02-01"
-end_date = "2022-07-01"
-processAllStocksChange(start_date, end_date)
+# start_date = "2022-02-01"
+# end_date = "2022-07-01"
+# processAllStocksChange(start_date, end_date)
 
-start_date = "2022-06-15"
-end_date = "2022-08-10"
-processAllStocksChange(start_date, end_date)
+# start_date = "2022-06-15"
+# end_date = "2022-08-10"
+# processAllStocksChange(start_date, end_date)
