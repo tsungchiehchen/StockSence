@@ -232,7 +232,7 @@
               "</div>"+
             "</div>" +
             "<div id=\"searchButton\" style=\"float:left;padding-top:8px;padding-left:10px\">" +
-            "<button type=\"submit\" form=\"form1\" class=\"btn btn-primary\" style=\"margin-left:0px\" onclick=\"post('/')\">Search</button>" +
+            "<button type=\"submit\" form=\"form1\" class=\"btn btn-primary\" style=\"margin-left:0px\" onclick=\"post('/')\">Update</button>" +
             "</div>");
               
             // Legend Text

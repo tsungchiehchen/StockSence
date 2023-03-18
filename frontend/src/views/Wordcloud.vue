@@ -254,7 +254,7 @@ export default {
             .duration(200)
             .style("display", "block")
             .style("opacity", .8)
-          tooltip.html("<p style=\"font-weight: 1000; font-size:15px; line-height: 1.7em;\">" + d[nameKey] + "</p>" + valueKey + ': ' + d[valueKey])
+          tooltip.html("<p style=\"font-weight: 1000; font-size:15px; line-height: 1.7em;\">" + d[nameKey] + "</p>" + "count" + ': ' + d[valueKey])
         })
           .on("mousemove", function (d) {
             tooltip
