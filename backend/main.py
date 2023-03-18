@@ -23,7 +23,6 @@ def api():
     getNewsSentiment.get_news_sentiment(startDate, endDate, stockSymbol)
     hierarchicalClustering.perform_hierarchical_cluster(stockSymbol)
     
-    
     url = "http://127.0.0.1:8081/?stockPriceOnly=" + str(stockPriceOnly) + "&startDate=" + str(startDate) + "&endDate=" + str(endDate) + "&stockSymbol=" + str(stockSymbol) + "&startTimestamp=" + str(startTimestamp) + "&endTimestamp=" + str(endTimestamp) + "&rate=" + str(rate) + "&treeType=" + str(treeType)
 
     return redirect(url)
@@ -96,15 +95,15 @@ def index():
             return render_template('index.html', type=type, macroChange=macroChange, percentiles=percentiles, startTimestamp=startTimestamp, endTimestamp=endTimestamp)
         
         else:  # 第一次進入網頁
-            percentilesFilePath = Path("./dataset/percentiles/" + "2022-12-01" + "~" + "2023-01-01.json")
+            percentilesFilePath = Path("./dataset/percentiles/" + "2022-12-01" + "~" + "2023-02-01.json")
             if not percentilesFilePath.is_file():  # macro change file does not exist
                 print("Not calculated before")
-                calculateStockChangebyDate.processAllStocksChange("2022-12-01", "2023-01-01")
+                calculateStockChangebyDate.processAllStocksChange("2022-12-01", "2023-02-01")
             
-            macroChange = calculateMacroChange.process_macro_data("2022-12-01", "2023-01-01")
+            macroChange = calculateMacroChange.process_macro_data("2022-12-01", "2023-02-01")
             percentilesFile = open(percentilesFilePath)
             percentiles = json.load(percentilesFile)
-            startTimestamp, endTimestamp = calculateStockChangebyDate.getTimeStamps("2022-12-01", "2023-01-01")
+            startTimestamp, endTimestamp = calculateStockChangebyDate.getTimeStamps("2022-12-01", "2023-02-01")
 
             return render_template('index.html', macroChange=macroChange, percentiles=percentiles, startTimestamp=startTimestamp, endTimestamp=endTimestamp)
 

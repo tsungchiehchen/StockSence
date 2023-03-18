@@ -1,6 +1,6 @@
 (function () {
     var defaultStartDate = "2022-12-01"
-    var defaultEndDate = "2023-01-01"
+    var defaultEndDate = "2023-02-01"
 
     var margin = { top: 50, right: 0, bottom: 0, left: 0 },
       width = window.innerWidth,
@@ -18,7 +18,7 @@
   
     var color = d3.scale.threshold()
     .domain([-3, -0.25, 0.25, 3])
-    .range(["#F63538", "#8B444E", "#404040", "#35764E", "#30CC5A"]);
+    .range(["#30CC5A", "#35764E", "#404040", "#8B444E", "#F63538"])
   
     var treemap = d3.layout.treemap()
       .children(function (d, depth) { return depth ? null : d._children; })
@@ -104,7 +104,7 @@
       .attr("height", "25px")
       .attr("style", "fill:rgb(66, 189, 127);stroke-width:0;stroke:rgb(0,0,0);border-radius: 25px;")
 
-    colorLegends.append("foreignObject")  // 1%
+    colorLegends.append("foreignObject")  // -1%
       .attr("x", window.innerWidth - 225)
       .attr("y", -37)
       .attr("width", "70px")
@@ -152,7 +152,7 @@
       .attr("height", "25px")
       .attr("style", "fill:rgb(242, 54, 69);stroke-width:0;stroke:rgb(0,0,0);border-radius: 25px;")
 
-    colorLegends.append("foreignObject")  // -1%
+    colorLegends.append("foreignObject")  // -2%
       .attr("x", window.innerWidth - 450)
       .attr("y", -37)
       .attr("width", "70px")
@@ -215,14 +215,14 @@
             "<button class=\"btn btn-outline-dark dropdown-toggle\" id=\"dropDownMenu\" type=\"button\" data-toggle=\"dropdown\" name=\"type\">View macroeconomic data" +
             "<span class=\"caret\"></span></button>" +
             "<ul class=\"dropdown-menu\" id=\"dropdown-menu\">" +
-            "<li><a href=\"#\">CPI</a></li>" +
-            "<li><a href=\"#\">Federal Funds Rate</a></li>" +
-            "<li><a href=\"#\">Retail Price</a></li>" +
-            "<li><a href=\"#\">Treasury yield 2 years</a></li>" +
-            "<li><a href=\"#\">Treasury yield 10 years</a></li>" +
-            "<li><a href=\"#\">Treasury yield 20 years</a></li>" +
-            "<li><a href=\"#\">Treasury yield 30 years</a></li>" +
-            "<li><a href=\"#\">Unemployment</a></li>" +
+            "<li><a>CPI</a></li>" +
+            "<li><a>Federal Funds Rate</a></li>" +
+            "<li><a>Retail Price</a></li>" +
+            "<li><a>Treasury yield 2 years</a></li>" +
+            "<li><a>Treasury yield 10 years</a></li>" +
+            "<li><a>Treasury yield 20 years</a></li>" +
+            "<li><a>Treasury yield 30 years</a></li>" +
+            "<li><a>Unemployment</a></li>" +
             "</ul>" +
             "</div>" +
             "<div class=\"col-auto\" style=\"float:left;padding-top:8px;padding-left:0px; padding-right:0px\" id=\"typeChange\">" +
@@ -232,7 +232,7 @@
               "</div>"+
             "</div>" +
             "<div id=\"searchButton\" style=\"float:left;padding-top:8px;padding-left:10px\">" +
-            "<button type=\"submit\" form=\"form1\" class=\"btn btn-primary\" style=\"margin-left:0px\" onclick=\"post('/')\">Search</button>" +
+            "<button type=\"submit\" form=\"form1\" class=\"btn btn-primary\" style=\"margin-left:0px\" onclick=\"post('/')\">Update</button>" +
             "</div>");
               
             // Legend Text
@@ -324,41 +324,6 @@
         }
   
         function layout(d) {
-          // 從 URL 取值更新到內容中
-          const url = new URL(window.location.href);
-          if (url.searchParams.get('stockPriceOnly') !== null) {
-            if (url.searchParams.get('stockPriceOnly') == "true"){
-              document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
-              document.getElementById("dropDownMenu").value = "Select macroeconomic type";
-              document.getElementById("dropDownMenu").disabled = true;
-              document.getElementById("stockPriceOnlyCheckBox").checked = true;
-              document.getElementById("dropDownMenu").style.display = 'none';
-              setDatePicker(true);
-            }
-            else{
-              document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
-              document.getElementById("dropDownMenu").value = "Select macroeconomic type";
-              document.getElementById("dropDownMenu").style.display = 'block';
-              changeMacroDisplayValue(url.searchParams.get('type'));
-              document.getElementById("stockPriceOnlyCheckBox").checked = false;
-              document.getElementById("checkBox").style="float:left;padding-top:14px;padding-left:0px";
-              setDatePicker(false);
-            }
-            //console.log(url.searchParams.get('startDate'));
-            document.getElementById("startDate").value = url.searchParams.get('startDate');
-            document.getElementById("endDate").value = url.searchParams.get('endDate');
-            document.getElementById("typeChange").style.display = 'none';
-          }
-          else{  // 第一次載入的情況
-            document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
-            document.getElementById("dropDownMenu").value = "Select macroeconomic type";
-            document.getElementById("stockPriceOnlyCheckBox").checked = false;
-            document.getElementById("startDate").value = defaultStartDate;
-            document.getElementById("endDate").value = defaultEndDate;
-            document.getElementById("typeChange").style.display = 'none';
-          }
-
-
           if (d._children) {
             treemap.nodes({ _children: d._children });
             d._children.forEach(function (c) {
@@ -377,6 +342,40 @@
         }
   
         function display(d) {
+          // 從 URL 取值更新到內容中
+          const url = new URL(window.location.href);
+          if (url.searchParams.get('stockPriceOnly') !== null) {
+            if (url.searchParams.get('stockPriceOnly') == "true"){
+              document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
+              document.getElementById("dropDownMenu").value = "Select macroeconomic type";
+              document.getElementById("dropDownMenu").disabled = true;
+              document.getElementById("stockPriceOnlyCheckBox").checked = true;
+              document.getElementById("dropDownMenu").style.display = 'none';
+              setDatePicker(true, true);
+            }
+            else{
+              document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
+              document.getElementById("dropDownMenu").value = "Select macroeconomic type";
+              document.getElementById("dropDownMenu").style.display = 'block';
+              changeMacroDisplayValue(url.searchParams.get('type'));
+              document.getElementById("stockPriceOnlyCheckBox").checked = false;
+              document.getElementById("checkBox").style="float:left;padding-top:14px;padding-left:0px";
+              setDatePicker(false, true);
+            }
+            //console.log(url.searchParams.get('startDate'));
+            document.getElementById("startDate").value = url.searchParams.get('startDate');
+            document.getElementById("endDate").value = url.searchParams.get('endDate');
+            document.getElementById("typeChange").style.display = 'none';
+          }
+          else{  // 第一次載入的情況
+            document.getElementById("dropDownMenu").innerHTML = "Select macroeconomic type";
+            document.getElementById("dropDownMenu").value = "Select macroeconomic type";
+            document.getElementById("stockPriceOnlyCheckBox").checked = false;
+            document.getElementById("startDate").value = defaultStartDate;
+            document.getElementById("endDate").value = defaultEndDate;
+            document.getElementById("typeChange").style.display = 'none';
+          }
+          
           grandparent
             .datum(d.parent)
             .on("click", transition)
@@ -425,6 +424,7 @@
                 }
                 else if (currentURL.includes("?")){
                   var postData = currentURL.split('?')[1];
+                  postData = postData.split('#')[0]
                   var url = "http://127.0.0.1:3000/api?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true" + "&rate=" + d.rate + "&treeType=tree";
                 }
                 else{  // 在初始情況下直接進入 page 2
@@ -538,13 +538,13 @@
               else if(parseFloat(d.rate) >= percentiles[4]){
                 return "#42BD7F";
               }
-              else if(parseFloat(d.rate) >= percentiles[3]){
+              else if(parseFloat(d.rate) >= percentiles[2]){
                 return "#C1C4CD";
               }
-              else if(parseFloat(d.rate) >= percentiles[2]){
+              else if(parseFloat(d.rate) >= percentiles[1]){
                 return "#F77C80";
               }
-              else if(parseFloat(d.rate) >= percentiles[1]){
+              else if(parseFloat(d.rate) >= percentiles[0]){
                 return "#F23645";
               }
               else{
@@ -597,28 +597,31 @@ function post(path, method = 'post') {
   }
 }
 
-function setDatePicker(stockPriceOnly) {
+function setDatePicker(stockPriceOnly, firstLoad) {
   if (stockPriceOnly == true) {
     var newOptions = {
       format: "yyyy-mm-dd",
       orientation: "bottom auto",
       startDate: "2017-01-01",
-      endDate: "2023-01-31",
+      endDate: "2023-02-28",
       multidate: false,
       daysOfWeekDisabled: "0,6",
       autoclose: true,
       startView: 1,
       minViewMode: 0
     }
-    $('#datepicker').datepicker('destroy');
-    $('#datepicker').datepicker(newOptions);
+    if(firstLoad == false)
+    {
+      $('#datepicker').datepicker('destroy')
+      $('#datepicker').datepicker(newOptions);
+    }
   }
   else {
     var newOptions = {
       format: "yyyy-mm-dd",
       orientation: "bottom auto",
       startDate: "2017-01-01",
-      endDate: "2023-01-31",
+      endDate: "2023-02-28",
       multidate: false,
       daysOfWeekDisabled: "0,6",
       autoclose: true,
@@ -634,7 +637,7 @@ function checkBoxChange(checkbox){
   if(checkbox.checked)
   {
     //document.getElementById("dropDownMenu").disabled = true;
-    setDatePicker(true);
+    setDatePicker(true, false);
     document.getElementById("startDate").value = "";
     document.getElementById("endDate").value = "";
     document.getElementById("typeChange").style.display = 'none';
@@ -643,7 +646,7 @@ function checkBoxChange(checkbox){
   else
   {
     document.getElementById("dropDownMenu").disabled = false;
-    setDatePicker(false);
+    setDatePicker(false, false);
     document.getElementById("startDate").value = "";
     document.getElementById("endDate").value = "";
     document.getElementById("typeChange").style.display = 'none';

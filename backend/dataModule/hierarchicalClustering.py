@@ -1,9 +1,9 @@
-# # For data manipulation
 import pandas as pd
 from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 import re
 import numpy as np
+from itertools import islice
 
 # import hierarchical clustering libraries
 import scipy.cluster.hierarchy as sch
@@ -116,9 +116,9 @@ def get_json(node):
 
 
 def perform_hierarchical_cluster(symbol):
-    data = pd.read_csv('./dataModule/financial_indicators.csv')
-    stock_list = data['Symbol'].to_list()
-    data.drop('Symbol', axis='columns', inplace=True)
+    fi_data = pd.read_csv('./dataModule/financial_indicators.csv')
+    stock_list = fi_data['Symbol'].to_list()
+    data = fi_data.drop('Symbol', axis='columns', inplace=False)
 
     clean_financial_indicators_df(data)
 
@@ -146,27 +146,51 @@ def perform_hierarchical_cluster(symbol):
         index=stock_list
     )
 
-    # get subset of distance matrix whose distance is less than 10
-    temp = distance_matrix[symbol]
-    kept_idx = []
-    for i in range(len(temp)):
-        if temp.iloc[i][0] < 5:
-            kept_idx.append(i)
+    # sort distance matrix by value in ascending order
+    dist = distance_matrix[symbol].to_dict()[(symbol,)]
+    sorted_dist = dict(sorted(dist.items(), key=lambda item: item[1]))
+    # get the first 20 elements
+    resulting_dist = dict(islice(sorted_dist.items(), 21))
 
-    # # get new distance matrix on new subset of data
-    subset_distance_matrix = distance_matrix[symbol].iloc[kept_idx]
-    subset_stock_list = list(subset_distance_matrix.index)
-
-    if len(kept_idx) < 3:
+    if len(resulting_dist) < 3:
         with open('./dataset/stockRecommendation.json', 'w') as f:
             f.write("{}")
     else:
+        subset_stock_list = list(resulting_dist.keys())
+
+        data['Symbol'] = fi_data['Symbol']
+        kept_idx = []
+        for x in subset_stock_list:
+            kept_idx.append(data.loc[data['Symbol'] == x].index[0])
+
         subset_normalized_data = normalized_data.iloc[kept_idx]
         distance_matrix = pd.DataFrame(
             squareform(pdist(subset_normalized_data)),
             columns=[subset_stock_list],
             index=subset_stock_list
         )
+
+    # get subset of distance matrix whose distance is less than 5
+    # temp = distance_matrix[symbol]
+    # kept_idx = []
+    # for i in range(len(temp)):
+    #     if temp.iloc[i][0] < 5:
+    #         kept_idx.append(i)
+
+    # # get new distance matrix on new subset of data
+    # subset_distance_matrix = distance_matrix[symbol].iloc[kept_idx]
+    # subset_stock_list = list(subset_distance_matrix.index)
+
+    # if len(kept_idx) < 3:
+    #     with open('./dataset/stockRecommendation.json', 'w') as f:
+    #         f.write("{}")
+    # else:
+    #     subset_normalized_data = normalized_data.iloc[kept_idx]
+    #     distance_matrix = pd.DataFrame(
+    #         squareform(pdist(subset_normalized_data)),
+    #         columns=[subset_stock_list],
+    #         index=subset_stock_list
+    #     )
 
         # convert to tree structure acceptable datatype
         ids = subset_stock_list
@@ -203,6 +227,7 @@ metrics = [
 # get_all_stocks_fundamental_data(metrics)
 
 # testing
-# symbol = 'TSLA'
+symbol = 'TSLA'
 # symbol = 'AAPL'
-# perform_hierarchical_cluster(symbol)
+# symbol = 'MSFT'
+perform_hierarchical_cluster(symbol)

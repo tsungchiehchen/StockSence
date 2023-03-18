@@ -79,8 +79,8 @@ export default {
     },
     methods: {
         onResize() {
-            this.width = window.innerWidth*0.78
-            this.height = window.innerHeight*0.65
+            this.width = window.innerWidth*0.75
+            this.height = window.innerHeight*0.63
             // var fixTimeRangeCheckBox = document.getElementById("fixTimeRangeCheckBox");
             // fixTimeRangeCheckBox.style = "left: " + (this.width-190) + "px";
         }
@@ -105,6 +105,7 @@ export default {
         div.style = "margin-right: 5px;"
         let currentURL = window.location.href;
         var postData = currentURL.split('?')[1];
+        postData = postData.split('#')[0]
         div.innerHTML = `<a href="http://127.0.0.1:3000/?` + postData + `"+ style="z-index:10000; pointer-events: all; font-size: 20px; color: rgb(0, 0, 0); text-decoration: none; font-weight: 300;">`+ 
             `◀ Back</a>`;
         document.querySelector(".trading-vue-ohlcv").prepend(div);
