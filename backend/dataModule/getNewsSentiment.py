@@ -1,8 +1,9 @@
 import pandas as pd
 import json
+from datetime import datetime, timedelta
 import zipfile
 
-from dataModule.calculateStockChangebyDate import getStocksChange
+# from dataModule.calculateStockChangebyDate import getStocksChange
 
 
 def getDFbyDate(start_date, end_date, symbol):
@@ -38,54 +39,64 @@ def getDFbyDate(start_date, end_date, symbol):
 
 
 def writetoJSON(results):
-    json_list = [[{"title": d["title"], "datetime": d["datetime"], "desc": d["link"]}
-                  for d in results[k]] for k in results.keys()]
+    json_list = json.dumps(results)
 
-    # write to json
+    # write the json array to a file
     with open('./dataset/NewsSentimentList.json', 'w') as f:
-        json.dump(json_list, f, indent=4, ensure_ascii=False)
+        f.write(json_list)
 
 
 def get_news_sentiment(start_date, end_date, symbol):
     df = getDFbyDate(start_date, end_date, symbol)
-    compound_score_threshold = 0.5 if len(df) > 150 else 0.3
-    change = getStocksChange(symbol, start_date, end_date)
+    df = df.sort_values('datetime', ascending=False)
+    # compound_score_threshold = 0.5 if len(df) > 150 else 0.3
+    # change = getStocksChange(symbol, start_date, end_date)
 
-    # split df to Positive, Negative, and Neutral
-    pos_df = df[df['Compound'] > compound_score_threshold]
-    neg_df = df[df['Compound'] < compound_score_threshold]
-    neu_df = df[df['Compound'] == 0]
+    start_date = datetime.strptime(start_date, "%Y-%m-%d")
+    end_date = datetime.strptime(end_date, "%Y-%m-%d")
 
-    # sort positive df by descending
-    pos_df = pos_df.sort_values('Compound', ascending=False)
-    # sort negative df by ascending
-    neg_df = neg_df.sort_values('Compound', ascending=True)
+    results = []
+    for i in range((end_date - start_date).days + 1):
+        current_date = start_date + timedelta(days=i)
+        current_date = current_date.strftime('%Y-%m-%d')
 
-    # return only maximum of 150 news item
-    if compound_score_threshold == 0.5:
-        if len(pos_df) > 50:
-            pos_df = pos_df[:50]
-        if len(neg_df) > 50:
-            neg_df = neg_df[:50]
-        if len(neu_df) > 50:
-            neu_df = neu_df[:50]
+        mask = (df['datetime'] == current_date)
+        selected_rows = df.loc[mask]
 
-    # convert df to dict
-    pos = pos_df.to_dict(orient='records')
-    neg = neg_df.to_dict(orient='records')
-    neu = neu_df.to_dict(orient='records')
+        # sort if the news item in that day is more than 10
+        if len(selected_rows) > 10:
+            result = {}
+            selected_rows.sort_values('Compound', ascending=True, inplace=True)
 
-    results = {}
-    if change > 0:
-        results['Positive'] = pos
-        results['Neutral'] = neu
-        results['Negative'] = neg
-        writetoJSON(results)
-    else:
-        results['Negative'] = neg
-        results['Neutral'] = neu
-        results['Positive'] = pos
-        writetoJSON(results)
+            # get positive
+            for i in range(len(selected_rows)-1, len(selected_rows) - 6, -1):
+                result['title'] = selected_rows.iloc[i]['title']
+                result['datetime'] = selected_rows.iloc[i]['datetime']
+                result['link'] = selected_rows.iloc[i]['link']
+                result['Sentiment'] = "Positive" if selected_rows.iloc[i]['Compound'] > 0 else "Neutral"
+                results.append(result)
+
+            # get negative
+            for i in range(0, 5, 1):
+                result['title'] = selected_rows.iloc[i]['title']
+                result['datetime'] = selected_rows.iloc[i]['datetime']
+                result['link'] = selected_rows.iloc[i]['link']
+                result['Sentiment'] = "Negative" if selected_rows.iloc[i]['Compound'] < 0 else "Neutral"
+                results.append(result)
+        else:
+            for i in range(len(selected_rows)):
+                result = {}
+                result['title'] = selected_rows.iloc[i]['title']
+                result['datetime'] = selected_rows.iloc[i]['datetime']
+                result['link'] = selected_rows.iloc[i]['link']
+                if selected_rows.iloc[i]['Compound'] < 0:
+                    result['Sentiment'] = "Negative"
+                elif selected_rows.iloc[i]['Compound'] > 0:
+                    result['Sentiment'] = "Positive"
+                else:
+                    result['Sentiment'] = "Neutral"
+                results.append(result)
+    writetoJSON(results)
 
 
 # testing
