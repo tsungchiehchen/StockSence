@@ -215,14 +215,14 @@
             "<button class=\"btn btn-outline-dark dropdown-toggle\" id=\"dropDownMenu\" type=\"button\" data-toggle=\"dropdown\" name=\"type\">View macroeconomic data" +
             "<span class=\"caret\"></span></button>" +
             "<ul class=\"dropdown-menu\" id=\"dropdown-menu\">" +
-            "<li><a href=\"#\">CPI</a></li>" +
-            "<li><a href=\"#\">Federal Funds Rate</a></li>" +
-            "<li><a href=\"#\">Retail Price</a></li>" +
-            "<li><a href=\"#\">Treasury yield 2 years</a></li>" +
-            "<li><a href=\"#\">Treasury yield 10 years</a></li>" +
-            "<li><a href=\"#\">Treasury yield 20 years</a></li>" +
-            "<li><a href=\"#\">Treasury yield 30 years</a></li>" +
-            "<li><a href=\"#\">Unemployment</a></li>" +
+            "<li><a>CPI</a></li>" +
+            "<li><a>Federal Funds Rate</a></li>" +
+            "<li><a>Retail Price</a></li>" +
+            "<li><a>Treasury yield 2 years</a></li>" +
+            "<li><a>Treasury yield 10 years</a></li>" +
+            "<li><a>Treasury yield 20 years</a></li>" +
+            "<li><a>Treasury yield 30 years</a></li>" +
+            "<li><a>Unemployment</a></li>" +
             "</ul>" +
             "</div>" +
             "<div class=\"col-auto\" style=\"float:left;padding-top:8px;padding-left:0px; padding-right:0px\" id=\"typeChange\">" +
@@ -424,6 +424,7 @@
                 }
                 else if (currentURL.includes("?")){
                   var postData = currentURL.split('?')[1];
+                  postData = postData.split('#')[0]
                   var url = "http://127.0.0.1:3000/api?" + postData + "&stockSymbol=" + d.name + "&startTimestamp=" + startTimestamp + "&endTimestamp=" + endTimestamp + "&fixTimeRange=true" + "&rate=" + d.rate + "&treeType=tree";
                 }
                 else{  // 在初始情況下直接進入 page 2
@@ -612,8 +613,8 @@ function setDatePicker(stockPriceOnly, firstLoad) {
     if(firstLoad == false)
     {
       $('#datepicker').datepicker('destroy')
+      $('#datepicker').datepicker(newOptions);
     }
-    $('#datepicker').datepicker(newOptions);
   }
   else {
     var newOptions = {

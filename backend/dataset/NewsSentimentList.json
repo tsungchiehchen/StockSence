@@ -1,5 +1,733 @@
 [
-    [],
-    [],
-    []
+    [
+        {
+            "title": "Apple AirTag stalking and tracking by criminals is a problem: Here's how to stop it",
+            "datetime": "2022-06-13",
+            "desc": "https://news.google.com/./articles/CBMic2h0dHBzOi8vd3d3LmZveDI2aG91c3Rvbi5jb20vbmV3cy9hcHBsZS1haXJ0YWctc3RhbGtpbmctYW5kLXRyYWNraW5nLWJ5LWNyaW1pbmFscy1pcy1hLXByb2JsZW0taGVyZXMtaG93LXRvLXN0b3AtaXTSAXdodHRwczovL3d3dy5mb3gyNmhvdXN0b24uY29tL25ld3MvYXBwbGUtYWlydGFnLXN0YWxraW5nLWFuZC10cmFja2luZy1ieS1jcmltaW5hbHMtaXMtYS1wcm9ibGVtLWhlcmVzLWhvdy10by1zdG9wLWl0LmFtcA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple stock suffers first 'death cross' chart pattern since the pandemic",
+            "datetime": "2022-06-02",
+            "desc": "https://news.google.com/./articles/CBMidmh0dHBzOi8vd3d3Lm1hcmtldHdhdGNoLmNvbS9zdG9yeS9hcHBsZS1zdG9jay10by1zdWZmZXItZmlyc3QtZGVhdGgtY3Jvc3MtY2hhcnQtcGF0dGVybi1zaW5jZS10aGUtcGFuZGVtaWMtMTE2NTQxOTMwNDXSAXpodHRwczovL3d3dy5tYXJrZXR3YXRjaC5jb20vYW1wL3N0b3J5L2FwcGxlLXN0b2NrLXRvLXN1ZmZlci1maXJzdC1kZWF0aC1jcm9zcy1jaGFydC1wYXR0ZXJuLXNpbmNlLXRoZS1wYW5kZW1pYy0xMTY1NDE5MzA0NQ?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple has been sued over their Apple Watch infringing a Patent from ...",
+            "datetime": "2022-06-13",
+            "desc": "https://news.google.com/./articles/CBMiiAFodHRwczovL3d3dy5wYXRlbnRseWFwcGxlLmNvbS8yMDIyLzA2L2FwcGxlLWhhcy1iZWVuLXN1ZWQtb3Zlci10aGVpci1hcHBsZS13YXRjaC1pbmZyaW5naW5nLWEtcGF0ZW50LWZyb20tc21hcnR3YXRjaC1tb2JpbGVjb25jZXB0cy5odG1s0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple's Incomplete Divorce From Intel (NASDAQ:AAPL)",
+            "datetime": "2022-06-24",
+            "desc": "https://news.google.com/./articles/CBMiR2h0dHBzOi8vc2Vla2luZ2FscGhhLmNvbS9hcnRpY2xlLzQ1MjAwODAtYXBwbGUtaW5jb21wbGV0ZS1kaXZvcmNlLWludGVs0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple Stock: Pay Later Could Face Problems In A Recession ...",
+            "datetime": "2022-06-16",
+            "desc": "https://news.google.com/./articles/CBMiVmh0dHBzOi8vc2Vla2luZ2FscGhhLmNvbS9hcnRpY2xlLzQ1MTg2ODgtYXBwbGUtcGF5LWxhdGVyLWNvdWxkLWZhY2UtcHJvYmxlbXMtcmVjZXNzaW9u0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Is It Time to Drop Apple Stock Amid Supply Chain Chaos?",
+            "datetime": "2022-06-14",
+            "desc": "https://news.google.com/./articles/CBMiUGh0dHBzOi8vaW52ZXN0b3JwbGFjZS5jb20vMjAyMi8wNi9hYXBsLXN0b2NrLWRyb3AtYXBwbGUtYW1pZC1zdXBwbHktY2hhaW4tY2hhb3Mv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Deutsche Bank Cuts Apple Price Target on Consumer Spending Concerns",
+            "datetime": "2022-06-14",
+            "desc": "https://news.google.com/./articles/CBMiUmh0dHBzOi8vd3d3LmJhcnJvbnMuY29tL2FydGljbGVzL2RldXRzY2hlLWJhbmstY3V0cy1hcHBsZS1wcmljZS10YXJnZXQtNTE2NTUyMTc0MzjSAVZodHRwczovL3d3dy5iYXJyb25zLmNvbS9hbXAvYXJ0aWNsZXMvZGV1dHNjaGUtYmFuay1jdXRzLWFwcGxlLXByaWNlLXRhcmdldC01MTY1NTIxNzQzOA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Is Apple's Passkey the Death of the Password? Not Quite, but It Will ...",
+            "datetime": "2022-06-15",
+            "desc": "https://news.google.com/./articles/CBMiTGh0dHBzOi8vd3d3LmluYy5jb20vbWVsaXNzYS1hbmdlbGwvYXBwbGUtcGFzc2tleS1wYXNzd29yZC1jeWJlcnNlY3VyaXR5Lmh0bWzSAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Fintiv's Emergency Motion Delays Apple Patent Trial In WDTX",
+            "datetime": "2022-06-07",
+            "desc": "https://news.google.com/./articles/CBMiY2h0dHBzOi8vd3d3LmxhdzM2MC5jb20vYXJ0aWNsZXMvMTUwMDUzMS9maW50aXYtcy1lbWVyZ2VuY3ktbW90aW9uLWRlbGF5cy1hcHBsZS1wYXRlbnQtdHJpYWwtaW4td2R0eNIBK2h0dHBzOi8vd3d3LmxhdzM2MC5jb20vYW1wL2FydGljbGVzLzE1MDA1MzE?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Major Apple-authorized retailer in Lubbock goes bankrupt, leaving customers without their devices",
+            "datetime": "2022-06-15",
+            "desc": "https://news.google.com/./articles/CBMiiAFodHRwczovL3d3dy5ldmVyeXRoaW5nbHViYm9jay5jb20vbmV3cy9sb2NhbC1uZXdzL21ham9yLWFwcGxlLWF1dGhvcml6ZWQtcmV0YWlsZXItZ29lcy1iYW5rcnVwdC1sZWF2aW5nLWN1c3RvbWVycy13aXRob3V0LXRoZWlyLWRldmljZXMv0gGMAWh0dHBzOi8vd3d3LmV2ZXJ5dGhpbmdsdWJib2NrLmNvbS9uZXdzL2xvY2FsLW5ld3MvbWFqb3ItYXBwbGUtYXV0aG9yaXplZC1yZXRhaWxlci1nb2VzLWJhbmtydXB0LWxlYXZpbmctY3VzdG9tZXJzLXdpdGhvdXQtdGhlaXItZGV2aWNlcy9hbXAv?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "As Much As We Hate It - The Algorithm Is Short Apple (NASDAQ ...",
+            "datetime": "2022-06-13",
+            "desc": "https://news.google.com/./articles/CBMiQ2h0dHBzOi8vc2Vla2luZ2FscGhhLmNvbS9hcnRpY2xlLzQ1MTc5MzYtYWxnb3JpdGhtLXNob3J0LWFhcGwtc3RvY2vSAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple (AAPL) Defends App Store Security From New US Antitrust ...",
+            "datetime": "2022-06-23",
+            "desc": "https://news.google.com/./articles/CBMie2h0dHBzOi8vd3d3LmJsb29tYmVyZy5jb20vbmV3cy9hcnRpY2xlcy8yMDIyLTA2LTIzL2FwcGxlLWFhcGwtZGVmZW5kcy1hcHAtc3RvcmUtc2VjdXJpdHktZnJvbS1uZXctdXMtYW50aXRydXN0LWJpbGwtY3JpdGljc9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple defeats class action over Meltdown, Spectre security flaws",
+            "datetime": "2022-06-08",
+            "desc": "https://news.google.com/./articles/CBMibmh0dHBzOi8vd3d3LnJldXRlcnMuY29tL3RlY2hub2xvZ3kvYXBwbGUtZGVmZWF0cy1jbGFzcy1hY3Rpb24tb3Zlci1tZWx0ZG93bi1zcGVjdHJlLXNlY3VyaXR5LWZsYXdzLTIwMjItMDYtMDgv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple's new car software no threat, complements our products, says ...",
+            "datetime": "2022-06-08",
+            "desc": "https://news.google.com/./articles/CBMieGh0dHBzOi8vd3d3LnJldXRlcnMuY29tL3RlY2hub2xvZ3kvYXBwbGVzLW5ldy1jYXItc29mdHdhcmUtbm8tdGhyZWF0LWNvbXBsZW1lbnRzLW91ci1wcm9kdWN0cy1zYXlzLXBhbmFzb25pYy0yMDIyLTA2LTA4L9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Block unveils 'tap to pay' partnership with Apple - SQ stock climbs ...",
+            "datetime": "2022-06-03",
+            "desc": "https://news.google.com/./articles/CBMiW2h0dHBzOi8vZmluYm9sZC5jb20vYmxvY2stdW52ZWlscy10YXAtdG8tcGF5LXBhcnRuZXJzaGlwLXdpdGgtYXBwbGUtc3Etc3RvY2stY2xpbWJzLW92ZXItNi_SAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "FinTech: Apple's Here, Should Incumbent Banks Fear? (NASDAQ ...",
+            "datetime": "2022-06-14",
+            "desc": "https://news.google.com/./articles/CBMiWGh0dHBzOi8vc2Vla2luZ2FscGhhLmNvbS9hcnRpY2xlLzQ1MTc3NTctZmludGVjaC1hcHBsZXMtaGVyZS1zaG91bGQtaW5jdW1iZW50LWJhbmtzLWZlYXLSAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple $100 Million App Store Antitrust Deal Gets Judge's Nod (1)",
+            "datetime": "2022-06-13",
+            "desc": "https://news.google.com/./articles/CBMiY2h0dHBzOi8vbmV3cy5ibG9vbWJlcmdsYXcuY29tL2FudGl0cnVzdC9hcHBsZXMtMTAwLW1pbGxpb24tYXBwLXN0b3JlLWFudGl0cnVzdC1kZWFsLWdldHMtanVkZ2VzLW5vZNIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple Stock Slumps As Morgan Stanley Cautions on App Store ...",
+            "datetime": "2022-06-03",
+            "desc": "https://news.google.com/./articles/CBMiYmh0dHBzOi8vd3d3LnRoZXN0cmVldC5jb20vbWFya2V0cy9hcHBsZS1zdG9jay1zbHVtcHMtYXMtbW9yZ2FuLXN0YW5sZXktd2FybnMtb24tYXBwLXN0b3JlLXJldmVudWVz0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Does Apple’s Future Lie in Advertising? J.P. Morgan Thinks So",
+            "datetime": "2022-06-16",
+            "desc": "https://news.google.com/./articles/CBMiYGh0dHBzOi8vd3d3LnRpcHJhbmtzLmNvbS9uZXdzL2FydGljbGUvZG9lcy1hcHBsZXMtZnV0dXJlLWxpZS1pbi1hZHZlcnRpc2luZy1qLXAtbW9yZ2FuLXRoaW5rcy1zb9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "U.S. House speaker Pelosi discloses trades in Apple and Microsoft",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMiiQFodHRwczovL3d3dy5tYXJrZXRzY3JlZW5lci5jb20vcXVvdGUvc3RvY2svQVBQTEUtSU5DLTQ4NDkvbmV3cy9VLVMtSG91c2Utc3BlYWtlci1QZWxvc2ktZGlzY2xvc2VzLXRyYWRlcy1pbi1BcHBsZS1hbmQtTWljcm9zb2Z0LTQwNjUyNDE0L9IBjQFodHRwczovL3d3dy5tYXJrZXRzY3JlZW5lci5jb20vYW1wL3F1b3RlL3N0b2NrL0FQUExFLUlOQy00ODQ5L25ld3MvVS1TLUhvdXNlLXNwZWFrZXItUGVsb3NpLWRpc2Nsb3Nlcy10cmFkZXMtaW4tQXBwbGUtYW5kLU1pY3Jvc29mdC00MDY1MjQxNC8?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Inside the dissolution of Apple's legacy design team",
+            "datetime": "2022-06-15",
+            "desc": "https://news.google.com/./articles/CBMiWGh0dHBzOi8vd3d3LmZhc3Rjb21wYW55LmNvbS85MDc0MTcxOS9pbnNpZGUtdGhlLWRpc3NvbHV0aW9uLW9mLWFwcGxlcy1sZWdhY3ktZGVzaWduLXRlYW3SAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple faces German antitrust probe over app tracking rules",
+            "datetime": "2022-06-14",
+            "desc": "https://news.google.com/./articles/CBMiP2h0dHBzOi8vd3d3LmZ0LmNvbS9jb250ZW50LzJlODE0YmE4LTAzNzktNDQzMi1hOWM2LTZhMTNjN2I1NWE3ZdIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "ITC Judge Says Apple Infringed Rival's ECG Wristband",
+            "datetime": "2022-06-28",
+            "desc": "https://news.google.com/./articles/CBMiXGh0dHBzOi8vd3d3LmxhdzM2MC5jb20vYXJ0aWNsZXMvMTUwNjczNi9pdGMtanVkZ2Utc2F5cy1hcHBsZS1pbmZyaW5nZWQtcml2YWwtcy1lY2ctd3Jpc3RiYW5k0gEraHR0cHM6Ly93d3cubGF3MzYwLmNvbS9hbXAvYXJ0aWNsZXMvMTUwNjczNg?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "U.S. House speaker Pelosi discloses trades in Apple and Microsoft",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMiZ2h0dHBzOi8vd3d3LnJldXRlcnMuY29tL21hcmtldHMvdXMvdXMtaG91c2Utc3BlYWtlci1wZWxvc2ktZGlzY2xvc2VzLXRyYWRlcy1hcHBsZS1taWNyb3NvZnQtMjAyMi0wNi0wNi_SAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple Reseller 'Simply Mac' Shuts Down",
+            "datetime": "2022-06-09",
+            "desc": "https://news.google.com/./articles/CBMiVWh0dHBzOi8vd3d3Lm1hY3J1bW9ycy5jb20vMjAyMi8wNi8wOS9hcHBsZS1yZXNlbGxlci1zaW1wbHktbWFjLWFwcGFyZW50bHktc2h1dHMtZG93bi_SAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Meta Halts Development of Apple Watch Rival with Two Cameras",
+            "datetime": "2022-06-09",
+            "desc": "https://news.google.com/./articles/CBMib2h0dHBzOi8vd3d3LmJsb29tYmVyZy5jb20vbmV3cy9hcnRpY2xlcy8yMDIyLTA2LTA5L21ldGEtaGFsdHMtZGV2ZWxvcG1lbnQtb2YtYXBwbGUtd2F0Y2gtcml2YWwtd2l0aC10d28tY2FtZXJhc9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "3 Stocks To Buy In This Market Madness",
+            "datetime": "2022-06-03",
+            "desc": "https://news.google.com/./articles/CBMiRGh0dHBzOi8vc2Vla2luZ2FscGhhLmNvbS9hcnRpY2xlLzQ1MTYyOTQtMy1zdG9ja3MtYnV5LW1hcmtldC1tYWRuZXNz0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "3 Mega-Cap Stocks to Buy for Recession-Proof Dividends",
+            "datetime": "2022-06-22",
+            "desc": "https://news.google.com/./articles/CBMiUmh0dHBzOi8vaW52ZXN0b3JwbGFjZS5jb20vMjAyMi8wNi8zLW1lZ2EtY2FwLXN0b2Nrcy1mb3ItcmVjZXNzaW9uLXByb29mLWRpdmlkZW5kcy_SAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "What A Recession Would Mean For Apple Stock",
+            "datetime": "2022-06-23",
+            "desc": "https://news.google.com/./articles/CBMiZmh0dHBzOi8vd3d3LmZvcmJlcy5jb20vc2l0ZXMvZ3JlYXRzcGVjdWxhdGlvbnMvMjAyMi8wNi8yMy93aGF0LWEtcmVjZXNzaW9uLXdvdWxkLW1lYW4tZm9yLWFwcGxlLXN0b2NrL9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple ‘passkeys’ could finally kill off the password for good",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMiWGh0dHBzOi8vdGVjaGNydW5jaC5jb20vMjAyMi8wNi8wNi9hcHBsZS1wYXNza2V5cy1sb29rLXRvLWtpbGwtb2ZmLXRoZS1wYXNzd29yZC1mb3ItZ29vZC_SAVxodHRwczovL3RlY2hjcnVuY2guY29tLzIwMjIvMDYvMDYvYXBwbGUtcGFzc2tleXMtbG9vay10by1raWxsLW9mZi10aGUtcGFzc3dvcmQtZm9yLWdvb2QvYW1wLw?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "FCC commissioner urges TikTok be removed from Apple, Google stores over 'unacceptable national security risk'",
+            "datetime": "2022-06-29",
+            "desc": "https://news.google.com/./articles/CBMicWh0dHBzOi8vd3d3LmZveGJ1c2luZXNzLmNvbS90ZWNobm9sb2d5L2ZjYy1jb21taXNzaW9uZXItdGlrdG9rLXJlbW92ZWQtYXBwbGUtZ29vZ2xlLXN0b3Jlcy1uYXRpb25hbC1zZWN1cml0eS1yaXNr0gF1aHR0cHM6Ly93d3cuZm94YnVzaW5lc3MuY29tL3RlY2hub2xvZ3kvZmNjLWNvbW1pc3Npb25lci10aWt0b2stcmVtb3ZlZC1hcHBsZS1nb29nbGUtc3RvcmVzLW5hdGlvbmFsLXNlY3VyaXR5LXJpc2suYW1w?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple Stock's Inflation Problem (NASDAQ:AAPL)",
+            "datetime": "2022-06-09",
+            "desc": "https://news.google.com/./articles/CBMiQWh0dHBzOi8vc2Vla2luZ2FscGhhLmNvbS9hcnRpY2xlLzQ1MTc1NTgtYXBwbGVzLWluZmxhdGlvbi1wcm9ibGVt0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "If You Invested $5,000 In Tesla, Apple Or Nvidia On Dec. 31 Here's How Much You've Lost And Why - Tesla (",
+            "datetime": "2022-06-11",
+            "desc": "https://news.google.com/./articles/CBMilwFodHRwczovL3d3dy5iZW56aW5nYS5jb20vdHJhZGluZy1pZGVhcy9tb3ZlcnMvMjIvMDYvMjc2NTQ2NzAvaWYteW91LWludmVzdGVkLTUtMDAwLWluLXRlc2xhLWFwcGxlLW9yLW52aWRpYS1vbi1kZWMtMzEtaGVyZXMtaG93LW11Y2gteW91dmUtbG9zdC1hbmQtd2h50gEtaHR0cHM6Ly93d3cuYmVuemluZ2EuY29tL2FtcC9jb250ZW50LzI3NjU0Njcw?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple's Troubles In China Aren't Going Away Quickly",
+            "datetime": "2022-06-07",
+            "desc": "https://news.google.com/./articles/CBMiaWh0dHBzOi8vd3d3LmJsb29tYmVyZy5jb20vbmV3cy9uZXdzbGV0dGVycy8yMDIyLTA2LTA3L2FwcGxlLXMtdHJvdWJsZXMtaW4tY2hpbmEtYXJlbi10LWdvaW5nLWF3YXktcXVpY2tsedIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "The iPhone Is 15 Years Old Today. Apple Finally Solved the Worst ...",
+            "datetime": "2022-06-29",
+            "desc": "https://news.google.com/./articles/CBMidWh0dHBzOi8vd3d3LmluYy5jb20vamFzb24tYXRlbi90aGUtaXBob25lLWlzLTE1LXllYXJzLW9sZC10b2RheS1hcHBsZS1maW5hbGx5LXNvbHZlZC13b3JzdC10aGluZy1hYm91dC11c2luZy1vbmUuaHRtbNIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Is Apple TV+ Losing $1B to $2B Annually?",
+            "datetime": "2022-06-28",
+            "desc": "https://news.google.com/./articles/CBMiR2h0dHBzOi8vd3d3LnRpcHJhbmtzLmNvbS9uZXdzL2FwcGxlLXR2LWxvc2luZy0xYi10by0yYi1hbm51YWxseS1hbmFseXN00gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple Stock: Don't Fight Against The Market (NASDAQ:AAPL)",
+            "datetime": "2022-06-29",
+            "desc": "https://news.google.com/./articles/CBMiTGh0dHBzOi8vc2Vla2luZ2FscGhhLmNvbS9hcnRpY2xlLzQ1MjA5OTUtYXBwbGUtZG9udC1maWdodC1hZ2FpbnN0LXRoZS1tYXJrZXTSAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple Leaks Reveal iPhone 14 Camera Upgrades",
+            "datetime": "2022-06-13",
+            "desc": "https://news.google.com/./articles/CBMiSmh0dHBzOi8vd3d3LnRpcHJhbmtzLmNvbS9uZXdzL2FwcGxlLWxlYWtzLXJldmVhbC1pcGhvbmUtMTQtY2FtZXJhLXVwZ3JhZGVz0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple Loses EU Trademark for 'Think Different' Slogan",
+            "datetime": "2022-06-08",
+            "desc": "https://news.google.com/./articles/CBMiSmh0dHBzOi8vZ2l6bW9kby5jb20vYXBwbGUtaXBob25lLXRoaW5rLWRpZmZlcmVudC10cmFkZW1hcmstbG9zdC0xODQ5MDM2Mzg20gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Qualcomm Stock Rises As Apple Struggles To Make Own 5G Chip",
+            "datetime": "2022-06-28",
+            "desc": "https://news.google.com/./articles/CBMiZmh0dHBzOi8vd3d3LmludmVzdG9ycy5jb20vbmV3cy90ZWNobm9sb2d5L3F1YWxjb21tLXN0b2NrLXJpc2VzLWFzLWFwcGxlLXN0cnVnZ2xlcy10by1tYWtlLW93bi01Zy1jaGlwL9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "UPDATE: Apple debuts a deferred payment service and iPhone updates to developers",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMid2h0dHBzOi8vd3d3LmRpZ2l0YWxjb21tZXJjZTM2MC5jb20vMjAyMi8wNi8wNi9hcHBsZS1kZWJ1dHMtYS1kZWZlcnJlZC1wYXltZW50LXNlcnZpY2UtYW5kLWlwaG9uZS11cGRhdGVzLXRvLWRldmVsb3BlcnMv0gF7aHR0cHM6Ly93d3cuZGlnaXRhbGNvbW1lcmNlMzYwLmNvbS8yMDIyLzA2LzA2L2FwcGxlLWRlYnV0cy1hLWRlZmVycmVkLXBheW1lbnQtc2VydmljZS1hbmQtaXBob25lLXVwZGF0ZXMtdG8tZGV2ZWxvcGVycy9hbXAv?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Solving Connectivity Problems Caused by Interlocking Apple ...",
+            "datetime": "2022-06-20",
+            "desc": "https://news.google.com/./articles/CBMia2h0dHBzOi8vdGlkYml0cy5jb20vMjAyMi8wNi8yMC9zb2x2aW5nLWNvbm5lY3Rpdml0eS1wcm9ibGVtcy1jYXVzZWQtYnktaW50ZXJsb2NraW5nLWFwcGxlLXByaXZhY3ktc2V0dGluZ3Mv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Meta, Apple Spyware Lawsuits Test NSO's Foreign Hacking Shields",
+            "datetime": "2022-06-15",
+            "desc": "https://news.google.com/./articles/CBMidWh0dHBzOi8vbmV3cy5ibG9vbWJlcmdsYXcuY29tL3ByaXZhY3ktYW5kLWRhdGEtc2VjdXJpdHkvbWV0YS1hcHBsZS1zcHl3YXJlLWxhd3N1aXRzLXRlc3QtbnNvcy1mb3JlaWduLWhhY2tpbmctc2hpZWxkc9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple's $2 Trillion Market Valuation on Shaky Ground",
+            "datetime": "2022-06-15",
+            "desc": "https://news.google.com/./articles/CBMicWh0dHBzOi8vd3d3LmJsb29tYmVyZy5jb20vbmV3cy9hcnRpY2xlcy8yMDIyLTA2LTE1L2FwcGxlLXMtMi10cmlsbGlvbi1tYXJrZXQtdmFsdWF0aW9uLW9uLXNoYWt5LWdyb3VuZC10ZWNoLXdhdGNo0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "iPhone Battery UK Lawsuit Could Cost Apple Millions in ...",
+            "datetime": "2022-06-15",
+            "desc": "https://news.google.com/./articles/CBMicWh0dHBzOi8vd3d3LmJsb29tYmVyZy5jb20vbmV3cy9hcnRpY2xlcy8yMDIyLTA2LTE1L2FwcGxlLWFjY3VzZWQtb2YtbWlzbGVhZGluZy1pcGhvbmUtY3VzdG9tZXJzLWluLW5ldy11ay1sYXdzdWl00gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple (AAPL) iPhone demand holds up ahead of new launch, Dan ...",
+            "datetime": "2022-06-29",
+            "desc": "https://news.google.com/./articles/CBMiV2h0dHBzOi8vY2FwaXRhbC5jb20vYXBwbGUtYWFwbC1pcGhvbmUtZGVtYW5kLWhvbGRzLXVwLWFoZWFkLW9mLW5ldy1sYXVuY2gtZGFuLWl2ZXMtc2F5c9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple (AAPL) Will Handle Its Own Lending for Buy Now Pay Later ...",
+            "datetime": "2022-06-08",
+            "desc": "https://news.google.com/./articles/CBMicmh0dHBzOi8vd3d3LmJsb29tYmVyZy5jb20vbmV3cy9hcnRpY2xlcy8yMDIyLTA2LTA4L2FwcGxlLXdpbGwtaGFuZGxlLXRoZS1sZW5kaW5nLWl0c2VsZi13aXRoLW5ldy1wYXktbGF0ZXItc2VydmljZdIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Meta: Michael Burry's Recession Proof Play (NASDAQ:META)",
+            "datetime": "2022-06-24",
+            "desc": "https://news.google.com/./articles/CBMiUWh0dHBzOi8vc2Vla2luZ2FscGhhLmNvbS9hcnRpY2xlLzQ1MjAyNjItbWV0YS1taWNoYWVsLWJ1cnJ5cy1yZWNlc3Npb24tcHJvb2YtcGxhedIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple to fund pay-later loans off its own balance sheet",
+            "datetime": "2022-06-08",
+            "desc": "https://news.google.com/./articles/CBMiY2h0dHBzOi8vd3d3LnJldXRlcnMuY29tL3RlY2hub2xvZ3kvYXBwbGUtZnVuZC1wYXktbGF0ZXItbG9hbnMtb2ZmLWl0cy1vd24tYmFsYW5jZS1zaGVldC0yMDIyLTA2LTA4L9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "7 Growth Stocks to Buy After the Market Crash",
+            "datetime": "2022-06-28",
+            "desc": "https://news.google.com/./articles/CBMiUGh0dHBzOi8vaW52ZXN0b3JwbGFjZS5jb20vMjAyMi8wNi83LWdyb3d0aC1zdG9ja3MtdG8tYnV5LWFmdGVyLXRoZS1tYXJrZXQtY3Jhc2gv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        }
+    ],
+    [
+        {
+            "title": "Apple will reportedly move some iPad capacity to Vietnam after China lockdowns",
+            "datetime": "2022-06-01",
+            "desc": "https://news.google.com/./articles/CBMiaGh0dHBzOi8vd3d3LmNuYmMuY29tLzIwMjIvMDYvMDEvYXBwbGUtd2lsbC1yZXBvcnRlZGx5LW1vdmUtc29tZS1pcGFkLWNhcGFjaXR5LWZyb20tY2hpbmEtdG8tdmlldG5hbS5odG1s0gFsaHR0cHM6Ly93d3cuY25iYy5jb20vYW1wLzIwMjIvMDYvMDEvYXBwbGUtd2lsbC1yZXBvcnRlZGx5LW1vdmUtc29tZS1pcGFkLWNhcGFjaXR5LWZyb20tY2hpbmEtdG8tdmlldG5hbS5odG1s?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple to move iPad production out of China for first time: report",
+            "datetime": "2022-06-01",
+            "desc": "https://news.google.com/./articles/CBMiUmh0dHBzOi8vd3d3LmZveGJ1c2luZXNzLmNvbS90ZWNobm9sb2d5L2FwcGxlLW1vdmUtaXBhZC1wcm9kdWN0aW9uLWNoaW5hLWZpcnN0LXRpbWXSAVZodHRwczovL3d3dy5mb3hidXNpbmVzcy5jb20vdGVjaG5vbG9neS9hcHBsZS1tb3ZlLWlwYWQtcHJvZHVjdGlvbi1jaGluYS1maXJzdC10aW1lLmFtcA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple Faces Higher Employment Costs: Now What?",
+            "datetime": "2022-06-01",
+            "desc": "https://news.google.com/./articles/CBMiUmh0dHBzOi8vd3d3LnRpcHJhbmtzLmNvbS9uZXdzL2FydGljbGUvYXBwbGUtZmFjZXMtaGlnaGVyLWVtcGxveW1lbnQtY29zdHMtbm93LXdoYXTSAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Rare Apple-1 Computer Signed by Steve Wozniak Up for Auction",
+            "datetime": "2022-06-02",
+            "desc": "https://news.google.com/./articles/CBMiPmh0dHBzOi8vd3d3Lm1hY3J1bW9ycy5jb20vMjAyMi8wNi8wMi9hcHBsZS0xLWNvbXB1dGVyLWF1Y3Rpb24v0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "What's Coming at Apple (AAPL) WWDC? IPad Upgrades That Make ...",
+            "datetime": "2022-06-02",
+            "desc": "https://news.google.com/./articles/CBMicWh0dHBzOi8vd3d3LmJsb29tYmVyZy5jb20vbmV3cy9hcnRpY2xlcy8yMDIyLTA2LTAyL2FwcGxlLXRvLXVwZ3JhZGUtaXRzLWlwYWQtc29mdHdhcmUtaW4tYmlkLXRvLXNhdGlzZnktcHJvLXVzZXJz0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "What to expect from Apple’s WWDC 2022 keynote",
+            "datetime": "2022-06-02",
+            "desc": "https://news.google.com/./articles/CBMiT2h0dHBzOi8vdGVjaGNydW5jaC5jb20vMjAyMi8wNi8wMi93aGF0LXRvLWV4cGVjdC1mcm9tLWFwcGxlcy13d2RjLTIwMjIta2V5bm90ZS_SAVNodHRwczovL3RlY2hjcnVuY2guY29tLzIwMjIvMDYvMDIvd2hhdC10by1leHBlY3QtZnJvbS1hcHBsZXMtd3dkYy0yMDIyLWtleW5vdGUvYW1wLw?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple Sees Virtual-Reality Headset as Its Next Big Thing",
+            "datetime": "2022-06-05",
+            "desc": "https://news.google.com/./articles/CBMiTmh0dHBzOi8vd3d3Lm55dGltZXMuY29tLzIwMjIvMDYvMDQvYnVzaW5lc3MvYXBwbGUtdmlydHVhbC1yZWFsaXR5LWhlYWRzZXQuaHRtbNIBUmh0dHBzOi8vd3d3Lm55dGltZXMuY29tLzIwMjIvMDYvMDQvYnVzaW5lc3MvYXBwbGUtdmlydHVhbC1yZWFsaXR5LWhlYWRzZXQuYW1wLmh0bWw?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Dow Jones Futures Rally As Apple Jumps Ahead Of WWDC 2022 ...",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMiemh0dHBzOi8vd3d3LmludmVzdG9ycy5jb20vbWFya2V0LXRyZW5kL3N0b2NrLW1hcmtldC10b2RheS9kb3ctam9uZXMtZnV0dXJlcy1yYWxseS1hcy1hcHBsZS1zdG9jay1qdW1wcy1haGVhZC1vZi13d2RjLTIwMjIv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Warner Bros. Discovery Stock: Deep Dive (NASDAQ:WBD)",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMiSGh0dHBzOi8vc2Vla2luZ2FscGhhLmNvbS9hcnRpY2xlLzQ1MTY3MDItd2FybmVyLWJyb3MtZGlzY292ZXJ5LWRlZXAtZGl2ZdIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple Stock: Apple WWDC 2022 Announcements",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMiVGh0dHBzOi8vd3d3LmludmVzdG9ycy5jb20vbmV3cy90ZWNobm9sb2d5L2FwcGxlLXN0b2NrLWFwcGxlLXd3ZGMtMjAyMi1hbm5vdW5jZW1lbnRzL9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple leaps into BNPL space as Affirm stock takes a hit",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMiRWh0dHBzOi8vZmluYW5jZS55YWhvby5jb20vbmV3cy9hcHBsZS1ibnBsLWFmZmlybS1zdG9jay0xOTUyMzYwNjQuaHRtbNIBTWh0dHBzOi8vZmluYW5jZS55YWhvby5jb20vYW1waHRtbC9uZXdzL2FwcGxlLWJucGwtYWZmaXJtLXN0b2NrLTE5NTIzNjA2NC5odG1s?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Representing 40% of Warren Buffett's Portfolio, Here Is Why Apple Is ...",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMiXGh0dHBzOi8vd3d3LmZvb2wuY29tL2ludmVzdGluZy8yMDIyLzA2LzA2L3JlcHJlc2VudGluZy00MC1vZi13YXJyZW4tYnVmZmV0dHMtcG9ydGZvbGlvLWhlcmUv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple unveils iOS 16 at WWDC 2022 - here's what's new",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMiR2h0dHBzOi8vYmdyLmNvbS90ZWNoL2FwcGxlLXVudmVpbHMtaW9zLTE2LWF0LXd3ZGMtMjAyMi1oZXJlcy13aGF0cy1uZXcv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple unveils iOS 16 with revamped lock screen and big changes to iMessage",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMiPmh0dHBzOi8vd3d3LmNubi5jb20vMjAyMi8wNi8wNi90ZWNoL2FwcGxlLXd3ZGMtMjAyMi9pbmRleC5odG1s0gFCaHR0cHM6Ly9hbXAuY25uLmNvbS9jbm4vMjAyMi8wNi8wNi90ZWNoL2FwcGxlLXd3ZGMtMjAyMi9pbmRleC5odG1s?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Analysis: Apple's next frontier is your car's dashboard",
+            "datetime": "2022-06-07",
+            "desc": "https://news.google.com/./articles/CBMiWmh0dHBzOi8vd3d3LnJldXRlcnMuY29tL3RlY2hub2xvZ3kvYXBwbGVzLW5leHQtZnJvbnRpZXItaXMteW91ci1jYXJzLWRhc2hib2FyZC0yMDIyLTA2LTA3L9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple stock key levels to watch as developers conference gets ...",
+            "datetime": "2022-06-07",
+            "desc": "https://news.google.com/./articles/CBMiW2h0dHBzOi8vZmluYm9sZC5jb20vYXBwbGUtc3RvY2sta2V5LWxldmVscy10by13YXRjaC1hcy1kZXZlbG9wZXJzLWNvbmZlcmVuY2UtZ2V0cy11bmRlcndheS_SAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple (AAPL) Makes Six Big Announcements at WWDC22",
+            "datetime": "2022-06-07",
+            "desc": "https://news.google.com/./articles/CBMiNmh0dHBzOi8vd3d3LmludmVzdG9wZWRpYS5jb20vYXBwbGUtYWFwbC13d2RjMjItNTMyNDY2NdIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Here's how much Apple's supply chain depends on Shanghai",
+            "datetime": "2022-06-08",
+            "desc": "https://news.google.com/./articles/CBMiamh0dHBzOi8vd3d3LmNuYmMuY29tLzIwMjIvMDYvMDkvY3JlZGl0LXN1aXNzZS1hcHBsZS1zdXBwbHktY2hhaW4tcmVjb3ZlcnktZnJvbS1jaGluYS1jb3ZpZC12cy1hbmRyb2lkLmh0bWzSAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "History of Apple's Stock Splits",
+            "datetime": "2022-06-08",
+            "desc": "https://news.google.com/./articles/CBMiTmh0dHBzOi8vd3d3LmZvb2wuY29tL2ludmVzdGluZy9ob3ctdG8taW52ZXN0L3N0b2Nrcy9zdG9jay1zcGxpdC9hcHBsZS1oaXN0b3J5L9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple to shift some iPad production to Vietnam amid China supply ...",
+            "datetime": "2022-06-08",
+            "desc": "https://news.google.com/./articles/CBMiP2h0dHBzOi8vd3d3LmZ0LmNvbS9jb250ZW50L2I5OGNkMmFlLTY5MDgtNDc2My1iNTdkLWZlZTFhOTVhZjY5ZdIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "The Deeper Implications of Apple's (AAPL) Shift Towards Service Revenue",
+            "datetime": "2022-06-08",
+            "desc": "https://news.google.com/./articles/CBMiZGh0dHBzOi8vd3d3Lm5hc2RhcS5jb20vYXJ0aWNsZXMvdGhlLWRlZXBlci1pbXBsaWNhdGlvbnMtb2YtYXBwbGVzLWFhcGwtc2hpZnQtdG93YXJkcy1zZXJ2aWNlLXJldmVudWXSAWhodHRwczovL3d3dy5uYXNkYXEuY29tL2FydGljbGVzL3RoZS1kZWVwZXItaW1wbGljYXRpb25zLW9mLWFwcGxlcy1hYXBsLXNoaWZ0LXRvd2FyZHMtc2VydmljZS1yZXZlbnVlP2FtcA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Michael Burry Shorts $AAPL",
+            "datetime": "2022-06-09",
+            "desc": "https://news.google.com/./articles/CBMiQGh0dHBzOi8vYWNxdWlyZXJzbXVsdGlwbGUuY29tLzIwMjIvMDYvbWljaGFlbC1idXJyeS1zaG9ydHMtYWFwbC_SAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple and Major League Baseball announce July “Friday Night ...",
+            "datetime": "2022-06-09",
+            "desc": "https://news.google.com/./articles/CBMidGh0dHBzOi8vd3d3LmFwcGxlLmNvbS9uZXdzcm9vbS8yMDIyLzA2L2FwcGxlLWFuZC1tYWpvci1sZWFndWUtYmFzZWJhbGwtYW5ub3VuY2UtanVseS1mcmlkYXktbmlnaHQtYmFzZWJhbGwtc2NoZWR1bGUv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Did Apple Just Put a Nail in Matterport's Coffin?",
+            "datetime": "2022-06-09",
+            "desc": "https://news.google.com/./articles/CBMiWmh0dHBzOi8vd3d3LmZvb2wuY29tL2ludmVzdGluZy8yMDIyLzA2LzA5L2RpZC1hcHBsZS1qdXN0LXB1dC1hLW5haWwtaW4tbWF0dGVycG9ydHMtY29mZmluL9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple Plans 15-Inch MacBook Air for 2023 and New 12-Inch Laptop",
+            "datetime": "2022-06-09",
+            "desc": "https://news.google.com/./articles/CBMicmh0dHBzOi8vd3d3LmJsb29tYmVyZy5jb20vbmV3cy9hcnRpY2xlcy8yMDIyLTA2LTA5L2FwcGxlLXJlYWRpZXMtbGFyZ2VyLW1hY2Jvb2stYWlyLXRvLWNhcGl0YWxpemUtb24taXRzLW5ldy1jaGlwc9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Most Obvious Pair Trade In The Market: Buy Google Sell Apple",
+            "datetime": "2022-06-10",
+            "desc": "https://news.google.com/./articles/CBMiZmh0dHBzOi8vc2Vla2luZ2FscGhhLmNvbS9hcnRpY2xlLzQ1MTc3MTAtbW9zdC1vYnZpb3VzLXBhaXItdHJhZGUtaW4tdGhlLW1hcmtldC1idXktYWxwaGFiZXQtc2VsbC1hcHBsZdIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Experts Are Bullish On Apple Stock After WWDC 2022. Here's Why",
+            "datetime": "2022-06-10",
+            "desc": "https://news.google.com/./articles/CBMiYWh0dHBzOi8vd3d3LnRoZXN0cmVldC5jb20vYXBwbGUvbmV3cy9leHBlcnRzLWFyZS1idWxsaXNoLW9uLWFwcGxlLXN0b2NrLWFmdGVyLXd3ZGMtMjAyMi1oZXJlcy13aHnSAWZodHRwczovL3d3dy50aGVzdHJlZXQuY29tL2FwcGxlLy5hbXAvbmV3cy9leHBlcnRzLWFyZS1idWxsaXNoLW9uLWFwcGxlLXN0b2NrLWFmdGVyLXd3ZGMtMjAyMi1oZXJlcy13aHk?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Stock Market Remains Deflated In Late Trading; These IBD 50 ...",
+            "datetime": "2022-06-10",
+            "desc": "https://news.google.com/./articles/CBMijQFodHRwczovL3d3dy5pbnZlc3RvcnMuY29tL21hcmtldC10cmVuZC9zdG9jay1tYXJrZXQtdG9kYXkvc3RvY2stbWFya2V0LXJlbWFpbnMtZGVmbGF0ZWQtaW4tbGF0ZS10cmFkaW5nLXRoZXNlLWliZC01MC1zdG9ja3MtaGl0LXNlbGwtc2lnbmFscy_SAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple's (AAPL) iOS 16 CarPlay Is Precursor to Apple Car; WWDC ...",
+            "datetime": "2022-06-12",
+            "desc": "https://news.google.com/./articles/CBMihAFodHRwczovL3d3dy5ibG9vbWJlcmcuY29tL25ld3MvbmV3c2xldHRlcnMvMjAyMi0wNi0xMi9hcHBsZS1zLWFhcGwtaW9zLTE2LWNhcnBsYXktaXMtcHJlY3Vyc29yLXRvLWFwcGxlLWNhci13d2RjLTIwMjItcmVjYXAtbDRiY3poYzbSAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple music, gaming to bring in over $8 billion in revenue by 2025 ...",
+            "datetime": "2022-06-13",
+            "desc": "https://news.google.com/./articles/CBMia2h0dHBzOi8vd3d3LnJldXRlcnMuY29tL3RlY2hub2xvZ3kvYXBwbGUtbXVzaWMtZ2FtaW5nLWJyaW5nLW92ZXItOC1ibG4tcmV2ZW51ZS1ieS0yMDI1LWpwbS1zYXlzLTIwMjItMDYtMTMv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple iOS 16: The new ways iPhone, Apple Watch try to keep you ...",
+            "datetime": "2022-06-13",
+            "desc": "https://news.google.com/./articles/CBMiW2h0dHBzOi8vd3d3LnVzYXRvZGF5LmNvbS9zdG9yeS90ZWNoLzIwMjIvMDYvMTMvaXBob25lLWhlYWx0aC1hcHBsZS13YXRjaC1pb3MtMTYvNzU3OTcwOTAwMS_SAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple AR Glasses: Specifications And Launch Date - Apple (NASDAQ:AAPL)",
+            "datetime": "2022-06-13",
+            "desc": "https://news.google.com/./articles/CBMijQFodHRwczovL3d3dy5iZW56aW5nYS5jb20vdGVjaC8yMi8wNi8yNzY0MzMwMy9hcHBsZS1oYXMtYmVlbi13b3JraW5nLW9uLWl0cy1hci1nbGFzc2VzLWZvci1vdmVyLTI3LXllYXJzLWhlcmVzLXdoYXQtYW5kLXdoZW4tdGhleS13aWxsLWJlLWxpa2XSAS1odHRwczovL3d3dy5iZW56aW5nYS5jb20vYW1wL2NvbnRlbnQvMjc2NDMzMDM?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple (AAPL) to Stream All Major League Soccer Games",
+            "datetime": "2022-06-14",
+            "desc": "https://news.google.com/./articles/CBMib2h0dHBzOi8vd3d3LmJsb29tYmVyZy5jb20vbmV3cy9hcnRpY2xlcy8yMDIyLTA2LTE0L2FwcGxlLXRvLXN0cmVhbS1tYWpvci1sZWFndWUtc29jY2VyLWFzLXNwb3J0cy1hbWJpdGlvbnMtZ3Jvd9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "13-inch MacBook Pro with M2 available to order starting Friday ...",
+            "datetime": "2022-06-14",
+            "desc": "https://news.google.com/./articles/CBMibmh0dHBzOi8vd3d3LmFwcGxlLmNvbS9uZXdzcm9vbS8yMDIyLzA2LzEzLWluY2gtbWFjYm9vay1wcm8td2l0aC1tMi1hdmFpbGFibGUtdG8tb3JkZXItc3RhcnRpbmctZnJpZGF5LWp1bmUtMTcv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "China COVID controls makes Apple supplier Pegatron \"emphasise ...",
+            "datetime": "2022-06-14",
+            "desc": "https://news.google.com/./articles/CBMif2h0dHBzOi8vd3d3LnJldXRlcnMuY29tL3RlY2hub2xvZ3kvY2hpbmEtY292aWQtY29udHJvbHMtbWFrZXMtYXBwbGUtc3VwcGxpZXItcGVnYXRyb24tZW1waGFzaXNlLWV4cGFuc2lvbi1lbHNld2hlcmUtMjAyMi0wNi0xNS_SAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple and MLS to present all MLS matches for 10 years, beginning ...",
+            "datetime": "2022-06-14",
+            "desc": "https://news.google.com/./articles/CBMib2h0dHBzOi8vd3d3LmFwcGxlLmNvbS9uZXdzcm9vbS8yMDIyLzA2L2FwcGxlLWFuZC1tbHMtdG8tcHJlc2VudC1hbGwtbWxzLW1hdGNoZXMtZm9yLTEwLXllYXJzLWJlZ2lubmluZy1pbi0yMDIzL9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple Execs Use a Simple Presentation Hack to Amplify Key ...",
+            "datetime": "2022-06-14",
+            "desc": "https://news.google.com/./articles/CBMiaWh0dHBzOi8vd3d3LmluYy5jb20vY2FybWluZS1nYWxsby9hcHBsZS1leGVjcy11c2UtYS1zaW1wbGUtcHJlc2VudGF0aW9uLWhhY2stdG8tYW1wbGlmeS1rZXktbWVzc2FnZXMuaHRtbNIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple hiring car experience engineer in China - Chinadaily.com.cn",
+            "datetime": "2022-06-20",
+            "desc": "https://news.google.com/./articles/CBMiTGh0dHBzOi8vZ2xvYmFsLmNoaW5hZGFpbHkuY29tLmNuL2EvMjAyMjA2LzIwL1dTNjJiMDNiNDRhMzEwZmQyYjI5ZTYzY2QwLmh0bWzSAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple won 49 patents today covering a Head-Mounted Device ...",
+            "datetime": "2022-06-21",
+            "desc": "https://news.google.com/./articles/CBMiqAFodHRwczovL3d3dy5wYXRlbnRseWFwcGxlLmNvbS8yMDIyLzA2L2FwcGxlLXdvbi00OS1wYXRlbnRzLXRvZGF5LWNvdmVyaW5nLWEtaGVhZC1tb3VudGVkLWRldmljZS1zeXN0ZW0tdGhhdC1rZWVwcy10aGUtdXNlci1pbnRlcmZhY2UtaW4tYS1oZWFsdGgtZXJnb25vbWljLXBvc2l0aW9uLmh0bWzSAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple is introducing new tech in iOS 16 to let you skip CAPTCHAs",
+            "datetime": "2022-06-21",
+            "desc": "https://news.google.com/./articles/CBMiY2h0dHBzOi8vdGVjaGNydW5jaC5jb20vMjAyMi8wNi8yMS9hcHBsZS1pcy1pbnRyb2R1Y2luZy1uZXctdGVjaC1pbi1pb3MtMTYtdG8tbGV0LXlvdS1za2lwLWNhcHRjaGFzL9IBZ2h0dHBzOi8vdGVjaGNydW5jaC5jb20vMjAyMi8wNi8yMS9hcHBsZS1pcy1pbnRyb2R1Y2luZy1uZXctdGVjaC1pbi1pb3MtMTYtdG8tbGV0LXlvdS1za2lwLWNhcHRjaGFzL2FtcC8?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "If You'd Invested $10,000 in Apple in 2012, This Is How Much You ...",
+            "datetime": "2022-06-22",
+            "desc": "https://news.google.com/./articles/CBMiVmh0dHBzOi8vd3d3LmZvb2wuY29tL2ludmVzdGluZy8yMDIyLzA2LzIyL2lmLWludmVzdGVkLTEwMDAwLWFwcGxlLTIwMTItaG93LW11Y2gtdG9kYXkv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Tim Cook gives clearest hint yet that Apple's building a headset",
+            "datetime": "2022-06-22",
+            "desc": "https://news.google.com/./articles/CBMiZGh0dHBzOi8vd3d3LmNuYmMuY29tLzIwMjIvMDYvMjIvdGltLWNvb2stZ2l2ZXMtY2xlYXJlc3QtaGludC15ZXQtdGhhdC1hcHBsZXMtYnVpbGRpbmctYS1oZWFkc2V0Lmh0bWzSAWhodHRwczovL3d3dy5jbmJjLmNvbS9hbXAvMjAyMi8wNi8yMi90aW0tY29vay1naXZlcy1jbGVhcmVzdC1oaW50LXlldC10aGF0LWFwcGxlcy1idWlsZGluZy1hLWhlYWRzZXQuaHRtbA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Microsoft Stock: When to Buy if the Selloff Continues?",
+            "datetime": "2022-06-22",
+            "desc": "https://news.google.com/./articles/CBMiWmh0dHBzOi8vd3d3LnRoZXN0cmVldC5jb20vaW52ZXN0aW5nL2J1eS1taWNyb3NvZnQtbXNmdC1zdG9jay1pbnN0ZWFkLW9mLW90aGVyLWZhYW5nLXN0b2Nrc9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple announces its plans to develop new features – Turning it into a fintech company",
+            "datetime": "2022-06-23",
+            "desc": "https://news.google.com/./articles/CBMic2h0dHBzOi8vYXBwbGVtYWdhemluZS5jb20vYXBwbGUtYW5ub3VuY2VzLWl0cy1wbGFucy10by1kZXZlbG9wLW5ldy1mZWF0dXJlcy10dXJuaW5nLWl0LWludG8tYS1maW50ZWNoLWNvbXBhbnkvNTMwMTXSAXdodHRwczovL2FwcGxlbWFnYXppbmUuY29tL2FwcGxlLWFubm91bmNlcy1pdHMtcGxhbnMtdG8tZGV2ZWxvcC1uZXctZmVhdHVyZXMtdHVybmluZy1pdC1pbnRvLWEtZmludGVjaC1jb21wYW55LzUzMDE1L2FtcA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "How To Buy Apple Stock (AAPL) – Forbes Advisor Canada",
+            "datetime": "2022-06-23",
+            "desc": "https://news.google.com/./articles/CBMiSGh0dHBzOi8vd3d3LmZvcmJlcy5jb20vYWR2aXNvci9jYS9pbnZlc3RpbmcvaG93LXRvLWJ1eS1hcHBsZS1hYXBsLXN0b2NrL9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Warren Buffett Has Bet the Farm on These 4 Stocks",
+            "datetime": "2022-06-23",
+            "desc": "https://news.google.com/./articles/CBMiXGh0dHBzOi8vd3d3LmZvb2wuY29tL2ludmVzdGluZy8yMDIyLzA2LzIzL3dhcnJlbi1idWZmZXR0LWhhcy1iZXQtdGhlLWZhcm0tb24tdGhlc2UtNC1zdG9ja3Mv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Should You Buy Apple Stock Right Now?",
+            "datetime": "2022-06-24",
+            "desc": "https://news.google.com/./articles/CBMiT2h0dHBzOi8vd3d3LmZvb2wuY29tL2ludmVzdGluZy8yMDIyLzA2LzI0L3Nob3VsZC15b3UtYnV5LWFwcGxlLXN0b2NrLXJpZ2h0LW5vdy_SAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "How to replace your computer with an iPad",
+            "datetime": "2022-06-24",
+            "desc": "https://news.google.com/./articles/CBMiV2h0dHBzOi8vYXBwbGVpbnNpZGVyLmNvbS9pbnNpZGUvaXBhZC1wcm8vdGlwcy9ob3ctdG8tcmVwbGFjZS15b3VyLWNvbXB1dGVyLXdpdGgtYW4taXBhZNIBXGh0dHBzOi8vYXBwbGVpbnNpZGVyLmNvbS9pbnNpZGUvaXBhZC1wcm8vdGlwcy9ob3ctdG8tcmVwbGFjZS15b3VyLWNvbXB1dGVyLXdpdGgtYW4taXBhZC9hbXAv?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "This ultra-rare Apple computer just sold for $468750",
+            "datetime": "2022-06-25",
+            "desc": "https://news.google.com/./articles/CBMiQGh0dHBzOi8vd3d3Lmltb3JlLmNvbS91bHRyYS1yYXJlLWFwcGxlLWNvbXB1dGVyLWp1c3Qtc29sZC0zNzUwMDDSAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple (AAPL) Plans iPhone 14, Apple Watch Series 8, M2 Macs for ...",
+            "datetime": "2022-06-26",
+            "desc": "https://news.google.com/./articles/CBMiiAFodHRwczovL3d3dy5ibG9vbWJlcmcuY29tL25ld3MvbmV3c2xldHRlcnMvMjAyMi0wNi0yNi9hcHBsZS1hYXBsLXBsYW5zLWlwaG9uZS0xNC1hcHBsZS13YXRjaC1zZXJpZXMtOC1tMi1tYWNzLWZvci0yMDIyLWFuZC0yMDIzLWw0dmQ1dW540gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        }
+    ],
+    [
+        {
+            "title": "Apple's WWDC22 Swift Student Challenge winners help ...",
+            "datetime": "2022-06-03",
+            "desc": "https://news.google.com/./articles/CBMidWh0dHBzOi8vd3d3LmFwcGxlLmNvbS9uZXdzcm9vbS8yMDIyLzA2L2FwcGxlcy13d2RjMjItc3dpZnQtc3R1ZGVudC1jaGFsbGVuZ2Utd2lubmVycy1oZWxwLWNvbW11bml0aWVzLXRocm91Z2gtY29kaW5nL9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "3 Best Retirement Stocks to Buy for Long-Term Wealth",
+            "datetime": "2022-06-02",
+            "desc": "https://news.google.com/./articles/CBMiV2h0dHBzOi8vaW52ZXN0b3JwbGFjZS5jb20vMjAyMi8wNi8zLWJlc3QtcmV0aXJlbWVudC1zdG9ja3MtdG8tYnV5LWZvci1sb25nLXRlcm0td2VhbHRoL9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple announces winners of the 2022 Apple Design Awards",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMiX2h0dHBzOi8vd3d3LmFwcGxlLmNvbS9uZXdzcm9vbS8yMDIyLzA2L2FwcGxlLWFubm91bmNlcy13aW5uZXJzLW9mLXRoZS0yMDIyLWFwcGxlLWRlc2lnbi1hd2FyZHMv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple responds to Roe v. Wade rollback, company benefits cover out-of-state travel for reproductive care",
+            "datetime": "2022-06-24",
+            "desc": "https://news.google.com/./articles/CBMiSmh0dHBzOi8vd3d3LmNuYmMuY29tLzIwMjIvMDYvMjQvYXBwbGUtcmVzcG9uZHMtdG8tcm9lLXYtd2FkZS1yb2xsYmFjay5odG1s0gFOaHR0cHM6Ly93d3cuY25iYy5jb20vYW1wLzIwMjIvMDYvMjQvYXBwbGUtcmVzcG9uZHMtdG8tcm9lLXYtd2FkZS1yb2xsYmFjay5odG1s?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Stocks' Best Two Weeks Start Now (Here Are The 7 Top Ones To Own)",
+            "datetime": "2022-06-28",
+            "desc": "https://news.google.com/./articles/CBMiemh0dHBzOi8vd3d3LmludmVzdG9ycy5jb20vZXRmcy1hbmQtZnVuZHMvc2VjdG9ycy9zcDUwMC1idXktYmlnLWNhcC10ZWNoLXN0b2Nrcy1yaWdodC1ub3ctaWYtdGhpcy1yZWxpYWJsZS10cmVuZC1jb250aW51ZXMv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "U.S. Supreme Court won't hear Apple's bid to revive Qualcomm ...",
+            "datetime": "2022-06-27",
+            "desc": "https://news.google.com/./articles/CBMidGh0dHBzOi8vd3d3LnJldXRlcnMuY29tL2J1c2luZXNzL3VzLXN1cHJlbWUtY291cnQtd29udC1oZWFyLWFwcGxlcy1iaWQtcmV2aXZlLXF1YWxjb21tLXBhdGVudC1jaGFsbGVuZ2VzLTIwMjItMDYtMjcv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "2 Compelling Tech Stocks That Score a ‘Perfect 10’",
+            "datetime": "2022-06-10",
+            "desc": "https://news.google.com/./articles/CBMiVGh0dHBzOi8vd3d3LnRpcHJhbmtzLmNvbS9uZXdzL2FydGljbGUvMi1wZXJmZWN0LTEwLXRlY2gtc3RvY2tzLXdvcnRoLWNvbnNpZGVyaW5nLW5vd9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple CEO Tim Cook recommends this decision-making tactic above all others: 'Your success will be sweetened'",
+            "datetime": "2022-06-21",
+            "desc": "https://news.google.com/./articles/CBMiZWh0dHBzOi8vd3d3LmNuYmMuY29tLzIwMjIvMDYvMjEvdGltLWNvb2stdGhpcy1kZWNpc2lvbi1tYWtpbmctbWV0cmljLWlzLWJlc3Qtd2F5LXRvLWZpbmQtc3VjY2Vzcy5odG1s0gFpaHR0cHM6Ly93d3cuY25iYy5jb20vYW1wLzIwMjIvMDYvMjEvdGltLWNvb2stdGhpcy1kZWNpc2lvbi1tYWtpbmctbWV0cmljLWlzLWJlc3Qtd2F5LXRvLWZpbmQtc3VjY2Vzcy5odG1s?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple Stock Is Still a Good Long-Term Growth Investment",
+            "datetime": "2022-06-16",
+            "desc": "https://news.google.com/./articles/CBMiV2h0dHBzOi8vd3d3Lm5hc2RhcS5jb20vYXJ0aWNsZXMvYXBwbGUtc3RvY2staXMtc3RpbGwtYS1nb29kLWxvbmctdGVybS1ncm93dGgtaW52ZXN0bWVudNIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "watchOS 9 delivers new ways to stay connected, active, and healthy",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMiaGh0dHBzOi8vd3d3LmFwcGxlLmNvbS9uZXdzcm9vbS8yMDIyLzA2L3dhdGNob3MtOS1kZWxpdmVycy1uZXctd2F5cy10by1zdGF5LWNvbm5lY3RlZC1hY3RpdmUtYW5kLWhlYWx0aHkv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple is the safest play in consumer hardware but isn't immune to this one 'growing risk'",
+            "datetime": "2022-06-15",
+            "desc": "https://news.google.com/./articles/CBMihAFodHRwczovL3d3dy5tYXJrZXR3YXRjaC5jb20vc3RvcnkvYXBwbGUtaXMtdGhlLXNhZmVzdC1wbGF5LWluLWNvbnN1bWVyLWhhcmR3YXJlLWJ1dC1pc250LWltbXVuZS10by10aGlzLW9uZS1ncm93aW5nLXJpc2stMTE2NTUzMTEzNjDSAYgBaHR0cHM6Ly93d3cubWFya2V0d2F0Y2guY29tL2FtcC9zdG9yeS9hcHBsZS1pcy10aGUtc2FmZXN0LXBsYXktaW4tY29uc3VtZXItaGFyZHdhcmUtYnV0LWlzbnQtaW1tdW5lLXRvLXRoaXMtb25lLWdyb3dpbmctcmlzay0xMTY1NTMxMTM2MA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Cramer Tuesday: Target's profit warning, Apple's 'innovation engine'",
+            "datetime": "2022-06-07",
+            "desc": "https://news.google.com/./articles/CBMiY2h0dHBzOi8vd3d3LmNuYmMuY29tLzIwMjIvMDYvMDcvY3JhbWVyLXR1ZXNkYXktdGFyZ2V0cy1wcm9maXQtd2FybmluZy1hcHBsZXMtaW5ub3ZhdGlvbi1lbmdpbmUuaHRtbNIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "How Square's Embrace of Apple Could Help Propel a Trend Toward ...",
+            "datetime": "2022-06-03",
+            "desc": "https://news.google.com/./articles/CBMiamh0dHBzOi8vd3d3LmRpZ2l0YWx0cmFuc2FjdGlvbnMubmV0L2hvdy1zcXVhcmVzLWVtYnJhY2Utb2YtYXBwbGUtY291bGQtaGVscC1wcm9wZWwtYS10cmVuZC10b3dhcmQtc29mdHBvcy_SAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Union wins right to represent workers at an Apple store for the first time",
+            "datetime": "2022-06-19",
+            "desc": "https://news.google.com/./articles/CBMiRWh0dHBzOi8vd3d3LmNubi5jb20vMjAyMi8wNi8xOS90ZWNoL2FwcGxlLXN0b3JlLXVuaW9uLXZvdGUvaW5kZXguaHRtbNIBSWh0dHBzOi8vYW1wLmNubi5jb20vY25uLzIwMjIvMDYvMTkvdGVjaC9hcHBsZS1zdG9yZS11bmlvbi12b3RlL2luZGV4Lmh0bWw?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Dow Falls, Techs Lead After Sell-Off; China Stocks Gain",
+            "datetime": "2022-06-17",
+            "desc": "https://news.google.com/./articles/CBMihAFodHRwczovL3d3dy5pbnZlc3RvcnMuY29tL21hcmtldC10cmVuZC9zdG9jay1tYXJrZXQtdG9kYXkvZG93LWpvbmVzLWZ1dHVyZXMtcmlzZS1hZnRlci1iaWctc2VsbC1vZmYtYWxpYmFiYS10aGVzZS1jaGluYS1zdG9ja3MtanVtcC_SAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple’s image cutout feature in iOS 16 is the most fun thing to come out of WWDC 2022",
+            "datetime": "2022-06-15",
+            "desc": "https://news.google.com/./articles/CBMid2h0dHBzOi8vdGVjaGNydW5jaC5jb20vMjAyMi8wNi8xNS9hcHBsZXMtaW1hZ2UtY3V0b3V0LWZlYXR1cmUtaW4taW9zLTE2LWlzLXRoZS1tb3N0LWZ1bi10aGluZy10by1jb21lLW91dC1vZi13d2RjLTIwMjIv0gF7aHR0cHM6Ly90ZWNoY3J1bmNoLmNvbS8yMDIyLzA2LzE1L2FwcGxlcy1pbWFnZS1jdXRvdXQtZmVhdHVyZS1pbi1pb3MtMTYtaXMtdGhlLW1vc3QtZnVuLXRoaW5nLXRvLWNvbWUtb3V0LW9mLXd3ZGMtMjAyMi9hbXAv?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Want $1,000 in Passive Income? Buy 1,084 Shares of This Warren ...",
+            "datetime": "2022-06-17",
+            "desc": "https://news.google.com/./articles/CBMiXWh0dHBzOi8vd3d3LmZvb2wuY29tL2ludmVzdGluZy8yMDIyLzA2LzE3L3dhbnQtMTAwMC1pbi1wYXNzaXZlLWluY29tZS1idXktdGhpcy1idWZmZXR0LXN0b2NrL9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Here's Why Needham Sees Apple's Brand Value Worth At $1T",
+            "datetime": "2022-06-17",
+            "desc": "https://news.google.com/./articles/CBMiS2h0dHBzOi8vZmluYW5jZS55YWhvby5jb20vbmV3cy9oZXJlcy13aHktbmVlZGhhbS1zZWVzLWFwcGxlcy0xNTE1MDg5NDkuaHRtbNIBU2h0dHBzOi8vZmluYW5jZS55YWhvby5jb20vYW1waHRtbC9uZXdzL2hlcmVzLXdoeS1uZWVkaGFtLXNlZXMtYXBwbGVzLTE1MTUwODk0OS5odG1s?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Tesla Is Now a Top 5 Stock in Russell Indexes and Meta Is a Value Stock.",
+            "datetime": "2022-06-23",
+            "desc": "https://news.google.com/./articles/CBMiU2h0dHBzOi8vd3d3LmJhcnJvbnMuY29tL2FydGljbGVzL3Rlc2xhLXRvcC1maXZlLXJ1c3NlbGwtaW5kZXgtY29tcGFuaWVzLTUxNjU1OTg4Mjky0gFXaHR0cHM6Ly93d3cuYmFycm9ucy5jb20vYW1wL2FydGljbGVzL3Rlc2xhLXRvcC1maXZlLXJ1c3NlbGwtaW5kZXgtY29tcGFuaWVzLTUxNjU1OTg4Mjky?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Biden Says He's 'Proud' of Apple Workers Voting to Unionize",
+            "datetime": "2022-06-20",
+            "desc": "https://news.google.com/./articles/CBMibGh0dHBzOi8vd3d3LmJsb29tYmVyZy5jb20vbmV3cy9hcnRpY2xlcy8yMDIyLTA2LTIwL2JpZGVuLXNheXMtaGUtcy1wcm91ZC1vbi1hcHBsZS13b3JrZXJzLXZvdGluZy10by11bmlvbml6ZdIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Late Apple co-founder Steve Jobs to receive Presidential Medal of ...",
+            "datetime": "2022-07-01",
+            "desc": "https://news.google.com/./articles/CBMiU2h0dHBzOi8vd3d3LnNmY2hyb25pY2xlLmNvbS90ZWNoL2FydGljbGUvc3RldmUtam9icy1wcmVzaWRlbnRpYWwtbWVkYWwtMTcyNzgwNjYucGhw0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple looks to its first headset for next breakthrough product",
+            "datetime": "2022-06-04",
+            "desc": "https://news.google.com/./articles/CBMiP2h0dHBzOi8vd3d3LmZ0LmNvbS9jb250ZW50L2MyMzYzOTg3LWQ3OGYtNGJiNy05MTkwLThiN2YyNjgwNThhZtIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Will Apple (AAPL) Stock Rebound Post WWDC22 Announcements?",
+            "datetime": "2022-06-08",
+            "desc": "https://news.google.com/./articles/CBMiS2h0dHBzOi8vZmluYW5jZS55YWhvby5jb20vbmV3cy9hcHBsZS1hYXBsLXN0b2NrLXJlYm91bmQtcG9zdC0xMzU4MDEwNjMuaHRtbNIBU2h0dHBzOi8vZmluYW5jZS55YWhvby5jb20vYW1waHRtbC9uZXdzL2FwcGxlLWFhcGwtc3RvY2stcmVib3VuZC1wb3N0LTEzNTgwMTA2My5odG1s?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Top Wall Street analysts say these are the best stocks to beat the volatile market",
+            "datetime": "2022-06-19",
+            "desc": "https://news.google.com/./articles/CBMiXmh0dHBzOi8vd3d3LmNuYmMuY29tLzIwMjIvMDYvMTkvdG9wLXdhbGwtc3RyZWV0LWFuYWx5c3RzLXNheS10by1idXktYXBwbGUtYmFuay1vZi1hbWVyaWNhLmh0bWzSAWJodHRwczovL3d3dy5jbmJjLmNvbS9hbXAvMjAyMi8wNi8xOS90b3Atd2FsbC1zdHJlZXQtYW5hbHlzdHMtc2F5LXRvLWJ1eS1hcHBsZS1iYW5rLW9mLWFtZXJpY2EuaHRtbA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "The Growing Relevance of Leadership Skills for Physicians: AAPL ...",
+            "datetime": "2022-06-29",
+            "desc": "https://news.google.com/./articles/CBMitAFodHRwczovL3d3dy5wcm5ld3N3aXJlLmNvbS9uZXdzLXJlbGVhc2VzL3RoZS1ncm93aW5nLXJlbGV2YW5jZS1vZi1sZWFkZXJzaGlwLXNraWxscy1mb3ItcGh5c2ljaWFucy1hYXBsLXJlbGVhc2VzLWl0cy0xMDB0aC1wb2RjYXN0LWZlYXR1cmluZy1sdW1pbmFyaWVzLWluLWhlYWx0aGNhcmUtMzAxNTc3OTYyLmh0bWzSAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Qualcomm Stock Has Upside Thanks to Apple and Samsung, Analyst Says",
+            "datetime": "2022-06-13",
+            "desc": "https://news.google.com/./articles/CBMiSWh0dHBzOi8vd3d3LmJhcnJvbnMuY29tL2FydGljbGVzL3F1YWxjb21tLXN0b2NrLWFwcGxlLXNhbXN1bmctNTE2NTUxMzg0NjHSAU1odHRwczovL3d3dy5iYXJyb25zLmNvbS9hbXAvYXJ0aWNsZXMvcXVhbGNvbW0tc3RvY2stYXBwbGUtc2Ftc3VuZy01MTY1NTEzODQ2MQ?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Is Now A Good Time To Buy Apple Stock As It Dips? (NASDAQ:AAPL)",
+            "datetime": "2022-06-23",
+            "desc": "https://news.google.com/./articles/CBMiSWh0dHBzOi8vc2Vla2luZ2FscGhhLmNvbS9hcnRpY2xlLzQ1MTk5NDItaXMtbm93LWdvb2QtdGltZS1idXktYXBwbGUtc3RvY2vSAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Lessons learned from a trading profit made shorting stocks",
+            "datetime": "2022-06-07",
+            "desc": "https://news.google.com/./articles/CBMiVGh0dHBzOi8vc2Vla2luZ2FscGhhLmNvbS9hcnRpY2xlLzQ1MTY4NDQtbGVzc29ucy1mcm9tLXRyYWRpbmctcHJvZml0LXNob3J0aW5nLXN0b2Nrc9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple (AAPL) to Improve Working Hours at Retail Stores",
+            "datetime": "2022-06-02",
+            "desc": "https://news.google.com/./articles/CBMic2h0dHBzOi8vd3d3LmJsb29tYmVyZy5jb20vbmV3cy9hcnRpY2xlcy8yMDIyLTA2LTAyL2FwcGxlLXRvLWltcHJvdmUtd29ya2luZy1ob3Vycy1mb3ItcmV0YWlsLXN0YWZmLWFmdGVyLXVuaW9uLXB1c2jSAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "AAPL: Apple vs. Amazon: Which FAANG Stock is a Better Buy?",
+            "datetime": "2022-06-02",
+            "desc": "https://news.google.com/./articles/CBMiV2h0dHBzOi8vc3RvY2tuZXdzLmNvbS9uZXdzL2FhcGwtYW16bi1hcHBsZS12cy1hbWF6b24td2hpY2gtZmFhbmctc3RvY2staXMtYS1iZXR0ZXItYnV5L9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "macOS Ventura brings powerful productivity tools, new Continuity ...",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMid2h0dHBzOi8vd3d3LmFwcGxlLmNvbS9uZXdzcm9vbS8yMDIyLzA2L21hY29zLXZlbnR1cmEtYnJpbmdzLXBvd2VyZnVsLXByb2R1Y3Rpdml0eS10b29scy1uZXctY29udGludWl0eS1mZWF0dXJlcy10by1tYWMv0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Is Microsoft's Stock Price Nearing A Buy Opportunity? (NASDAQ ...",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMiXGh0dHBzOi8vc2Vla2luZ2FscGhhLmNvbS9hcnRpY2xlLzQ1MTY2NzQtaXMtbWljcm9zb2Z0cy1zdG9jay1wcmljZS1uZWFyaW5nLWEtYnV5LW9wcG9ydHVuaXR50gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple provides developers with even more powerful technologies",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMiZmh0dHBzOi8vd3d3LmFwcGxlLmNvbS9uZXdzcm9vbS8yMDIyLzA2L2FwcGxlLXByb3ZpZGVzLWRldmVsb3BlcnMtd2l0aC1ldmVuLW1vcmUtcG93ZXJmdWwtdGVjaG5vbG9naWVzL9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Tesla Is a Once-in-a-Lifetime Opportunity. Why This Analyst Is Still a Bull.",
+            "datetime": "2022-06-22",
+            "desc": "https://news.google.com/./articles/CBMiWWh0dHBzOi8vd3d3LmJhcnJvbnMuY29tL2FydGljbGVzL3Rlc2xhLWxpZmV0aW1lLW9wcG9ydHVuaXR5LWJ1bGwtbXVzay10d2l0dGVyLTUxNjU1OTE2OTU00gFdaHR0cHM6Ly93d3cuYmFycm9ucy5jb20vYW1wL2FydGljbGVzL3Rlc2xhLWxpZmV0aW1lLW9wcG9ydHVuaXR5LWJ1bGwtbXVzay10d2l0dGVyLTUxNjU1OTE2OTU0?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Better Buy: Apple vs. Amazon",
+            "datetime": "2022-06-03",
+            "desc": "https://news.google.com/./articles/CBMiRWh0dHBzOi8vd3d3LmZvb2wuY29tL2ludmVzdGluZy8yMDIyLzA2LzAzL2JldHRlci1idXktYXBwbGUtdnMtYW1hem9uL9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple doesn’t want a metaverse, it wants a better universe",
+            "datetime": "2022-06-22",
+            "desc": "https://news.google.com/./articles/CBMia2h0dHBzOi8vd3d3LmNvbXB1dGVyd29ybGQuY29tL2FydGljbGUvMzY2NDA4MC9hcHBsZS1kb2VzbnQtd2FudC1hLW1ldGF2ZXJzZS1pdC13YW50cy1hLWJldHRlci11bml2ZXJzZS5odG1s0gFvaHR0cHM6Ly93d3cuY29tcHV0ZXJ3b3JsZC5jb20vYXJ0aWNsZS8zNjY0MDgwL2FwcGxlLWRvZXNudC13YW50LWEtbWV0YXZlcnNlLWl0LXdhbnRzLWEtYmV0dGVyLXVuaXZlcnNlLmFtcC5odG1s?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple invites families to create and learn together during Apple Camp",
+            "datetime": "2022-06-15",
+            "desc": "https://news.google.com/./articles/CBMibWh0dHBzOi8vd3d3LmFwcGxlLmNvbS9uZXdzcm9vbS8yMDIyLzA2L2FwcGxlLWludml0ZXMtZmFtaWxpZXMtdG8tY3JlYXRlLWFuZC1sZWFybi10b2dldGhlci1kdXJpbmctYXBwbGUtY2FtcC_SAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "A tangle of cables is the price for Apple's innovation",
+            "datetime": "2022-06-09",
+            "desc": "https://news.google.com/./articles/CBMiP2h0dHBzOi8vd3d3LmZ0LmNvbS9jb250ZW50L2YwOWI0ODQ4LWIyMGUtNDA5MC04ZmNhLTE5Zjk1ZTNlZjlkNdIBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple Stock: M2 Chip Unlocks New Growth Cycle Amid Bloodbath",
+            "datetime": "2022-06-15",
+            "desc": "https://news.google.com/./articles/CBMiUmh0dHBzOi8vc2Vla2luZ2FscGhhLmNvbS9hcnRpY2xlLzQ1MTg1MDctYXBwbGUtbTItY2hpcC1ncm93dGgtY3ljbGUtYW1pZC1ibG9vZGJhdGjSAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Why does Buffett Like Apple",
+            "datetime": "2022-06-12",
+            "desc": "https://news.google.com/./articles/CBMiXWh0dHBzOi8vbWVkaXVtLmRhdGFkcml2ZW5pbnZlc3Rvci5jb20vd2h5LWRvZXMtd2FycmVuLWJ1ZmZldHQtbGlrZS1hcHBsZS1zby1tdWNoLWExZmM3YmJmNGFjY9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple readies more land in Austin for expansion - Austin Business ...",
+            "datetime": "2022-06-16",
+            "desc": "https://news.google.com/./articles/CBMiWWh0dHBzOi8vd3d3LmJpempvdXJuYWxzLmNvbS9hdXN0aW4vbmV3cy8yMDIyLzA2LzE2L2FwcGxlLWF1c3Rpbi1leHBhbnNpb24tYW5uZXhhdGlvbi5odG1s0gEA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple grows gaming market share as App Store dominates mobile ...",
+            "datetime": "2022-06-24",
+            "desc": "https://news.google.com/./articles/CBMinwFodHRwczovL3d3dy5zcGdsb2JhbC5jb20vbWFya2V0aW50ZWxsaWdlbmNlL2VuL25ld3MtaW5zaWdodHMvbGF0ZXN0LW5ld3MtaGVhZGxpbmVzL2FwcGxlLWdyb3dzLWdhbWluZy1tYXJrZXQtc2hhcmUtYXMtYXBwLXN0b3JlLWRvbWluYXRlcy1tb2JpbGUtc3BhY2UtNzA5MjI0NDDSAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple has several 'long term' value drivers coming from WWDC",
+            "datetime": "2022-06-07",
+            "desc": "https://news.google.com/./articles/CBMiYGh0dHBzOi8vc2Vla2luZ2FscGhhLmNvbS9uZXdzLzM4NDYzNTktYXBwbGUtaGFzLXNldmVyYWwtbG9uZy10ZXJtLXZhbHVlLWRyaXZlcnMtY29taW5nLWZyb20td3dkY9IBAA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Original Apple-1 computer signed by Steve Wozniak sold for $340,100",
+            "datetime": "2022-06-13",
+            "desc": "https://news.google.com/./articles/CBMibGh0dHBzOi8vYXBwbGVpbnNpZGVyLmNvbS9hcnRpY2xlcy8yMi8wNi8xMy9vcmlnaW5hbC1hcHBsZS0xLWNvbXB1dGVyLXNpZ25lZC1ieS1zdGV2ZS13b3puaWFrLXNvbGQtZm9yLTM0MDEwMNIBcWh0dHBzOi8vYXBwbGVpbnNpZGVyLmNvbS9hcnRpY2xlcy8yMi8wNi8xMy9vcmlnaW5hbC1hcHBsZS0xLWNvbXB1dGVyLXNpZ25lZC1ieS1zdGV2ZS13b3puaWFrLXNvbGQtZm9yLTM0MDEwMC9hbXAv?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+            "title": "Apple unveils new ways to share and communicate in iOS 16",
+            "datetime": "2022-06-06",
+            "desc": "https://news.google.com/./articles/CBMiYWh0dHBzOi8vd3d3LmFwcGxlLmNvbS9uZXdzcm9vbS8yMDIyLzA2L2FwcGxlLXVudmVpbHMtbmV3LXdheXMtdG8tc2hhcmUtYW5kLWNvbW11bmljYXRlLWluLWlvcy0xNi_SAQA?hl=en-US&gl=US&ceid=US%3Aen"
+        }
+    ]
 ]
