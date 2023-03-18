@@ -63,7 +63,7 @@ def get_percentile_and_write(start_date, end_date, changes):
     # n = len(portion_separate_values)
 
     # Use median to get interval
-    interval = np.median(changes)
+    interval = abs(np.median(changes))
     portion_separate_values = [0 for _ in range(7)]
     n = len(portion_separate_values)
 
@@ -72,11 +72,12 @@ def get_percentile_and_write(start_date, end_date, changes):
         portion_separate_values[(n//2) + i] = interval * i
 
     # Write the percentiles list to a JSON file
-    filename = './dataset/percentiles/' + str(start_date) + '~' + str(end_date) + '.json'
+    filename = './dataset/percentiles/' + \
+        str(start_date) + '~' + str(end_date) + '.json'
 
     with open(filename, 'w+') as f:
         json.dump(portion_separate_values, f)
-    
+
     return portion_separate_values
 
 
@@ -222,7 +223,7 @@ def getTimeStamps(start_date, end_date):
         time.strptime(start_date, "%Y-%m-%d"))) * 1000
     endTimestamp = int(
         time.mktime(time.strptime(end_date, "%Y-%m-%d"))) * 1000
-    
+
     return startTimestamp, endTimestamp
 
 
@@ -258,11 +259,11 @@ def processAllStocksChange(start_date, end_date):
     # convert start_date and end_date to tradingVue accetable timestamp
     # startTimestamp, endTimestamp = getTimeStamps(start_date, end_date)
 
-    writetoCSV(all_changes)
-    change_in_json = convertCSVtoJSON()
-    file = open('../frontend/flask/static/stockPriceDifference/' + str(start_date) + "~" + str(end_date) +'.json', 'w+')
-    file.write(change_in_json)
-    file.close()
+    # writetoCSV(all_changes)
+    # change_in_json = convertCSVtoJSON()
+    # file = open('../frontend/flask/static/stockPriceDifference/' + str(start_date) + "~" + str(end_date) +'.json', 'w+')
+    # file.write(change_in_json)
+    # file.close()
     # return percentile, startTimestamp, endTimestamp
 
 
@@ -436,3 +437,21 @@ def get_company_name():
 #     name = get_company_name(symbol)
 #     print(name)
 #     print("End: " + symbol + '\n')
+
+
+# Testing for percentile
+# start_date = "2022-06-01"
+# end_date = "2022-09-01"
+# processAllStocksChange(start_date, end_date)
+
+# start_date = "2022-01-01"
+# end_date = "2023-02-01"
+# processAllStocksChange(start_date, end_date)
+
+# start_date = "2022-02-01"
+# end_date = "2022-07-01"
+# processAllStocksChange(start_date, end_date)
+
+# start_date = "2022-06-15"
+# end_date = "2022-08-10"
+# processAllStocksChange(start_date, end_date)
