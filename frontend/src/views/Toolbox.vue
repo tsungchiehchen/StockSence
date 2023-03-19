@@ -189,6 +189,7 @@ export default {
         this.searchPopup = false
       }
       else{
+        console.log("prediction")
         document.getElementsByClassName("vuesax-app-is-ltr")[0].style = "pointer-events: none;";  // 讓 popup 不會被滑鼠關掉
         const url = new URL(window.location.href);
         var payload = String(url).split("/?")[1]

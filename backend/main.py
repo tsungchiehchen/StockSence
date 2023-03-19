@@ -30,6 +30,7 @@ def api():
 
 @app.route('/prediction', methods=['GET', 'POST'])
 def prediction():
+    print("predicting")
     stockPriceOnly = "true"
     startDate = request.args.get('startDate')
     endDate = request.args.get('endDate')
