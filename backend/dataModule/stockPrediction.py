@@ -202,29 +202,31 @@ future_number_of_days = 30
 #     symbol, train_on_number_of_days, future_number_of_days)
 
 ##################  Training  #####################
-df = pd.read_csv('./dataset/Stocks Symbols.csv')
-df = df.loc[df['Market_Cap'] > 2000000000.00]
-symbols = df['Symbol'].tolist()
+# df = pd.read_csv('./dataset/LargeCap Stock Symbols.csv')
+# symbols = df['Symbol'].tolist()
 
-dont_run = ['ATAT']
-symbols = [symb for symb in symbols if symb not in dont_run]
+# dont_run = ['ATAT', 'MBLY', 'GEHC', 'AAPL', 'ASML', 'MSFT', 'GOOG',
+#             'PEP', 'META', 'COST', 'CSCO', 'PCAR', 'TSLA', 'NVDA',
+#             'AMZN', 'AZN', 'AVGO', 'GOOGL']
+# symbols = [symb for symb in symbols if symb not in dont_run]
 
-already_processed_symbol = []
-with open('./dataset/Finished_news_sentiment.txt', 'r') as file:
-    for line in file:
-        already_processed_symbol.append(line.split()[0])
+# already_processed_symbol = []
+# with open('./dataset/Finished_news_sentiment.txt', 'r') as file:
+#     for line in file:
+#         already_processed_symbol.append(line.split()[0])
+# # cnt = 0
+# for symbol in symbols:
+#     if symbol not in already_processed_symbol:
+#         print("Start " + symbol)
+#         # cnt += 1
 
-for symbol in symbols:
-    if symbol not in already_processed_symbol:
-        print("Start " + symbol)
+#         start = time.time()
+#         stock_prediction_train_model(
+#             symbol, train_on_number_of_days, future_number_of_days)
+#         end = time.time()
+#         print("Finished " + symbol + " in ", end-start, " Seconds")
 
-        start = time.time()
-        stock_prediction_train_model(
-            symbol, train_on_number_of_days, future_number_of_days)
-        end = time.time()
-        print("Finished " + symbol + " in ", end-start, " Seconds")
-
-
+# print(cnt)
 ################## Inference Testing #####################
 # symbol = 'AAPL'
 # start_date = "2023-03-01"

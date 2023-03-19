@@ -3,8 +3,6 @@ import json
 from datetime import datetime, timedelta
 import zipfile
 
-# from dataModule.calculateStockChangebyDate import getStocksChange
-
 
 def getDFbyDate(start_date, end_date, symbol):
     # # Uncomment below to use unzip
@@ -49,8 +47,6 @@ def writetoJSON(results):
 def get_news_sentiment(start_date, end_date, symbol):
     df = getDFbyDate(start_date, end_date, symbol)
     df = df.sort_values('datetime', ascending=False)
-    # compound_score_threshold = 0.5 if len(df) > 150 else 0.3
-    # change = getStocksChange(symbol, start_date, end_date)
 
     start_date = datetime.strptime(start_date, "%Y-%m-%d")
     end_date = datetime.strptime(end_date, "%Y-%m-%d")
@@ -102,7 +98,6 @@ def get_news_sentiment(start_date, end_date, symbol):
 
 # testing
 start_date = "2019-08-01"
-# end_date = "2020-01-01"
-end_date = "2019-08-02"
+end_date = "2020-01-01"
 symbol = 'AAPL'
 get_news_sentiment(start_date, end_date, symbol)
