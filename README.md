@@ -18,9 +18,10 @@ npm install
 ```bash=
 npm run serve
 ```
-5. Start frontend
+5. Open another terminal and start frontend
 ```bash=
-npm run serve
+cd backend
+python main.py
 ```
 6. Go to http://127.0.0.1:3000 ([link](http://127.0.0.1:3000)) to access our homepage
 
