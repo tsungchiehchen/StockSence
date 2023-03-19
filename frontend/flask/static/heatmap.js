@@ -307,7 +307,7 @@
               format: "yyyy-mm-dd",
               orientation: "bottom auto",
               startDate: "2017-01-01",
-              endDate: "2023-01-31",
+              endDate: "2023-02-28",
               multidate: false,
               daysOfWeekDisabled: "0,6",
               autoclose: true,

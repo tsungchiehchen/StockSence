@@ -82,7 +82,6 @@ def index():
         
         elif stockPriceOnly == "false":  # 要查 stock change 跟 macro change
             percentilesFilePath = Path("./dataset/percentiles/" + str(startDate) + "~" + str(endDate) + ".json")
-            print(percentilesFilePath)
             if not percentilesFilePath.is_file():  # macro change file does not exist
                 print("Not calculated before")
                 calculateStockChangebyDate.processAllStocksChange(startDate, endDate)

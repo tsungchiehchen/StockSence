@@ -259,11 +259,11 @@ def processAllStocksChange(start_date, end_date):
     # convert start_date and end_date to tradingVue accetable timestamp
     # startTimestamp, endTimestamp = getTimeStamps(start_date, end_date)
 
-    # writetoCSV(all_changes)
-    # change_in_json = convertCSVtoJSON()
-    # file = open('../frontend/flask/static/stockPriceDifference/' + str(start_date) + "~" + str(end_date) +'.json', 'w+')
-    # file.write(change_in_json)
-    # file.close()
+    writetoCSV(all_changes)
+    change_in_json = convertCSVtoJSON()
+    file = open('../frontend/flask/static/stockPriceDifference/' + str(start_date) + "~" + str(end_date) +'.json', 'w+')
+    file.write(change_in_json)
+    file.close()
     # return percentile, startTimestamp, endTimestamp
 
 

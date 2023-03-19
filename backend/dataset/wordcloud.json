@@ -1,54 +1,174 @@
 [
   {
-    "name": "top+",
-    "value": 8
+    "name": "microsoft+",
+    "value": 47
   },
   {
-    "name": "apple+",
-    "value": 6
+    "name": "top+",
+    "value": 15
   },
   {
     "name": "amazon+",
-    "value": 5
+    "value": 13
   },
   {
-    "name": "stocks+",
-    "value": 5
+    "name": "apple+",
+    "value": 10
   },
   {
-    "name": "wwdc+",
-    "value": 5
-  },
-  {
-    "name": "iphone-",
-    "value": 5
+    "name": "cloud+",
+    "value": 10
   },
   {
     "name": "better+",
-    "value": 4
+    "value": 9
+  },
+  {
+    "name": "stock+",
+    "value": 9
+  },
+  {
+    "name": "buy+",
+    "value": 8
+  },
+  {
+    "name": "new+",
+    "value": 8
+  },
+  {
+    "name": "growth+",
+    "value": 7
+  },
+  {
+    "name": "tech-",
+    "value": 7
+  },
+  {
+    "name": "help+",
+    "value": 6
+  },
+  {
+    "name": "stocks+",
+    "value": 6
+  },
+  {
+    "name": "google+",
+    "value": 6
+  },
+  {
+    "name": "big+",
+    "value": 6
+  },
+  {
+    "name": "azure+",
+    "value": 6
+  },
+  {
+    "name": "dow+",
+    "value": 5
   },
   {
     "name": "recession-",
-    "value": 4
+    "value": 5
   },
   {
-    "name": "pay-",
-    "value": 3
+    "name": "defender+",
+    "value": 5
+  },
+  {
+    "name": "court+",
+    "value": 5
   },
   {
     "name": "best+",
+    "value": 5
+  },
+  {
+    "name": "nasdaq+",
+    "value": 4
+  },
+  {
+    "name": "market+",
+    "value": 4
+  },
+  {
+    "name": "aws+",
+    "value": 4
+  },
+  {
+    "name": "cuts-",
+    "value": 4
+  },
+  {
+    "name": "right+",
+    "value": 4
+  },
+  {
+    "name": "gates+",
+    "value": 4
+  },
+  {
+    "name": "picks+",
+    "value": 4
+  },
+  {
+    "name": "agreement+",
+    "value": 4
+  },
+  {
+    "name": "combat-",
+    "value": 4
+  },
+  {
+    "name": "risk-",
+    "value": 4
+  },
+  {
+    "name": "matter+",
+    "value": 4
+  },
+  {
+    "name": "good+",
+    "value": 4
+  },
+  {
+    "name": "partner+",
+    "value": 4
+  },
+  {
+    "name": "economy-",
+    "value": 4
+  },
+  {
+    "name": "former+",
     "value": 3
   },
   {
-    "name": "long+",
+    "name": "world+",
     "value": 3
   },
   {
-    "name": "term+",
+    "name": "secure+",
     "value": 3
   },
   {
-    "name": "news+",
+    "name": "cramer-",
+    "value": 3
+  },
+  {
+    "name": "like+",
+    "value": 3
+  },
+  {
+    "name": "tesla+",
+    "value": 3
+  },
+  {
+    "name": "technology+",
+    "value": 3
+  },
+  {
+    "name": "alphabet+",
     "value": 3
   },
   {
@@ -56,23 +176,279 @@
     "value": 3
   },
   {
-    "name": "later-",
+    "name": "partners+",
     "value": 3
   },
   {
-    "name": "security-",
+    "name": "profit+",
     "value": 3
   },
   {
-    "name": "meta-",
+    "name": "safe+",
     "value": 3
   },
   {
-    "name": "antitrust-",
+    "name": "treasury+",
     "value": 3
   },
   {
-    "name": "dominates+",
+    "name": "xbox+",
+    "value": 3
+  },
+  {
+    "name": "bear+",
+    "value": 3
+  },
+  {
+    "name": "adds+",
+    "value": 3
+  },
+  {
+    "name": "boost+",
+    "value": 3
+  },
+  {
+    "name": "says-",
+    "value": 3
+  },
+  {
+    "name": "joins+",
+    "value": 3
+  },
+  {
+    "name": "helping+",
+    "value": 3
+  },
+  {
+    "name": "missed-",
+    "value": 3
+  },
+  {
+    "name": "test-",
+    "value": 3
+  },
+  {
+    "name": "uber+",
+    "value": 3
+  },
+  {
+    "name": "five+",
+    "value": 3
+  },
+  {
+    "name": "want+",
+    "value": 3
+  },
+  {
+    "name": "street-",
+    "value": 3
+  },
+  {
+    "name": "uncertain-",
+    "value": 3
+  },
+  {
+    "name": "results+",
+    "value": 3
+  },
+  {
+    "name": "anti-",
+    "value": 3
+  },
+  {
+    "name": "reduction+",
+    "value": 3
+  },
+  {
+    "name": "act+",
+    "value": 3
+  },
+  {
+    "name": "time+",
+    "value": 2
+  },
+  {
+    "name": "office-",
+    "value": 2
+  },
+  {
+    "name": "vulnerability-",
+    "value": 2
+  },
+  {
+    "name": "customers+",
+    "value": 2
+  },
+  {
+    "name": "accenture+",
+    "value": 2
+  },
+  {
+    "name": "avanade+",
+    "value": 2
+  },
+  {
+    "name": "expand+",
+    "value": 2
+  },
+  {
+    "name": "partnership+",
+    "value": 2
+  },
+  {
+    "name": "yields+",
+    "value": 2
+  },
+  {
+    "name": "salesforce+",
+    "value": 2
+  },
+  {
+    "name": "nvidia-",
+    "value": 2
+  },
+  {
+    "name": "deal+",
+    "value": 2
+  },
+  {
+    "name": "employee+",
+    "value": 2
+  },
+  {
+    "name": "challenge+",
+    "value": 2
+  },
+  {
+    "name": "msft+",
+    "value": 2
+  },
+  {
+    "name": "bests+",
+    "value": 2
+  },
+  {
+    "name": "critical-",
+    "value": 2
+  },
+  {
+    "name": "avepoint+",
+    "value": 2
+  },
+  {
+    "name": "solutions+",
+    "value": 2
+  },
+  {
+    "name": "jones+",
+    "value": 2
+  },
+  {
+    "name": "sells+",
+    "value": 2
+  },
+  {
+    "name": "target+",
+    "value": 2
+  },
+  {
+    "name": "warning+",
+    "value": 2
+  },
+  {
+    "name": "rebound+",
+    "value": 2
+  },
+  {
+    "name": "future+",
+    "value": 2
+  },
+  {
+    "name": "leave-",
+    "value": 2
+  },
+  {
+    "name": "russia-",
+    "value": 2
+  },
+  {
+    "name": "war-",
+    "value": 2
+  },
+  {
+    "name": "outlook-",
+    "value": 2
+  },
+  {
+    "name": "higher+",
+    "value": 2
+  },
+  {
+    "name": "build+",
+    "value": 2
+  },
+  {
+    "name": "blue+",
+    "value": 2
+  },
+  {
+    "name": "gets+",
+    "value": 2
+  },
+  {
+    "name": "hybrid+",
+    "value": 2
+  },
+  {
+    "name": "warren+",
+    "value": 2
+  },
+  {
+    "name": "buffett+",
+    "value": 2
+  },
+  {
+    "name": "managers+",
+    "value": 2
+  },
+  {
+    "name": "singapore+",
+    "value": 2
+  },
+  {
+    "name": "leadership+",
+    "value": 2
+  },
+  {
+    "name": "move+",
+    "value": 2
+  },
+  {
+    "name": "smart+",
+    "value": 2
+  },
+  {
+    "name": "could-",
+    "value": 2
+  },
+  {
+    "name": "cut-",
+    "value": 2
+  },
+  {
+    "name": "costs-",
+    "value": 2
+  },
+  {
+    "name": "highlights+",
+    "value": 2
+  },
+  {
+    "name": "games+",
+    "value": 2
+  },
+  {
+    "name": "uses+",
     "value": 2
   },
   {
@@ -80,75 +456,123 @@
     "value": 2
   },
   {
-    "name": "stock+",
+    "name": "bill+",
     "value": 2
   },
   {
-    "name": "buy+",
+    "name": "portfolio-",
     "value": 2
   },
   {
-    "name": "death-",
+    "name": "labor+",
     "value": 2
   },
   {
-    "name": "microsoft+",
+    "name": "neutrality+",
     "value": 2
   },
   {
-    "name": "morgan-",
+    "name": "language+",
     "value": 2
   },
   {
-    "name": "app-",
+    "name": "research+",
     "value": 2
   },
   {
-    "name": "winners+",
+    "name": "free+",
     "value": 2
   },
   {
-    "name": "help+",
+    "name": "internet-",
     "value": 2
   },
   {
-    "name": "opportunity+",
+    "name": "explorer-",
     "value": 2
   },
   {
-    "name": "nasdaq-",
+    "name": "small-",
     "value": 2
   },
   {
-    "name": "finally-",
+    "name": "crash-",
     "value": 2
   },
   {
-    "name": "password-",
+    "name": "year+",
     "value": 2
   },
   {
-    "name": "house-",
+    "name": "security+",
     "value": 2
   },
   {
-    "name": "speaker-",
+    "name": "foreign-",
     "value": 2
   },
   {
-    "name": "pelosi-",
+    "name": "alibaba+",
     "value": 2
   },
   {
-    "name": "discloses-",
+    "name": "gartner+",
     "value": 2
   },
   {
-    "name": "trades-",
+    "name": "fund+",
     "value": 2
   },
   {
-    "name": "powerful+",
+    "name": "take+",
+    "value": 2
+  },
+  {
+    "name": "hit-",
+    "value": 2
+  },
+  {
+    "name": "making+",
+    "value": 2
+  },
+  {
+    "name": "place+",
+    "value": 2
+  },
+  {
+    "name": "individuals+",
+    "value": 2
+  },
+  {
+    "name": "revenue+",
+    "value": 2
+  },
+  {
+    "name": "gap+",
+    "value": 2
+  },
+  {
+    "name": "activision+",
+    "value": 2
+  },
+  {
+    "name": "app+",
+    "value": 2
+  },
+  {
+    "name": "make+",
+    "value": 2
+  },
+  {
+    "name": "lead+",
+    "value": 2
+  },
+  {
+    "name": "netflix+",
+    "value": 2
+  },
+  {
+    "name": "video+",
     "value": 2
   },
   {
@@ -156,447 +580,23 @@
     "value": 2
   },
   {
-    "name": "share+",
+    "name": "care+",
     "value": 2
   },
   {
-    "name": "ios+",
+    "name": "citing-",
     "value": 2
   },
   {
-    "name": "profit+",
+    "name": "celebrating+",
     "value": 2
   },
   {
-    "name": "innovation+",
+    "name": "black+",
     "value": 2
   },
   {
-    "name": "patent-",
+    "name": "hits-",
     "value": 2
-  },
-  {
-    "name": "today+",
-    "value": 2
-  },
-  {
-    "name": "problem-",
-    "value": 2
-  },
-  {
-    "name": "watch-",
-    "value": 2
-  },
-  {
-    "name": "rival-",
-    "value": 2
-  },
-  {
-    "name": "tech+",
-    "value": 2
-  },
-  {
-    "name": "mobile+",
-    "value": 2
-  },
-  {
-    "name": "analyst+",
-    "value": 2
-  },
-  {
-    "name": "judge-",
-    "value": 2
-  },
-  {
-    "name": "steve+",
-    "value": 2
-  },
-  {
-    "name": "tracking-",
-    "value": 2
-  },
-  {
-    "name": "one+",
-    "value": 2
-  },
-  {
-    "name": "growing+",
-    "value": 2
-  },
-  {
-    "name": "create+",
-    "value": 2
-  },
-  {
-    "name": "austin+",
-    "value": 2
-  },
-  {
-    "name": "still+",
-    "value": 2
-  },
-  {
-    "name": "problems-",
-    "value": 2
-  },
-  {
-    "name": "worth+",
-    "value": 2
-  },
-  {
-    "name": "want+",
-    "value": 2
-  },
-  {
-    "name": "sell+",
-    "value": 2
-  },
-  {
-    "name": "decision+",
-    "value": 2
-  },
-  {
-    "name": "workers+",
-    "value": 2
-  },
-  {
-    "name": "proof-",
-    "value": 2
-  },
-  {
-    "name": "cover+",
-    "value": 2
-  },
-  {
-    "name": "travel+",
-    "value": 2
-  },
-  {
-    "name": "japan+",
-    "value": 1
-  },
-  {
-    "name": "faang+",
-    "value": 1
-  },
-  {
-    "name": "suffers-",
-    "value": 1
-  },
-  {
-    "name": "first+",
-    "value": 1
-  },
-  {
-    "name": "cross-",
-    "value": 1
-  },
-  {
-    "name": "chart-",
-    "value": 1
-  },
-  {
-    "name": "pattern-",
-    "value": 1
-  },
-  {
-    "name": "since-",
-    "value": 1
-  },
-  {
-    "name": "pandemic-",
-    "value": 1
-  },
-  {
-    "name": "improve+",
-    "value": 1
-  },
-  {
-    "name": "working+",
-    "value": 1
-  },
-  {
-    "name": "hours+",
-    "value": 1
-  },
-  {
-    "name": "retail+",
-    "value": 1
-  },
-  {
-    "name": "lot+",
-    "value": 1
-  },
-  {
-    "name": "solid+",
-    "value": 1
-  },
-  {
-    "name": "yields+",
-    "value": 1
-  },
-  {
-    "name": "retirement+",
-    "value": 1
-  },
-  {
-    "name": "wealth+",
-    "value": 1
-  },
-  {
-    "name": "slumps-",
-    "value": 1
-  },
-  {
-    "name": "stanley-",
-    "value": 1
-  },
-  {
-    "name": "cautions-",
-    "value": 1
-  },
-  {
-    "name": "awaits+",
-    "value": 1
-  },
-  {
-    "name": "block-",
-    "value": 1
-  },
-  {
-    "name": "partnership-",
-    "value": 1
-  },
-  {
-    "name": "climbs-",
-    "value": 1
-  },
-  {
-    "name": "madness-",
-    "value": 1
-  },
-  {
-    "name": "swift+",
-    "value": 1
-  },
-  {
-    "name": "student+",
-    "value": 1
-  },
-  {
-    "name": "challenge+",
-    "value": 1
-  },
-  {
-    "name": "square+",
-    "value": 1
-  },
-  {
-    "name": "embrace+",
-    "value": 1
-  },
-  {
-    "name": "could-",
-    "value": 1
-  },
-  {
-    "name": "propel+",
-    "value": 1
-  },
-  {
-    "name": "trend+",
-    "value": 1
-  },
-  {
-    "name": "toward+",
-    "value": 1
-  },
-  {
-    "name": "looks+",
-    "value": 1
-  },
-  {
-    "name": "headset+",
-    "value": 1
-  },
-  {
-    "name": "next+",
-    "value": 1
-  },
-  {
-    "name": "breakthrough+",
-    "value": 1
-  },
-  {
-    "name": "product+",
-    "value": 1
-  },
-  {
-    "name": "price+",
-    "value": 1
-  },
-  {
-    "name": "nearing+",
-    "value": 1
-  },
-  {
-    "name": "passkeys-",
-    "value": 1
-  },
-  {
-    "name": "kill-",
-    "value": 1
-  },
-  {
-    "name": "good+",
-    "value": 1
-  },
-  {
-    "name": "adds+",
-    "value": 1
-  },
-  {
-    "name": "pro+",
-    "value": 1
-  },
-  {
-    "name": "features+",
-    "value": 1
-  },
-  {
-    "name": "ipados+",
-    "value": 1
-  },
-  {
-    "name": "multitasking+",
-    "value": 1
-  },
-  {
-    "name": "update-",
-    "value": 1
-  },
-  {
-    "name": "debuts-",
-    "value": 1
-  },
-  {
-    "name": "deferred-",
-    "value": 1
-  },
-  {
-    "name": "service-",
-    "value": 1
-  },
-  {
-    "name": "updates-",
-    "value": 1
-  },
-  {
-    "name": "provides+",
-    "value": 1
-  },
-  {
-    "name": "even+",
-    "value": 1
-  },
-  {
-    "name": "technologies+",
-    "value": 1
-  },
-  {
-    "name": "macos+",
-    "value": 1
-  },
-  {
-    "name": "ventura+",
-    "value": 1
-  },
-  {
-    "name": "brings+",
-    "value": 1
-  },
-  {
-    "name": "productivity+",
-    "value": 1
-  },
-  {
-    "name": "tools+",
-    "value": 1
-  },
-  {
-    "name": "new+",
-    "value": 1
-  },
-  {
-    "name": "continuity+",
-    "value": 1
-  },
-  {
-    "name": "communicate+",
-    "value": 1
-  },
-  {
-    "name": "announces+",
-    "value": 1
-  },
-  {
-    "name": "awards+",
-    "value": 1
-  },
-  {
-    "name": "watchos+",
-    "value": 1
-  },
-  {
-    "name": "delivers+",
-    "value": 1
-  },
-  {
-    "name": "stay+",
-    "value": 1
-  },
-  {
-    "name": "connected+",
-    "value": 1
-  },
-  {
-    "name": "active+",
-    "value": 1
-  },
-  {
-    "name": "healthy+",
-    "value": 1
-  },
-  {
-    "name": "agrees+",
-    "value": 1
-  },
-  {
-    "name": "plan+",
-    "value": 1
-  },
-  {
-    "name": "usb+",
-    "value": 1
-  },
-  {
-    "name": "common+",
-    "value": 1
-  },
-  {
-    "name": "phone+",
-    "value": 1
-  },
-  {
-    "name": "charger+",
-    "value": 1
-  },
-  {
-    "name": "blow+",
-    "value": 1
-  },
-  {
-    "name": "cramer+",
-    "value": 1
   }
 ]
