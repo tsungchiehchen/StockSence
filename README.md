@@ -14,11 +14,11 @@ cd ..
 cd frontend
 npm install
 ```
-4. Start backend
+4. Start frontend
 ```bash=
 npm run serve
 ```
-5. Open another terminal and start frontend
+5. Open another terminal and start backend
 ```bash=
 cd backend
 python main.py
