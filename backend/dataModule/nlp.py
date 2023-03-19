@@ -94,21 +94,36 @@ def drop_row_with_duplicate(df):
 
 
 def get_sentiment_as_dataframe(symbol):
-    # get the news from using stock symbol
+    # get the news from using stock symbol - from old
     try:
         symbol_news_df = pd.read_csv('./dataset/news/' + symbol + '.csv')
     except:
         symbol_news_df = pd.DataFrame()
 
-    # get the news from using company name
+    # get the news from using company name - from old
     try:
         comp_name_news_df = pd.read_csv(
             './dataset/news-company-name/' + symbol + '.csv')
     except:
         comp_name_news_df = pd.DataFrame()
 
+    # get the news from using stock symbol - from new
+    try:
+        new_symbol_news_df = pd.read_csv(
+            './dataset/news-stockSymbol-new/' + symbol + '.csv')
+    except:
+        new_symbol_news_df = pd.DataFrame()
+
+    # get the news from using company name - from new
+    try:
+        new_comp_name_news_df = pd.read_csv(
+            './dataset/news-company-name-new/' + symbol + '.csv')
+    except:
+        new_comp_name_news_df = pd.DataFrame()
+
     # combine news scrape with stock symbols and company's name
-    combined_df = pd.concat([symbol_news_df, comp_name_news_df], axis=0)
+    combined_df = pd.concat(
+        [symbol_news_df, comp_name_news_df, new_comp_name_news_df, new_symbol_news_df], axis=0)
     # reset the index of the combined dataframe
     combined_df = combined_df.reset_index(drop=True)
 
@@ -118,6 +133,9 @@ def get_sentiment_as_dataframe(symbol):
 
     # drop duplicates
     combined_df.drop_duplicates(keep='first', inplace=True)
+    # drop datetime == NaN
+    combined_df = combined_df.dropna(subset=['datetime'])
+
     combined_df.to_csv(
         './dataset/combine news/combined_news_' + symbol + '.csv', index=False)
 
@@ -126,10 +144,6 @@ def get_sentiment_as_dataframe(symbol):
     # get sentiment score on each title
     try:
         scores = get_sentiment_score(df['title'])
-        symbol += '\n'
-        # Write to .txt file indicating finished company with correct scores
-        with open('./dataset/Finished_news_sentiment.txt', 'a') as file:
-            file.write(str(symbol))
 
         for i in range(len(scores)):
             df.loc[i, 'Negative'] = scores[i]['neg']
@@ -139,6 +153,12 @@ def get_sentiment_as_dataframe(symbol):
 
         df.to_csv('./dataset/news sentiment/' + symbol +
                   '_news_sentiment.csv', index=False)
+
+        # Write to .txt file indicating finished company with correct scores
+        with open('./dataset/Finished_news_sentiment.txt', 'a') as file:
+            symbol += '\n'
+            file.write(str(symbol))
+
     except:
         scores = None
         symbol += '\n'
@@ -147,6 +167,7 @@ def get_sentiment_as_dataframe(symbol):
             file.write(str(symbol))
 
 
+# testing on all stocks
 # df = pd.read_csv('./dataset/Stocks Symbols.csv')
 # df = df.loc[df['Market_Cap'] > 2000000000.00]
 # symbols = df['Symbol'].tolist()
@@ -162,3 +183,16 @@ def get_sentiment_as_dataframe(symbol):
 #         get_sentiment_as_dataframe(symbol)
 #         end = time.time()
 #         print("Finished " + symbol + " in ", end-start, " Seconds")
+
+# test on single stock
+# symbol = 'AAPL'
+# start = time.time()
+# get_sentiment_as_dataframe(symbol)
+# end = time.time()
+# print("Finished " + symbol + " in ", end-start, " Seconds")
+
+# test for distribution in news sentiment
+# df = pd.read_csv('./dataset/news sentiment/AAPL_news_sentiment.csv')
+# print(len(df[df["Compound"] != 0]))
+# print(len(df[df["Compound"] == 0]))
+# print()
