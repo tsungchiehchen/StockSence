@@ -30,6 +30,7 @@ def api():
 
 @app.route('/prediction', methods=['GET', 'POST'])
 def prediction():
+    print("predicting")
     stockPriceOnly = "true"
     startDate = request.args.get('startDate')
     endDate = request.args.get('endDate')
@@ -82,7 +83,6 @@ def index():
         
         elif stockPriceOnly == "false":  # 要查 stock change 跟 macro change
             percentilesFilePath = Path("./dataset/percentiles/" + str(startDate) + "~" + str(endDate) + ".json")
-            print(percentilesFilePath)
             if not percentilesFilePath.is_file():  # macro change file does not exist
                 print("Not calculated before")
                 calculateStockChangebyDate.processAllStocksChange(startDate, endDate)

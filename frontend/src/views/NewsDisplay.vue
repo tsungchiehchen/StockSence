@@ -35,10 +35,10 @@ export default {
     var processedItems = []
     var key = 1
     for (var i = 0; i < newsJson.length; i++){
-      if (newsJson[i].Score == "Positive"){
+      if (newsJson[i].Sentiment == "Positive"){
         var color = "color: #42b883"
       }
-      else if(newsJson[i].Score == "Negative"){
+      else if(newsJson[i].Sentiment == "Negative"){
         color = "color: #e54050"
       }
       else{
@@ -47,7 +47,7 @@ export default {
       let news = {
           "key": key,
           "name": newsJson[i].title + " (" + newsJson[i].datetime + ")",
-          "desc": newsJson[i].desc,
+          "desc": newsJson[i].link,
           "color": color
         }
       key++

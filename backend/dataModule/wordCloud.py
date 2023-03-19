@@ -2,8 +2,22 @@ import pandas as pd
 import operator
 import json
 import re
+import nltk
+from nltk.corpus import wordnet
 from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
 import itertools
+
+
+def get_wordnet_pos(word):
+    """Map POS tag to first character lemmatize() accepts"""
+    tag = nltk.pos_tag([word])[0][1][0].upper()
+    tag_dict = {"J": wordnet.ADJ,
+                "N": wordnet.NOUN,
+                "V": wordnet.VERB,
+                "R": wordnet.ADV}
+
+    return tag_dict.get(tag, wordnet.NOUN)
 
 
 def preprocess(raw_text: str):
@@ -22,7 +36,15 @@ def preprocess(raw_text: str):
         if word not in stop_words:
             cleaned_words.append(word)
 
-    return " ".join(cleaned_words)
+    # Step 4: lemmatise words
+    lemmas = []
+    lemmatizer = WordNetLemmatizer()
+    for word in cleaned_words:
+        lemma = lemmatizer.lemmatize(word, get_wordnet_pos(word))
+        lemmas.append(lemma)
+
+    # Step 5: converting list back to string and return
+    return " ".join(lemmas)
 
 
 def getDFbyDate(start_date, end_date, symbol):
@@ -97,7 +119,7 @@ def getWordCloud(start_date, end_date, symbol):
 
 
 # testing
-# start_date = "2020-01-01"
-# end_date = "2022-01-01"
-# symbol = 'AAPL'
-# getWordCloud(start_date, end_date, symbol)
+start_date = "2019-07-01"
+end_date = "2020-01-01"
+symbol = 'AAPL'
+getWordCloud(start_date, end_date, symbol)
