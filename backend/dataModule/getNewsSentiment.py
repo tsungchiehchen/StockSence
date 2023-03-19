@@ -65,11 +65,11 @@ def get_news_sentiment(start_date, end_date, symbol):
 
         # sort if the news item in that day is more than 10
         if len(selected_rows) > 10:
-            result = {}
             selected_rows.sort_values('Compound', ascending=True, inplace=True)
 
             # get positive
             for i in range(len(selected_rows)-1, len(selected_rows) - 6, -1):
+                result = {}
                 result['title'] = selected_rows.iloc[i]['title']
                 result['datetime'] = selected_rows.iloc[i]['datetime']
                 result['link'] = selected_rows.iloc[i]['link']
@@ -78,6 +78,7 @@ def get_news_sentiment(start_date, end_date, symbol):
 
             # get negative
             for i in range(0, 5, 1):
+                result = {}
                 result['title'] = selected_rows.iloc[i]['title']
                 result['datetime'] = selected_rows.iloc[i]['datetime']
                 result['link'] = selected_rows.iloc[i]['link']
@@ -100,7 +101,8 @@ def get_news_sentiment(start_date, end_date, symbol):
 
 
 # testing
-# start_date = "2020-01-01"
-# end_date = "2022-01-01"
-# symbol = 'AAPL'
-# get_news_sentiment(start_date, end_date, symbol)
+start_date = "2019-08-01"
+# end_date = "2020-01-01"
+end_date = "2019-08-02"
+symbol = 'AAPL'
+get_news_sentiment(start_date, end_date, symbol)
