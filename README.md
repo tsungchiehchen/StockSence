@@ -1,4 +1,4 @@
-# StockSence
+# StockSense
 
 ## Project setup
 1. Install [node.js](https://nodejs.org/en/) and [Python](https://www.python.org/downloads/) if not yet.
